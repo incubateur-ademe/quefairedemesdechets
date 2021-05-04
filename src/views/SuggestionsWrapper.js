@@ -12,12 +12,12 @@ const Wrapper = styled.div`
   align-items: center;
 `
 const Content = styled.div`
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   opacity: ${(props) => (props.isFetching ? 0 : 1)};
   transition: opacity 1500ms 1500ms;
 
   ${(props) => props.theme.mq.small} {
-    padding-bottom: 1rem;
+    padding-bottom: 0;
   }
 `
 export default function SuggestionsWrapper() {

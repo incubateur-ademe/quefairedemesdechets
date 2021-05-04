@@ -1,8 +1,8 @@
 # Que Faire de mes Déchets
 
-Application web permettant de
+Application web permettant de savoir quoi faire de ses déchets
 
-https://teletravail.monimpacttransport.fr/
+https://quefairedemesdechets.netlify.app/
 
 ## Développement
 
