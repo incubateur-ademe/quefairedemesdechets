@@ -87,7 +87,6 @@ export default function Bin() {
       visible={visible && waste.length}
       position={position}
       onClick={() => {
-        console.log('click')
         setVisible(false)
         setTimeout(() => {
           setPosition((prevPosition) =>
