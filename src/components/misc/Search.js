@@ -29,7 +29,7 @@ const Wrapper = styled.div`
   transition: height 400ms ease-out;
 
   ${(props) => props.theme.mq.small} {
-    height: ${(props) => (props.small ? 0 : '10rem')};
+    height: ${(props) => (props.small ? 0 : '6rem')};
     margin-bottom: 4.5rem;
   }
 `
