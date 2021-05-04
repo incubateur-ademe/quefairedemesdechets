@@ -31,8 +31,16 @@ const Big = styled.span`
   display: block;
   font-size: 1.25rem;
   text-decoration: underline;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 1.125rem;
+  }
 `
-const Small = styled.span``
+const Small = styled.span`
+  ${(props) => props.theme.mq.small} {
+    font-size: 0.875rem;
+  }
+`
 export default function Links(props) {
   return props.product.links?.length ? (
     <Wrapper>
