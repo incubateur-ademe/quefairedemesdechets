@@ -38,12 +38,12 @@ const Suggestion = styled.div`
   display: flex;
   align-items: center;
   white-space: nowrap;
-  opacity: ${(props) => (props.visible ? (props.isFetching ? 0.25 : 0.75) : 0)};
+  opacity: ${(props) => (props.visible ? (props.isFetched ? 0.75 : 0.25) : 0)};
   pointer-events: none;
   transition: opacity ${(props) => (props.visible ? 200 : 0)}ms;
 
   ${(props) => props.theme.mq.small} {
-    opacity: ${(props) => (props.visible ? (props.isFetching ? 0.2 : 0.6) : 0)};
+    opacity: ${(props) => (props.visible ? (props.isFetched ? 0.6 : 0.2) : 0)};
   }
 `
 const Invisible = styled.div`
@@ -98,7 +98,7 @@ export default React.forwardRef(function TextInput(props, ref) {
       />
       <Suggestion
         visible={props.suggestion && props.suggestionVisible && props.search}
-        isFetching={props.isFetching}
+        isFetched={props.isFetched}
       >
         <Invisible>{props.search}</Invisible>
         {props.suggestion && <Visible>{props.suggestion.item['Nom']}</Visible>}

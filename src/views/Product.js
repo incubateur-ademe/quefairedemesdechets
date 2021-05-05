@@ -20,27 +20,32 @@ export default function Product() {
   let { name } = useParams()
   let { waste } = useContext(WasteContext)
   const [product, setProduct] = useState(null)
+  const [notFound, setNotFound] = useState(false)
   useEffect(() => {
-    setProduct(waste.find((product) => product['slug'] === name))
+    const newProduct = waste.find((product) => product['slug'] === name)
+    setProduct(newProduct)
+    setNotFound(newProduct ? false : true)
   }, [name, waste])
 
   return (
-    <Wrapper visible={waste.length}>
-      {waste.length &&
-        (product ? (
+    <>
+      <Wrapper visible={product}>
+        {product && (
           <>
             <Presentation product={product} />
             <Map product={product} />
             <Details product={product} />
             <Links product={product} />
           </>
-        ) : (
-          <Suggestions>
-            Ce déchet n'existe pas :(
-            <br />
-            Essayez une des suggestions ci dessous.
-          </Suggestions>
-        ))}
-    </Wrapper>
+        )}
+      </Wrapper>
+      {notFound && (
+        <Suggestions>
+          Ce déchet n'existe pas :(
+          <br />
+          Essayez une des suggestions ci dessous.
+        </Suggestions>
+      )}
+    </>
   )
 }

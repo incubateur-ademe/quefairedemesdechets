@@ -4,7 +4,7 @@ import { useQuery } from 'react-query'
 import axios from 'axios'
 
 export default function WasteProvider(props) {
-  const { data: wasteData, isFetching } = useQuery('waste', () =>
+  const { data: wasteData, isFetched } = useQuery('waste', () =>
     axios.get('/data/waste.json').then((res) => res.data)
   )
   const [waste, setWaste] = useState([])
@@ -47,6 +47,7 @@ export default function WasteProvider(props) {
     }
   )
   const [linksSet, setLinksSet] = useState(false)
+
   useEffect(() => {
     if (links && !linksSet) {
       setLinksSet(true)
@@ -65,7 +66,7 @@ export default function WasteProvider(props) {
     <WasteContext.Provider
       value={{
         waste,
-        isFetching,
+        isFetched,
       }}
     >
       {props.children}

@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 `
 const Content = styled.div`
   padding-bottom: 1rem;
-  opacity: ${(props) => (props.isFetching ? 0 : 1)};
+  opacity: ${(props) => (props.isFetched ? 1 : 0)};
   transition: opacity 1500ms 1500ms;
 
   ${(props) => props.theme.mq.small} {
@@ -22,7 +22,7 @@ const Content = styled.div`
   }
 `
 export default function SuggestionsWrapper() {
-  const { isFetching } = useContext(WasteContext)
+  const { isFetched } = useContext(WasteContext)
 
   const { setSearch } = useContext(SearchContext)
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function SuggestionsWrapper() {
 
   return (
     <Wrapper>
-      <Content isFetching={isFetching}>
+      <Content isFetched={isFetched}>
         <Suggestions>
           En panne d’inspiration ? Essayez une des suggestions ci‑dessous.
         </Suggestions>

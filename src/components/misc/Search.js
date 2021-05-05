@@ -62,7 +62,7 @@ const Color = styled.span`
     height: 0.25rem;
     border-radius: 0.125rem;
     background-color: ${(props) => props.theme.colors.ter};
-    animation: ${(props) => !props.isFetching && fetched} 350ms linear 750ms;
+    animation: ${(props) => !props.isFetched && fetched} 350ms linear 750ms;
     ${(props) => props.theme.mq.small} {
       bottom: 0;
       height: 0.7vw;
@@ -76,14 +76,14 @@ export default function Search() {
     setSmall(location.pathname !== '/')
   }, [location])
 
-  const { waste, isFetching } = useContext(WasteContext)
+  const { isFetched } = useContext(WasteContext)
 
   return (
     <Wrapper small={small}>
       <Title small={small}>
-        Que Faire de mes <Color isFetching={isFetching}>Déchets</Color> ?
+        Que Faire de mes <Color isFetched={isFetched}>Déchets</Color> ?
       </Title>
-      <SearchBar small={small} isFetched={waste.length} />
+      <SearchBar small={small} isFetched={isFetched} />
     </Wrapper>
   )
 }

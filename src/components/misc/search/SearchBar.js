@@ -45,17 +45,18 @@ export default function SearchBar(props) {
           keys: ['searchable'],
           threshold: 0.3,
           ignoreLocation: true,
-          minMatchCharLength: 4,
         })
       )
     }
   }, [waste])
 
   useEffect(() => {
-    if (fuse) {
+    if (fuse && search.length > 2) {
       setResults(
         fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
       )
+    } else {
+      setResults([])
     }
   }, [search, fuse])
 
