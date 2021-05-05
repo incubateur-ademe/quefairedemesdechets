@@ -10,10 +10,8 @@ const Wrapper = styled.div`
 const Suggestion = styled.div`
   padding: 0.75rem 0.75rem 0.75rem 2rem;
   cursor: pointer;
-  transition: background-color 200ms ease-out,
-    opacity ${(props) => (props.isFetched ? 0 : 300)}ms ease-out;
+  transition: background-color 200ms ease-out;
   background-color: rgba(0, 0, 0, ${(props) => (props.current ? 0.15 : 0)});
-  opacity: ${(props) => (props.isFetched ? 1 : 0.5)};
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.2);
@@ -67,7 +65,6 @@ export default function Suggestions(props) {
             <Suggestion
               current={index === props.current}
               key={product.item['ID']}
-              isFetched={props.isFetched}
               onClick={() => props.handleSuggestionClick(product)}
               onMouseDown={(e) => e.preventDefault()}
             >
