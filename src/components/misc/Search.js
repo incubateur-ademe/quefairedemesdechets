@@ -76,14 +76,14 @@ export default function Search() {
     setSmall(location.pathname !== '/')
   }, [location])
 
-  const { isFetching } = useContext(WasteContext)
+  const { waste, isFetching } = useContext(WasteContext)
 
   return (
     <Wrapper small={small}>
       <Title small={small}>
         Que Faire de mes <Color isFetching={isFetching}>Déchets</Color> ?
       </Title>
-      <SearchBar small={small} isFetching={isFetching} />
+      <SearchBar small={small} isFetched={waste.length} />
     </Wrapper>
   )
 }

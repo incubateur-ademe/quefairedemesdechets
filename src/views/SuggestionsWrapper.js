@@ -1,7 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useEffect, useContext } from 'react'
 import styled from 'styled-components'
 
 import WasteContext from 'utils/WasteContext'
+import SearchContext from 'utils/SearchContext'
 import Suggestions from 'components/misc/Suggestions'
 
 const Wrapper = styled.div`
@@ -22,6 +23,11 @@ const Content = styled.div`
 `
 export default function SuggestionsWrapper() {
   const { isFetching } = useContext(WasteContext)
+
+  const { setSearch } = useContext(SearchContext)
+  useEffect(() => {
+    setSearch('')
+  }, [setSearch])
 
   return (
     <Wrapper>

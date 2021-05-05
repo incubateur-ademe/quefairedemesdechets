@@ -19,7 +19,7 @@ const Wrapper = styled.form`
   border: 0.25rem solid ${(props) => props.theme.colors.main};
   border-radius: 2rem;
   overflow: hidden;
-  opacity: ${(props) => (props.isFetching ? 0 : 1)};
+  opacity: ${(props) => (props.isFetched ? 1 : 0)};
   transition: opacity 1500ms;
 
   ${(props) => props.theme.mq.small} {
@@ -43,9 +43,9 @@ export default function SearchBar(props) {
       setFuse(
         new Fuse(waste, {
           keys: ['searchable'],
-          threshold: 0.2,
+          threshold: 0.3,
           ignoreLocation: true,
-          minMatchCharLength: 3,
+          minMatchCharLength: 4,
         })
       )
     }
@@ -79,11 +79,11 @@ export default function SearchBar(props) {
 
   return (
     <Wrapper
-      isFetching={props.isFetching}
+      isFetched={props.isFetched}
       focus={focus}
       onSubmit={(e) => {
         e.preventDefault()
-        if (current > -1) {
+        if (results[current]) {
           navigateToProduct(results[current])
         }
       }}

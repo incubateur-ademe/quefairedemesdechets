@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { useParams } from 'react-router-dom'
 
 import WasteContext from 'utils/WasteContext'
+import Suggestions from 'components/misc/Suggestions'
 import Presentation from './product/Presentation'
 import Map from './product/Map'
 import Details from './product/Details'
@@ -24,15 +25,22 @@ export default function Product() {
   }, [name, waste])
 
   return (
-    <Wrapper visible={product}>
-      {product && (
-        <>
-          <Presentation product={product} />
-          <Map product={product} />
-          <Details product={product} />
-          <Links product={product} />
-        </>
-      )}
+    <Wrapper visible={waste.length}>
+      {waste.length &&
+        (product ? (
+          <>
+            <Presentation product={product} />
+            <Map product={product} />
+            <Details product={product} />
+            <Links product={product} />
+          </>
+        ) : (
+          <Suggestions>
+            Ce déchet n'existe pas :(
+            <br />
+            Essayez une des suggestions ci dessous.
+          </Suggestions>
+        ))}
     </Wrapper>
   )
 }

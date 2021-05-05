@@ -1,8 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
-
-import SearchContext from 'utils/SearchContext'
 
 const Wrapper = styled.button`
   position: absolute;
@@ -57,13 +55,12 @@ const Arrow = styled.svg`
 `
 export default function BackButton(props) {
   let history = useHistory()
-  const { setSearch } = useContext(SearchContext)
+
   return (
     <Wrapper
       type='button'
       disabled={!props.small || props.focus}
       onClick={() => {
-        setSearch('')
         history.push(`/`)
       }}
     >
