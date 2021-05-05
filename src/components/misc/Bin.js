@@ -7,16 +7,16 @@ const wink = keyframes`
   from {
     transform: scaleY(1);
   }
-  19% {
+  38% {
     transform: scaleY(1);
   }
-  19.4% {
+  38.8% {
     transform: scaleY(0.2);
   }
-  19.6% {
+  39.2% {
     transform: scaleY(0.2);
   }
-  20% {
+  40% {
     transform: scaleY(1);
   }
   to {
@@ -74,7 +74,7 @@ const Svg = styled.svg`
 `
 const Eye = styled.circle`
   transform-origin: 50.5px 50.5px;
-  animation: ${wink} 25000ms linear infinite;
+  animation: ${wink} 12000ms linear infinite;
 `
 export default function Bin() {
   const { waste } = useContext(WasteContext)
