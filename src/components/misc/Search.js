@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components'
 import { useLocation } from 'react-router-dom'
 
 import WasteContext from 'utils/WasteContext'
+import UXContext from 'utils/UXContext'
 import SearchBar from './search/SearchBar'
 
 const fetched = keyframes`
@@ -52,6 +53,7 @@ const Color = styled.span`
   display: inline-block;
   vertical-align: bottom;
   overflow: hidden;
+  cursor: pointer;
 
   &:before {
     content: '';
@@ -62,7 +64,7 @@ const Color = styled.span`
     height: 0.25rem;
     border-radius: 0.125rem;
     background-color: ${(props) => props.theme.colors.ter};
-    animation: ${(props) => props.isFetched && fetched} 350ms linear 750ms;
+    animation: ${(props) => !props.isFetching && fetched} 350ms linear 750ms;
     ${(props) => props.theme.mq.small} {
       bottom: 0;
       height: 0.7vw;
@@ -76,12 +78,26 @@ export default function Search() {
     setSmall(location.pathname !== '/')
   }, [location])
 
-  const { isFetched } = useContext(WasteContext)
+  const { isFetched, isFetching } = useContext(WasteContext)
+
+  const { binFlight, setBinFlight } = useContext(UXContext)
 
   return (
     <Wrapper small={small}>
       <Title small={small}>
-        Que Faire de mes <Color isFetched={isFetched}>Déchets</Color> ?
+        Que Faire de mes{' '}
+        <Color
+          onClick={() => {
+            if (!binFlight) {
+              setBinFlight(true)
+              setTimeout(() => setBinFlight(false), 4000)
+            }
+          }}
+          isFetching={isFetching}
+        >
+          Déchets
+        </Color>{' '}
+        ?
       </Title>
       <SearchBar small={small} isFetched={isFetched} />
     </Wrapper>

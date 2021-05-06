@@ -20,6 +20,8 @@ export default function UXProvider(props) {
     })
   }, [])
 
+  const [binFlight, setBinFlight] = useState(false)
+
   return (
     <UXContext.Provider
       value={{
@@ -55,6 +57,8 @@ export default function UXProvider(props) {
         typeShare,
         setTypeShare,
         installPrompt,
+        binFlight,
+        setBinFlight,
       }}
     >
       {props.children}

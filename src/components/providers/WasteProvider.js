@@ -4,7 +4,7 @@ import { useQuery } from 'react-query'
 import axios from 'axios'
 
 export default function WasteProvider(props) {
-  const { data: wasteData, isFetched } = useQuery('waste', () =>
+  const { data: wasteData, isFetched, isFetching } = useQuery('waste', () =>
     axios.get('/data/waste.json').then((res) => res.data)
   )
   const [waste, setWaste] = useState([])
@@ -67,6 +67,7 @@ export default function WasteProvider(props) {
       value={{
         waste,
         isFetched,
+        isFetching,
       }}
     >
       {props.children}

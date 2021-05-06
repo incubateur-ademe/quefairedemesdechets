@@ -2,7 +2,52 @@ import React, { useState, useContext } from 'react'
 import styled, { keyframes } from 'styled-components'
 
 import WasteContext from 'utils/WasteContext'
+import UXContext from 'utils/UXContext'
 
+const flightLeft = keyframes`
+  from {
+    left: 1rem;
+    transform: translateY(50%);
+  }
+  10% {
+    left: 1rem;
+    transform: translateY(50%) rotate(-20deg);
+  }
+  90% {
+    left: 120vw;
+     transform: translateY(50%) rotate(-25deg);
+  }
+  90.1% {
+    left: -10vw;
+    transform: translateY(50%) rotate(-25deg);
+  }
+  to {
+    left: 1rem;
+    transform: translateY(50%);
+  }
+`
+const flightRight = keyframes`
+  from {
+    right: 1rem;
+    transform: translateY(50%);
+  }
+  10% {
+    right: 1rem;
+    transform: translateY(50%) rotate(20deg);
+  }
+  90% {
+    right: 120vw;
+     transform: translateY(50%) rotate(25deg);
+  }
+  90.1% {
+    right: -10vw;
+    transform: translateY(50%) rotate(25deg);
+  }
+  to {
+    right: 1rem;
+    transform: translateY(50%);
+  }
+`
 const wink = keyframes`
   from {
     transform: scaleY(1);
@@ -57,6 +102,13 @@ const Wrapper = styled.div`
   transform: translateY(${(props) => (props.visible ? '50%' : '100%')});
   transition: transform 400ms ease-out
     ${(props) => (props.visible ? '2500ms' : '0ms')};
+  animation: ${(props) =>
+      props.flight
+        ? props.position === 'left'
+          ? flightLeft
+          : flightRight
+        : ''}
+    2000ms;
 
   ${(props) => props.theme.mq.medium} {
     display: none;
@@ -78,6 +130,7 @@ const Eye = styled.circle`
 `
 export default function Bin() {
   const { waste } = useContext(WasteContext)
+  const { binFlight } = useContext(UXContext)
 
   const [position, setPosition] = useState('left')
   const [visible, setVisible] = useState(true)
@@ -85,6 +138,7 @@ export default function Bin() {
   return (
     <Wrapper
       visible={visible && waste.length}
+      flight={binFlight}
       position={position}
       onClick={() => {
         setVisible(false)
