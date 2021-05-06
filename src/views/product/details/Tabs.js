@@ -4,8 +4,8 @@ import styled from 'styled-components'
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: -0.125rem -0.125rem -0.125rem -0.125rem;
-  border-bottom: 0.125rem solid ${(props) => props.theme.colors.text};
+  //margin: -0.125rem -0.125rem -0.125rem -0.125rem;
+  // border-bottom: 0.125rem solid ${(props) => props.theme.colors.text};
 `
 const Tab = styled.button`
   flex: 1;
@@ -22,6 +22,9 @@ const Tab = styled.button`
   cursor: pointer;
   transition: all 300ms ease-out;
 
+  &:last-child {
+    border-right: none;
+  }
   &:hover {
     color: ${(props) => props.theme.colors.background};
     background-color: ${(props) => props.theme.colors.text};

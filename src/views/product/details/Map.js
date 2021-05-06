@@ -4,9 +4,23 @@ import styled from 'styled-components'
 import ReactMapGL from 'react-map-gl'
 
 const Wrapper = styled.div`
+  position: relative;
   width: 100%;
   height: 20rem;
-  margin-top: 0.125rem;
+  padding-top: 0.125rem;
+  border-top: 0.125rem solid ${(props) => props.theme.colors.text};
+`
+const Alert = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  text-align: center;
+  color: ${(props) => props.theme.colors.background};
+  background-color: ${(props) => props.theme.colors.main};
+  border-radius: 2rem;
 `
 export default function Map(props) {
   const [viewport, setViewport] = useState({
@@ -25,6 +39,7 @@ export default function Map(props) {
         onViewportChange={setViewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_API_TOKEN}
       />
+      <Alert>Prochainement sur vos écrans</Alert>
     </Wrapper>
   ) : null
 }

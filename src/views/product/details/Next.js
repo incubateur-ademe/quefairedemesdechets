@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Text = styled.p`
-  margin: 1.5rem 1.5rem 2.5rem;
+  padding: 1.5rem 1.5rem 2.5rem;
   font-size: 1.125rem;
+  border-top: 0.125rem solid ${(props) => props.theme.colors.text};
 
   ${(props) => props.theme.mq.small} {
     margin-bottom: 2rem;
