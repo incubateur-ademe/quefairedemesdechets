@@ -1,39 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
-const Title = styled.h2``
-const Text = styled.p`
-  margin-bottom: 2.5rem;
-  font-size: 1.125rem;
+import Tabs from './details/Tabs'
+import Map from './details/Map'
+import Avoid from './details/Avoid'
+import Next from './details/Next'
 
-  ${(props) => props.theme.mq.small} {
-    margin-bottom: 2rem;
-    font-size: 1rem;
-  }
+const Wrapper = styled.div`
+  margin-bottom: 5rem;
+  border: 0.125rem solid ${(props) => props.theme.colors.text};
+  border-radius: 2rem;
+  overflow: hidden;
 `
-export default function Details(props) {
+
+export default function Product(props) {
+  const [open, setOpen] = useState(null)
   return (
-    <>
-      {props.product[`Comment_les_Ã©viter_?`] && (
-        <>
-          <Title>Comment éviter de le produire ?</Title>
-          <Text
-            dangerouslySetInnerHTML={{
-              __html: props.product[`Comment_les_Ã©viter_?`],
-            }}
-          />
-        </>
-      )}
-      {props.product[`Que_va-t-il_devenir_?`] && (
-        <>
-          <Title>Que va t-il devenir ?</Title>
-          <Text
-            dangerouslySetInnerHTML={{
-              __html: props.product[`Que_va-t-il_devenir_?`],
-            }}
-          />
-        </>
-      )}
-    </>
+    <Wrapper visible={props.product}>
+      <Tabs setOpen={setOpen} open={open} />
+      <Map open={open === 'map'} product={props.product} />
+      <Avoid open={open === 'avoid'} product={props.product} />
+      <Next open={open === 'next'} product={props.product} />
+    </Wrapper>
   )
 }

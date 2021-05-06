@@ -16,9 +16,9 @@ const StyledLink = styled(MagicLink)`
   }
 `
 const Icon = styled.svg`
-  width: 1.2rem;
+  width: 1rem;
   height: auto;
-  margin: 0.3rem 0.5rem 0 0;
+  margin: 0.15rem 0.5rem 0 0;
 
   path {
     fill: ${(props) => props.theme.colors.ter};
@@ -29,16 +29,12 @@ const Text = styled.div`
 `
 const Big = styled.span`
   display: block;
-  font-size: 1.25rem;
   text-decoration: underline;
-
-  ${(props) => props.theme.mq.small} {
-    font-size: 1.125rem;
-  }
 `
 const Small = styled.span`
+  font-size: 0.875rem;
   ${(props) => props.theme.mq.small} {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
   }
 `
 export default function Links(props) {

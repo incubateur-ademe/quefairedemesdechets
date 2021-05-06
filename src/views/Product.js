@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom'
 import WasteContext from 'utils/WasteContext'
 import Suggestions from 'components/misc/Suggestions'
 import Presentation from './product/Presentation'
-import Map from './product/Map'
 import Details from './product/Details'
 import Links from './product/Links'
 
@@ -27,13 +26,13 @@ export default function Product() {
     setNotFound(newProduct ? false : true)
   }, [name, waste])
 
+  const [open, setOpen] = useState(null)
   return (
     <>
       <Wrapper visible={product}>
         {product && (
           <>
             <Presentation product={product} />
-            <Map product={product} />
             <Details product={product} />
             <Links product={product} />
           </>
