@@ -9,7 +9,19 @@ const flightLeft = keyframes`
     left: 1rem;
     transform: translateY(50%);
   }
-  10% {
+  7% {
+    left: 1rem;
+    transform: translateY(10%)  rotate(-20deg);
+  }
+  8.5% {
+    left: 1rem;
+    transform: translateY(10%)  rotate(-20deg);
+  }
+  12% {
+    left: 1rem;
+    transform: translateY(50%) rotate(-20deg);
+  }
+  14% {
     left: 1rem;
     transform: translateY(50%) rotate(-20deg);
   }
@@ -31,7 +43,19 @@ const flightRight = keyframes`
     right: 1rem;
     transform: translateY(50%);
   }
-  10% {
+  7% {
+    right: 1rem;
+    transform: translateY(10%)  rotate(20deg);
+  }
+  8.5% {
+    right: 1rem;
+    transform: translateY(10%)  rotate(20deg);
+  }
+  12% {
+    right: 1rem;
+    transform: translateY(50%) rotate(20deg);
+  }
+  14% {
     right: 1rem;
     transform: translateY(50%) rotate(20deg);
   }
