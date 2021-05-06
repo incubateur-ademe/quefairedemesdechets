@@ -6,6 +6,7 @@ import WasteContext from 'utils/WasteContext'
 import Suggestions from 'components/misc/Suggestions'
 import Presentation from './product/Presentation'
 import Details from './product/Details'
+import DetailsMobile from './product/DetailsMobile'
 import Links from './product/Links'
 
 const Wrapper = styled.div`
@@ -33,6 +34,7 @@ export default function Product() {
           <>
             <Presentation product={product} />
             <Details product={product} />
+            <DetailsMobile product={product} />
             <Links product={product} />
           </>
         )}

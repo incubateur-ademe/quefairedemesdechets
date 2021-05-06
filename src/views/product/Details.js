@@ -11,6 +11,10 @@ const Wrapper = styled.div`
   border: 0.125rem solid ${(props) => props.theme.colors.text};
   border-radius: 2rem;
   overflow: hidden;
+
+  ${(props) => props.theme.mq.small} {
+    display: none;
+  }
 `
 
 export default function Product(props) {

@@ -10,6 +10,9 @@ import UXProvider from 'components/providers/UXProvider'
 import WasteProvider from 'components/providers/WasteProvider'
 import SearchProvider from 'components/providers/SearchProvider'
 import CO2EModal from 'components/modals/CO2EModal'
+import MapModal from 'components/modals/MapModal'
+import AvoidModal from 'components/modals/AvoidModal'
+import NextModal from 'components/modals/NextModal'
 import Web from 'components/layout/Web'
 import Iframe from 'components/layout/Iframe'
 import SuggestionsWrapper from 'views/SuggestionsWrapper'
@@ -46,6 +49,9 @@ function App() {
                       </Route>
                     </Switch>
                     <CO2EModal />
+                    <MapModal />
+                    <AvoidModal />
+                    <NextModal />
                   </ModalProvider>
                 </SearchProvider>
               </WasteProvider>
