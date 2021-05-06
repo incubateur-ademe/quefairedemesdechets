@@ -88,13 +88,18 @@ const Subtitle = styled.span`
   display: block;
   font-size: 0.5em;
 `
-const Text = styled.p`
+const Text = styled.div`
   margin-bottom: 3rem;
   font-size: 1.25rem;
 
   ${(props) => props.theme.mq.small} {
     margin-bottom: 2.5rem;
     font-size: 1.125rem;
+  }
+
+  ul,
+  li {
+    margin-bottom: 1.5rem;
   }
 `
 export default function Presentation(props) {
