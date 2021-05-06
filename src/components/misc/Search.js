@@ -62,7 +62,7 @@ const Color = styled.span`
     height: 0.25rem;
     border-radius: 0.125rem;
     background-color: ${(props) => props.theme.colors.ter};
-    animation: ${(props) => !props.isFetched && fetched} 350ms linear 750ms;
+    animation: ${(props) => props.isFetched && fetched} 350ms linear 750ms;
     ${(props) => props.theme.mq.small} {
       bottom: 0;
       height: 0.7vw;
