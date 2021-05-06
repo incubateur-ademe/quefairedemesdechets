@@ -28,10 +28,9 @@ const Content = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  width: ${(props) => props.width || '30em'};
-  max-width: 90vw;
+  max-width: 30rem;
   max-height: 90vh;
-  margin: 2rem;
+  margin: 1rem;
   color: ${(props) => props.theme.colors.text};
   background-color: ${(props) => props.theme.colors.background};
   border-radius: 1em;
@@ -55,7 +54,7 @@ const ButtonClose = styled.div`
 `
 const Scroll = styled.div`
   overflow-y: auto;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
 `
 export default function Modal(props) {
   return (

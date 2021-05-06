@@ -13,6 +13,7 @@ const Wrapper = styled.div`
 `
 export default function MapModal() {
   const { map, setMap } = useContext(ModalContext)
+
   return (
     <Modal open={map} setOpen={setMap}>
       <Wrapper>
