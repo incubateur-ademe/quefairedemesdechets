@@ -16,8 +16,8 @@ const Wrapper = styled.div`
 export default function Product(props) {
   const [open, setOpen] = useState(null)
   return (
-    <Wrapper visible={props.product}>
-      <Tabs setOpen={setOpen} open={open} />
+    <Wrapper>
+      <Tabs setOpen={setOpen} open={open} product={props.product} />
       <Map open={open === 'map'} product={props.product} />
       <Avoid open={open === 'avoid'} product={props.product} />
       <Next open={open === 'next'} product={props.product} />

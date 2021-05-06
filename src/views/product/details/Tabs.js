@@ -33,18 +33,22 @@ export default function Tabs(props) {
       <Tab current={props.open === 'map'} onClick={() => props.setOpen('map')}>
         Ou l'apporter ?
       </Tab>
-      <Tab
-        current={props.open === 'next'}
-        onClick={() => props.setOpen('next')}
-      >
-        Que va t'il devenir ?
-      </Tab>
-      <Tab
-        current={props.open === 'avoid'}
-        onClick={() => props.setOpen('avoid')}
-      >
-        Comment l'éviter ?
-      </Tab>
+      {props.product[`Que_va-t-il_devenir_?`] && (
+        <Tab
+          current={props.open === 'next'}
+          onClick={() => props.setOpen('next')}
+        >
+          Que va t'il devenir ?
+        </Tab>
+      )}
+      {props.product[`Comment_les_Ã©viter_?`] && (
+        <Tab
+          current={props.open === 'avoid'}
+          onClick={() => props.setOpen('avoid')}
+        >
+          Comment l'éviter ?
+        </Tab>
+      )}
     </Wrapper>
   )
 }

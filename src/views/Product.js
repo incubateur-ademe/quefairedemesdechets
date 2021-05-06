@@ -26,7 +26,6 @@ export default function Product() {
     setNotFound(newProduct ? false : true)
   }, [name, waste])
 
-  const [open, setOpen] = useState(null)
   return (
     <>
       <Wrapper visible={product}>
