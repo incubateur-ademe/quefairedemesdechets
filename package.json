@@ -14,7 +14,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-highlight-words": "^0.17.0",
-    "react-map-gl": "^6.1.13",
+    "react-map-gl": "5.2.11",
     "react-query": "^3.13.6",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
