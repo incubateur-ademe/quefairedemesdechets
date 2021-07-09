@@ -6,6 +6,7 @@ import Modal from 'components/base/Modal'
 import MapWrapper from 'components/misc/MapWrapper'
 
 const Wrapper = styled.div`
+  position: relative;
   margin: -2rem -1.5rem;
   height: 90vh;
   border-radius: 1rem;

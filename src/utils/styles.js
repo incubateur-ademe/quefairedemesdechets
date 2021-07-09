@@ -8,9 +8,10 @@ export const themes = {
       main: '#ffffff',
       second: '#328591',
       ter: '#F56A00',
-      quad: '#ffffff',
+      quad: '255, 255, 255',
       background: '#328591',
       text: '#ffffff',
+      error: '#e10600',
     },
     fonts: {
       body: '"Poppins", sans-serif',
