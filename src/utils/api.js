@@ -55,3 +55,19 @@ export function useDecheteries(viewport, enabled) {
     }
   )
 }
+export function usePharmacies(viewport, enabled) {
+  return useQuery(
+    ['pharmacies', viewport],
+    () =>
+      axios
+        .get(
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/pharmacie.json?proximity=${viewport.longitude},${viewport.latitude}&language=fr&access_token=${process.env.REACT_APP_MAPBOX_API_TOKEN}&limit=10`
+        )
+        .then((res) => res.data.features),
+    {
+      enabled: enabled && viewport.zoom > 8.5 ? true : false,
+      keepPreviousData: viewport.zoom > 8.5 ? true : false,
+      refetchOnWindowFocus: false,
+    }
+  )
+}

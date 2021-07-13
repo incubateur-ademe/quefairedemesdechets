@@ -53,7 +53,7 @@ export default function Address(props) {
         label: place.properties.label,
         latitude: place.geometry.coordinates[1],
         longitude: place.geometry.coordinates[0],
-        zoom: 10,
+        zoom: 11,
       })
       setFocus(false)
     },

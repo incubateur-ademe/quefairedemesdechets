@@ -4,6 +4,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le. Dans le cas où vous achetez un produit neuf équivalent, déposez l'ancien chez le revendeur. Sinon apportez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 939373,
       "_i": 1,
@@ -19,6 +20,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si l'accessoire est encore en bon état, remettez-le à une structure de réemploi ou revendez-le. Sinon apportez-le en déchèterie (selon le type d'accessoire).",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 770447,
       "_i": 2,
@@ -34,6 +36,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Que le flacon soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 219736,
       "_i": 3,
@@ -49,6 +52,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Que le flacon soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 170679,
       "_i": 4,
@@ -62,7 +66,8 @@
     },
     {
       "Qu'est-ce_que_j'en_fais_?": "Mettez-la dans une boîte à aiguilles jaune à couvercle vert (BAA), remise gratuitement aux patients en autotraitement sur simple présentation d'une ordonnance, par le biais de toutes les pharmacies (d'officine ou hospitalière). Une fois la boîte pleine, rapportez-la dans un point de collecte qui l'accepte (pharmacie d'officine ou hospitalière, déchèterie, laboratoire de biologie médicale, borne automatisée sur la voie publique, local municipal...).",
-      "Déchèterie": false,
+      "Déchèterie": true,
+      "Pharmacie": true,
       "Bdd": "ademe",
       "_rand": 828868,
       "_i": 5,
@@ -77,6 +82,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Que la bouteille soit vide ou non, apportez-la dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 929444,
       "_i": 6,
@@ -92,6 +98,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez-les à domicile ou jetez-les dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile.<br />Vous pouvez aussi les donner comme nourriture à des animaux domestiques.<br />Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 588076,
       "_i": 7,
@@ -107,6 +114,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'il soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 266824,
       "_i": 8,
@@ -121,6 +129,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le à la poubelle des ordures ménagères si vous en avez une petite quantité. Sinon apportez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 878265,
       "_i": 9,
@@ -135,6 +144,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever l'amiante par l'entrepreneur qui réalise vos travaux de rénovation. Il doit disposer d'une certification QUALIBAT 1552. Il retirera et évacuera vos éléments en amiante en toute sécurité vers des installations dédiées (en contrepartie d'une rémunération fixée lors du devis initial). Le retrait par vous-même est fortement déconseillé. Toutefois, si vous réalisez des travaux vous-même et que la quantité de déchets à éliminer est limitée, vous pouvez contacter votre déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 477195,
       "_i": 10,
@@ -150,6 +160,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Que la bouteille soit vide ou non, apportez-la dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 898448,
       "_i": 11,
@@ -165,6 +176,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez-la dans un bac de collecte. Les points de collecte sont installés chez les distributeurs (il existe des bacs de collecte dans toutes les grandes surfaces) ou dans les déchèteries. Le symbole de la \"poubelle barrée\" marqué sur une lampe signifie qu'elle fait l'objet d'un recyclage et qu'il ne faut donc pas la jeter dans la poubelle classique.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 391741,
       "_i": 12,
@@ -180,6 +192,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans la poubelle des ordures ménagères. Les ampoules à filaments ne sont pas recyclées, ne contiennent pas de mercure et sont à jeter dans la poubelle classique.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 334744,
       "_i": 13,
@@ -195,6 +208,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Que le récipient soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 525519,
       "_i": 14,
@@ -210,6 +224,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Que le récipient soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 631583,
       "_i": 15,
@@ -225,6 +240,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le. Sinon apportez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 12745,
       "_i": 16,
@@ -239,6 +255,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Rapportez-le à un revendeur ou à un laboratoire photographique, qu'il soit numérique ou non. Sinon apportez-le en déchèterie. Certains des éléments qui le compose peuvent en effet être dangereux pour la santé et l'environnement (piles, condensateurs du flash, circuits imprimés...)",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 692417,
       "_i": 17,
@@ -254,6 +271,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le. Dans le cadre de l'achat d'un produit neuf, rapportez votre ancien appareil à votre revendeur. <br /><br />Vous pouvez aussi le déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces. Sinon apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 82047,
       "_i": 18,
@@ -269,6 +287,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever les ardoises par l'entrepreneur qui réalise vos travaux de rénovation. Il les évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors du devis initial ou en fonction de la quantité évacuée).<br /><br />Déposez-les en déchèterie si vous réalisez des travaux vous-même et que la quantité de déchets à éliminer est limitée. Si les quantités sont trop importantes, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 397910,
       "_i": 19,
@@ -282,6 +301,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Vous devez remplir un formulaire de \"déclaration d'abandon par un particulier d'arme et de munitions à l'État\" et remettez-le, ainsi que l'arme, au commissariat ou à la gendarmerie nationale la plus proche de votre domicile.<br /><br />Une arme à feu peut être revendue, sous conditions, à un armurier ou à un particulier majeur en présence d'un armurier.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 334185,
       "_i": 20,
@@ -296,6 +316,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez-la au commissariat ou à la gendarmerie, qui vous remettra une main courante. Une arme blanche peut être revendue à un armurier ou à un particulier (majeur).",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 176487,
       "_i": 21,
@@ -310,6 +331,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Se le meuble est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />S'il n'est plus utilisable, rapportez-le à un point de collecte : en déchèterie ou chez les distributeurs volontaires. Vous pouvez aussi le faire reprendre à la livraison d'un meuble neuf.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 390676,
       "_i": 22,
@@ -324,6 +346,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si votre article est encore en bon état, remettez-le à une structure de réemploi, éventuellement via une borne de récupération des textiles en fonction des consignes indiquées dessus, ou revendez-le. Sinon jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 102967,
       "_i": 23,
@@ -338,6 +361,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, donnez-le à une structure de réemploi ou revendez-le. Dans le cadre de l'achat d'un produit neuf, vous pouvez déposer votre ancien équipement chez le revendeur ou le faire reprendre gratuitement en cas de livraison. Sinon apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 650622,
       "_i": 24,
@@ -353,6 +377,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, donnez votre ancien produit à une structure de réemploi ou revendez-le. Dans le cadre de l'achat d'un produit neuf, vous pouvez déposer votre ancien autoradio chez le revendeur. Sinon apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 32436,
       "_i": 25,
@@ -368,6 +393,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi. Vous pouvez aussi la revendre à un ferrailleur. Sinon faites-la enlever par les services de votre collectivité chargés des encombrants ou déposez-la en déchèterie dans la benne appropriée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 600110,
       "_i": 26,
@@ -382,6 +408,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi. Sinon faites-la enlever par les services de votre collectivité chargés des encombrants ou déposez-la en déchèterie dans la benne appropriée. Il n'existe pas de filière de recyclage pour ces plastiques.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 492242,
       "_i": 27,
@@ -396,6 +423,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'il soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 691169,
       "_i": 28,
@@ -411,6 +439,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, donnez votre ancien baladeur à une structure de réemploi ou revendez-le. Dans le cadre de l'achat d'un produit neuf, vous pouvez déposer votre ancien équipement chez le revendeur. Sinon apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 770128,
       "_i": 29,
@@ -426,6 +455,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi. Sinon déposez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 61539,
       "_i": 30,
@@ -440,6 +470,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-les dans la poubelle des ordures ménagères ou apportez-les en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 518566,
       "_i": 31,
@@ -455,6 +486,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le à un ferrailleur. Sinon faites-le enlever par les services de votre collectivité chargés des encombrants ou déposez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 638809,
       "_i": 32,
@@ -469,6 +501,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 284124,
       "_i": 33,
@@ -483,6 +516,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le vide dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune. Si le récipient n'est pas vide, déposez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 353593,
       "_i": 34,
@@ -497,6 +531,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le vide dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune. Si le récipient n'est pas vide, déposez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 711469,
       "_i": 35,
@@ -511,6 +546,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 817733,
       "_i": 36,
@@ -525,6 +561,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans la poubelle des ordures ménagères. Exception : si dans votre commune la consigne de trier tous les emballages en plastique est en place, mettez-la dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri données.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 359117,
       "_i": 37,
@@ -540,6 +577,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi. Sinon, jetez-la dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 304514,
       "_i": 38,
@@ -554,6 +592,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Rapportez-les dans un point de collecte. Les points de collecte sont installés chez les distributeurs, en déchèterie, dans d'autres lieux publics (écoles, mairies, hôpitaux...) ou dans des entreprises.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 987018,
       "_i": 39,
@@ -568,6 +607,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Rapportez-la à un point de collecte installé en déchèterie, chez un distributeur (centre automobile) ou chez certains garagistes.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 159264,
       "_i": 40,
@@ -581,6 +621,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever les déchets de béton par l'entrepreneur qui réalise vos travaux de rénovation. Il les évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors du devis initial ou en fonction de la quantité évacuée).<br /><br />Déposez-le en déchèterie si vous réalisez des travaux vous-même et que la quantité de déchets à éliminer est limitée. Si les quantités sont trop importantes, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 856950,
       "_i": 41,
@@ -594,6 +635,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 680186,
       "_i": 42,
@@ -608,6 +650,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez-le en déchèterie ou rapportez-le chez un garagiste ou un distributeur qui accepte de le reprendre.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 838413,
       "_i": 43,
@@ -622,6 +665,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le. Sinon, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 540096,
       "_i": 44,
@@ -635,6 +679,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans le bac ou le conteneur réservé aux emballages recyclables en verre, sans son couvercle, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 119838,
       "_i": 45,
@@ -650,6 +695,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le. Sinon jetez-le dans la poubelle des ordures ménagères ou rapportez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 445763,
       "_i": 46,
@@ -664,6 +710,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déclarez en mairie la présence de termites dans votre logement. C'est une obligation légale, que votre logement soit couvert ou non par un arrêté préfectoral délimitant les zones infestées par les termites. Faîtes traiter les éléments en bois de votre habitat (charpente, plancher, murs, portes, fenêtres...) par un expert (de préférence agréé par l'Institut FCBA).",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 638563,
       "_i": 47,
@@ -677,6 +724,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si vous n'en avez plus l'usage, vous pouvez le donner ou le vendre. Sinon, déposez-le en déchèterie ou faites-le enlever par les services de votre collectivité chargés des encombrants ou des déchets verts.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 497944,
       "_i": 48,
@@ -690,6 +738,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever le bois par l'entrepreneur qui réalise vos travaux de rénovation. Il l'évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors du devis initial ou en fonction de la quantité évacuée).<br /><br />Déposez-le en déchèterie si vous réalisez des travaux vous-même et que la quantité de déchets à éliminer est limitée. Si les quantités sont trop importantes, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 359438,
       "_i": 49,
@@ -704,6 +753,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever le bois par l'entrepreneur qui réalise vos travaux de rénovation. Il l'évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors d'un diagnostic préalable ou en fonction de la quantité évacuée).<br /><br />Déposez-le en déchèterie si vous réalisez des travaux vous-même et que la quantité de déchets à éliminer est limitée. Si les quantités sont trop importantes, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 273497,
       "_i": 50,
@@ -718,6 +768,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever ce bois par l'entrepreneur qui réalise vos travaux de rénovation. Il l'évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors du devis initial ou en fonction de la quantité évacuée).<br /><br />Déposez-le en déchèterie si vous réalisez des travaux vous-même et que la quantité de déchets à éliminer est limitée. Si les quantités sont trop importantes, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 791680,
       "_i": 51,
@@ -732,6 +783,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la vide dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 292174,
       "_i": 52,
@@ -747,6 +799,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans la poubelle des ordures ménagères.<br /><br />Exception : si, dans votre commune, la consigne de trier tous les emballages en plastiques est en place, mettez-la dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri données.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 79560,
       "_i": 53,
@@ -761,6 +814,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "La boîte en carton, salie par la nourriture, est à jeter dans un bac de compostage, si cette solution a été mise en place à votre domicile. Sinon, même salie mais bien vidée des restes de nourriture, jetez-la dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 691654,
       "_i": 54,
@@ -775,6 +829,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez les allumettes brûlées à domicile ou jetez-les dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile.<br /><br />Jetez la boîte dans le bac, le sac ou le conteneur réservé aux emballages recyclables et les allumettes non-brûlées dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 39939,
       "_i": 55,
@@ -789,6 +844,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez les boîtes de conserve en métal dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 577112,
       "_i": 56,
@@ -804,6 +860,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez vos boîtes de médicaments vides en carton dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 847126,
       "_i": 57,
@@ -817,6 +874,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez vos boîtes en métal de produits alimentaires dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 277953,
       "_i": 58,
@@ -831,6 +889,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans la poubelle des ordures ménagères.<br /><br />Exception : si, dans votre commune la consigne de trier tous les emballages en plastiques est en place, mettez-la dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri données.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 876956,
       "_i": 59,
@@ -846,6 +905,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la (sans son capuchon en plastique) dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune. Rapportez en déchèterie les bombes de produits dangereux, qu'elles soient vides ou pas.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 480574,
       "_i": 60,
@@ -859,6 +919,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elles sont encore en bon état, revendez-les, donnez-les ou déposez-les en point de collecte. Les dépôts-ventes, vide-greniers ou sites Internet serviront de vitrine aux chineurs. Les points de collecte peuvent être des conteneurs sur la voie publique, un espace dédié en déchèterie ou une antenne locale d'association. Vos bottes doivent être maintenues par paire. Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 853300,
       "_i": 61,
@@ -873,6 +934,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Remettez-les à une association qui organise une collecte ou en déchèterie si elle reprend les bouchons séparément. De nombreux points de collecte existent en magasin, en mairie, dans les écoles... Sinon jetez-les à la poubelle des ordures ménagères.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 561688,
       "_i": 62,
@@ -886,6 +948,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Laissez-les sur les bouteilles et flacons vides en plastique et jetez-les dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune (sauf lorsqu'ils fermaient des bouteilles ou flacons contenant des produits dangereux).",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 599964,
       "_i": 63,
@@ -900,6 +963,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 575496,
       "_i": 64,
@@ -915,6 +979,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 15357,
       "_i": 65,
@@ -928,6 +993,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune (sauf lorsqu'elles contenaient des produits dangereux). Les bouteilles peuvent être jetées avec leur bouchon.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 763430,
       "_i": 66,
@@ -942,6 +1008,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Rapportez-la au distributeur ou au vendeur.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 808343,
       "_i": 67,
@@ -955,6 +1022,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 429862,
       "_i": 68,
@@ -969,6 +1037,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans le bac ou le conteneur réservé aux emballages recyclables en verre, sans leur bouchon, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 189895,
       "_i": 69,
@@ -984,6 +1053,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez-la à un point de vente qui distribue la marque de la bouteille (stations-service, chauffagistes...).",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 877649,
       "_i": 70,
@@ -997,6 +1067,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Les branchages, une fois broyés, peuvent servir à pailler au pied de vos plantes dans le jardin. Vous pouvez aussi les intégrer à votre compost. Vous pouvez utiliser les branches sèches pour vous chauffer.<br /><br />Sinon, apportez-les en déchèterie ou faites-les enlever si une collecte des biodéchets en porte à porte est proposée par votre collectivité.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 435955,
       "_i": 71,
@@ -1012,6 +1083,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la vide dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 194117,
       "_i": 72,
@@ -1027,6 +1099,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le vide dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 946821,
       "_i": 73,
@@ -1040,6 +1113,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 286673,
       "_i": 74,
@@ -1054,6 +1128,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Remettez-le à un centre d'incinération pour animaux ou à un vétérinaire ou faites-le enterrer dans un cimetière dédié.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 142982,
       "_i": 75,
@@ -1067,6 +1142,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez-le à domicile ou jetez-le dans un bac de compostage partagé, si cette solution a été mise en place à proximité de votre domicile. Sinon, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 644034,
       "_i": 76,
@@ -1082,6 +1158,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Utilisez les caissettes comme bois de chauffage ou dans un barbecue. Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 871735,
       "_i": 77,
@@ -1095,6 +1172,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans le bac, le sac ou le conteneur de collecte séparée, conformément aux consignes de tri de votre commune. Il est inutile de retirer les agraphes ou les spirales et de le déchirer avant de le jeter.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 661396,
       "_i": 78,
@@ -1110,6 +1188,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />S'il n'est plus utilisable, rapportez-le à un point de collecte : en déchèterie ou chez les distributeurs volontaires. Vous pouvez aussi le faire reprendre à la livraison d'un meuble neuf.<br /><br />",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 757820,
       "_i": 79,
@@ -1124,6 +1203,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 818418,
       "_i": 80,
@@ -1138,6 +1218,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères (ou apporter en déchèterie si vous en disposez de grandes quantités).",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 85010,
       "_i": 81,
@@ -1151,6 +1232,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Lorsque les capsules sont en aluminium, rapportez-les à un point de collecte. Si dans votre commune la consigne de trier tous les emballages en aluminium est en place, mettez-le dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri données.<br /><br />Compostez les capsules en papier à domicile ou jetez-les dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile.<br /><br />Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 839012,
       "_i": 82,
@@ -1165,6 +1247,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez-la chez un revendeur dans le cadre de l'achat d'un produit neuf, ou dans un des 22 000 bacs de collecte installés dans les grandes surfaces. Sinon apportez-la en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 390921,
       "_i": 83,
@@ -1179,6 +1262,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Remettez votre carte bancaire périmée à votre agence bancaire. Jetez les autres cartes à puce à la poubelle des ordures ménagères si elles ne contiennent pas de données personnelles.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 3728,
       "_i": 84,
@@ -1192,6 +1276,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez vos cartons vides dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 787945,
       "_i": 85,
@@ -1206,6 +1291,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez vos cartons de grande taille en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 232414,
       "_i": 86,
@@ -1219,6 +1305,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez vos cartouches d'impression usagées dans un point de collecte. Vous trouverez les points de collecte chez les revendeurs, dans certains magasins généralistes, grandes surfaces, mairies, écoles, postes et en déchèterie. Vous pouvez aussi fréquemment renvoyer vos cartouches vides directement au fabriquant, dans des colis prépayés (enveloppes T). De nombreuses enseignes proposent enfin de racheter vos cartouches vides.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 904865,
       "_i": 87,
@@ -1233,6 +1320,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Vous pouvez le proposer aux pompiers de votre ville qui l'utiliseront pour simuler les interventions sur des victimes casquées, lors de démonstrations pédagogiques. Sinon faites-le enlever par les services de votre collectivité chargés des encombrants ou apportez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 815121,
       "_i": 88,
@@ -1245,7 +1333,8 @@
     },
     {
       "Qu'est-ce_que_j'en_fais_?": "Mettez-le dans une boîte à aiguilles jaune à couvercle vert (BAA), remise gratuitement aux patients en autotraitement sur simple présentation d'une ordonnance, par le biais de toutes les pharmacies (d'officine ou hospitalière). Une fois la boîte pleine, rapportez-la dans un point de collecte qui l'accepte (pharmacie d'officine ou hospitalière, déchèterie, laboratoire de biologie médicale, borne automatisée sur la voie publique, local municipal...).",
-      "Déchèterie": false,
+      "Déchèterie": true,
+      "Pharmacie": true,
       "Bdd": "ademe",
       "_rand": 447761,
       "_i": 89,
@@ -1260,6 +1349,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Remettez vos disques et cassettes à une structure de réemploi. S'ils ne sont plus utilisables, jetez-les dans la poubelle des ordures ménagères (ou apportez-les en déchèterie si vous en disposez de grandes quantités).<br /><br />Les boîtiers en platique sont également à jeter dans la poubelle des ordures ménagères.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 592055,
       "_i": 90,
@@ -1274,6 +1364,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez vos cendres de bois à domicile en petites quantités ou jetez-les dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile. Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 219122,
       "_i": 91,
@@ -1287,6 +1378,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, donnez votre ancien produit à une structure de réemploi ou revendez-le. Dans le cadre de l'achat d'un produit neuf, vous pouvez déposer votre ancien équipement chez le revendeur ou dans l'un des 22 000 bacs de collecte installés dans les grandes surfaces. Sinon apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 347646,
       "_i": 92,
@@ -1301,6 +1393,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez-le chez un revendeur ou faites-le reprendre gratuitement à la livraison dans le cadre de l'achat d'un produit neuf. Sinon apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 630657,
       "_i": 93,
@@ -1315,6 +1408,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elles sont encore en bon état, donnez-les, revendez-les, donnez-les ou déposez-les en point de collecte, avec celles qui sont en mauvais état, dans un sac fermé. Il faut qu'elles soient liées par paires pour simplifier le tri. Les points de collecte peuvent être des boutiques équipées, des conteneurs sur la voie publique, un espace dédié en déchèterie ou une antenne locale d'association.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 160325,
       "_i": 94,
@@ -1330,6 +1424,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 967402,
       "_i": 95,
@@ -1344,6 +1439,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Apportez vos chiffons souillés de produits dangereux dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 23724,
       "_i": 96,
@@ -1357,6 +1453,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'il soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 209192,
       "_i": 97,
@@ -1372,6 +1469,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Dans le cadre de l'achat d'un produit neuf, rapportez l'ancienne cigarette électronique à votre revendeur. Vous pouvez aussi la déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces. Sinon apportez-la en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 780049,
       "_i": 98,
@@ -1386,6 +1484,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Remettez-les à une structure de réemploi s'ils sont encore en bon état ou à une association qui collecte des fournitures scolaires. Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 601993,
       "_i": 99,
@@ -1400,6 +1499,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Remettez-le à une structure de réemploi s'il est encore en bon état ou à une association qui collecte des fournitures scolaires. Sinon, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 434420,
       "_i": 100,
@@ -1414,6 +1514,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Dans le cadre de l'achat d'un produit neuf, rapportez votre clé USB hors d'usage à votre revendeur. Vous pouvez aussi la déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces. Sinon apportez-la en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 2358,
       "_i": 101,
@@ -1428,6 +1529,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'elle soit vide ou non, apportez-la dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 982594,
       "_i": 102,
@@ -1442,6 +1544,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 353948,
       "_i": 103,
@@ -1457,6 +1560,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever ces déchets par l'entrepreneur qui réalise vos travaux de rénovation. Il les évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors d'un diagnostic préalable ou en fonction de la quantité évacuée).<br /><br />Déposez-les en déchèterie si vous réalisez des travaux vous-même et que la quantité de déchets à éliminer est limitée. Si les quantités sont trop importantes, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 941253,
       "_i": 104,
@@ -1471,6 +1575,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-les en petites quantités dans le tas de compost ou le bac individuel ou partagé de compostage (si cette dernière solution a été mise en place à proximité de votre domicile). Dans la mesure du possible, broyez-les avant de les jeter.<br /><br />Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 504337,
       "_i": 105,
@@ -1484,6 +1589,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-les en petites quantités dans le tas de compost ou le bac individuel ou partagé de compostage (si cette dernière solution a été mise en place à proximité de votre domicile). Dans la mesure du possible, broyez-les avant de les jeter.<br /><br />Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 105883,
       "_i": 106,
@@ -1497,6 +1603,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Remettez-la aux magasins ou clubs de voile ou d'alpinisme qui acceptent de les reprendre.<br /><br />Sinon, jetez-la dans la poubelle des ordures ménagères (ou apportez-la en déchèterie si vous disposez de grandes quantités).",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 679388,
       "_i": 107,
@@ -1510,6 +1617,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "L'emballage, bien vidé, est à jeter dans le bac de tri, selon les consignes de votre communes :<br />- s'il s'agit d'un pot, d'un flacon ou d'une bouteille en verre, jetez-le dans le bac réservé au verre ;<br />- si c'est un flacon ou une bouteille en plastique ou un emballage en métal (tube, flacon, bouteille), jetez-le dans le bac, le sac ou le conteneur réservé aux emballages recyclables ;<br />- sinon, un tube ou un pot en plastique est à jeter dans le bac des ordures ménagères. Exception : si dans votre commune la consigne de trier tous les emballages en plastique est en place, mettez-la dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri données.<br /><br />La boîte en carton et la notice en papier sont à jetez dans le bac, le sac ou le conteneur réservé aux emballages recyclables.<br /><br />S'il reste du produit dans le pot, le tube, la bouteille ou le flacon, et qu'il est périmé, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 472238,
       "_i": 108,
@@ -1525,6 +1633,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez les couches culottes dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 707542,
       "_i": 109,
@@ -1540,6 +1649,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi. Sinon, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 683211,
       "_i": 110,
@@ -1554,6 +1664,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 320856,
       "_i": 111,
@@ -1567,6 +1678,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'ils sont encore en bon état, remettez-les à une structure de réemploi. Rapportez-les en déchèterie dans la benne réservée aux métaux.<br /><br />Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 339791,
       "_i": 112,
@@ -1580,6 +1692,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 970725,
       "_i": 113,
@@ -1594,6 +1707,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Conduisez votre chien dans le caniveau et ramassez la déjection à l'aide d'un sachet. Nouez le sachet ou repliez sa partie supérieure. Jetez le tout dans une poubelle sur la voie publique ou dans les bornes prévues à cet effet.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 609005,
       "_i": 114,
@@ -1607,6 +1721,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 266442,
       "_i": 115,
@@ -1621,6 +1736,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-le à une structure de réemploi ou revendez-la.<br /><br />Dans le cadre de l'achat d'un produit neuf, vous pouvez déposer votre ancienne cuisinière chez le revendeur ou la faire reprendre gratuitement en cas de livraison.<br /><br />Sinon, apportez-la en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 65100,
       "_i": 116,
@@ -1635,6 +1751,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi.<br /><br />Sinon, faites-la enlever par les services de votre collectivité chargés des encombrants ou déposez-la en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 440161,
       "_i": 117,
@@ -1648,6 +1765,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'il soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 657913,
       "_i": 118,
@@ -1662,6 +1780,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'il soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 991947,
       "_i": 119,
@@ -1677,6 +1796,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez dans la poubelle des ordures ménagères les déchets non-dangereux que vous utilisez pour vos soins médicaux à domicile.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 827679,
       "_i": 120,
@@ -1690,7 +1810,8 @@
     },
     {
       "Qu'est-ce_que_j'en_fais_?": "Mettez-les dans une boîte à aiguilles jaune à couvercle vert (BAA), remise gratuitement aux patients en autotraitement sur simple présentation d'une ordonnance, par le biais de toutes les pharmacies (d'officine ou hospitalière). Une fois la boîte pleine, rapportez-la dans un point de collecte qui l'accepte (pharmacie d'officine ou hospitalière, déchèterie, laboratoire de biologie médicale, borne automatisée sur la voie publique, local municipal...).",
-      "Déchèterie": false,
+      "Déchèterie": true,
+      "Pharmacie": true,
       "Bdd": "ademe",
       "_rand": 110051,
       "_i": 121,
@@ -1704,6 +1825,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez les aliments à domicile ou jetez-les dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile. Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 120284,
       "_i": 122,
@@ -1719,6 +1841,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever ces déchets par l'entrepreneur qui réalise vos travaux de rénovation. Il les évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors du devis initial ou en fonction de la quantité évacuée).<br /><br />Déposez-les en déchèterie si vous réalisez des travaux vous-même et que la quantité de déchets à éliminer est limitée. Si les quantités sont trop importantes, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 60439,
       "_i": 123,
@@ -1733,6 +1856,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Contactez l'Andra (Agence nationale pour la gestion des déchets radioactifs) qui prendra gratuitement en charge l'enlèvement de votre produit (en dessous d'un seuil de 5000 € HT).",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 671496,
       "_i": 124,
@@ -1747,6 +1871,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Les déchets verts peuvent servir à pailler au pied de vos plantes dans le jardin. Vous pouvez aussi les intégrer à votre compost. Sinon apportez-les en déchèterie ou faites-les enlever si une collecte des biodéchets en porte à porte est proposée par votre collectivité. S'il existe un traitement biologique des ordures ménagères résiduelles dans votre collectivité, la consigne peut être de mettre ses biodéchets dans la poubelle.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 91601,
       "_i": 125,
@@ -1762,6 +1887,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "En métal, jetez-le dans le bac, le sac ou le conteneur réservé aux emballages recyclables, bien vidé et sabs bouchon, selon les consignes de tri de votre commune.<br /><br />En plastique, jetez-la dans la poubelle des ordures ménagères. Exception : si dans votre commune la consigne de trier tous les emballages en plastique est en place, mettez-la dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri données.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 391898,
       "_i": 126,
@@ -1776,6 +1902,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Confiez-le à un professionnel agréé pour traiter les véhicules hors d'usage (centre VHU), contre la remise d'un certificat de destruction (envoyé en copie à la préfecture). Il existe certaines entreprises spécialisées dans la récupération des 2 roues.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 287261,
       "_i": 127,
@@ -1791,6 +1918,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez-les en déchèterie (si une filière spécifique existe) ou remettez-les aux laboratoires photographiques s'ils les acceptent.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 743129,
       "_i": 128,
@@ -1804,6 +1932,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez l'emballage vide dans la poubelle des ordures ménagères.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 694875,
       "_i": 129,
@@ -1818,6 +1947,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez la bouteille vide dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune. Les bouchons peuvent être jetés avec leur bouteille.<br /><br />A déposer en déchèterie si le récipient n'est pas vide.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 152602,
       "_i": 130,
@@ -1832,6 +1962,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-les emballages vides dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune. Les bouchons peuvent être jetés avec leur récipient.<br /><br />A déposer en déchèterie si le récipient n'est pas vide.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 892397,
       "_i": 131,
@@ -1846,6 +1977,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'elle soit vide ou non, apportez-la dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 440338,
       "_i": 132,
@@ -1860,6 +1992,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "L'eau est contaminée par des produits dangereux (solvants, peintures...) est à apporter en déchèterie, dans un récipient fermé. Si l'eau contient des substances non-dangereuses, videz-la dans les WC ou un évier .",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 35050,
       "_i": 133,
@@ -1873,6 +2006,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Sinon, apportez-le en déchèterie.<br /><br />Dans le cadre de l'achat d'un produit neuf, vous pouvez déposer votre ancien écran chez le revendeur ou le faire reprendre gratuitement en cas de livraison.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 362525,
       "_i": 134,
@@ -1888,6 +2022,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 528132,
       "_i": 135,
@@ -1902,6 +2037,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 600991,
       "_i": 136,
@@ -1916,6 +2052,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'il soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 446173,
       "_i": 137,
@@ -1930,6 +2067,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'il soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 597308,
       "_i": 138,
@@ -1944,6 +2082,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez les engrais organiques dans la poubelle des ordures ménagères si vous en avez en petite quantité. Sinon apportez-les en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 317560,
       "_i": 139,
@@ -1958,6 +2097,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Sinon, apportez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 924948,
       "_i": 140,
@@ -1971,6 +2111,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez les enveloppes dans le bac, le sac ou le conteneur de collecte séparée, conformément aux consignes de tri de votre commune, sans la froisser ou la déchirer. Une enveloppe avec fenêtre peut également être jetée dans le bac de collecte séparée.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 793715,
       "_i": 141,
@@ -1985,6 +2126,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez les épluchures à domicile ou jetez-les dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile.<br /><br />Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 680465,
       "_i": 142,
@@ -2000,6 +2142,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si l'appareil est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Sinon, apportez-le en déchèterie.<br /><br />Dans le cadre de l'achat d'un produit neuf, vous pouvez déposer votre ancien équipement chez le revendeur ou le faire reprendre gratuitement en cas de livraison.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 923503,
       "_i": 143,
@@ -2015,6 +2158,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Que la bouteille soit vide ou non, apportez-la dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 58117,
       "_i": 144,
@@ -2029,6 +2173,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'ils soient vide ou non, apportez-les dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 29584,
       "_i": 145,
@@ -2043,6 +2188,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez-le à domicile ou jetez-le dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile. Sinon, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 717356,
       "_i": 146,
@@ -2058,6 +2204,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi.<br /><br />Sinon, faites-le enlever par les services de votre collectivité chargés des encombrants ou déposez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 534530,
       "_i": 147,
@@ -2071,6 +2218,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le. <br /><br />S'il est en mauvais état, vous pouvez aussi le revendre à un ferrailleur.<br /><br />Sinon, faites-le enlever par les services de votre collectivité chargés des encombrants ou déposez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 524273,
       "_i": 148,
@@ -2085,6 +2233,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Rapportez-le à un revendeur.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 330687,
       "_i": 149,
@@ -2098,6 +2247,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez les restes de votre repas, en bac ou en tas ou dans un bac de compostage partagé (si cette dernière solution a été mise en place à proximité de votre domicile). Jetez les emballages dans la poubelle des ordures ménagères car ils sont le plus souvent trop souillés pour être recyclés.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 454373,
       "_i": 150,
@@ -2112,6 +2262,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Paillez votre jardin avec les feuilles. Compostez-les à domicile ou jetez-les dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile.<br /><br />Vous pouvez aussi les déposer en déchèterie dans la benne de collecte des déchets verts ou à les faire enlever par les services de votre collectivité qui collectent les biodéchets.<br /><br />S'il existe un traitement biologique des ordures ménagères résiduelles dans votre collectivité, la consigne peut être de mettre ses biodéchets dans la poubelle.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 124924,
       "_i": 151,
@@ -2126,6 +2277,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 769291,
       "_i": 152,
@@ -2141,6 +2293,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever l'amiante par l'entrepreneur qui réalise vos travaux de rénovation. Il doit disposer d'une certification QUALIBAT 1552. Il retirera et évacuera vos éléments en fibro-ciment en toute sécurité vers des installations dédiées (en contrepartie d'une rémunération fixée lors du devis initial). Le retrait par vous-même est fortement déconseillé. Toutefois, si vous réalisez des travaux vous-même et que la quantité de déchets à éliminer est limitée, vous pouvez contacter votre déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 301916,
       "_i": 153,
@@ -2155,6 +2308,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Vous pouvez revendre les fils en métal à un ferrailleur ou les déposer en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 267759,
       "_i": 154,
@@ -2168,6 +2322,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères. Exception : si dans votre commune la consigne de trier tous les emballages en plastiques est en place, mettez-le dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri données.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 343620,
       "_i": 155,
@@ -2181,6 +2336,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez-le à domicile ou jetez-le dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile. Sinon, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 22853,
       "_i": 156,
@@ -2196,6 +2352,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans le bac, ou le conteneur réservé aux emballages recyclables en verre, si possible sans le bouchon, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 962716,
       "_i": 157,
@@ -2210,6 +2367,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez-le au commissariat ou à la gendarmerie, qui vous remettront une main courante. Un flashball peut être revendu à un armurier ou à un particulier (majeur).",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 314951,
       "_i": 158,
@@ -2223,6 +2381,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez-les à domicile ou jetez-les dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile. Vous pouvez aussi les déposer en déchèterie dans la benne de collecte des déchets verts ou à les faire enlever par les services de votre collectivité qui collectent les biodéchets. S'il existe un traitement biologique des ordures ménagères résiduelles dans votre collectivité, la consigne peut être de mettre ses biodéchets dans la poubelle. Sinon, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 57005,
       "_i": 159,
@@ -2237,6 +2396,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'il soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 986979,
       "_i": 160,
@@ -2251,6 +2411,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le. Dans le cadre de l'achat d'un produit neuf, vous pouvez déposer votre ancien four chez le revendeur ou le faire reprendre gratuitement en cas de livraison. Sinon apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 887359,
       "_i": 161,
@@ -2265,6 +2426,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Remettez vos fournitures à une structure de réemploi si elles sont encore en bon état. Sinon jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 963187,
       "_i": 162,
@@ -2280,6 +2442,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la. Sinon, jetez-la dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 652398,
       "_i": 163,
@@ -2293,6 +2456,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la. Sinon, jetez-la dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 631974,
       "_i": 164,
@@ -2306,6 +2470,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez-les à domicile ou jetez-les dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile. Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 899337,
       "_i": 165,
@@ -2321,6 +2486,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez-les à domicile ou jetez-les dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile. Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 90384,
       "_i": 166,
@@ -2336,6 +2502,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Stockez-le en fumière puis utilisez-le en tant qu'amendement dans votre jardin ou votre potager. Compostez-le à domicile. Apportez-le dans une unité de méthanisation ou de compostage.<br /><br />Sinon, déposez-le dans une déchèterie qui l'accepte.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 446702,
       "_i": 167,
@@ -2349,6 +2516,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez-le en déchèterie (même vide).",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 273807,
       "_i": 168,
@@ -2363,6 +2531,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il n'est pas consigné, jetez-le dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 93006,
       "_i": 169,
@@ -2377,6 +2546,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elles sont encore en bon état, remettez-les à une structure de réemploi ou revendez-les.<br /><br />Sinon, apportez-les en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 408235,
       "_i": 170,
@@ -2391,6 +2561,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la. En mauvais état, elle peut être revendu à un ferrailleur.<br /><br />Sinon, faites-la enlever par les services de votre collectivité chargés des encombrants ou déposez-la en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 773539,
       "_i": 171,
@@ -2405,6 +2576,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez les gobelets en carton dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 465568,
       "_i": 172,
@@ -2420,6 +2592,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez les gobelets en plastique dans la poubelle des ordures ménagères.<br /><br />Exception : si dans votre commune la consigne de trier tous les emballages en plastiques est en place, mettez-le dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri données.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 272487,
       "_i": 173,
@@ -2435,6 +2608,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi. Sinon, jetez-la dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 397830,
       "_i": 174,
@@ -2448,6 +2622,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le. Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur.<br /><br />Vous pouvez aussi le déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces.<br /><br />Sinon, apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 694417,
       "_i": 175,
@@ -2463,6 +2638,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever vos gravats par l'entrepreneur qui réalise vos travaux de rénovation. Il les évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors du devis initial ou en fonction de la quantité évacuée).<br /><br />Déposez-les en déchèterie si vous réalisez des travaux vous-même et que la quantité de déchets à éliminer est limitée.<br /><br />Si les quantités sont trop importantes, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 247884,
       "_i": 176,
@@ -2477,6 +2653,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Vous pouvez revendre un grillage en métal à un ferrailleur.<br /><br />Sinon, déposez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 690842,
       "_i": 177,
@@ -2490,6 +2667,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si votre appareil est encore en bon état, remettez-le à une structure de réemploi ou revendez-le. Dans le cadre de l'achat d'un produit neuf, vous pouvez déposer votre ancien équipement chez le revendeur ou le faire reprendre gratuitement en cas de livraison.<br /><br />Sinon, apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 58854,
       "_i": 178,
@@ -2505,6 +2683,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la. Dans le cadre de l'achat d'un produit neuf, rapportez l'ancienne guirlande à votre revendeur. Vous pouvez aussi le déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces. Sinon apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 590191,
       "_i": 179,
@@ -2519,6 +2698,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la.<br /><br />Sinon, jetez-la dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 890633,
       "_i": 180,
@@ -2533,6 +2713,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez les ampoules halogènes dans la poubelle des ordures ménagères. Les ampoules halogènes ne sont pas recyclées, ne contiennent pas de mercure et sont donc à jeter dans la poubelle classique.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 855368,
       "_i": 181,
@@ -2547,6 +2728,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'ils sont encore en bon état, remettez-les à une structure de réemploi ou revendez-les. Dans le cadre de l'achat d'un produit neuf, rapportez vos anciens haut-parleurs à votre revendeur. Vous pouvez aussi le déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces. Sinon apportez-les en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 436032,
       "_i": 182,
@@ -2562,6 +2744,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Paillez votre jardin avec l'herbe coupée. Compostez-la à domicile ou jetez-la dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile. Vous pouvez aussi la déposer en déchèterie dans la benne de collecte des déchets verts ou à la faire enlever par les services de votre collectivité qui collectent les biodéchets. S'il existe un traitement biologique des ordures ménagères résiduelles dans votre collectivité, la consigne peut être de mettre ses biodéchets dans la poubelle.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 442391,
       "_i": 183,
@@ -2576,6 +2759,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez vos huiles de fritures en déchèterie. Il n'existe par de filière de collecte pour les huiles de fritures des particuliers.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 513809,
       "_i": 184,
@@ -2589,6 +2773,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Rapportez votre huile de vidange en point de collecte, dans un récipient spécifique, fermé et étanche (bidon d'huile par exemple). Les points de collecte sont installés en déchèterie et chez certains professionnels du commerce et de la réparation automobile. Veillez à ne pas mélanger votre huile usagée avec d'autres produits (huiles de friture, liquides de refroidissement, liquides de frein, acides de batteries, carburant, white-spirit, eau...).",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 158142,
       "_i": 185,
@@ -2602,6 +2787,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'il soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 677906,
       "_i": 186,
@@ -2616,6 +2802,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la. Dans le cadre de l'achat d'un produit neuf, rapportez l'ancienne imprimante à votre revendeur. Sinon, apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 560833,
       "_i": 187,
@@ -2630,6 +2817,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'il soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 827684,
       "_i": 188,
@@ -2644,6 +2832,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le. Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur. Sinon apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 844390,
       "_i": 189,
@@ -2659,6 +2848,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si votre jean est en bon état, revendez-le ou déposez-le dans un point de collecte (conteneur sur la voie publique, espace dédié en déchèterie ou antenne locale d'association). Les dépôts-ventes, vide-greniers ou sites Internet serviront de vitrine aux chineurs.<br /><br />En mauvais état, il est à déposer propre et sec dans un conteneur prévu à cet effet, présent sur la voie publique ou en déchèterie.<br /><br />Si votre jean est souillé, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 90990,
       "_i": 190,
@@ -2673,6 +2863,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le. Sinon jetez-le dans la poubelle des ordures ménagères (ou, si vous disposez d'une grandes quantités, apportez vos jeux déchèterie ).",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 297167,
       "_i": 191,
@@ -2686,6 +2877,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le. Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur. Sinon jetez-le dans la poubelle des ordures ménagères (ou, selon la taille et la quantité, apportez-les en déchèterie ou faites-les enlever par les services de votre collectivité chargés des encombrants).",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 886061,
       "_i": 192,
@@ -2700,6 +2892,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans le bac, le sac ou le conteneur de collecte séparée, conformément aux consignes de tri de votre commune. Il est inutile de le froisser ou de le déchirer avant de le jeter.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 525983,
       "_i": 193,
@@ -2712,7 +2905,8 @@
     },
     {
       "Qu'est-ce_que_j'en_fais_?": "Mettez-le dans une boîte à aiguilles jaune à couvercle vert (BAA), remise gratuitement aux patients en autotraitement sur simple présentation d'une ordonnance, par le biais de toutes les pharmacies (d'officine ou hospitalière). Une fois la boîte pleine, rapportez-la dans un point de collecte qui l'accepte (pharmacie d'officine ou hospitalière, déchèterie, laboratoire de biologie médicale, borne automatisée sur la voie publique, local municipal...).",
-      "Déchèterie": false,
+      "Déchèterie": true,
+      "Pharmacie": true,
       "Bdd": "ademe",
       "_rand": 388651,
       "_i": 194,
@@ -2727,6 +2921,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever ces déchets par l'entrepreneur qui réalise vos travaux de rénovation. Il les évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors du devis initial ou en fonction de la quantité évacuée).<br /><br />Déposez-les en déchèterie si vous réalisez des travaux vous-même et que la quantité de déchets à éliminer est limitée. Si la quantité est trop importante, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 556553,
       "_i": 195,
@@ -2740,6 +2935,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si votre luminaire est encore en bon état, remettez-la à une structure de réemploi ou revendez-la.<br /><br />Sinon faites-le enlever par le service de votre collectivité chargé des encombrants ou déposez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 671202,
       "_i": 196,
@@ -2754,6 +2950,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Mettez-la dans une boîte à aiguilles jaune à couvercle vert (BAA), remise gratuitement aux patients en autotraitement sur simple présentation d'une ordonnance, par le biais de toutes les pharmacies (d'officine ou hospitalière). Une fois la boîte pleine, rapportez-la dans un point de collecte qui l'accepte (pharmacie d'officine ou hospitalière, déchèterie, laboratoire de biologie médicale, borne automatisée sur la voie publique, local municipal...).",
       "Déchèterie": false,
+      "Pharmacie": true,
       "Bdd": "ademe",
       "_rand": 124107,
       "_i": 197,
@@ -2767,6 +2964,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur. Vous pouvez aussi le déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces.<br /><br />Sinon apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 477906,
       "_i": 198,
@@ -2781,6 +2979,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Rapportez-la à un point de collecte. Les points de collecte sont installés chez les distributeurs, en déchèterie ou dans des entreprises. Le symbole de la \"poubelle barrée\" marqué sur une lampe signifie qu'elle fait l'objet d'un recyclage et qu'il ne faut donc pas la jeter à la poubelle classique.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 896952,
       "_i": 199,
@@ -2796,6 +2995,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez-les à domicile ou jetez-les dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile. Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 196836,
       "_i": 200,
@@ -2811,6 +3011,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si votre linge est en bon état, revendez-le ou déposez-le dans un point de collecte (conteneur sur la voie publique, espace dédié en déchèterie ou antenne locale d'association). Les dépôts-ventes, vide-greniers ou sites Internet serviront de vitrine aux chineurs.<br /><br />En mauvais état, il est à déposer propre et sec dans un conteneur prévu à cet effet, présent sur la voie publique ou en déchèterie. Si votre linge est souillé, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 253846,
       "_i": 201,
@@ -2826,6 +3027,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans la poubelle des ordures ménagères. Les produits imprégnant les lingettes rendent leur recyclage impossible.<br /><br />Attention : en aucun cas une lingette ne doit être jetée dans la poubelle jaune ou dans le compost ou dans les toilettes, vous risqueriez de les boucher ou d'obstruer les réseaux publics d'assainissement.<br /><br />",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 65988,
       "_i": 202,
@@ -2840,6 +3042,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jeter le flacon en plastique, vide, dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 32635,
       "_i": 203,
@@ -2854,6 +3057,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />S'il n'est plus utilisable, rapportez-le à un point de collecte : en déchèterie ou chez les distributeurs volontaires. Vous pouvez aussi le faire reprendre à la livraison d'un meuble neuf.<br /><br />",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 125211,
       "_i": 204,
@@ -2868,6 +3072,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 392959,
       "_i": 205,
@@ -2881,6 +3086,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi (association, recyclerie...) ou revendez-le.<br /><br />Sinon, jetez-le dans le bac, le sac ou le conteneur de collecte séparée, conformément aux consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 78665,
       "_i": 206,
@@ -2895,6 +3101,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites-la enlever par les services de votre collectivité chargés des encombrants ou déposez-la en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 900071,
       "_i": 207,
@@ -2908,6 +3115,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez-les chez les opticiens qui les acceptent ou donnez-les à des associations humanitaires.<br /><br />Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 127366,
       "_i": 208,
@@ -2921,6 +3129,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si l'appareil est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancienne machine à votre revendeur ou faites-la reprendre gratuitement en cas de livraison.<br /><br />Sinon, apportez-la en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 677005,
       "_i": 209,
@@ -2936,6 +3145,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "A jeter dans le bac, le sac ou le conteneur de collecte séparée, conformément aux consignes de tri de votre commune, sans le froisser ou le déchirer.<br /><br />Vous n'avez pas besoin de retirer les agrafes. Veillez cependant à retirer les éventuels CD et autres produits promotionnels pouvant être contenus à l'intérieur.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 690644,
       "_i": 210,
@@ -2950,6 +3160,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "L'emballage, bien vidé, est à jeter dans le bac de tri, selon les consignes de votre communes :<br />- s'il s'agit d'un pot, d'un flacon ou d'une bouteille en verre, jetez-le dans le bac réservé au verre ;<br />- si c'est un flacon ou une bouteille en plastique ou un emballage en métal (tube, flacon, bouteille), jetez-le dans le bac, le sac ou le conteneur réservé aux emballages recyclables ;<br />- sinon, un tube ou un pot en plastique est à jeter dans le bac des ordures ménagères. Exception : si dans votre commune la consigne de trier tous les emballages en plastique est en place, mettez-la dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri données.<br /><br />La boîte en carton et la notice en papier sont à jetez dans le bac, le sac ou le conteneur réservé aux emballages recyclables.<br /><br />S'il reste du produit dans le pot, le tube, la bouteille ou le flacon, et qu'il est périmé, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 815264,
       "_i": 211,
@@ -2964,6 +3175,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Sinon, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 909540,
       "_i": 212,
@@ -2977,6 +3189,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'il soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 310430,
       "_i": 213,
@@ -2991,6 +3204,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi.<br /><br />S'il n'est plus utilisable, rapportez-le à un point de collecte. Les points de collecte sont installés chez les distributeurs volontaires, dans certaines déchèteries et lors d'évènements ponctuels organisés pendant les foires, fêtes, marchés... ou dans des quartiers d'habitation très fréquentés.<br /><br />Dans le cadre de l'achat d'un matelas neuf, les distributeurs et installateurs volontaires peuvent reprendre votre ancien matelas.<br /><br />Sinon, faites-le enlever par les services de votre collectivité chargés des encombrants ou rapportez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 845461,
       "_i": 214,
@@ -3004,6 +3218,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever ces déchets par l'entrepreneur qui réalise vos travaux de rénovation. Il les évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors du devis initial ou en fonction de la quantité évacuée).<br /><br />Déposez-les en déchèterie si vous réalisez des travaux vous-même et que la quantité de déchets à éliminer est limitée. Si les quantités sont trop importantes, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 945504,
       "_i": 215,
@@ -3018,6 +3233,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever ces déchets par l'entrepreneur qui réalise vos travaux de rénovation. Il les évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors du devis initial ou en fonction de la quantité évacuée).<br /><br />Déposez-les en déchèterie si vous réalisez des travaux vous-même et que la quantité de déchets à éliminer est limitée. Si les quantités sont trop importantes, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 509894,
       "_i": 216,
@@ -3032,6 +3248,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Vous pouvez le déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces.<br /><br />Sinon, apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 138570,
       "_i": 217,
@@ -3046,6 +3263,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si l'appareil est encore en bon état, remettez-le à une structure de réemploi ou revendez-le. Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien matériel à votre revendeur ou faites-le reprendre gratuitement en cas de livraison.<br /><br />Sinon, apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 206253,
       "_i": 218,
@@ -3061,6 +3279,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez-les à domicile ou jetez-les dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile.<br /><br />Vous pouvez aussi les déposer en déchèterie dans la benne de collecte des déchets verts ou à les faire enlever par les services de votre collectivité qui collectent les biodéchets. S'il existe un traitement biologique des ordures ménagères résiduelles dans votre collectivité, la consigne peut être de mettre ses biodéchets dans la poubelle.<br /><br />Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 55956,
       "_i": 219,
@@ -3075,6 +3294,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez-les dans une pharmacie.",
       "Déchèterie": false,
+      "Pharmacie": true,
       "Bdd": "google",
       "_rand": 727750,
       "_i": 220,
@@ -3089,6 +3309,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez vos mégots dans la poubelle des ordures ménagères ou dans les poubelles présentes sur la voie publique.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 216338,
       "_i": 221,
@@ -3102,6 +3323,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez-le en déchèterie dans un récipient fermé.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 200595,
       "_i": 222,
@@ -3115,6 +3337,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Se le meuble est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />S'il n'est plus utilisable, rapportez-le à un point de collecte : en déchèterie ou chez les distributeurs volontaires. Vous pouvez aussi le faire reprendre à la livraison d'un meuble neuf.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 663474,
       "_i": 223,
@@ -3129,6 +3352,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, donnez-le à une structure de réemploi ou revendez-le. Dans le cadre de l'achat d'un produit neuf, vous pouvez déposer votre ancien équipement chez le revendeur ou le faire reprendre gratuitement en cas de livraison. Sinon apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 825650,
       "_i": 224,
@@ -3144,6 +3368,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi.<br /><br />Sinon, apportez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 911446,
       "_i": 225,
@@ -3157,6 +3382,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez votre mobilier à une structure de réemploi ou revendez-le.<br /><br />S'il n'est plus utilisable, rapportez-le à un point de collecte : en déchèterie ou chez les distributeurs volontaires. Vous pouvez aussi le faire reprendre à la livraison d'un meuble neuf<br /><br />",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 435062,
       "_i": 226,
@@ -3171,6 +3397,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la. Dans le cadre de l'achat d'un produit neuf, rapportez l'ancienne montre à votre revendeur. Vous pouvez aussi la déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces. Sinon apportez-la en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 462880,
       "_i": 227,
@@ -3185,6 +3412,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la.<br /><br />Sinon, jetez-la dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 768307,
       "_i": 228,
@@ -3199,6 +3427,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever votre moquette par l'entrepreneur qui réalise vos travaux de rénovation. Il l'évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors du devis initial ou en fonction de la quantité évacuée).<br /><br />Déposez-la en déchèterie si vous réalisez des travaux vous-même.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 394696,
       "_i": 229,
@@ -3212,6 +3441,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Utilisez-les comme bois de chauffage si les morceaux de bois ne sont pas traités ou souillés. Déposez-les à la déchèterie ou faites-les enlever par le service de votre collectivité chargé des encombrants ou des déchets verts.<br /><br />Si vous en avez une très faible quantité, non traités et non souillés, vous pouvez les jeter dans la poubelle des ordures ménagères.<br /><br />Traités ou souillés, apportez-les en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 732970,
       "_i": 230,
@@ -3226,6 +3456,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez-les en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 934650,
       "_i": 231,
@@ -3239,6 +3470,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "En petites quantités, jetez le verre non alimentaire dans la poubelle des ordures ménagères.<br /><br />Sinon, apportez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 600674,
       "_i": 232,
@@ -3252,6 +3484,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'elle soit vide ou non, apportez-la dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 428940,
       "_i": 233,
@@ -3267,6 +3500,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la (sans son capuchon en plastique) dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 180392,
       "_i": 234,
@@ -3280,6 +3514,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "En métal, jetez-le tube bien vidé dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune.<br /><br />En plastique, jetez-la dans la poubelle des ordures ménagères. Exception : si dans votre commune la consigne de trier tous les emballages en plastique est en place, mettez-la dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri données.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 530603,
       "_i": 235,
@@ -3293,6 +3528,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever ces déchets par l'entrepreneur qui réalise vos travaux de rénovation. Il les évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors du devis initial ou en fonction de la quantité évacuée).<br /><br />Déposez-la en déchèterie si vous réalisez des travaux vous-même.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 206372,
       "_i": 236,
@@ -3306,6 +3542,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'il soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 354991,
       "_i": 237,
@@ -3320,6 +3557,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien matériel à votre revendeur ou faites-le reprendre gratuitement en cas de livraison.<br /><br />Sinon apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 349661,
       "_i": 238,
@@ -3335,6 +3573,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur.<br /><br />Sinon, apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 850782,
       "_i": 239,
@@ -3350,6 +3589,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez les os en petites quantités en tas, en bac individuel ou en bac partagé de compostage (si cette dernière solution a été mise en place à proximité de votre domicile). Dans la mesure du possible, broyez-les avant de les jeter car les os se décomposent très lentement.<br /><br />Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 91426,
       "_i": 240,
@@ -3365,6 +3605,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si l'outil est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur. Vous pouvez aussi le déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces.<br /><br />Sinon, apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 940665,
       "_i": 241,
@@ -3380,6 +3621,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si l'outil est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Sinon, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 753280,
       "_i": 242,
@@ -3394,6 +3636,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez-la en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 622876,
       "_i": 243,
@@ -3407,6 +3650,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever les panneaux d'aggloméré par l'entrepreneur qui réalise vos travaux de rénovation. Il les évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors d'un diagnostic préalable ou en fonction de la quantité évacuée). Déposez-les en déchèterie si vous réalisez des travaux vous-même et que la quantité de déchets à éliminer est limitée. Si les quantités sont trop importantes, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 810617,
       "_i": 244,
@@ -3421,6 +3665,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez-le à domicile ou jetez-le dans un bac de compostage partagé si cette solution a été mise en place à proximité de votre domicile.<br /><br />Sinon, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 794242,
       "_i": 245,
@@ -3434,6 +3679,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.<br /><br />Exception : si dans votre commune la consigne de trier tous les emballages en aluminium est en place, mettez-le dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri données.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 748962,
       "_i": 246,
@@ -3447,6 +3693,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans le bac, le sac ou le conteneur de collecte séparée, conformément aux consignes de tri de votre commune, sans le froisser ou le déchirer.<br /><br />Le \"papier\" cadeau en plastique est à jeter dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 316256,
       "_i": 247,
@@ -3461,6 +3708,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 257791,
       "_i": 248,
@@ -3474,6 +3722,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 345194,
       "_i": 249,
@@ -3487,6 +3736,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez le papier dans le bac, le sac ou le conteneur de collecte séparée, conformément aux consignes de tri de votre commune sans le froisser ou le déchirer. Il est inutile de retirer les agrafes.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 208878,
       "_i": 250,
@@ -3501,6 +3751,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez le papier dans le bac, le sac ou le conteneur de collecte séparée, conformément aux consignes de tri de votre commune sans le froisser ou le déchirer. Il est inutile de retirer les agrafes.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 309509,
       "_i": 251,
@@ -3515,6 +3766,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez vos papiers gras à domicile ou jetez-les dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile. Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 492691,
       "_i": 252,
@@ -3528,6 +3780,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans le bac, le sac ou le conteneur de collecte séparée, conformément aux consignes de tri de votre commune sans le froisser ou le déchirer. Il est inutile de retirer les éventuelles agrafes.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 709269,
       "_i": 253,
@@ -3542,6 +3795,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 399114,
       "_i": 254,
@@ -3556,6 +3810,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 508426,
       "_i": 255,
@@ -3570,6 +3825,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'elle soit vide ou non, apportez-la dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 959663,
       "_i": 256,
@@ -3584,6 +3840,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'elle soit vide ou non, apportez-la dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 743312,
       "_i": 257,
@@ -3598,6 +3855,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'elle soit vide ou non, apportez-la dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 724244,
       "_i": 258,
@@ -3612,6 +3870,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'elle soit vide ou non, apportez-la dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 334216,
       "_i": 259,
@@ -3626,6 +3885,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'elle soit vide ou non, apportez-la dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 38831,
       "_i": 260,
@@ -3641,6 +3901,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez vos pellicules ou négatifs en déchèterie (si une filière spécifique existe) ou remettez-les aux laboratoires photographiques, s'ils les acceptent.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 366025,
       "_i": 261,
@@ -3655,6 +3916,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Apportez-le en déchèterie (même vide).",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 477544,
       "_i": 262,
@@ -3669,6 +3931,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si l'appareil est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur.<br /><br />Vous pouvez aussi le déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces.<br /><br />Sinon, apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 990442,
       "_i": 263,
@@ -3684,6 +3947,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever les pierres par l'entrepreneur qui réalise vos travaux de rénovation. Il les évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors du devis initial ou en fonction de la quantité évacuée).<br /><br />Déposez-les en déchèterie si vous réalisez des travaux vous-même et que la quantité de déchets à éliminer est limitée. Si les quantités sont trop importantes, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 792639,
       "_i": 264,
@@ -3697,6 +3961,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'il soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 414459,
       "_i": 265,
@@ -3711,6 +3976,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Rapportez vos piles dans un point de collecte. Les points de collecte sont installés chez les distributeurs, en déchèterie, dans d'autres lieux publics (écoles, mairies, hôpitaux...) ou dans des entreprises.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 376212,
       "_i": 266,
@@ -3725,6 +3991,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Rapportez vos piles dans un point de collecte. Les points de collecte sont installés chez les distributeurs, en déchèterie, dans d'autres lieux publics (écoles, mairies, hôpitaux...) ou dans des entreprises.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 372149,
       "_i": 267,
@@ -3739,6 +4006,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Paillez votre jardin avec les morceaux de plantes coupées.<br /><br />Compostez-les à domicile ou jetez-les dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile.<br /><br />Vous pouvez aussi les déposer en déchèterie dans la benne de collecte des déchets verts ou à les faire enlever par les services de votre collectivité qui collectent les biodéchets. S'il existe un traitement biologique des ordures ménagères résiduelles dans votre collectivité, la consigne peut être de mettre ses biodéchets dans la poubelle.<br /><br />Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 302366,
       "_i": 268,
@@ -3753,6 +4021,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever ces déchets par l'entrepreneur qui réalise vos travaux de rénovation. Il les évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors du devis initial ou en fonction de la quantité évacuée).<br /><br />Déposez-les en déchèterie si vous réalisez des travaux vous-même et que la quantité de déchets à éliminer est limitée. Si les quantités sont trop importantes, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 289978,
       "_i": 269,
@@ -3766,6 +4035,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez les produits en plomb (plomb de fil de pêche, de plongée, jouets, anciennes canalisations...) en déchèterie.<br /><br />Le plomb entre dans la composition de quelques objets du quotidien (verre, vaisselle, ). Jetez ces derniers à la poubelle des ordures ménagères.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 677062,
       "_i": 270,
@@ -3779,6 +4049,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Rapportez-le chez votre dentiste ou déposez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 6936,
       "_i": 271,
@@ -3792,6 +4063,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si ce produit est en bon état, remettez-le à une structure de réemploi ou revendez-le. Déposez-le propre et sec dans un conteneur ou dans un autre point d'apport volontaire (conteneur sur l'espace public ou sur l'espace privé, en déchèterie ou dans une antenne locale d'association). S'il est souillé ou humide, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 328023,
       "_i": 272,
@@ -3806,6 +4078,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Rapportez vos pneus prioritairement chez le distributeur, sinon en déchèterie. Le distributeur de pneus à l'obligation de les reprendre gratuitement (dans la limite du tonnage de pneus neufs qu'il vend).",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 826326,
       "_i": 273,
@@ -3820,6 +4093,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans la poubelle des ordures ménagères.<br /><br />Exception : si dans votre commune la consigne de trier tous les emballages en plastiques est en place, mettez-la dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri données.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 819487,
       "_i": 274,
@@ -3833,6 +4107,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Certains livreurs récupèrent les emballages lors de la livraison d'un gros appareil électroménager : demandez-leur si possible de les reprendre.<br /><br />Sinon, apportez-les en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 814284,
       "_i": 275,
@@ -3846,6 +4121,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Revendez-le à un repreneur spécialisé ou à un ferrailleur.<br /><br />Si non, déposez-le dans une déchèterie qui l'accepte.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 941759,
       "_i": 276,
@@ -3860,6 +4136,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi. Sinon, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 115618,
       "_i": 277,
@@ -3873,6 +4150,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.<br /><br />Exception : si dans votre commune la consigne de trier tous les emballages en plastiques est en place, mettez-le dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri données.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 110282,
       "_i": 278,
@@ -3888,6 +4166,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le noué dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 728573,
       "_i": 279,
@@ -3901,6 +4180,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'ils soient vide ou non, apportez-les dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 297843,
       "_i": 280,
@@ -3915,6 +4195,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le vide dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune. Les bouchons peuvent être jetés avec leur bouteille ou flacon.<br /><br />Déposez-le en déchèterie si le récipient n'est pas vide.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 601227,
       "_i": 281,
@@ -3930,6 +4211,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Que le flacon soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 113765,
       "_i": 282,
@@ -3945,6 +4227,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'il soit vide ou non, apportez le produit dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 72273,
       "_i": 283,
@@ -3960,6 +4243,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Rapportez vos produits phytosanitaires au revendeur ou au distributeur.<br /><br />Sinon, apportez-les en déchèterie dans leur emballage d'origine.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 64634,
       "_i": 284,
@@ -3975,6 +4259,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Apportez les produit en déchèterie (même vides).",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 25577,
       "_i": 285,
@@ -3990,6 +4275,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez les prospectus dans le bac, le sac ou le conteneur de collecte séparée, conformément aux consignes de tri de votre commune, sans les froisser ou les déchirer avant de le jeter.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 894878,
       "_i": 286,
@@ -4005,6 +4291,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />S'il n'est plus utilisable, rapportez-le à un point de collecte : en déchèterie ou chez les distributeurs volontaires. Vous pouvez aussi le faire reprendre à la livraison d'un meuble neuf.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 943237,
       "_i": 287,
@@ -4019,6 +4306,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever ces déchets par l'entrepreneur qui réalise vos travaux de rénovation. Il les évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée par l'entrepreneur lors d'un diagnostic préalable ou en fonction de la quantité évacuée).<br /><br />Déposez-les en déchèterie si vous réalisez des travaux vous-même et que la quantité de déchets à éliminer est limitée. Si les quantités sont trop importantes, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 336299,
       "_i": 288,
@@ -4032,6 +4320,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien produit à votre revendeur ou faites-le reprendre gratuitement en cas de livraison.<br /><br />Sinon apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 137072,
       "_i": 289,
@@ -4047,6 +4336,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi.<br /><br />Sinon, faites-le enlever par les services de votre collectivité chargés des encombrants ou déposez-la en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 741649,
       "_i": 290,
@@ -4060,6 +4350,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez les radiographies en déchèterie (si une borne spécifique existe).<br /><br />Vous pouvez aussi les remettre à un cabinet de radiologie ou une pharmacie qui les acceptent.",
       "Déchèterie": true,
+      "Pharmacie": true,
       "Bdd": "ademe",
       "_rand": 119241,
       "_i": 291,
@@ -4073,6 +4364,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 400314,
       "_i": 292,
@@ -4087,6 +4379,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, donnez-le à une structure de réemploi ou revendez-le.<br /><br />Dans le cadre de l'achat d'un produit neuf, vous pouvez déposer votre ancien réfrigérateur chez le revendeur ou le faire reprendre gratuitement en cas de livraison.<br /><br />Sinon apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 858134,
       "_i": 293,
@@ -4102,6 +4395,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'il soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 960974,
       "_i": 294,
@@ -4116,6 +4410,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'elles soient vide ou non, apportez-les dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 888136,
       "_i": 295,
@@ -4131,6 +4426,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'ils sont encore consommables, accomodez-les pour les servir à un autre repas. <br />Compostez-les à domicile ou jetez-les dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile.<br />Vous pouvez aussi les donner comme nourriture à des animaux familiers.<br />Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 578574,
       "_i": 296,
@@ -4146,6 +4442,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien matériel à votre revendeur ou faites-le reprendre gratuitement en cas de livraison.<br /><br />Sinon, apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 951893,
       "_i": 297,
@@ -4160,6 +4457,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'ils sont encore en bon état, remettez-les à une structure de réemploi ou revendez-les.<br /><br />Sinon apportez-les en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 578072,
       "_i": 298,
@@ -4174,6 +4472,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères. L'emballage est le plus souvent constitué d'un mélange de plastiques et reste trop souillé pour être recyclé.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 80681,
       "_i": 299,
@@ -4188,6 +4487,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever le sable par l'entrepreneur qui réalise vos travaux de rénovation. Il les évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors du devis initial ou en fonction de la quantité évacuée).<br /><br />Déposez-le en déchèterie si vous réalisez des travaux vous-même et que la quantité de sable à éliminer est limitée. Si les quantités sont trop importantes, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 267644,
       "_i": 300,
@@ -4202,6 +4502,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi.<br /><br />Sinon, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 855600,
       "_i": 301,
@@ -4216,6 +4517,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Échangez-le gratuitement dans votre grande surface lorsque cette dernière propose cette solution.<br /><br />Sinon, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 197898,
       "_i": 302,
@@ -4229,6 +4531,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez-le à domicile ou jetez-le dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile.<br /><br />Sinon, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 971994,
       "_i": 303,
@@ -4244,6 +4547,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.<br /><br />Exception : si dans votre commune la consigne de trier tous les emballages en plastiques est en place, mettez-le dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri données.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 197104,
       "_i": 304,
@@ -4259,6 +4563,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle correspondant aux déchets qu'il contient.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 894321,
       "_i": 305,
@@ -4273,6 +4578,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.<br /><br />Exception : si dans votre commune la consigne de trier tous les emballages en plastiques est en place, mettez-le dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri données.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 974635,
       "_i": 306,
@@ -4287,6 +4593,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez vos sachets de thé à domicile ou jetez-les dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile.<br /><br />Sinon, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 430007,
       "_i": 307,
@@ -4302,6 +4609,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "<br />\tEmmenez-le à la déchèterie dans la benne des déchets verts ;<br />\tDéposez-le dans un lieu prévu à cet effet : les collectivités et certains magasins organisent des collectes juste après les fêtes. Renseignez-vous sur le site de votre mairie pour connaitre la liste des points de collecte ;<br />\tSi vous avez un jardin, vous pouvez broyer votre sapin pour le transformer en compost ou pour pailler autour des végétaux. Si vous avez acheté un sapin en pot, il peut également être replanté.<br />",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 164717,
       "_i": 308,
@@ -4317,6 +4625,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Utilisez la sciure comme combustible dans un appareil adapté pour le chauffage ou dans un barbecue. Compostez-la à domicile ou jetez-la dans un bac de compostage partagé, si cette dernière solution a été mise en place dans votre commune.<br /><br />Sinon, déposez-la en déchèterie dans une benne de collecte des déchets verts.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 910849,
       "_i": 309,
@@ -4331,6 +4640,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur.<br /><br />Vous pouvez aussi le déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces.<br /><br />Sinon apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 278424,
       "_i": 310,
@@ -4345,7 +4655,8 @@
     },
     {
       "Qu'est-ce_que_j'en_fais_?": "Mettez-la dans une boîte à aiguilles jaune à couvercle vert (BAA), remise gratuitement aux patients en autotraitement sur simple présentation d'une ordonnance, par le biais de toutes les pharmacies (d'officine ou hospitalière). Une fois la boîte pleine, rapportez-la dans un point de collecte qui l'accepte (pharmacie d'officine ou hospitalière, déchèterie, laboratoire de biologie médicale, borne automatisée sur la voie publique, local municipal...).",
-      "Déchèterie": false,
+      "Déchèterie": true,
+      "Pharmacie": true,
       "Bdd": "ademe",
       "_rand": 309391,
       "_i": 311,
@@ -4360,6 +4671,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans un conteneur spécifique de couleur majoritairement jaune à usage unique (sac plastique, conteneur carton ou fûts plastiques).",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 45549,
       "_i": 312,
@@ -4374,6 +4686,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Sans aiguille, votre seringue ne présente pas de risque perforant. N'étant pas contaminée, elle ne présente pas non plus de risque infectieux. Jetez-la vide dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 593409,
       "_i": 313,
@@ -4388,6 +4701,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Compostez vos serviettes en papier à domicile ou jetez-les dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile.<br /><br />Sinon, jetez vos serviettes en papier dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 794096,
       "_i": 314,
@@ -4402,6 +4716,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez-la propre et sèche dans un point de collecte pour les textiles (conteneur sur la voie publique, espace dédié en déchèterie ou antenne locale d'association).<br /><br />Si votre serviette est souillée ou mouillée, jetez-la dans la poubelle des ordures ménagères.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 56356,
       "_i": 315,
@@ -4416,6 +4731,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 185580,
       "_i": 316,
@@ -4429,7 +4745,8 @@
     },
     {
       "Qu'est-ce_que_j'en_fais_?": "Mettez-le dans une boîte à aiguilles jaune à couvercle vert (BAA), remise gratuitement aux patients en autotraitement sur simple présentation d'une ordonnance, par le biais de toutes les pharmacies (d'officine ou hospitalière). Une fois la boîte pleine, rapportez-la dans un point de collecte qui l'accepte (pharmacie d'officine ou hospitalière, déchèterie, laboratoire de biologie médicale, borne automatisée sur la voie publique, local municipal...).",
-      "Déchèterie": false,
+      "Déchèterie": true,
+      "Pharmacie": true,
       "Bdd": "ademe",
       "_rand": 176640,
       "_i": 317,
@@ -4444,6 +4761,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans le bac, le sac ou le conteneur réservé aux emballages recyclables, avec son bouchon, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 400552,
       "_i": 318,
@@ -4458,6 +4776,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Sinon, apportez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 429492,
       "_i": 319,
@@ -4472,6 +4791,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la.<br /><br />Vous pouvez aussi la déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces.<br /><br />Sinon apportez-la en déchèterie.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 396899,
       "_i": 320,
@@ -4487,6 +4807,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si le produit est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Sinon, apportez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 386819,
       "_i": 321,
@@ -4501,6 +4822,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'il soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 376545,
       "_i": 322,
@@ -4516,6 +4838,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'elle soit vide ou non, apportez-la dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 175134,
       "_i": 323,
@@ -4530,6 +4853,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 197909,
       "_i": 324,
@@ -4544,7 +4868,8 @@
     },
     {
       "Qu'est-ce_que_j'en_fais_?": "Mettez-le dans une boîte à aiguilles jaune à couvercle vert (BAA), remise gratuitement aux patients en autotraitement sur simple présentation d'une ordonnance, par le biais de toutes les pharmacies (d'officine ou hospitalière). Une fois la boîte pleine, rapportez-la dans un point de collecte qui l'accepte (pharmacie d'officine ou hospitalière, déchèterie, laboratoire de biologie médicale, borne automatisée sur la voie publique, local municipal...).",
-      "Déchèterie": false,
+      "Déchèterie": true,
+      "Pharmacie": true,
       "Bdd": "ademe",
       "_rand": 803660,
       "_i": 325,
@@ -4558,6 +4883,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 736959,
       "_i": 326,
@@ -4572,6 +4898,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi.<br /><br />Sinon, faites-la enlever par le service de votre collectivité chargée des encombrants ou déposez-la en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 329790,
       "_i": 327,
@@ -4586,6 +4913,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Sinon faites-le enlever par le service de votre collectivité chargé des encombrants ou déposez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 70848,
       "_i": 328,
@@ -4599,6 +4927,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Remettez-le à une structure de réemploi s'il est encore en bon état ou à une association qui collecte des fournitures scolaires.<br /><br />Sinon, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 744865,
       "_i": 329,
@@ -4613,6 +4942,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 543972,
       "_i": 330,
@@ -4627,6 +4957,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le. Vous pouvez aussi le déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces.<br /><br />Sinon, apportez-le en déchèterie.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 471011,
       "_i": 331,
@@ -4641,6 +4972,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Vous pouvez aussi le déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces.<br /><br />Sinon apportez-le en déchèterie.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 809665,
       "_i": 332,
@@ -4656,6 +4988,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si l'appareil est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Sinon apportez-le en déchèterie.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien radiateur à votre revendeur ou faites-le reprendre gratuitement en cas de livraison.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 104717,
       "_i": 333,
@@ -4671,6 +5004,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever la terre par l'entrepreneur qui réalise vos travaux de rénovation. Il les évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors du devis initial ou en fonction de la quantité évacuée).<br /><br />Déposez-la en déchèterie si vous réalisez des travaux vous-même et que la quantité à éliminer est limitée. Si les quantités sont trop importantes, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 178983,
       "_i": 334,
@@ -4684,6 +5018,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Réutilisez le terreau dans votre jardin ou pour vos plantes en pots (ou à donner à une connaissance si vous n'en avez plus l'usage).<br /><br />Sinon, apportez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 460170,
       "_i": 335,
@@ -4698,6 +5033,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 353882,
       "_i": 336,
@@ -4711,6 +5047,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si vos textiles sont en bon état, donnez-les, revendez-les ou déposez-les dans un point de collecte avec ceux qui sont en mauvais état. Ils sont à déposer propres et secs dans un sac fermé. Les points de collecte peuvent être des boutiques équipées, des conteneurs sur la voie publique, un espace dédié en déchèterie ou une antenne locale d'association.<br /><br />Si vos textiles sont souillés par des produits chimiques ou humides, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 796949,
       "_i": 337,
@@ -4726,6 +5063,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères. Les thermomètres à alcool sont essentiellement composés de plastiques non-collectés séparément. La faible quantité d'alcool qu'ils contiennent présente très peu de risque pour la santé et l'environnement.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 167480,
       "_i": 338,
@@ -4739,6 +5077,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Rapportez-le en déchèterie. Les thermomètres à mercure sont dangereux lorsqu'ils libèrent le mercure qu'ils contiennent et ne peuvent donc pas être jetés dans la poubelle des ordures ménagères.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 963424,
       "_i": 339,
@@ -4753,6 +5092,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Vous pouvez aussi le déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces.<br /><br />Sinon, apportez-le en déchèterie.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 83452,
       "_i": 340,
@@ -4766,6 +5106,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Les tickets sont recyclables. Jetez-les dans le bac, le sac ou le conteneur de collecte séparée, conformément aux consignes de tri du papier de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 888560,
       "_i": 341,
@@ -4781,6 +5122,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la. <br /><br />Vous pouvez aussi la déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces.<br /><br />Sinon, apportez-la en déchèterie.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancienne à votre revendeur.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 637397,
       "_i": 342,
@@ -4795,6 +5137,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la. Sinon apportez-la en déchèterie. Dans le cadre de l'achat d'un produit neuf, rapportez l'ancienne à votre revendeur.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 790189,
       "_i": 343,
@@ -4809,6 +5152,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la. Vous pouvez la revendre à un ferrailleur. Sinon apportez-la en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 770684,
       "_i": 344,
@@ -4822,6 +5166,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la.<br /><br />Sinon, apportez-la en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 23114,
       "_i": 345,
@@ -4836,6 +5181,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le. Sinon apportez-le en déchèterie. Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 92954,
       "_i": 346,
@@ -4849,6 +5195,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Vous pouvez aussi le déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces.<br /><br />Sinon? apportez-le en déchèterie.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 863114,
       "_i": 347,
@@ -4863,6 +5210,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur. Sinon apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 296207,
       "_i": 348,
@@ -4876,6 +5224,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la.<br /><br />Sinon, apportez-la en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 101736,
       "_i": 349,
@@ -4889,6 +5238,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez votre lampe dans un bac de collecte. Les points de collecte sont installés chez les distributeurs (il existe des bacs de collecte dans toutes les grandes surfaces) et dans les déchèteries. Le symbole de la \"poubelle barrée\" marqué sur une lampe signifie qu'elle fait l'objet d'un recyclage et qu'il ne faut donc pas la jeter dans la poubelle classique.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 884473,
       "_i": 350,
@@ -4903,6 +5253,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever les tuiles par l'entrepreneur qui réalise vos travaux de rénovation. Il les évacuera vers des plateformes dédiées (en contrepartie d'une rémunération fixée lors du devis initial ou en fonction de la quantité évacuée).<br /><br />Déposez-les en déchèterie si vous réalisez des travaux vous-même et que la quantité de tuiles à éliminer est limitée. Si les quantités sont trop importantes, faîtes appel à une entreprise spécialisée.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 783449,
       "_i": 351,
@@ -4916,6 +5267,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi.<br /><br />Apportez-le en déchèterie dans la benne correspondant au matériau qui compose votre ustensile.<br /><br />Sinon, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 123025,
       "_i": 352,
@@ -4929,6 +5281,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si la vaisselle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la.<br /><br />Apportez-la en déchèterie si vous en disposez de grandes quantités.<br /><br />Sinon, jetez-la dans la poubelle des ordures ménagères.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 47104,
       "_i": 353,
@@ -4943,6 +5296,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si le carton ou le plastique de la vaisselle est 100 % biodégradable, compostez-la à domicile ou jetez-la dans un bac de compostage partagé, si cette dernière solution a été mise en place à proximité de votre domicile.<br /><br />Sinon, jetez-la dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 788658,
       "_i": 354,
@@ -4957,6 +5311,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Confiez votre véhicule à un professionnel agréé pour traiter les véhicules hors d'usage (centre VHU), contre la remise d'un certificat de destruction (envoyé en copie à la préfecture).",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 828879,
       "_i": 355,
@@ -4972,6 +5327,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le. Vous pouvez le revendre à un ferrailleur.<br /><br />Déposez-le en déchèterie dans la benne prévue pour le métal.<br /><br />Sinon, faites-le enlever par le service de votre collectivité chargé des encombrants.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 829909,
       "_i": 356,
@@ -4987,6 +5343,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Sinon, apportez-le en déchèterie.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 281355,
       "_i": 357,
@@ -5002,6 +5359,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Que le produit soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 55507,
       "_i": 358,
@@ -5016,6 +5374,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 752007,
       "_i": 359,
@@ -5029,6 +5388,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 739141,
       "_i": 360,
@@ -5042,6 +5402,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Déposez-le en déchèterie s'il a été souillé par des produits dangereux (peintures, solvants...).<br /><br />Sinon, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 889587,
       "_i": 361,
@@ -5056,6 +5417,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si vos vêtements sont en bon état, donnez-les, revendez-les ou déposez-les dans un point de collecte avec ceux qui sont en mauvais état. Ils sont à déposer propres et secs dans un sac fermé. Les points de collecte peuvent être des boutiques équipées, des conteneurs sur la voie publique, un espace dédié en déchèterie ou une antenne locale d'association.<br /><br />Si vos vêtements sont souillés par des produits chimiques, jetez-les dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 217637,
       "_i": 362,
@@ -5071,6 +5433,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />Vous pouvez aussi le déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces.<br /><br />Sinon, apportez-le en déchèterie.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 741834,
       "_i": 363,
@@ -5084,6 +5447,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Faites enlever votre ancien vitrage par l'installateur lors du changement de vos fenêtres.<br /><br />Sinon, apportez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 374931,
       "_i": 364,
@@ -5097,6 +5461,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la.<br /><br />Vous pouvez aussi la déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces.<br /><br />Sinon, apportez-la en déchèterie.<br /><br />Dans le cadre de l'achat d'un produit neuf, rapportez l'ancien à votre revendeur.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 929786,
       "_i": 365,
@@ -5111,6 +5476,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Que le produit soit vide ou non, apportez-le dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 429524,
       "_i": 366,
@@ -5126,6 +5492,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-la dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 816012,
       "_i": 367,
@@ -5140,6 +5507,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune (sauf lorsqu'ils contenaient des produits dangereux). Les flacons peuvent être jetés avec leur bouchon.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 185283,
       "_i": 368,
@@ -5154,6 +5522,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si votre couvre-chef (chapeau, casquette, etc.) est en bon état, revendez-le ou déposez-le dans un point de collecte (conteneur sur la voie publique, espace dédié en déchèterie ou antenne locale d'association). Les dépôts-ventes, vide-greniers ou sites Internet serviront de vitrine aux chineurs. En mauvais état, il est à déposer propre et sec dans un conteneur prévu à cet effet, présent sur la voie publique ou en déchèterie. S'il est souillé, jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 334203,
       "_i": 369,
@@ -5169,6 +5538,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Depuis janvier 2015, ce nouveau logo a fait son apparition sur certains produits et emballages.<br />Le logo « Triman » indique que le produit ou l'emballage ne doit pas être jeté dans la poubelle des ordures ménagères mais doit être trié ou rapporté dans un point de collecte (bacs en magasins, déchèteries...) pour être recyclé.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 857372,
       "_i": 370,
@@ -5181,6 +5551,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la.<br /><br />Sinon apportez-la en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 259320,
       "_i": 371,
@@ -5195,6 +5566,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 117379,
       "_i": 372,
@@ -5210,6 +5582,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état, donnez-le à une structure de réemploi ou revendez-le. Dans le cadre de l'achat d'un produit neuf, vous pouvez déposer votre ancien équipement chez le revendeur ou le faire reprendre gratuitement en cas de livraison.<br /><br />Sinon, apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 611654,
       "_i": 373,
@@ -5224,6 +5597,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "S'il est encore en bon état revendez-le. Dans le cadre de l'achat d'un produit neuf, vous pouvez déposer votre ancien équipement chez le revendeur ou le faire reprendre gratuitement en cas de livraison d'un grand écran.<br /><br />Sinon, apportez-le en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 678434,
       "_i": 374,
@@ -5238,6 +5612,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le flacon en verre dans le bac ou le conteneur réservé aux emballages recyclables en verre.<br /><br />Jetez-le pinceau et son capuchon dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 236915,
       "_i": 375,
@@ -5251,6 +5626,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 146505,
       "_i": 376,
@@ -5265,6 +5641,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.<br /><br />Exception : si dans votre commune la consigne de trier tous les emballages en plastiques est en place, mettez-le dans le bac, le sac ou le conteneur réservé aux emballages recyclables selon les consignes de tri données.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 450783,
       "_i": 377,
@@ -5279,6 +5656,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez-le dans la poubelle des ordures ménagères.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 328156,
       "_i": 378,
@@ -5293,6 +5671,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si ce produit est en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />S'il n'est plus utilisable, rappotez-le à un point de collecte : en déchèterie ou chez un distributeur volontaire.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 300594,
       "_i": 379,
@@ -5307,6 +5686,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Jetez vos cartons vides dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune. Si la taille de votre carton est trop grande, déposez-le en déchèterie.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 784150,
       "_i": 380,
@@ -5320,6 +5700,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si le symbole de la \"poubelle barrée\" est apposé sur la lampe (communément appelée \"ampoule\"), cela signifie qu'elle doit être recyclée et qu'il ne faut donc pas la jeter dans la poubelle classique. La lampe est alors à déposer dans les bacs de collecte installés dans les grandes surfaces alimentaires et de bricolage ou dans les déchèteries municipales.<br /><br />Si le symbole de la \"poubelle barrée\" n'est pas apposé sur la lampe, jetez-la dans la poubelle d'ordure ménagère.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 16466,
       "_i": 381,
@@ -5335,6 +5716,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Pour les bouteilles d'huile en verre : jetez-la dans le bac, le sac ou le conteneur réservé aux produits en verre, vides et sans leur bouchon en métal, selon les consignes de tri de votre commune.<br /><br />Pour les bouteilles d'huile en plastique : jetez-la dans le bac ou le conteneur réservé aux emballages recyclables, avec leur bouchon, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 668295,
       "_i": 382,
@@ -5349,6 +5731,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Qu'elle soit vide ou non, apportez-la dans une déchèterie acceptant les déchets ménagers spéciaux et dangereux.",
       "Déchèterie": true,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 546014,
       "_i": 383,
@@ -5363,6 +5746,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Si elle est encore en bon état, remettez-la à une structure de réemploi ou revendez-la. Dans le cadre de l'achat d'un produit neuf, rapportez l'ancienne calculatrice à votre revendeur. Vous pouvez aussi la déposer dans un des 22 000 bacs de collecte installés dans les grandes surfaces. Sinon apportez-la en déchèterie.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ocad3e",
       "_rand": 637312,
       "_i": 384,
@@ -5377,6 +5761,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Durant la crise du coronavirus :<br /><br /><br />\tSi vous n'êtes pas malade, jetez vos masques dans la poubelle des ordures ménagères.<br />\t <br />\tSi vous êtes malade, contact ou si vous avez des symptômes : jetez vos masques dans un sac poubelle dédié aux masques, mouchoirs en papier, lingettes désinfectantes et gants jetables, résistant, opaque et disposant d'un système de fermeture fonctionnel.<br />\tLorsque le sac est rempli, refermez-le soigneusement, placez le dans un deuxième sac du même type et conservez-le 24 heures. Puis jetez-le dans le sac poubelle des ordures ménagères.<br /><br /><br />Attention : en aucun cas le masque ne doit être jeté dans la poubelle destinée aux emballages, dans le compost, dans la nature ou dans la rue, même si vous n'êtes pas malade !",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 174486,
       "_i": 385,
@@ -5390,6 +5775,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Durant la crise du coronavirus :<br /><br /><br />\tSi vous n'êtes pas malade, jetez vos mouchoirs en papier dans la poubelle des ordures ménagères.<br />\t <br />\tSi vous êtes malades, contacts ou si vous avez des symptômes : jetez vos mouchoirs en papier dans un sac poubelle dédié aux masques, mouchoirs en papier, lingettes désinfectantes et gants jetables, résistant, opaque et disposant d'un système de fermeture fonctionnel.<br />\tLorsque le sac est rempli, refermez-le soigneusement, placez le dans un deuxième sac du même type et conservez-le 24 heures. Puis jetez-le dans le sac poubelle des ordures ménagères.<br /><br /><br />En aucun les mouchoirs en papier usagés ne doivent être jetés dans la poubelle destinée aux emballages ou jetés dans la nature ou dans la rue, même si vous n'êtes pas malade !",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 902439,
       "_i": 386,
@@ -5403,6 +5789,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Durant la crise du coronavirus :<br /><br /><br />\tSi vous n'êtes pas malade, jetez vos lingettes désinfectantes dans la poubelle des ordures ménagères.<br />\t <br />\tSi vous êtes malades, contacts ou si vous avez des symptômes : jetez vos lingettes désinfectantes dans un sac poubelle dédié aux masques, mouchoirs en papier, lingettes désinfectantes et gants jetables, résistant et disposant d'un système de fermeture fonctionnel.<br />\tLorsque le sac est rempli, refermez-le soigneusement, placez le dans un deuxième sac du même type et conservez-le 24 heures. Puis jetez-le dans le sac poubelle des ordures ménagères.<br /><br /><br />Attention : en aucun cas une lingette ne doit être jetée dans la poubelle destinée aux emballages dans le compost ou dans la nature. Il ne faut pas jeter non plus la lingette dans les toilettes, vous risqueriez de les boucher ou d'obstruer les réseaux publics d'assainissement car la dégradation des lingettes se fait trop lentement.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 831561,
       "_i": 387,
@@ -5417,6 +5804,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Durant la crise du coronavirus :<br /><br /><br />\tSi vous n'êtes pas malade, jetez vos gants dans la poubelle des ordures ménagères.<br />\t <br />\tSi vous êtes malade, contact ou si vous avez des symptômes : jetez vos gants dans un sac poubelle dédié aux masques, mouchoirs en papier, lingettes désinfectantes et gants jetables, résistant, opaque et disposant d'un système de fermeture fonctionnel.<br />\tLorsque le sac est rempli, refermez-le soigneusement, placez le dans un deuxième sac du même type et conservez-le 24 heures. Puis jetez-le dans le sac poubelle des ordures ménagères.<br /><br /><br />Attention : en aucun cas les gants à usage unique ne doivent être jetés dans la poubelle destinée aux emballages, dans la nature ou dans la rue, même si vous n'êtes pas malade !",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 997276,
       "_i": 388,
@@ -5430,6 +5818,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Je rapporte mes produits périmés dans les magasins spécialisés lors de l'achat de produits neufs.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 65996,
       "_i": 389,
@@ -5445,6 +5834,7 @@
     {
       "Qu'est-ce_que_j'en_fais_?": "Les cartouches de gaz vides sont à placer dans le bac, le sac ou le conteneur réservé aux emballages recyclables, selon les consignes de tri de votre commune.",
       "Déchèterie": false,
+      "Pharmacie": false,
       "Bdd": "ademe",
       "_rand": 753284,
       "_i": 390,

@@ -23,7 +23,10 @@ export default function Product() {
   const [notFound, setNotFound] = useState(false)
   useEffect(() => {
     const newProduct = waste.find((product) => product['slug'] === name)
-    setProduct({ ...newProduct, map: newProduct && newProduct['Déchèterie'] })
+    setProduct({
+      ...newProduct,
+      map: newProduct && (newProduct['Déchèterie'] || newProduct['Pharmacie']),
+    })
     setNotFound(newProduct ? false : true)
   }, [name, waste])
 
