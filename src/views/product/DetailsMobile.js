@@ -25,11 +25,16 @@ export default function Product(props) {
 
   return (
     <Wrapper>
-      <StyledButton expanded onClick={() => setMap(props.product)}>
-        Où l'apporter ?
-      </StyledButton>
+      {props.product.map && (
+        <StyledButton expanded onClick={() => setMap(props.product)}>
+          Où l'apporter ?
+        </StyledButton>
+      )}
       {props.product[`Que_va-t-il_devenir_?`] && (
-        <StyledButton hollow onClick={() => setNext(props.product)}>
+        <StyledButton
+          hollow={props.product.map}
+          onClick={() => setNext(props.product)}
+        >
           Que va-t-il devenir ?
         </StyledButton>
       )}

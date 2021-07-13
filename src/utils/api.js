@@ -7,7 +7,7 @@ export function useSearch(search) {
   return useQuery(
     ['search', search],
     () =>
-      search.length > 2
+      search && search.length > 2
         ? axios
             .get(
               `https://api-adresse.data.gouv.fr/search/?q=${search}&type=housenumber`
@@ -20,7 +20,7 @@ export function useSearch(search) {
     }
   )
 }
-export function usePosition(position, pathname) {
+export function usePosition(position) {
   return useQuery(
     ['position', position?.timestamp],
     () =>
@@ -30,21 +30,27 @@ export function usePosition(position, pathname) {
         )
         .then((res) => res.data),
     {
-      enabled: position && pathname === '/' ? true : false,
+      enabled: position ? true : false,
       refetchOnWindowFocus: false,
     }
   )
 }
-export function useCode(code) {
+export function useDecheteries(viewport, enabled) {
   return useQuery(
-    ['code', code],
+    ['decheterie', viewport],
     () =>
       axios
-        .get(`https://geo.api.gouv.fr/communes?limit=1&fields=nom&code=${code}`)
-        .then((res) => res.data),
+        .get(
+          `https://koumoul.com/s/data-fair/api/v1/datasets/greatersinoe-(r)-annuaire-2017-des-decheteries-de-dechets-menagers-et-assimiles-(dma)/lines?format=json&q_mode=simple&geo_distance=${
+            viewport.longitude
+          }%2C${viewport.latitude}%2C${
+            viewport.zoom > 10 ? 10000 : 15000
+          }&size=1000&sampling=neighbors&select=Nom_Déchèterie,Adresse_Déchèterie,Code_postal_Déchèterie,Commune_Déchèterie,_id,_geopoint`
+        )
+        .then((res) => res.data.results),
     {
-      enabled: code ? true : false,
-      keepPreviousData: code ? false : true,
+      enabled: enabled && viewport.zoom > 8.5 ? true : false,
+      keepPreviousData: viewport.zoom > 8.5 ? true : false,
       refetchOnWindowFocus: false,
     }
   )

@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 const Tab = styled.button`
   flex: 1;
   padding: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-family: 'Baloo Chettan 2';
   text-align: center;
   color: ${(props) =>
@@ -33,9 +33,14 @@ const Tab = styled.button`
 export default function Tabs(props) {
   return (
     <Wrapper>
-      <Tab current={props.open === 'map'} onClick={() => props.setOpen('map')}>
-        Où l'apporter ?
-      </Tab>
+      {props.product.map && (
+        <Tab
+          current={props.open === 'map'}
+          onClick={() => props.setOpen('map')}
+        >
+          Où l'apporter ?
+        </Tab>
+      )}
       {props.product[`Que_va-t-il_devenir_?`] && (
         <Tab
           current={props.open === 'next'}

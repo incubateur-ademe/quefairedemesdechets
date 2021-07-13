@@ -18,13 +18,13 @@ const Wrapper = styled.div`
 `
 
 export default function Product(props) {
-  const [open, setOpen] = useState(null)
+  const [open, setOpen] = useState(props.product.map ? 'map' : 'next')
   return (
     <Wrapper>
       <Tabs setOpen={setOpen} open={open} product={props.product} />
       <Map open={open === 'map'} product={props.product} />
-      <Avoid open={open === 'avoid'} product={props.product} />
       <Next open={open === 'next'} product={props.product} />
+      <Avoid open={open === 'avoid'} product={props.product} />
     </Wrapper>
   )
 }

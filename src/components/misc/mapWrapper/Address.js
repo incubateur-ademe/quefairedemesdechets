@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useCallback, useRef } from 'react'
 import styled from 'styled-components'
 
 import { useSearch } from 'utils/api'
@@ -9,7 +9,7 @@ import Suggestions from './address/Suggestions'
 const Wrapper = styled.form`
   position: absolute;
   z-index: 100;
-  top: 1rem;
+  top: ${(props) => (props.addressSet ? '1rem' : '5rem')};
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 2rem);
@@ -18,12 +18,19 @@ const Wrapper = styled.form`
   border: 0.125rem solid ${(props) => props.theme.colors.text};
   border-radius: 1.375rem;
   transition: box-shadow 200ms ease-out;
-  transition: border 200ms ease-out;
+  transition: border 200ms ease-out, top 300ms ease-out;
   //overflow: hidden;
+
+  ${(props) => props.theme.mq.small} {
+    top: ${(props) => (props.addressSet ? '2.5rem' : '5rem')};
+  }
 `
 
 export default function Address(props) {
   const [search, setSearch] = useState('')
+  useEffect(() => {
+    setSearch(props.viewport.label)
+  }, [props.viewport.label])
   const debouncedSearch = useDebounce(search)
 
   const { data, isFetching } = useSearch(debouncedSearch)
@@ -31,6 +38,7 @@ export default function Address(props) {
   const [focus, setFocus] = useState(false)
   const input = useRef(null)
   const [current, setCurrent] = useState(0)
+
   useEffect(() => {
     if (!focus) {
       setCurrent(0)
@@ -38,18 +46,24 @@ export default function Address(props) {
     }
   }, [focus])
 
-  const navigateToPlace = (place) => {
-    props.setViewport({
-      latitude: place.geometry.coordinates[1],
-      longitude: place.geometry.coordinates[0],
-      zoom: 12.5,
-    })
-    setFocus(false)
-  }
+  const setViewport = props.setViewport
+  const navigateToPlace = useCallback(
+    (place) => {
+      setViewport({
+        label: place.properties.label,
+        latitude: place.geometry.coordinates[1],
+        longitude: place.geometry.coordinates[0],
+        zoom: 10,
+      })
+      setFocus(false)
+    },
+    [setViewport]
+  )
 
   return (
     <Wrapper
       focus={focus}
+      addressSet={props.viewport.label}
       onSubmit={(e) => {
         e.preventDefault()
         if (current > -1) {
@@ -65,7 +79,7 @@ export default function Address(props) {
         isFetching={isFetching}
         setSearch={setSearch}
         setFocus={setFocus}
-        setViewport={props.setViewport}
+        navigateToPlace={navigateToPlace}
       />
       {data && focus && (
         <Suggestions

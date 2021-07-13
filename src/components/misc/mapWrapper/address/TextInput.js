@@ -44,7 +44,7 @@ export default React.forwardRef(function TextInput(props, ref) {
       />
       <Geoloc
         visible={!(props.suggestion && props.suggestionVisible && props.search)}
-        setViewport={props.setViewport}
+        navigateToPlace={props.navigateToPlace}
       />
     </Wrapper>
   )

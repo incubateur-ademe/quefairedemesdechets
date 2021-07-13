@@ -18,7 +18,7 @@ export default function MapModal() {
   return (
     <Modal open={map} setOpen={setMap}>
       <Wrapper>
-        <MapWrapper />
+        <MapWrapper product={map} />
       </Wrapper>
     </Modal>
   )
