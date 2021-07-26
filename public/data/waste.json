@@ -329,7 +329,7 @@
       "_id": "21"
     },
     {
-      "Qu'est-ce_que_j'en_fais_?": "Se le meuble est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />S'il n'est plus utilisable, rapportez-le à un point de collecte : en déchèterie ou chez les distributeurs volontaires. Vous pouvez aussi le faire reprendre à la livraison d'un meuble neuf.",
+      "Qu'est-ce_que_j'en_fais_?": "Si le meuble est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />S'il n'est plus utilisable, rapportez-le à un point de collecte : en déchèterie ou chez les distributeurs volontaires. Vous pouvez aussi le faire reprendre à la livraison d'un meuble neuf.",
       "Déchèterie": true,
       "Pharmacie": false,
       "Bdd": "ademe",
@@ -3335,7 +3335,7 @@
       "_id": "222"
     },
     {
-      "Qu'est-ce_que_j'en_fais_?": "Se le meuble est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />S'il n'est plus utilisable, rapportez-le à un point de collecte : en déchèterie ou chez les distributeurs volontaires. Vous pouvez aussi le faire reprendre à la livraison d'un meuble neuf.",
+      "Qu'est-ce_que_j'en_fais_?": "Si le meuble est encore en bon état, remettez-le à une structure de réemploi ou revendez-le.<br /><br />S'il n'est plus utilisable, rapportez-le à un point de collecte : en déchèterie ou chez les distributeurs volontaires. Vous pouvez aussi le faire reprendre à la livraison d'un meuble neuf.",
       "Déchèterie": true,
       "Pharmacie": false,
       "Bdd": "ademe",
