@@ -4,7 +4,11 @@ import { useQuery } from 'react-query'
 import axios from 'axios'
 
 export default function WasteProvider(props) {
-  const { data: wasteData, isFetched, isFetching } = useQuery('waste', () =>
+  const {
+    data: wasteData,
+    isFetched,
+    isFetching,
+  } = useQuery('waste', () =>
     axios.get('/data/waste.json').then((res) => res.data)
   )
   const [waste, setWaste] = useState([])
@@ -62,10 +66,14 @@ export default function WasteProvider(props) {
     }
   }, [waste, links, linksSet])
 
+  const [product, setProduct] = useState(null)
+
   return (
     <WasteContext.Provider
       value={{
         waste,
+        product,
+        setProduct,
         isFetched,
         isFetching,
       }}

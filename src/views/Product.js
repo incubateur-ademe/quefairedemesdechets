@@ -18,8 +18,7 @@ const Wrapper = styled.div`
 
 export default function Product() {
   let { name } = useParams()
-  let { waste } = useContext(WasteContext)
-  const [product, setProduct] = useState(null)
+  let { waste, product, setProduct } = useContext(WasteContext)
   const [notFound, setNotFound] = useState(false)
   useEffect(() => {
     const newProduct = waste.find((product) => product['slug'] === name)
@@ -28,7 +27,7 @@ export default function Product() {
       map: newProduct && (newProduct['Déchèterie'] || newProduct['Pharmacie']),
     })
     setNotFound(newProduct ? false : true)
-  }, [name, waste])
+  }, [name, waste, setProduct])
 
   return (
     <>
