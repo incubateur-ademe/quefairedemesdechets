@@ -33,13 +33,8 @@ const ShareButtons = styled.div`
   }
 `
 export default function Share(props) {
-  const {
-    shareOpen,
-    setShareOpen,
-    typeShare,
-    setTypeShare,
-    setEmbedOpen,
-  } = useContext(UXContext)
+  const { shareOpen, setShareOpen, typeShare, setTypeShare, setEmbedOpen } =
+    useContext(UXContext)
 
   let location = useLocation()
   const [url, setUrl] = useState(`${window.location.origin}/${location.search}`)
@@ -66,7 +61,7 @@ export default function Share(props) {
           onChange={setTypeShare}
           options={[
             { value: 'simulator', label: `ce simulateur` },
-            { value: 'result', label: `mon résultat` },
+            { value: 'result', label: `cette fiche` },
           ]}
         />
       </h2>

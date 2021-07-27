@@ -10,9 +10,8 @@ import Select from 'components/base/FancySelect'
 
 export default function Embed(props) {
   const { themes, theme, setTheme } = useContext(StyleContext)
-  const { embedOpen, setEmbedOpen, typeShare, setTypeShare } = useContext(
-    UXContext
-  )
+  const { embedOpen, setEmbedOpen, typeShare, setTypeShare } =
+    useContext(UXContext)
 
   return (
     <Panel
@@ -32,7 +31,7 @@ export default function Embed(props) {
           onChange={setTypeShare}
           options={[
             { value: 'simulator', label: `ce simulateur` },
-            { value: 'result', label: `mon résultat` },
+            { value: 'result', label: `cette fiche` },
           ]}
         />
       </h2>
