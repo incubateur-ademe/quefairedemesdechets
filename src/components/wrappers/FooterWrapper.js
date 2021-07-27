@@ -15,7 +15,7 @@ export default function FooterWrapper() {
           __html: `D'ou viennent ces données&#8239;?`,
         }}
       />
-      <p>Ce simulateur utilise les données de l'ADEME.</p>
+      <p>Ce simulateur utilise les données de l'ADEME. Il s'agit de données à l'échelle nationale.</p>
       <p>
         Si vous souhaitez aller plus loin dans votre démarche, vous pouvez{' '}
         <strong>
