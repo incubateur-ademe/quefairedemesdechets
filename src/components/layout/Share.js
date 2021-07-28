@@ -68,30 +68,19 @@ export default function Share(props) {
       <ShareButtons>
         <Integration onClick={() => setEmbedOpen(true)} />
         <Mail
-          title={props.messages[typeShare].title}
-          message={props.messages[typeShare].message}
+          subject={props.messages.mail[typeShare].subject}
+          body={props.messages.mail[typeShare].body}
           url={url}
         />
-        <Facebook
-          title={props.messages[typeShare].title}
-          message={props.messages[typeShare].message}
-          url={url}
-        />
-        <Twitter
-          title={props.messages[typeShare].title}
-          message={props.messages[typeShare].message}
-          url={url}
-        />
+        <Facebook quote={props.messages.facebook[typeShare].quote} url={url} />
+        <Twitter title={props.messages.twitter[typeShare].title} url={url} />
         <Linkedin
-          title={props.messages[typeShare].title}
-          message={props.messages[typeShare].message}
+          title={props.messages.linkedin[typeShare].title}
+          summary={props.messages.linkedin[typeShare].summary}
+          source={props.messages.linkedin[typeShare].source}
           url={url}
         />
-        <Whatsapp
-          title={props.messages[typeShare].title}
-          message={props.messages[typeShare].message}
-          url={url}
-        />
+        <Whatsapp title={props.messages.whatsapp[typeShare].title} url={url} />
       </ShareButtons>
       <Link url={url} />
     </Panel>
