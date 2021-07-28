@@ -7,12 +7,12 @@ const Wrapper = styled.button`
   top: 0;
   bottom: 0;
   left: 0;
-  padding-left: 1.5rem;
+  padding-left: 1.5em;
   background: ${(props) => props.theme.colors.background};
   border: none;
 
   ${(props) => props.theme.mq.small} {
-    padding-left: 1rem;
+    padding-left: 1em;
   }
 
   path {
@@ -31,26 +31,27 @@ const Wrapper = styled.button`
 const Glass = styled.svg`
   position: relative;
   transform: translateY(0);
+  width: 2em;
   opacity: ${(props) => (props.visible ? 1 : 0)};
   transition: opacity 300ms;
 
   ${(props) => props.theme.mq.small} {
-    width: 1.5rem;
+    width: 1.5em;
     height: auto;
   }
 `
 const Arrow = styled.svg`
   position: absolute;
   top: 50%;
-  right: 0.3rem;
-  width: 2rem;
+  right: 0.3em;
+  width: 2em;
   height: auto;
   transform: translateY(-50%);
   opacity: ${(props) => (props.visible ? 1 : 0)};
   transition: opacity 400ms;
 
   ${(props) => props.theme.mq.small} {
-    width: 1.5rem;
+    width: 1.5em;
   }
 `
 export default function BackButton(props) {

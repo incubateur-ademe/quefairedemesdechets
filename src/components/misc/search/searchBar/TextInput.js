@@ -10,8 +10,8 @@ const Wrapper = styled.div`
 `
 const Input = styled.input`
   width: 100%;
-  padding: 0.75rem 4.5rem;
-  font-size: 1.625rem;
+  padding: 0.5em 2.8em;
+  font-size: 1.625em;
   font-weight: 500;
   line-height: 1.25;
   color: ${(props) => props.theme.colors.text};
@@ -27,8 +27,7 @@ const Input = styled.input`
   }
 
   ${(props) => props.theme.mq.small} {
-    padding: 0.75rem 3.5rem;
-    font-size: 1.25rem;
+    font-size: 1.1em;
   }
 `
 const Suggestion = styled.div`
@@ -41,31 +40,21 @@ const Suggestion = styled.div`
   opacity: ${(props) => (props.visible ? 0.75 : 0)};
   pointer-events: none;
   transition: opacity ${(props) => (props.visible ? 200 : 0)}ms;
-
-  ${(props) => props.theme.mq.small} {
-    opacity: ${(props) => (props.visible ? 0.6 : 0)};
-  }
 `
 const Invisible = styled.div`
   opacity: 0;
-  padding: 0.75rem 0.75rem 0.75rem 4.5rem;
-  font-size: 1.75rem;
+  padding: 0.45em 0.45em 0.45em 2.8em;
+  font-size: 1.625em;
   line-height: 1.15;
 
   ${(props) => props.theme.mq.small} {
-    padding: 0.75rem 0.75rem 0.75rem 3.5rem;
-    font-size: 1.25rem;
+    font-size: 1.1em;
   }
 `
 const Visible = styled.div`
   position: relative;
-  margin-top: 0.2rem;
-  padding-left: 1.25rem;
-
-  ${(props) => props.theme.mq.small} {
-    padding-left: 1rem;
-    font-size: 0.875rem;
-  }
+  margin-top: 0em;
+  padding-left: 1.25em;
 
   &:before {
     content: '';
@@ -73,13 +62,14 @@ const Visible = styled.div`
     top: 50%;
     left: 0;
     transform: translateY(-150%);
-    width: 0.75rem;
-    height: 1px;
+    width: 0.75em;
+    height: 0.05em;
     background-color: ${(props) => props.theme.colors.text};
-
-    ${(props) => props.theme.mq.small} {
-      width: 0.5rem;
-    }
+  }
+`
+const Name = styled.span`
+  ${(props) => props.theme.mq.small} {
+    font-size: 0.8em;
   }
 `
 
@@ -100,7 +90,11 @@ export default React.forwardRef(function TextInput(props, ref) {
         visible={props.suggestion && props.suggestionVisible && props.search}
       >
         <Invisible>{props.search}</Invisible>
-        {props.suggestion && <Visible>{props.suggestion.item['Nom']}</Visible>}
+        {props.suggestion && (
+          <Visible>
+            <Name>{props.suggestion.item['Nom']}</Name>
+          </Visible>
+        )}
       </Suggestion>
 
       <Submit

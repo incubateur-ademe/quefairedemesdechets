@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   overflow-y: scroll;
 `
 const Suggestion = styled.div`
-  padding: 0.75rem 0.75rem 0.75rem 2rem;
+  padding: 0.75em 0.75em 0.75em 2em;
   cursor: pointer;
   transition: background-color 200ms ease-out;
   background-color: rgba(0, 0, 0, ${(props) => (props.current ? 0.15 : 0)});
@@ -17,18 +17,13 @@ const Suggestion = styled.div`
     background-color: rgba(0, 0, 0, 0.2);
   }
   &:last-child {
-    padding-bottom: 1.5rem;
+    padding-bottom: 1.5em;
   }
 
   mark {
     color: ${(props) => props.theme.colors.text};
     background-color: transparent;
     opacity: 0.5;
-  }
-
-  ${(props) => props.theme.mq.small} {
-    padding: 0.75rem;
-    font-size: 0.875rem;
   }
 `
 const Name = styled.span``

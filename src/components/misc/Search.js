@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom'
 import WasteContext from 'utils/WasteContext'
 import UXContext from 'utils/UXContext'
 import SearchBar from './search/SearchBar'
+import Header from './search/Header'
 
 const fetched = keyframes`
   from {
@@ -22,30 +23,24 @@ const fetched = keyframes`
 `
 const Wrapper = styled.div`
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: ${(props) => (props.small ? 0 : '25vh')};
-  margin-bottom: 7.5rem;
-  transition: height 400ms ease-out;
+  margin-bottom: 3.5rem;
 
   ${(props) => props.theme.mq.small} {
-    height: ${(props) => (props.small ? 0 : '6rem')};
     margin-bottom: 4.5rem;
   }
 `
 const Title = styled.h1`
   position: relative;
   z-index: 101;
-  margin-bottom: ${(props) => (props.small ? '0' : '4rem')};
-  font-size: ${(props) => (props.small ? '2rem' : '3rem')};
+  margin: ${(props) => (props.small ? '0' : '3rem')} 0;
+  font-size: ${(props) => (props.small ? '0' : '3rem')};
   text-align: center;
   opacity: ${(props) => (props.small ? 0 : 1)};
   transition: all 400ms ease-out;
 
   ${(props) => props.theme.mq.small} {
     margin-bottom: ${(props) => (props.small ? '0' : '3rem')};
-    font-size: 6.5vw;
+    font-size: ${(props) => (props.small ? '0.5rem' : '6.5vw')};
   }
 `
 const Color = styled.span`
@@ -71,6 +66,12 @@ const Color = styled.span`
     }
   }
 `
+const StyledSearchBar = styled(SearchBar)`
+  font-size: ${(props) => (props.small ? 0.8 : 1)}rem;
+  ${(props) => props.theme.mq.small} {
+    font-size: 1rem;
+  }
+`
 export default function Search() {
   let location = useLocation()
   const [small, setSmall] = useState(false)
@@ -84,6 +85,7 @@ export default function Search() {
 
   return (
     <Wrapper small={small}>
+      <Header />
       <Title small={small}>
         Que Faire de mes{' '}
         <Color
@@ -99,7 +101,7 @@ export default function Search() {
         </Color>{' '}
         ?
       </Title>
-      <SearchBar small={small} isFetched={isFetched} />
+      <StyledSearchBar small={small} isFetched={isFetched} />
     </Wrapper>
   )
 }

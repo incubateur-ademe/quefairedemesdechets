@@ -11,22 +11,23 @@ import Suggestions from './searchBar/Suggestions'
 const Wrapper = styled.form`
   position: absolute;
   z-index: 100;
-  top: 100%;
-  left: 0.5rem;
+  top: ${(props) => (props.small ? '1rem' : '100%')};
+  left: ${(props) => (props.small ? 20 : 0.5)}rem;
   right: 0.5rem;
   background-color: ${(props) => props.theme.colors.background};
   ${(props) => props.theme.shadow};
-  border: 0.25rem solid ${(props) => props.theme.colors.main};
-  border-radius: 2rem;
+  border: 0.25em solid ${(props) => props.theme.colors.main};
+  border-radius: 2em;
   overflow: hidden;
   opacity: ${(props) => (props.isFetched ? 1 : 0)};
   transition: opacity 1500ms;
 
   ${(props) => props.theme.mq.small} {
+    top: 100%;
     left: 0;
     right: 0;
-    border: 0.125rem solid ${(props) => props.theme.colors.main};
-    border-radius: 1.65625rem;
+    border: 0.125em solid ${(props) => props.theme.colors.main};
+    border-radius: 1.65625em;
   }
 `
 
@@ -81,6 +82,7 @@ export default function SearchBar(props) {
   return (
     <Wrapper
       isFetched={props.isFetched}
+      small={props.small}
       focus={focus}
       onSubmit={(e) => {
         e.preventDefault()
@@ -88,6 +90,7 @@ export default function SearchBar(props) {
           navigateToProduct(results[current])
         }
       }}
+      className={props.className}
     >
       <TextInput
         small={props.small}

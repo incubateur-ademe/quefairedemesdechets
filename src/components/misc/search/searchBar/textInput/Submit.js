@@ -6,7 +6,7 @@ const Wrapper = styled.button`
   top: 0;
   bottom: 0;
   right: 0;
-  padding-right: 0.75rem;
+  padding-right: 0.75em;
   background: ${(props) => props.theme.colors.background};
   border: none;
   opacity: ${(props) => (props.visible ? 1 : 0)};
@@ -14,7 +14,7 @@ const Wrapper = styled.button`
   transition: opacity ${(props) => (props.visible ? 600 : 0)}ms;
 
   ${(props) => props.theme.mq.small} {
-    padding-right: 0.5rem;
+    padding-right: 0.5em;
   }
 
   &:focus {
@@ -23,14 +23,14 @@ const Wrapper = styled.button`
 
   svg {
     display: block;
-    width: 2.25rem;
+    width: 2.25em;
     height: auto;
 
     path {
       fill: ${(props) => props.theme.colors.ter};
     }
     ${(props) => props.theme.mq.small} {
-      width: 1.7rem;
+      width: 1.7em;
       height: auto;
     }
   }
