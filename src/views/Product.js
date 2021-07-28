@@ -26,7 +26,7 @@ export default function Product() {
       ...newProduct,
       map: newProduct && (newProduct['Déchèterie'] || newProduct['Pharmacie']),
     })
-    setNotFound(newProduct ? false : true)
+    setNotFound(!newProduct && waste.length ? true : false)
   }, [name, waste, setProduct])
 
   return (
