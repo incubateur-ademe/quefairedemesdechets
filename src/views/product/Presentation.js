@@ -118,6 +118,9 @@ export default function Presentation(props) {
           onClick={() => {
             setShareOpen(true)
             setTypeShare('result')
+            if (window.innerWidth < 1200) {
+              document.getElementById('share-mobile').scrollIntoView()
+            }
           }}
         >
           <svg height='512pt' viewBox='-21 0 512 512' width='512pt'>

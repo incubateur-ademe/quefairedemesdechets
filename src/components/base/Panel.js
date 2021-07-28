@@ -68,7 +68,7 @@ const ButtonClose = styled.div`
 export default function Panel(props) {
   const { width } = useWindowSize()
   return (width > 1200 && !props.small) || (width <= 1200 && props.small) ? (
-    <Wrapper open={props.open} small={props.small}>
+    <Wrapper open={props.open} small={props.small} id={props.id}>
       {!props.small &&
         (props.index === 0 ? (
           <EmbedButton

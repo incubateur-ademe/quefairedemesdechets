@@ -49,6 +49,7 @@ export default function Share(props) {
   return (
     <Panel
       small={props.small}
+      id={props.small ? 'share-mobile' : null}
       open={shareOpen}
       toggleClose={() => setShareOpen((prevOpen) => !prevOpen)}
       index={1}
