@@ -35,7 +35,7 @@ export default function MapWrapper(props) {
         {...viewport}
         width='100%'
         height='100%'
-        mapStyle={'mapbox://styles/florianpanchout/cko9uoaxw1n2718qkb6zktjjf'}
+        mapStyle={'mapbox://styles/florianpanchout/ckrnnxugq0yua17lmpm1ddn9d'}
         onViewportChange={(newViewport) => {
           setViewport({
             ...viewport,
