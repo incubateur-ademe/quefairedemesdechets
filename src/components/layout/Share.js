@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { useLocation } from 'react-router-dom'
 
 import UXContext from 'utils/UXContext'
 import Select from 'components/base/FancySelect'
@@ -36,16 +35,7 @@ export default function Share(props) {
   const { shareOpen, setShareOpen, typeShare, setTypeShare, setEmbedOpen } =
     useContext(UXContext)
 
-  let location = useLocation()
-  const [url, setUrl] = useState(`${window.location.origin}/${location.search}`)
-  useEffect(() => {
-    setUrl(
-      `${window.location.origin}/${
-        typeShare === 'result' ? location.search : ''
-      }`
-    )
-  }, [location.search, typeShare])
-
+  const url = 'https://www.quefairedemesdechets.fr/'
   return (
     <Panel
       small={props.small}

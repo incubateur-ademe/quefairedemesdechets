@@ -11,12 +11,12 @@ export default function ShareWrapper(props) {
       messages={{
         mail: {
           simulator: {
-            subject: 'Que faire de mes déchets',
-            body: `Salut,
-
-Je viens de découvrir le site Que Faire de mes Déchets. Il te permet de savoir quoi faire de n'importe quel déchet ; et aussi de savoir ce qu'il va devenir et comment l'éviter. 
-
-Je pense que cela pourra aussi t'intéresser, n'hésite pas à le visiter ici : http://www.quefairedemesdechets.fr/`,
+            subject: `Découvrez & intégrez le simulateur de l'ADEME Que faire de mes déchets !`,
+            body: `Bonjour,
+            
+            Vous souhaitez aider votre communauté ou collaborateurs à savoir plus facilement où jeter leurs déchets, et comment les limiter ?
+            
+            Le site Que faire de mes déchets permet de savoir quoi faire de vos déchets, de savoir ce qu'ils vont devenir et comment les éviter. `,
           },
           result: {
             subject: `Que faire de mes déchets - ${product && product['Nom']}`,
@@ -27,7 +27,8 @@ Je pense que cela pourra aussi t'intéresser, n'hésite pas à le visiter ici : 
         },
         facebook: {
           simulator: {
-            quote: 'Decouvrez que faire de vos déchets !',
+            quote:
+              'Vous voulez être sûr de bien respecter les consignes de tri pour vos emballages ? Vous vous demandez où apporter vos appareils électriques ? Grâce au simulateur Datagir, retrouvez toutes les réponses à ces questions !',
           },
           result: {
             quote: `${product && product['Nom']} - Que faire de mes déchets`,
@@ -35,7 +36,8 @@ Je pense que cela pourra aussi t'intéresser, n'hésite pas à le visiter ici : 
         },
         twitter: {
           simulator: {
-            title: 'Que Faire de mes Déchets',
+            title:
+              'Vous voulez être sûr de bien respecter les consignes de tri pour vos emballages ? Vous vous demandez où apporter vos appareils électriques ? Grâce au simulateur Datagir, retrouvez toutes les réponses à ces questions !',
           },
           result: {
             title: `${product && product['Nom']} - Que Faire de mes déchets`,
@@ -44,9 +46,10 @@ Je pense que cela pourra aussi t'intéresser, n'hésite pas à le visiter ici : 
         linkedin: {
           simulator: {
             source: 'Que Faire de mes Déchets',
-            title: '',
+            title:
+              'Retrouvez les consignes de tri de tous les déchets et intégrez cet outil à votre site ! 💻♻🌍',
             summary:
-              'Vous voulez vérifier si vous respectez bien les consignes de tri pour vos emballages, pots de peinture ou médicaments ? Vous vous demandez où apporter vos appareils électriques, votre ordinateur ou vos vêtements ? Toutes les réponses sont ici',
+              'Vous souhaitez aider votre communauté ou collaborateurs à savoir plus facilement où jeter leurs déchets, et comment les limiter ? Faites-leur découvrir Que faire de mes déchets !  Ce simulateur aussi intégrable librement en iframe sur vos plateformes web & mobiles, de quoi toucher largement les visiteurs de votre site !',
           },
           result: {
             source: `Que faire de mes Déchets`,

@@ -6,11 +6,11 @@ import SearchContext from 'utils/SearchContext'
 import Suggestions from 'components/misc/Suggestions'
 
 const Wrapper = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
+  margin-top: 4rem;
+
+  ${(props) => props.theme.mq.small} {
+    margin-top: 1rem;
+  }
 `
 const Content = styled.div`
   padding-bottom: 1rem;
