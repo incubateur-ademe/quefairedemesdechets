@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import Button from 'components/base/Button'
 
-const Title = styled.h4`
+const Title = styled.p`
   text-align: center;
   margin-bottom: 1rem;
 

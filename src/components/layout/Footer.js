@@ -14,7 +14,7 @@ import MobileButtons from './footer/MobileButtons'
 const Wrapper = styled.div`
   position: relative;
   background-color: ${(props) =>
-    props.theme.colors[props.background || 'second']};
+    props.theme.colors[props.background || 'footer']};
   transition: all 600ms;
 `
 const Content = styled.div`

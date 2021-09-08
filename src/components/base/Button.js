@@ -16,7 +16,7 @@ const Wrapper = styled(MagicLink)`
     props.hollow
       ? props.theme.colors.main
       : props.theme.colors[
-          props.theme.name === 'Défaut' ? 'background' : 'second'
+          props.theme.name === 'Défaut' ? 'background' : 'background'
         ]};
   background-color: ${(props) =>
     props.hollow ? 'transparent' : props.theme.colors.main};
@@ -32,7 +32,7 @@ const Wrapper = styled(MagicLink)`
       props.hollow ? props.theme.colors.main : props.theme.colors.main};
     color: ${(props) =>
       props.theme.colors[
-        props.theme.name === 'Défaut' ? 'background' : 'second'
+        props.theme.name === 'Défaut' ? 'background' : 'background'
       ]};
   }
 

@@ -6,9 +6,12 @@ import MagicLink from 'components/base/MagicLink'
 import Marianne from 'components/base/Marianne'
 import Logo from 'components/base/Logo'
 
-const Wrapper = styled(MagicLink)`
+const Wrapper = styled.div``
+const Logos = styled(MagicLink)`
   display: flex;
   align-items: center;
+  padding-right: 0.75rem;
+  background-color: #fff;
 `
 const Ademe = styled.img`
   width: 4.9375rem;
@@ -23,12 +26,15 @@ const StyledLogo = styled(Logo)`
     height: auto;
   }
 `
-export default function Header() {
+export default function Header(props) {
   return (
-    <Wrapper to='/'>
-      <Marianne />
-      <Ademe src={ademe} alt='ADEME' />
-      <StyledLogo />
+    <Wrapper className={props.className}>
+      <Logos to='/'>
+        <Marianne />
+        <Ademe src={ademe} alt='ADEME' />
+        <StyledLogo />
+      </Logos>
+      {props.children}
     </Wrapper>
   )
 }

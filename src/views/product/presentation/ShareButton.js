@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import styled, { keyframes } from 'styled-components'
 
 import UXContext from 'utils/UXContext'
-import Toggle from './Toggle'
 
 const hover = keyframes`
   from {
@@ -15,11 +14,19 @@ const hover = keyframes`
     opacity: 1;
   }
 `
-const StyledWrapper = styled(Toggle)`
-  transform: translate(
-    ${(props) => (props.open ? '-30rem' : '0')},
-    ${(props) => (props.four ? 'calc(-100% - 1rem)' : '-50%')}
-  );
+
+const Wrapper = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  background: none;
+  border: 3px solid ${(props) => props.theme.colors.main};
+  border-radius: 2rem;
+  cursor: pointer;
 
   &:hover,
   &:focus {
@@ -28,45 +35,49 @@ const StyledWrapper = styled(Toggle)`
       animation-duration: 400ms;
     }
   }
-`
-const Share = styled.svg`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
-  width: 2.25rem;
-  height: auto;
-  opacity: ${(props) => (props.open ? 0 : 1)};
-  transition: all 300ms ease-out;
 
-  path {
-    fill: ${(props) => props.theme.colors.background};
+  ${(props) => props.theme.mq.small} {
+    align-self: flex-end;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0;
+  }
 
-    &.outline1 {
-      animation-delay: 200ms;
+  svg {
+    display: block;
+    width: 1.6rem;
+    height: auto;
+
+    ${(props) => props.theme.mq.small} {
+      width: 1.4rem;
     }
-    &.outline2 {
-      animation-delay: 400ms;
+    path {
+      fill: ${(props) => props.theme.colors.main};
+
+      &.outline1 {
+        animation-delay: 200ms;
+      }
+      &.outline2 {
+        animation-delay: 400ms;
+      }
     }
   }
 `
-export default function ShareButton(props) {
-  const { installPrompt } = useContext(UXContext)
+
+export default function Presentation(props) {
+  const { setShareOpen, setTypeShare } = useContext(UXContext)
 
   return (
-    <StyledWrapper
-      open={props.open}
-      onClick={props.onClick}
-      four={installPrompt}
-      tooltip={'Partager ce simulateur'}
+    <Wrapper
+      onClick={() => {
+        setShareOpen(true)
+        setTypeShare('result')
+        if (window.innerWidth < 1200) {
+          document.getElementById('share-mobile').scrollIntoView()
+        }
+      }}
     >
-      <Share
-        open={props.open}
-        height='512pt'
-        viewBox='-21 0 512 512'
-        width='512pt'
-      >
+      <svg height='512pt' viewBox='-21 0 512 512' width='512pt'>
         <path d='m453.332031 85.332031c0 38.292969-31.039062 69.335938-69.332031 69.335938s-69.332031-31.042969-69.332031-69.335938c0-38.289062 31.039062-69.332031 69.332031-69.332031s69.332031 31.042969 69.332031 69.332031zm0 0' />
         <path
           className='outline'
@@ -84,7 +95,7 @@ export default function ShareButton(props) {
         />
         <path d='m135.703125 245.761719c-7.425781 0-14.636719-3.863281-18.5625-10.773438-5.824219-10.21875-2.238281-23.253906 7.980469-29.101562l197.949218-112.851563c10.21875-5.867187 23.253907-2.28125 29.101563 7.976563 5.824219 10.21875 2.238281 23.253906-7.980469 29.101562l-197.953125 112.851563c-3.328125 1.898437-6.953125 2.796875-10.535156 2.796875zm0 0' />
         <path d='m333.632812 421.761719c-3.585937 0-7.210937-.898438-10.539062-2.796875l-197.953125-112.851563c-10.21875-5.824219-13.800781-18.859375-7.976563-29.101562 5.800782-10.238281 18.855469-13.84375 29.097657-7.976563l197.953125 112.851563c10.21875 5.824219 13.800781 18.859375 7.976562 29.101562-3.945312 6.910157-11.15625 10.773438-18.558594 10.773438zm0 0' />
-      </Share>
-    </StyledWrapper>
+      </svg>
+    </Wrapper>
   )
 }

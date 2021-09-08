@@ -18,7 +18,6 @@ export default function Embed(props) {
       small={props.small}
       open={embedOpen}
       toggleClose={() => {
-        setTheme('default')
         setEmbedOpen((prevOpen) => !prevOpen)
       }}
       index={0}
@@ -36,8 +35,13 @@ export default function Embed(props) {
         />
       </h2>
       <Code id={props.id} typeShare={typeShare} />
-      <h3>Options d'intégration</h3>
-      {props.children}
+      {props.children && (
+        <>
+          <h3>Options d'intégration</h3>
+          {props.children}
+        </>
+      )}
+      <h3>Choisissez un thème</h3>
       <Themes themes={themes} theme={theme} setTheme={setTheme} />
       <ContactPrompt configurator />
     </Panel>

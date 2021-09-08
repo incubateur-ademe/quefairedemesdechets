@@ -24,7 +24,7 @@ const Wrapper = styled.button`
     outline: none;
 
     path {
-      fill: ${(props) => props.theme.colors.ter};
+      fill: ${(props) => props.theme.colors.main};
     }
   }
 `

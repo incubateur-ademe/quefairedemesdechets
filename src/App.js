@@ -7,7 +7,6 @@ import { GlobalStyle } from 'utils/styles'
 import StyleProvider from 'components/providers/StyleProvider'
 import ModalProvider from 'components/providers/ModalProvider'
 import UXProvider from 'components/providers/UXProvider'
-import WasteProvider from 'components/providers/WasteProvider'
 import SearchProvider from 'components/providers/SearchProvider'
 import CO2EModal from 'components/modals/CO2EModal'
 import MapModal from 'components/modals/MapModal'
@@ -27,34 +26,32 @@ function App() {
         <QueryClientProvider client={queryClient}>
           <UXProvider>
             <StyleProvider>
-              <WasteProvider>
-                <SearchProvider>
-                  <ModalProvider>
-                    <GlobalStyle />
-                    <Switch>
-                      <Route path='/embed'>
-                        <Iframe>Iframe</Iframe>
-                      </Route>
-                      <Route>
-                        <Web>
-                          <Switch>
-                            <Route path='/dechet/:name'>
-                              <Product />
-                            </Route>
-                            <Route path='/'>
-                              <SuggestionsWrapper />
-                            </Route>
-                          </Switch>
-                        </Web>
-                      </Route>
-                    </Switch>
-                    <CO2EModal />
-                    <MapModal />
-                    <AvoidModal />
-                    <NextModal />
-                  </ModalProvider>
-                </SearchProvider>
-              </WasteProvider>
+              <SearchProvider>
+                <ModalProvider>
+                  <GlobalStyle />
+                  <Switch>
+                    <Route path='/embed'>
+                      <Iframe>Iframe</Iframe>
+                    </Route>
+                    <Route>
+                      <Web>
+                        <Switch>
+                          <Route path='/dechet/:name'>
+                            <Product />
+                          </Route>
+                          <Route path='/'>
+                            <SuggestionsWrapper />
+                          </Route>
+                        </Switch>
+                      </Web>
+                    </Route>
+                  </Switch>
+                  <CO2EModal />
+                  <MapModal />
+                  <AvoidModal />
+                  <NextModal />
+                </ModalProvider>
+              </SearchProvider>
             </StyleProvider>
           </UXProvider>
         </QueryClientProvider>

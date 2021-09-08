@@ -29,27 +29,29 @@ const Svg = styled.svg`
   height: auto;
 `
 export default function Visible(props) {
-  const { themes, accessibility, setAccessibility } = useContext(StyleContext)
+  const { themes, theme, setTheme } = useContext(StyleContext)
 
   return (
     <Wrapper mobile={props.mobile}>
       <Switch
         onChange={() =>
-          setAccessibility((prevAccessibility) => !prevAccessibility)
+          setTheme((prevTheme) =>
+            prevTheme === 'default' ? 'night' : 'default'
+          )
         }
-        checked={accessibility}
-        offColor={themes.classic.colors.background}
+        checked={theme === 'night'}
+        offColor={themes.night.colors.background}
         onColor={themes.default.colors.background}
         offHandleColor={themes.default.colors.background}
-        onHandleColor={themes.classic.colors.background}
+        onHandleColor={themes.night.colors.background}
         uncheckedIcon={
           <Svg x='0px' y='0px' viewBox='0 0 469.333 469.333'>
             <path
-              fill={themes.classic.colors.main}
+              fill={themes.night.colors.main}
               d='M234.667,170.667c-35.307,0-64,28.693-64,64s28.693,64,64,64s64-28.693,64-64S269.973,170.667,234.667,170.667z'
             />
             <path
-              fill={themes.classic.colors.main}
+              fill={themes.night.colors.main}
               d='M234.667,74.667C128,74.667,36.907,141.013,0,234.667c36.907,93.653,128,160,234.667,160     c106.773,0,197.76-66.347,234.667-160C432.427,141.013,341.44,74.667,234.667,74.667z M234.667,341.333     c-58.88,0-106.667-47.787-106.667-106.667S175.787,128,234.667,128s106.667,47.787,106.667,106.667     S293.547,341.333,234.667,341.333z'
             />
           </Svg>

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react'
 import styled, { keyframes } from 'styled-components'
 
-import WasteContext from 'utils/WasteContext'
+import { useWaste } from 'utils/api'
 import UXContext from 'utils/UXContext'
 
 const flightLeft = keyframes`
@@ -153,7 +153,7 @@ const Eye = styled.circle`
   animation: ${wink} 12000ms linear infinite;
 `
 export default function Bin() {
-  const { waste } = useContext(WasteContext)
+  const { isSuccess } = useWaste()
   const { binFlight } = useContext(UXContext)
 
   const [position, setPosition] = useState('left')
@@ -161,7 +161,7 @@ export default function Bin() {
 
   return (
     <Wrapper
-      visible={visible && waste.length}
+      visible={visible && isSuccess}
       flight={binFlight}
       position={position}
       onClick={() => {

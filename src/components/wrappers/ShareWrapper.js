@@ -1,10 +1,10 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
-import WasteContext from 'utils/WasteContext'
+import useProduct from 'hooks/useProduct'
 import Share from 'components/layout/Share'
 
 export default function ShareWrapper(props) {
-  let { product } = useContext(WasteContext)
+  let { product } = useProduct()
   return (
     <Share
       small={props.small}
@@ -14,9 +14,11 @@ export default function ShareWrapper(props) {
             subject: `Découvrez & intégrez le simulateur de l'ADEME Que faire de mes déchets !`,
             body: `Bonjour,
             
-            Vous souhaitez aider votre communauté ou collaborateurs à savoir plus facilement où jeter leurs déchets, et comment les limiter ?
+Vous souhaitez aider votre communauté ou collaborateurs à savoir plus facilement où jeter leurs déchets, et comment les limiter ?
             
-            Le site Que faire de mes déchets permet de savoir quoi faire de vos déchets, de savoir ce qu'ils vont devenir et comment les éviter. `,
+Le site Que Faire de mes Déchets permet de savoir quoi faire de vos déchets, de savoir ce qu'ils vont devenir et comment les éviter. 
+
+Découvrez le ici : `,
           },
           result: {
             subject: `Que faire de mes déchets - ${product && product['Nom']}`,

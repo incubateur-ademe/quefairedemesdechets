@@ -3,41 +3,16 @@ import styledNormalize from 'styled-normalize'
 
 export const themes = {
   default: {
-    name: 'Défaut',
+    name: 'Clair',
     colors: {
       main: '#e42313',
-      second: '#ffffff',
-      ter: '#e42313',
-      quad: '#ffffff',
       background: '#ffffff',
+      footer: '#F0F0F0',
       text: '#32337B',
     },
     fonts: {
       body: '"Poppins", sans-serif',
-      title: '"Baloo Chettan 2", sans-serif',
-    },
-    mq: {
-      small: `@media screen and (max-width: ${46}em)`,
-      medium: `@media screen and (max-width: ${75}em)`,
-      mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${62}px)`,
-      mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${62}px)`,
-      large: `@media screen and (min-width: ${92}em)`,
-      xlarge: `@media screen and (min-width: ${2000}px)`,
-    },
-  },
-  classic: {
-    name: 'Classique',
-    colors: {
-      main: '#EF0D50',
-      second: '#ffffff',
-      ter: '#EF0D50',
-      quad: '#ffffff',
-      background: '#ffffff',
-      text: '#32337B',
-    },
-    fonts: {
-      body: '"Poppins", sans-serif',
-      title: '"Baloo Chettan 2", sans-serif',
+      title: '"Poppins", sans-serif',
     },
     mq: {
       small: `@media screen and (max-width: ${46}em)`,
@@ -49,41 +24,16 @@ export const themes = {
     },
   },
   night: {
-    name: 'Nuit',
+    name: 'Sombre',
     colors: {
       main: '#92F2D2',
-      second: '#1e1e1e',
-      ter: '#ffffff',
-      quad: '#1e1e1e',
       background: '#1e1e1e',
+      footer: '#383838',
       text: '#ffffff',
     },
     fonts: {
       body: '"Poppins", sans-serif',
-      title: '"Baloo Chettan 2", sans-serif',
-    },
-    mq: {
-      small: `@media screen and (max-width: ${46}em)`,
-      medium: `@media screen and (max-width: ${75}em)`,
-      mediumLandscape: `@media screen and (orientation: landscape) and (max-width: ${62}px)`,
-      mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${62}px)`,
-      large: `@media screen and (min-width: ${92}em)`,
-      xlarge: `@media screen and (min-width: ${2000}px)`,
-    },
-  },
-  simple: {
-    name: 'Simple',
-    colors: {
-      main: '#000091',
-      second: '#ffffff',
-      ter: '#1e1e1e',
-      quad: '#ffffff',
-      background: '#ffffff',
-      text: '#1e1e1e',
-    },
-    fonts: {
-      body: '"Poppins", sans-serif',
-      title: '"Baloo Chettan 2", sans-serif',
+      title: '"Poppins", sans-serif',
     },
     mq: {
       small: `@media screen and (max-width: ${46}em)`,
@@ -127,7 +77,7 @@ export const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     font-family: ${(props) => props.theme.fonts.title};
-    font-weight: 600;
+    font-weight: 800;
     line-height: 1.2;
   }
 
@@ -135,8 +85,8 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 2rem;
 
     ${(props) => props.theme.mq.small} {
-    font-size: 1.5rem;
-  }
+      font-size: 1.5rem;
+    }
   }
 
   a {

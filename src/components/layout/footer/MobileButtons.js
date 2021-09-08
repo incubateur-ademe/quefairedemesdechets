@@ -50,7 +50,7 @@ const Icon = styled.div`
     height: auto;
 
     path {
-      fill: ${(props) => props.theme.colors.second};
+      fill: ${(props) => props.theme.colors.background};
     }
   }
 `
@@ -73,12 +73,8 @@ const Label = styled.div`
   text-align: center;
 `
 export default function MobileButtons(props) {
-  const {
-    setEmbedOpen,
-    setShareOpen,
-    setContactOpen,
-    installPrompt,
-  } = useContext(UXContext)
+  const { setEmbedOpen, setShareOpen, setContactOpen, installPrompt } =
+    useContext(UXContext)
 
   return (
     <>

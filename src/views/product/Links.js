@@ -21,7 +21,7 @@ const Icon = styled.svg`
   margin: 0.15rem 0.5rem 0 0;
 
   path {
-    fill: ${(props) => props.theme.colors.ter};
+    fill: ${(props) => props.theme.colors.main};
   }
 `
 const Text = styled.div`

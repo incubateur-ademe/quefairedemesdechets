@@ -11,7 +11,6 @@ const Tab = styled.button`
   flex: 1;
   padding: 1rem;
   font-size: 1.125rem;
-  font-family: 'Baloo Chettan 2';
   text-align: center;
   color: ${(props) =>
     props.theme.colors[props.current ? 'background' : 'text']};

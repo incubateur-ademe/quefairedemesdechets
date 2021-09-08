@@ -3,6 +3,58 @@
 import { useQuery } from 'react-query'
 import axios from 'axios'
 
+export function useWaste() {
+  return useQuery(
+    ['waste'],
+    () =>
+      axios
+        .get(`/data/waste.json`)
+        .then((res) => res.data.results)
+        .then((wasteRes) =>
+          axios
+            .get('/data/links.json')
+            .then((res) => res.data.results)
+            .then((linkRes) => {
+              let tempWaste = [...wasteRes]
+
+              for (let result of wasteRes) {
+                if (result['Synonymes_existants']) {
+                  const synonyms = result['Synonymes_existants'].split(' / ')
+                  for (let i = 0; i < synonyms.length; i++) {
+                    tempWaste.push({
+                      ...result,
+                      Nom: synonyms[i],
+                      parent: result['Nom'],
+                      ID: result['ID'] + '_' + i,
+                    })
+                  }
+                }
+              }
+              return tempWaste
+                .map((waste) => ({
+                  ...waste,
+                  searchable: waste['Nom']
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, ''),
+                }))
+                .map((waste) => ({
+                  ...waste,
+                  slug: waste[`searchable`].replaceAll(' ', '-').toLowerCase(),
+                }))
+                .map((product) => ({
+                  ...product,
+                  linkRes: linkRes.filter((link) =>
+                    link['Produits_associÃ©s'].includes(product['Nom'])
+                  ),
+                }))
+            })
+        ),
+    {
+      keepPreviousData: true,
+      refetchOnWindowFocus: false,
+    }
+  )
+}
 export function useSearch(search) {
   return useQuery(
     ['search', search],

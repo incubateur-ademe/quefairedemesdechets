@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
 import Fuse from '../../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
 
-import WasteContext from 'utils/WasteContext'
+import { useWaste } from 'utils/api'
 import SearchContext from 'utils/SearchContext'
 import TextInput from './searchBar/TextInput'
 import Suggestions from './searchBar/Suggestions'
@@ -11,16 +11,16 @@ import Suggestions from './searchBar/Suggestions'
 const Wrapper = styled.form`
   position: absolute;
   z-index: 100;
-  top: ${(props) => (props.small ? '1rem' : '100%')};
-  left: ${(props) => (props.small ? 20 : 0.5)}rem;
+  top: 100%;
+  left: 0.5rem;
   right: 0.5rem;
   background-color: ${(props) => props.theme.colors.background};
   ${(props) => props.theme.shadow};
   border: 0.25em solid ${(props) => props.theme.colors.main};
   border-radius: 2em;
   overflow: hidden;
-  opacity: ${(props) => (props.isFetched ? 1 : 0)};
-  transition: opacity 1500ms;
+  opacity: ${(props) => (props.isFetched && !props.small ? 1 : 0)};
+  transition: opacity 300ms;
 
   ${(props) => props.theme.mq.small} {
     top: 100%;
@@ -34,22 +34,22 @@ const Wrapper = styled.form`
 export default function SearchBar(props) {
   let history = useHistory()
 
-  const { waste } = useContext(WasteContext)
+  const { data, isFetched } = useWaste()
   const { search, setSearch } = useContext(SearchContext)
 
   const [results, setResults] = useState([])
   const [fuse, setFuse] = useState(null)
   useEffect(() => {
-    if (waste) {
+    if (data) {
       setFuse(
-        new Fuse(waste, {
+        new Fuse(data, {
           keys: ['searchable'],
           threshold: 0.3,
           ignoreLocation: true,
         })
       )
     }
-  }, [waste])
+  }, [data])
 
   useEffect(() => {
     if (fuse && search.length > 2) {
@@ -98,11 +98,11 @@ export default function SearchBar(props) {
         search={search}
         focus={focus}
         suggestion={results[current]}
-        suggestionVisible={waste && focus}
+        suggestionVisible={isFetched && focus}
         setSearch={setSearch}
         setFocus={setFocus}
       />
-      {waste && focus && (
+      {isFetched && focus && (
         <Suggestions
           search={search}
           results={results}

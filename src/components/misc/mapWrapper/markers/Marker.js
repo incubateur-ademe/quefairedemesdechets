@@ -9,7 +9,7 @@ const Icon = styled.svg`
   pointer-events: initial;
 
   & path {
-    fill: ${(props) => props.theme.colors.ter};
+    fill: ${(props) => props.theme.colors.main};
   }
 `
 const Wrapper = styled.div`
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   padding: 1rem;
   transform: translate(-50%, calc(-100% - 1rem));
   background-color: ${(props) => props.theme.colors.background};
-  border: 2px solid ${(props) => props.theme.colors.ter};
+  border: 2px solid ${(props) => props.theme.colors.main};
   border-radius: 1rem;
   user-select: text;
   pointer-events: initial;
@@ -32,7 +32,7 @@ const Handle = styled.svg`
   width: 1.5rem;
   height: auto;
   & path {
-    stroke: ${(props) => props.theme.colors.ter};
+    stroke: ${(props) => props.theme.colors.main};
     fill: ${(props) => props.theme.colors.background};
   }
 `

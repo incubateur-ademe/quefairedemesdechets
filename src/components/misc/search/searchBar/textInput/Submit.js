@@ -27,7 +27,7 @@ const Wrapper = styled.button`
     height: auto;
 
     path {
-      fill: ${(props) => props.theme.colors.ter};
+      fill: ${(props) => props.theme.colors.main};
     }
     ${(props) => props.theme.mq.small} {
       width: 1.7em;

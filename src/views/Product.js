@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { useParams } from 'react-router-dom'
 
-import WasteContext from 'utils/WasteContext'
+import useProduct from 'hooks/useProduct'
 import Suggestions from 'components/misc/Suggestions'
 import Presentation from './product/Presentation'
 import Details from './product/Details'
@@ -10,24 +9,13 @@ import DetailsMobile from './product/DetailsMobile'
 import Links from './product/Links'
 
 const Wrapper = styled.div`
-  max-width: 40rem;
   margin: 0 auto;
   opacity: ${(props) => (props.visible ? 1 : 0)};
   transition: opacity 800ms;
 `
 
 export default function Product() {
-  let { name } = useParams()
-  let { waste, product, setProduct } = useContext(WasteContext)
-  const [notFound, setNotFound] = useState(false)
-  useEffect(() => {
-    const newProduct = waste.find((product) => product['slug'] === name)
-    setProduct({
-      ...newProduct,
-      map: newProduct && (newProduct['Déchèterie'] || newProduct['Pharmacie']),
-    })
-    setNotFound(!newProduct && waste.length ? true : false)
-  }, [name, waste, setProduct])
+  const { product, notFound } = useProduct()
 
   return (
     <>

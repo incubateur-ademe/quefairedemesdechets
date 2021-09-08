@@ -5,10 +5,11 @@ import useWindowSize from 'hooks/useWindowSize'
 
 import ThemeToggle from 'components/base/ThemeToggle'
 import InstallButton from 'components/base/InstallButton'
+import HeaderWrapper from 'components/wrappers/HeaderWrapper'
+import FooterWrapper from 'components/wrappers/FooterWrapper'
 import ShareWrapper from 'components/wrappers/ShareWrapper'
 import EmbedWrapper from 'components/wrappers/EmbedWrapper'
 import ContactWrapper from 'components/wrappers/ContactWrapper'
-import FooterWrapper from 'components/wrappers/FooterWrapper'
 import Search from 'components/misc/Search'
 import Bin from 'components/misc/Bin'
 
@@ -32,13 +33,10 @@ const FullScreen = styled.div`
   display: flex;
   flex-direction: column;
   width: 46rem;
+  max-width: 100%;
   min-height: ${(props) => props.windowHeight}px;
-  margin: 0 auto 5rem;
-  padding: 0 0.5rem 2rem;
-
-  ${(props) => props.theme.mq.small} {
-    width: 100%;
-  }
+  margin: 0 auto;
+  padding: 0 0.5rem 5rem;
 `
 export default function Web(props) {
   const { height } = useWindowSize()
@@ -48,6 +46,7 @@ export default function Web(props) {
       <ThemeToggle />
       <Content>
         <FullScreen windowHeight={height}>
+          <HeaderWrapper />
           <Search />
           {props.children}
           <Bin />

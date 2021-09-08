@@ -11,7 +11,7 @@ import MobileButtons from './footer/MobileButtons'
 
 const Wrapper = styled.div`
   position: relative;
-  background-color: ${(props) => props.theme.colors.second};
+  background-color: ${(props) => props.theme.colors.background};
 `
 const Content = styled.div`
   max-width: 37rem;

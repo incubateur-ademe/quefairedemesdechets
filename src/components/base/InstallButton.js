@@ -55,7 +55,7 @@ const Install = styled.svg`
   overflow: visible;
 
   path {
-    fill: ${(props) => props.theme.colors.second};
+    fill: ${(props) => props.theme.colors.background};
     transform-origin: center bottom;
   }
 `

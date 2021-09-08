@@ -18,13 +18,13 @@ const Suggestion = styled.div`
   transition: background-color 200ms ease-out,
     opacity ${(props) => (props.isFetching ? 300 : 0)}ms ease-out;
   background-color: rgba(
-    ${(props) => props.theme.colors.quad},
+    ${(props) => props.theme.colors.background},
     ${(props) => (props.current ? 0.4 : 0)}
   );
   opacity: ${(props) => (props.isFetching ? 0.3 : 1)};
 
   &:hover {
-    background-color: rgba(${(props) => props.theme.colors.quad}, 0.7);
+    background-color: rgba(${(props) => props.theme.colors.background}, 0.7);
   }
 
   mark {

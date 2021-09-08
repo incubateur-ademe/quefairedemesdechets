@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react'
 import styled from 'styled-components'
 
-import WasteContext from 'utils/WasteContext'
+import { useWaste } from 'utils/api'
 import SearchContext from 'utils/SearchContext'
 import Suggestions from 'components/misc/Suggestions'
 
@@ -22,7 +22,7 @@ const Content = styled.div`
   }
 `
 export default function SuggestionsWrapper() {
-  const { isFetched } = useContext(WasteContext)
+  const { isFetched } = useWaste()
 
   const { setSearch } = useContext(SearchContext)
   useEffect(() => {
