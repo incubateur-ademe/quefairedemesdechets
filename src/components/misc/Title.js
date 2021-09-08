@@ -49,7 +49,7 @@ export default function Title() {
 
   const { isFetching } = useWaste()
   const { binFlight, setBinFlight } = useContext(UXContext)
-
+  console.log(fetched)
   return (
     <Wrapper small={location.pathname !== '/'}>
       Que Faire de mes{' '}
