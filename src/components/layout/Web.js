@@ -32,11 +32,11 @@ const FullScreen = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: 46rem;
+  width: 46.5rem;
   max-width: 100%;
   min-height: ${(props) => props.windowHeight}px;
   margin: 0 auto;
-  padding: 0 0.5rem 5rem;
+  padding: 0 0.75rem 5rem;
 `
 export default function Web(props) {
   const { height } = useWindowSize()

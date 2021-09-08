@@ -13,6 +13,10 @@ const Logos = styled(MagicLink)`
   margin-left: -0.75rem;
   padding-right: 0.75rem;
   background-color: #fff;
+
+  ${(props) => props.theme.mq.small} {
+    width: calc(100% + 1.5rem);
+  }
 `
 const Ademe = styled.img`
   width: 4.9375rem;

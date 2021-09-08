@@ -1,25 +1,12 @@
 import React, { useContext } from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { useLocation } from 'react-router-dom'
 
 import { useWaste } from 'utils/api'
 import UXContext from 'utils/UXContext'
+import MagicLink from 'components/base/MagicLink'
 
-const fetched = keyframes`
-  from {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(100%);
-  }
-  50.1% {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-`
-const Wrapper = styled.h1`
+const Wrapper = styled.h2`
   position: relative;
   z-index: 101;
   left: ${(props) => (props.small ? 100 : 50)}%;
@@ -36,9 +23,9 @@ const Wrapper = styled.h1`
   ${(props) => props.theme.mq.small} {
     left: 50%;
     transform: translateX(-50%);
-    margin: ${(props) => (props.small ? '0.5rem' : '4rem')} 0
+    margin: ${(props) => (props.small ? '1.25rem' : '4rem')} 0
       ${(props) => (props.small ? '0' : '3rem')};
-    font-size: 6vw;
+    font-size: 1.5rem;
   }
 `
 const Color = styled.span`
@@ -49,7 +36,7 @@ export default function Title() {
 
   const { isFetching } = useWaste()
   const { binFlight, setBinFlight } = useContext(UXContext)
-  console.log(fetched)
+
   return (
     <Wrapper small={location.pathname !== '/'}>
       Que Faire de mes{' '}
