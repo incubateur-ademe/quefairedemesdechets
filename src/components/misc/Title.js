@@ -36,7 +36,7 @@ const Wrapper = styled.h1`
   ${(props) => props.theme.mq.small} {
     left: 50%;
     transform: translateX(-50%);
-    margin: ${(props) => (props.small ? '1rem' : '4rem')} 0
+    margin: ${(props) => (props.small ? '0.5rem' : '4rem')} 0
       ${(props) => (props.small ? '0' : '3rem')};
     font-size: 6vw;
   }

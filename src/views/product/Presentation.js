@@ -13,6 +13,16 @@ const Header = styled.div`
 
   ${(props) => props.theme.mq.small} {
     align-items: flex-start;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -1.5rem;
+      left: -1rem;
+      right: -1rem;
+      height: 0.125rem;
+      background-color: ${(props) => props.theme.colors.text};
+    }
   }
 `
 const Title = styled.h1`
@@ -27,7 +37,7 @@ const Title = styled.h1`
 
   ${(props) => props.theme.mq.small} {
     font-size: 2rem;
-    margin: 0 0 0 1rem;
+    margin: 0 1rem 0 0;
   }
 `
 const Subtitle = styled.h3`
