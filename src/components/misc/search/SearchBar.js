@@ -20,6 +20,7 @@ const Wrapper = styled.form`
   border-radius: 2em;
   overflow: hidden;
   opacity: ${(props) => (props.isFetched && !props.small ? 1 : 0)};
+  pointer-events: ${(props) => (props.small ? 'none' : 'inherit')};
   transition: opacity 300ms;
 
   ${(props) => props.theme.mq.small} {

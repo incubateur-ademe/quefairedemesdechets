@@ -21,7 +21,6 @@ const Wrapper = styled.button`
   align-items: center;
   width: 3rem;
   height: 3rem;
-  margin-left: 1rem;
   padding: 0;
   background: none;
   border: 3px solid ${(props) => props.theme.colors.main};

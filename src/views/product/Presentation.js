@@ -9,7 +9,7 @@ const Header = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 
   ${(props) => props.theme.mq.small} {
     align-items: flex-start;
@@ -27,7 +27,7 @@ const Title = styled.h1`
 
   ${(props) => props.theme.mq.small} {
     font-size: 2rem;
-    margin: 0 0 1rem 0;
+    margin: 0 0 0 1rem;
   }
 `
 const Subtitle = styled.h3`
