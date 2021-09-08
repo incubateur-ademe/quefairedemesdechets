@@ -5,13 +5,14 @@ import PreviousButton from './presentation/PreviousButton'
 import ShareButton from './presentation/ShareButton'
 
 const Header = styled.div`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5rem;
 
   ${(props) => props.theme.mq.small} {
-    flex-direction: column-reverse;
+    align-items: flex-start;
   }
 `
 const Title = styled.h1`
@@ -25,13 +26,13 @@ const Title = styled.h1`
   }
 
   ${(props) => props.theme.mq.small} {
-    font-size: 2.25rem;
+    font-size: 2rem;
     margin: 0 0 1rem 0;
   }
 `
-const Subtitle = styled.span`
+const Subtitle = styled.h3`
+  margin: -1rem 3rem 2rem;
   display: block;
-  font-size: 0.5em;
 `
 const Text = styled.div`
   margin-bottom: 3rem;
@@ -39,7 +40,7 @@ const Text = styled.div`
 
   ${(props) => props.theme.mq.small} {
     margin-bottom: 2.5rem;
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   ul,
@@ -52,14 +53,12 @@ export default function Presentation(props) {
     <>
       <Header>
         <PreviousButton />
-        <Title>
-          {props.product['Nom']}
-          {props.product['parent'] && (
-            <Subtitle>({props.product['parent']})</Subtitle>
-          )}
-        </Title>
+        <Title>{props.product['Nom']}</Title>
         <ShareButton />
       </Header>
+      {props.product['parent'] && (
+        <Subtitle>({props.product['parent']})</Subtitle>
+      )}
       <Text
         dangerouslySetInnerHTML={{
           __html: props.product[`Qu'est-ce_que_j'en_fais_?`],

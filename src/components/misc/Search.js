@@ -8,10 +8,6 @@ import SearchBar from './search/SearchBar'
 const Wrapper = styled.div`
   position: relative;
   margin-bottom: 2.5rem;
-
-  ${(props) => props.theme.mq.small} {
-    margin-bottom: 4.5rem;
-  }
 `
 export default function Search() {
   let location = useLocation()

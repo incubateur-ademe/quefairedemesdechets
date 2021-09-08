@@ -10,22 +10,15 @@ const Wrapper = styled.div``
 const Logos = styled(MagicLink)`
   display: flex;
   align-items: center;
+  margin-left: -0.75rem;
   padding-right: 0.75rem;
   background-color: #fff;
 `
 const Ademe = styled.img`
   width: 4.9375rem;
   height: auto;
-  ${(props) => props.theme.mq.small} {
-    width: 2.75rem;
-  }
 `
-const StyledLogo = styled(Logo)`
-  ${(props) => props.theme.mq.small} {
-    width: 4rem;
-    height: auto;
-  }
-`
+const StyledLogo = styled(Logo)``
 export default function Header(props) {
   return (
     <Wrapper className={props.className}>

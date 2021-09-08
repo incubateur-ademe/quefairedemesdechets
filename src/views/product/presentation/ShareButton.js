@@ -21,7 +21,7 @@ const Wrapper = styled.button`
   align-items: center;
   width: 3rem;
   height: 3rem;
-  margin: 0.5rem 0 0;
+  margin-left: 1rem;
   padding: 0;
   background: none;
   border: 3px solid ${(props) => props.theme.colors.main};
@@ -37,10 +37,8 @@ const Wrapper = styled.button`
   }
 
   ${(props) => props.theme.mq.small} {
-    align-self: flex-end;
     width: 2.5rem;
     height: 2.5rem;
-    margin: 0;
   }
 
   svg {

@@ -6,10 +6,6 @@ const Wrapper = styled.div`
   font-size: 0.75rem;
   background-color: #fff;
 
-  ${(props) => props.theme.mq.small} {
-    font-size: 0.45rem;
-  }
-
   &:before {
     content: '';
     display: block;

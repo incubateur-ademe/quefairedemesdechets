@@ -30,11 +30,15 @@ const Wrapper = styled.h1`
   margin: ${(props) => (props.small ? '0' : '4rem')} 0
     ${(props) => (props.small ? '0' : '3rem')};
   font-size: ${(props) => (props.small ? 1.5 : 2.5)}rem;
-  transition: all 300ms ease-out;
+  transition: transform 200ms ease-out 50ms, left 200ms ease-out,
+    margin 200ms ease-out, font-size 200ms ease-out;
 
   ${(props) => props.theme.mq.small} {
-    margin-bottom: ${(props) => (props.small ? '0' : '3rem')};
-    font-size: ${(props) => (props.small ? '0.5rem' : '6.5vw')};
+    left: 50%;
+    transform: translateX(-50%);
+    margin: ${(props) => (props.small ? '1rem' : '4rem')} 0
+      ${(props) => (props.small ? '0' : '3rem')};
+    font-size: 6vw;
   }
 `
 const Color = styled.span`
@@ -44,8 +48,6 @@ export default function Title() {
   let location = useLocation()
 
   const { isFetching } = useWaste()
-  const waste = useWaste()
-  console.log(waste)
   const { binFlight, setBinFlight } = useContext(UXContext)
 
   return (

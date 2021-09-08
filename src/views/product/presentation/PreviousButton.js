@@ -12,6 +12,10 @@ const Wrapper = styled(MagicLink)`
   path {
     fill: ${(props) => props.theme.colors.main};
   }
+
+  ${(props) => props.theme.mq.small} {
+    display: none;
+  }
 `
 export default function PreviousButton() {
   return (
