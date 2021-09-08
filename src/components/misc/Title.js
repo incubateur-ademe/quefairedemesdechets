@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom'
 
 import { useWaste } from 'utils/api'
 import UXContext from 'utils/UXContext'
-import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.h2`
   position: relative;
