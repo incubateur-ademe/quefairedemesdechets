@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   margin-top: 4rem;
 
   ${(props) => props.theme.mq.small} {
-    margin-top: 1rem;
+    margin-top: 2.5rem;
   }
 `
 const Content = styled.div`
