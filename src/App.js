@@ -34,16 +34,18 @@ function App() {
                       <Iframe>Iframe</Iframe>
                     </Route>
                     <Route>
-                      <Web>
-                        <Switch>
-                          <Route path='/dechet/:name'>
+                      <Switch>
+                        <Route path='/dechet/:name'>
+                          <Web>
                             <Product />
-                          </Route>
-                          <Route path='/'>
+                          </Web>
+                        </Route>
+                        <Route path='/'>
+                          <Web>
                             <SuggestionsWrapper />
-                          </Route>
-                        </Switch>
-                      </Web>
+                          </Web>
+                        </Route>
+                      </Switch>
                     </Route>
                   </Switch>
                   <CO2EModal />

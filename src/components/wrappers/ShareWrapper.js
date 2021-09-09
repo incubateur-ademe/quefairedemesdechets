@@ -4,14 +4,15 @@ import useProduct from 'hooks/useProduct'
 import Share from 'components/layout/Share'
 
 export default function ShareWrapper(props) {
-  let { product } = useProduct()
+  const { product } = useProduct()
+
   return (
     <Share
       small={props.small}
       messages={{
         mail: {
           simulator: {
-            subject: `Découvrez & intégrez le simulateur de l'ADEME Que faire de mes déchets !`,
+            subject: `Découvrez & intégrez le simulateur de l'ADEME Que Faire de mes Déchets !`,
             body: `Bonjour,
             
 Vous souhaitez aider votre communauté ou collaborateurs à savoir plus facilement où jeter leurs déchets, et comment les limiter ?
@@ -21,10 +22,12 @@ Le site Que Faire de mes Déchets permet de savoir quoi faire de vos déchets, d
 Découvrez le ici : `,
           },
           result: {
-            subject: `Que faire de mes déchets - ${product && product['Nom']}`,
-            body: `Je viens de découvrir comment jeter ${
+            subject: `Découvre cette fiche résultat sur le site de l'ADEME Que Faire de mes Déchets - ${
               product && product['Nom']
-            }, ce qu'il va devenir mais aussi comment l'éviter. Je pense que cela pourra aussi t'intéresser, n'hésite pas à voir tous les détails sur ce site de l'ADEME.`,
+            }`,
+            body: `Bonjour,
+
+Voici un résultat de recherche sur le site Que Faire de mes Déchets que je voulais partager avec toi : `,
           },
         },
         facebook: {
@@ -33,7 +36,9 @@ Découvrez le ici : `,
               'Vous voulez être sûr de bien respecter les consignes de tri pour vos emballages ? Vous vous demandez où apporter vos appareils électriques ? Grâce au simulateur Datagir, retrouvez toutes les réponses à ces questions !',
           },
           result: {
-            quote: `${product && product['Nom']} - Que faire de mes déchets`,
+            quote: `${
+              product && product['Nom']
+            } - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
           },
         },
         twitter: {
@@ -42,7 +47,9 @@ Découvrez le ici : `,
               'Vous voulez être sûr de bien respecter les consignes de tri pour vos emballages ? Vous vous demandez où apporter vos appareils électriques ? Grâce au simulateur Datagir, retrouvez toutes les réponses à ces questions !',
           },
           result: {
-            title: `${product && product['Nom']} - Que Faire de mes déchets`,
+            title: `${
+              product && product['Nom']
+            } - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
           },
         },
         linkedin: {
@@ -55,9 +62,11 @@ Découvrez le ici : `,
           },
           result: {
             source: `Que faire de mes Déchets`,
-            title: `${product && product['Nom']}`,
+            title: `${
+              product && product['Nom']
+            } - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
             summary:
-              'Vous voulez vérifier si vous respectez bien les consignes de tri pour vos emballages, pots de peinture ou médicaments ? Vous vous demandez où apporter vos appareils électriques, votre ordinateur ou vos vêtements ? Toutes les réponses sont ici',
+              'Des questions sur un autre déchet ? Toutes les réponses sont dans Que Faire de mes Déchets !',
           },
         },
         whatsapp: {
@@ -65,7 +74,9 @@ Découvrez le ici : `,
             title: 'Que Faire de mes Déchets',
           },
           result: {
-            title: `${product && product['Nom']} - Que faire de mes déchets`,
+            title: `${
+              product && product['Nom']
+            } - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
           },
         },
       }}

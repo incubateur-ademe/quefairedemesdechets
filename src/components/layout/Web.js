@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useParams } from 'react-router-dom'
 
 import useWindowSize from 'hooks/useWindowSize'
 
@@ -40,7 +41,8 @@ const FullScreen = styled.div`
 `
 export default function Web(props) {
   const { height } = useWindowSize()
-
+  let { name } = useParams()
+  console.log(name)
   return (
     <Wrapper>
       <ThemeToggle />
