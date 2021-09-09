@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useParams } from 'react-router-dom'
 
 import useProduct from 'hooks/useProduct'
 import Suggestions from 'components/misc/Suggestions'
@@ -17,8 +16,6 @@ const Wrapper = styled.div`
 
 export default function Product() {
   const { product, notFound } = useProduct()
-
-  let { name } = useParams()
 
   return (
     <>
