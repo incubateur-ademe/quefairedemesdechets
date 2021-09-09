@@ -45,7 +45,7 @@ export default function Share(props) {
       }`
     )
   }, [location.search, location.pathname, typeShare])
-  console.log(location)
+
   return (
     <Panel
       small={props.small}

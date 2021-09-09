@@ -19,7 +19,7 @@ export default function Product() {
   const { product, notFound } = useProduct()
 
   let { name } = useParams()
-  console.log(name)
+
   return (
     <>
       <Wrapper visible={product}>
