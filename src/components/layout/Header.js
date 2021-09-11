@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import MagicLink from 'components/base/MagicLink'
+import Marianne from 'components/base/Marianne'
 
 const Wrapper = styled.div`
   position: relative;

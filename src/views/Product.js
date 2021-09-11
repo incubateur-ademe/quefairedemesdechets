@@ -1,6 +1,5 @@
 import React from 'react'
 
-import Suggestions from 'components/misc/Suggestions'
 import Presentation from './product/Presentation'
 import Details from './product/Details'
 import DetailsMobile from './product/DetailsMobile'
