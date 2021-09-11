@@ -26,6 +26,23 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
+        <form name='contact' netlify netlify-honeypot='bot-field' hidden>
+          <input type='text' name='nom' />
+          <input type='email' name='email' />
+          <input type='text' name='objet' />
+          <textarea name='message'></textarea>
+        </form>
+        <form name='bug' netlify netlify-honeypot='bot-field' hidden>
+          <input type='text' name='nom' />
+          <input type='email' name='email' />
+          <input type='text' name='objet' />
+          <textarea name='message'></textarea>
+        </form>
+        <script
+          src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.contentWindow.js'
+          integrity='sha512-5+HBQlT1izP2UxL213/uqaO9tIpPso52TedvIsOevDs6w/HNt0/KNlkYLgi8Ona7lPCBjMEWybiR/qqs2MgyEg=='
+          crossorigin='anonymous'
+        ></script>
       </body>
     </html>
   )

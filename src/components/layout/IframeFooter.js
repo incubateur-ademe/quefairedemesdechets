@@ -46,7 +46,7 @@ export default function Footer() {
       <Content>
         <MobileButtons iframe />
         <ButtonWrapper>
-          <Button to={process.env.REACT_APP_URL}>
+          <Button to={process.env.GATSBY_URL}>
             En savoir plus sur ce simulateur
           </Button>
         </ButtonWrapper>

@@ -47,7 +47,7 @@ export default function MapWrapper(props) {
           interactionState.isDragging && setCurrentMarker(null)
         }
         onNativeClick={() => setCurrentMarker(null)}
-        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_API_TOKEN}
+        mapboxApiAccessToken={process.env.GATSBY_MAPBOX_API_TOKEN}
       >
         <Markers
           product={props.product}

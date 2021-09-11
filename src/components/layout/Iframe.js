@@ -18,7 +18,7 @@ export default function Iframe(props) {
   return (
     <Wrapper>
       <Content>{props.children}</Content>
-      <IframeFooter about={process.env.REACT_APP_URL} />
+      <IframeFooter about={process.env.GATSBY_URL} />
     </Wrapper>
   )
 }

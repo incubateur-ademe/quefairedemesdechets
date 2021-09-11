@@ -15,11 +15,13 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
             if (result['Synonymes_existants']) {
               const synonyms = result['Synonymes_existants'].split(' / ')
               for (let i = 0; i < synonyms.length; i++) {
-                tempWaste.push({
-                  ...result,
-                  Nom: synonyms[i],
-                  parent: result['Nom'],
-                })
+                if (!tempWaste.find((waste) => waste['Nom'] === synonyms[i])) {
+                  tempWaste.push({
+                    ...result,
+                    Nom: synonyms[i],
+                    parent: result['Nom'],
+                  })
+                }
               }
             }
           }

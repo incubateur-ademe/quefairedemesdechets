@@ -125,7 +125,7 @@ const Wrapper = styled.div`
   cursor: pointer;
   transform: translateY(${(props) => (props.visible ? '50%' : '100%')});
   transition: transform 400ms ease-out
-    ${(props) => (props.visible ? '2500ms' : '0ms')};
+    ${(props) => (props.visible ? '1000ms' : '0ms')};
   animation: ${(props) =>
       props.flight
         ? props.position === 'left'

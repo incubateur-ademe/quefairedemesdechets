@@ -6,7 +6,7 @@ const domain = script.dataset.domain
 const search = script.dataset.search
 const source = window.location.href.toString()
 
-const src = `${domain || 'domain'}/embed/${search}${
+const src = `${domain || 'https://quefairedemesdechets.fr'}/${search}${
   search && search.includes('?') ? '&' : '?'
 }source=${source}`
 

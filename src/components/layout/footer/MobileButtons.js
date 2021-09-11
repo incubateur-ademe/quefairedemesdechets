@@ -146,9 +146,7 @@ export default function MobileButtons(props) {
           <Label>Contact</Label>
         </Button>
         {props.iframe && (
-          <StyledLink
-            to={process.env.REACT_APP_URL || 'https://datagir.ademe.fr'}
-          >
+          <StyledLink to={process.env.GATSBY_URL || 'https://datagir.ademe.fr'}>
             <Icon>
               <Eye x='0px' y='0px' viewBox='0 0 469.333 469.333'>
                 <path d='M234.667,170.667c-35.307,0-64,28.693-64,64s28.693,64,64,64s64-28.693,64-64S269.973,170.667,234.667,170.667z' />

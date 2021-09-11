@@ -18,15 +18,17 @@ export function useWaste() {
             if (result['Synonymes_existants']) {
               const synonyms = result['Synonymes_existants'].split(' / ')
               for (let i = 0; i < synonyms.length; i++) {
-                tempWaste.push({
-                  ...result,
-                  Nom: synonyms[i],
-                  parent: result['Nom'],
-                  ID: result['ID'] + '_' + i,
-                })
+                if (!tempWaste.find((waste) => waste['Nom'] === synonyms[i])) {
+                  tempWaste.push({
+                    ...result,
+                    Nom: synonyms[i],
+                    parent: result['Nom'],
+                  })
+                }
               }
             }
           }
+          console.log('length', tempWaste.length)
           return tempWaste.map((waste) => ({
             ...waste,
             searchable: waste['Nom']
@@ -104,7 +106,7 @@ export function usePharmacies(viewport, enabled) {
     () =>
       axios
         .get(
-          `https://api.mapbox.com/geocoding/v5/mapbox.places/pharmacie.json?proximity=${viewport.longitude},${viewport.latitude}&language=fr&access_token=${process.env.REACT_APP_MAPBOX_API_TOKEN}&limit=10`
+          `https://api.mapbox.com/geocoding/v5/mapbox.places/pharmacie.json?proximity=${viewport.longitude},${viewport.latitude}&language=fr&access_token=${process.env.GATSBY_MAPBOX_API_TOKEN}&limit=10`
         )
         .then((res) => res.data.features),
     {

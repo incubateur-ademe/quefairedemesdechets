@@ -32,8 +32,8 @@ export const themes = {
       text: '#ffffff',
     },
     fonts: {
-      body: '"Poppins", sans-serif',
-      title: '"Poppins", sans-serif',
+      body: '"Marianne", sans-serif',
+      title: '"Marianne", sans-serif',
     },
     mq: {
       small: `@media screen and (max-width: ${46}em)`,

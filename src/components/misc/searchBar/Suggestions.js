@@ -59,7 +59,7 @@ export default function Suggestions(props) {
           index < 10 && (
             <Suggestion
               current={index === props.current}
-              key={product.item['ID']}
+              key={product.item['Nom']}
               onClick={() => props.handleSuggestionClick(product)}
               onMouseDown={(e) => e.preventDefault()}
             >

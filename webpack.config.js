@@ -4,6 +4,6 @@ module.exports = {
   entry: './iframe/index.js',
   output: {
     filename: 'iframe.js',
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname, 'static'),
   },
 }
