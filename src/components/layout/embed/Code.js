@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
-import { useLocation } from 'react-router-dom'
+import { useLocation } from '@reach/router'
 import copy from 'copy-to-clipboard'
 
 import StyleContext from 'utils/StyleContext'

@@ -10,45 +10,36 @@ export function useWaste() {
       axios
         .get(`/data/waste.json`)
         .then((res) => res.data.results)
-        .then((wasteRes) =>
-          axios
-            .get('/data/links.json')
-            .then((res) => res.data.results)
-            .then((linkRes) => {
-              let tempWaste = [...wasteRes]
 
-              for (let result of wasteRes) {
-                if (result['Synonymes_existants']) {
-                  const synonyms = result['Synonymes_existants'].split(' / ')
-                  for (let i = 0; i < synonyms.length; i++) {
-                    tempWaste.push({
-                      ...result,
-                      Nom: synonyms[i],
-                      parent: result['Nom'],
-                      ID: result['ID'] + '_' + i,
-                    })
-                  }
-                }
+        .then((res) => {
+          let tempWaste = [...res]
+
+          for (let result of res) {
+            if (result['Synonymes_existants']) {
+              const synonyms = result['Synonymes_existants'].split(' / ')
+              for (let i = 0; i < synonyms.length; i++) {
+                tempWaste.push({
+                  ...result,
+                  Nom: synonyms[i],
+                  parent: result['Nom'],
+                  ID: result['ID'] + '_' + i,
+                })
               }
-              return tempWaste
-                .map((waste) => ({
-                  ...waste,
-                  searchable: waste['Nom']
-                    .normalize('NFD')
-                    .replace(/[\u0300-\u036f]/g, ''),
-                }))
-                .map((waste) => ({
-                  ...waste,
-                  slug: waste[`searchable`].replaceAll(' ', '-').toLowerCase(),
-                }))
-                .map((product) => ({
-                  ...product,
-                  linkRes: linkRes.filter((link) =>
-                    link['Produits_associÃ©s'].includes(product['Nom'])
-                  ),
-                }))
-            })
-        ),
+            }
+          }
+          return tempWaste.map((waste) => ({
+            ...waste,
+            searchable: waste['Nom']
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, ''),
+            slug: waste[`Nom`]
+              .toLowerCase()
+              .replaceAll(' ', '-')
+              .replaceAll(`'`, '-')
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, ''),
+          }))
+        }),
     {
       keepPreviousData: true,
       refetchOnWindowFocus: false,

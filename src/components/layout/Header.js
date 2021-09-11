@@ -6,11 +6,19 @@ import MagicLink from 'components/base/MagicLink'
 import Marianne from 'components/base/Marianne'
 import Logo from 'components/base/Logo'
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 1.25rem;
+  margin-bottom: 3rem;
+`
 const Logos = styled(MagicLink)`
   display: flex;
   align-items: center;
-  margin-left: -0.75rem;
+  margin: 0 -0.75rem 1.25rem;
   padding-right: 0.75rem;
   background-color: #fff;
 

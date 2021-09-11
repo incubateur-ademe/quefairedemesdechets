@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useHistory } from 'react-router-dom'
+import { navigate } from 'gatsby'
 
 const Wrapper = styled.button`
   position: absolute;
@@ -55,14 +55,12 @@ const Arrow = styled.svg`
   }
 `
 export default function BackButton(props) {
-  let history = useHistory()
-
   return (
     <Wrapper
       type='button'
       disabled={!props.small || props.focus}
       onClick={() => {
-        history.push(`/`)
+        navigate(`/`)
       }}
     >
       <Glass

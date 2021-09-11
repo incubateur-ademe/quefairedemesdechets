@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { useLocation } from 'react-router-dom'
 
 import { useWaste } from 'utils/api'
 import UXContext from 'utils/UXContext'
@@ -8,36 +7,22 @@ import UXContext from 'utils/UXContext'
 const Wrapper = styled.h2`
   position: relative;
   z-index: 101;
-  left: ${(props) => (props.small ? 100 : 50)}%;
-  transform: translate(
-    ${(props) => (props.small ? '-100%' : '-50%')},
-    ${(props) => (props.small ? '-3.5rem' : 0)}
-  );
-  margin: ${(props) => (props.small ? '0' : '4rem')} 0
-    ${(props) => (props.small ? '0' : '3rem')};
   font-size: ${(props) => (props.small ? 1.5 : 2.5)}rem;
-  transition: transform 200ms ease-out 50ms, left 200ms ease-out,
-    margin 200ms ease-out, font-size 200ms ease-out;
+  text-align: center;
 
   ${(props) => props.theme.mq.small} {
-    left: 50%;
-    transform: translateX(-50%);
-    margin: ${(props) => (props.small ? '1.25rem' : '4rem')} 0
-      ${(props) => (props.small ? '0' : '3rem')};
     font-size: 1.5rem;
   }
 `
 const Color = styled.span`
   color: ${(props) => props.theme.colors.main};
 `
-export default function Title() {
-  let location = useLocation()
-
+export default function Title(props) {
   const { isFetching } = useWaste()
   const { binFlight, setBinFlight } = useContext(UXContext)
 
   return (
-    <Wrapper small={location.pathname !== '/'}>
+    <Wrapper small={props.small}>
       Que Faire de mes{' '}
       <Color
         onClick={() => {

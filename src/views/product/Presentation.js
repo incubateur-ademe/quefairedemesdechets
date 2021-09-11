@@ -13,17 +13,7 @@ const Header = styled.div`
 
   ${(props) => props.theme.mq.small} {
     align-items: flex-start;
-    padding-top: 1.5rem;
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: -1rem;
-      left: -1rem;
-      right: -1rem;
-      height: 0.125rem;
-      background-color: ${(props) => props.theme.colors.text};
-    }
+    // padding-top: 1.5rem;
   }
 `
 const Title = styled.h1`

@@ -1,10 +1,9 @@
 import React from 'react'
 
-import useProduct from 'hooks/useProduct'
 import Share from 'components/layout/Share'
 
 export default function ShareWrapper(props) {
-  const { product } = useProduct()
+  const product = null
 
   return (
     <Share

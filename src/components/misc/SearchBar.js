@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext, useRef } from 'react'
 import styled from 'styled-components'
-import { useHistory } from 'react-router-dom'
-import Fuse from '../../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
+import { navigate } from 'gatsby'
+import Fuse from '../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
 
 import { useWaste } from 'utils/api'
 import SearchContext from 'utils/SearchContext'
@@ -33,8 +33,6 @@ const Wrapper = styled.form`
 `
 
 export default function SearchBar(props) {
-  let history = useHistory()
-
   const { data, isFetched } = useWaste()
   const { search, setSearch } = useContext(SearchContext)
 
@@ -75,7 +73,7 @@ export default function SearchBar(props) {
 
   const navigateToProduct = (product) => {
     console.log(product)
-    history.push(`/dechet/${product.item[`slug`]}`)
+    navigate(`/dechet/${product.item[`slug`]}`)
     setSearch(product.item[`Nom`])
     setFocus(false)
   }

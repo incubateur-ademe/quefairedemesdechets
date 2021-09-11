@@ -6,13 +6,6 @@ import SearchContext from 'utils/SearchContext'
 import Suggestions from 'components/misc/Suggestions'
 
 const Wrapper = styled.div`
-  margin-top: 4rem;
-
-  ${(props) => props.theme.mq.small} {
-    margin-top: 2.5rem;
-  }
-`
-const Content = styled.div`
   padding-bottom: 1rem;
   opacity: ${(props) => (props.isFetched ? 1 : 0)};
   transition: opacity 1500ms 1500ms;
@@ -30,12 +23,10 @@ export default function SuggestionsWrapper() {
   }, [setSearch])
 
   return (
-    <Wrapper>
-      <Content isFetched={isFetched}>
-        <Suggestions>
-          En panne d’inspiration ? Essayez une des suggestions ci‑dessous.
-        </Suggestions>
-      </Content>
+    <Wrapper isFetched={isFetched}>
+      <Suggestions>
+        En panne d’inspiration ? Essayez une des suggestions ci‑dessous.
+      </Suggestions>
     </Wrapper>
   )
 }

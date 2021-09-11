@@ -70,7 +70,9 @@ export default function Geoloc(props) {
 
   const [error, setError] = useState(false)
 
-  return 'geolocation' in navigator ? (
+  return typeof window != 'undefined' &&
+    window.document &&
+    'geolocation' in navigator ? (
     <>
       <Wrapper
         visible={props.visible && !error && !isError}

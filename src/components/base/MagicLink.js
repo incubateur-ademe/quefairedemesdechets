@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'gatsby'
+import { useLocation } from '@reach/router'
 
 export default function MagicLink(props) {
   const { search } = useLocation()

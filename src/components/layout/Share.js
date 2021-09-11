@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import styled from 'styled-components'
-import { useLocation } from 'react-router-dom'
+import { useLocation } from '@reach/router'
 
 import UXContext from 'utils/UXContext'
 import Select from 'components/base/FancySelect'
@@ -37,7 +37,7 @@ export default function Share(props) {
     useContext(UXContext)
 
   let location = useLocation()
-  const [url, setUrl] = useState(`${window.location.origin}/${location.search}`)
+  const [url, setUrl] = useState()
   useEffect(() => {
     setUrl(
       `${window.location.origin}/${

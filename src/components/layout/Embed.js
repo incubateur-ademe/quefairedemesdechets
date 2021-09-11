@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 
-import StyleContext from 'utils/StyleContext'
 import UXContext from 'utils/UXContext'
 import Panel from 'components/base/Panel'
 import Themes from './embed/Themes'
@@ -9,7 +8,6 @@ import ContactPrompt from 'components/base/ContactPrompt'
 import Select from 'components/base/FancySelect'
 
 export default function Embed(props) {
-  const { themes, theme, setTheme } = useContext(StyleContext)
   const { embedOpen, setEmbedOpen, typeShare, setTypeShare } =
     useContext(UXContext)
 
@@ -42,7 +40,7 @@ export default function Embed(props) {
         </>
       )}
       <h3>Choisissez un thème</h3>
-      <Themes themes={themes} theme={theme} setTheme={setTheme} />
+      <Themes />
       <ContactPrompt configurator />
     </Panel>
   )

@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import Switch from 'react-switch'
 
+import { themes } from 'utils/styles'
 import StyleContext from 'utils/StyleContext'
 
 const Wrapper = styled.div`
@@ -29,7 +30,7 @@ const Svg = styled.svg`
   height: auto;
 `
 export default function Visible(props) {
-  const { themes, theme, setTheme } = useContext(StyleContext)
+  const { theme, setTheme } = useContext(StyleContext)
 
   return (
     <Wrapper mobile={props.mobile}>
