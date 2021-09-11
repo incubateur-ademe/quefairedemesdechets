@@ -12,9 +12,12 @@ module.exports = {
     `gatsby-plugin-root-import`,
     `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
-        fonts: [`limelight`, `poppins\:500,800`],
+        custom: {
+          families: ['Marianne:n3,n5,n7,n8'],
+          urls: ['/fonts/fonts.css'],
+        },
       },
     },
     {
@@ -34,19 +37,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#e42313`,
         display: `minimal-ui`,
-        icons: [
-          {
-            src: 'icons/android-chrome-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
-            purpose: 'any maskable',
-          },
-          {
-            src: 'icons/android-chrome-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-          },
-        ],
+        icon: 'src/images/favicon.png',
       },
     },
     'gatsby-plugin-offline',

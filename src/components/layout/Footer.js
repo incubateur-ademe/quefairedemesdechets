@@ -2,12 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 import ademe from './footer/ademe.jpg'
-import repufrancaise from './footer/repufrancaise.jpg'
 
 import MagicLink from 'components/base/MagicLink'
 import ThemeToggle from 'components/base/ThemeToggle'
 import ContactPrompt from 'components/base/ContactPrompt'
 import Button from 'components/base/Button'
+import Marianne from 'components/base/Marianne'
 import Logo from 'components/base/Logo'
 import MobileButtons from './footer/MobileButtons'
 
@@ -46,11 +46,12 @@ const Logos = styled(MagicLink)`
   align-items: center;
   width: 100%;
   text-decoration: none;
-  background-color: white;
+  background-color: #fff;
 `
-const Institution = styled.img`
+const Ademe = styled.img`
   display: block;
-  height: 5.625em;
+  width: 4.9375rem;
+  height: auto;
 `
 const StyledButton = styled(Button)`
   align-self: center;
@@ -103,8 +104,8 @@ export default function Footer(props) {
       </Content>
       <LogosWrapper>
         <Logos to='https://datagir.ademe.fr/'>
-          <Institution src={repufrancaise} alt='République Française' />
-          <Institution src={ademe} alt='ADEME' />
+          <Marianne />
+          <Ademe src={ademe} alt='ADEME' />
           <Logo />
         </Logos>
       </LogosWrapper>

@@ -12,8 +12,8 @@ const Wrapper = styled.form`
   position: absolute;
   z-index: 100;
   top: 100%;
-  left: 0.5rem;
-  right: 0.5rem;
+  left: 0;
+  right: 0;
   background-color: ${(props) => props.theme.colors.background};
   ${(props) => props.theme.shadow};
   border: 0.25em solid ${(props) => props.theme.colors.main};

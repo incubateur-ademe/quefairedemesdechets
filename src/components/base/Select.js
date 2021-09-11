@@ -7,7 +7,7 @@ const Wrapper = styled.div`
 const Label = styled.label`
   display: block;
   margin-bottom: 0.5rem;
-  font-weight: 700;
+  font-weight: bold;
 `
 const Input = styled.select`
   width: 100%;

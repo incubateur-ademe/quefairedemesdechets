@@ -9,7 +9,6 @@ const Wrapper = styled(MagicLink)`
   align-items: center;
   padding: 0.8em 1.6em;
   font-size: ${(props) => (props.small ? '0.875em' : '1em')};
-  font-weight: 400;
   text-align: center;
   text-decoration: none;
   color: ${(props) =>

@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
-import { useQueryParam, StringParam, withDefault } from 'use-query-params'
 
 import { themes } from 'utils/styles'
 import StyleContext from 'utils/StyleContext'

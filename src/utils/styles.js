@@ -11,8 +11,8 @@ export const themes = {
       text: '#32337B',
     },
     fonts: {
-      body: '"Poppins", sans-serif',
-      title: '"Poppins", sans-serif',
+      body: '"Marianne", sans-serif',
+      title: '"Marianne", sans-serif',
     },
     mq: {
       small: `@media screen and (max-width: ${46}em)`,
@@ -53,7 +53,6 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-family: ${(props) => props.theme.fonts.body};
-    font-weight: 500;
     line-height: 1.4;
     text-rendering: geometricPrecision;
   }
@@ -77,7 +76,7 @@ export const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     font-family: ${(props) => props.theme.fonts.title};
-    font-weight: 800;
+    font-weight: bold;
     line-height: 1.2;
   }
 
