@@ -3,7 +3,7 @@ module.exports = {
     title: `Que Faire de mes Déchets`,
     author: `Datagir`,
     description: `Découvrez les solutions pour tous vos déchets et nos conseils pour en produire moins.`,
-    url: `https://quefairedemesdechets.fr`,
+    siteUrl: `https://quefairedemesdechets.fr`,
     image: 'metaimage.png',
     twitterUsername: '_datagir',
   },
