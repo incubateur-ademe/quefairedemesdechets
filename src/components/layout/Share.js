@@ -45,7 +45,7 @@ export default function Share(props) {
       }`
     )
   }, [location.search, location.pathname, typeShare])
-
+  console.log(url)
   return (
     <Panel
       small={props.small}
@@ -62,7 +62,11 @@ export default function Share(props) {
           onChange={setTypeShare}
           options={[
             { value: 'simulator', label: `ce simulateur` },
-            { value: 'result', label: `cette fiche` },
+            {
+              value: 'result',
+              label: `cette fiche`,
+              disabled: !props.result,
+            },
           ]}
         />
       </h2>

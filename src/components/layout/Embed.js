@@ -28,7 +28,7 @@ export default function Embed(props) {
           onChange={setTypeShare}
           options={[
             { value: 'simulator', label: `ce simulateur` },
-            { value: 'result', label: `cette fiche` },
+            { value: 'result', label: `cette fiche`, disabled: !props.result },
           ]}
         />
       </h2>

@@ -65,8 +65,8 @@ export default function Web(props) {
                 </FullScreen>
                 <FooterWrapper />
               </Content>
-              <EmbedWrapper />
-              <ShareWrapper />
+              <EmbedWrapper result={props.result} />
+              <ShareWrapper result={props.result} />
               <ContactWrapper />
               <InstallButton />
               <CO2EModal />

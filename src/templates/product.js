@@ -5,7 +5,10 @@ import Product from 'views/Product'
 
 export default function product(props) {
   return (
-    <Web title={props.pageContext.product.Nom}>
+    <Web
+      title={props.pageContext.product.Nom}
+      result={props.pageContext.product['Nom']}
+    >
       <Product product={props.pageContext.product} />
     </Web>
   )

@@ -3,11 +3,10 @@ import React from 'react'
 import Share from 'components/layout/Share'
 
 export default function ShareWrapper(props) {
-  const product = null
-
   return (
     <Share
       small={props.small}
+      result={props.result}
       messages={{
         mail: {
           simulator: {
@@ -21,9 +20,7 @@ Le site Que Faire de mes Déchets permet de savoir quoi faire de vos déchets, d
 Découvrez le ici : `,
           },
           result: {
-            subject: `Découvre cette fiche résultat sur le site de l'ADEME Que Faire de mes Déchets - ${
-              product && product['Nom']
-            }`,
+            subject: `Découvre cette fiche résultat sur le site de l'ADEME Que Faire de mes Déchets - ${props.result}`,
             body: `Bonjour,
 
 Voici un résultat de recherche sur le site Que Faire de mes Déchets que je voulais partager avec toi : `,
@@ -35,9 +32,7 @@ Voici un résultat de recherche sur le site Que Faire de mes Déchets que je vou
               'Vous voulez être sûr de bien respecter les consignes de tri pour vos emballages ? Vous vous demandez où apporter vos appareils électriques ? Grâce au simulateur Datagir, retrouvez toutes les réponses à ces questions !',
           },
           result: {
-            quote: `${
-              product && product['Nom']
-            } - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
+            quote: `${props.result} - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
           },
         },
         twitter: {
@@ -46,9 +41,7 @@ Voici un résultat de recherche sur le site Que Faire de mes Déchets que je vou
               'Vous voulez être sûr de bien respecter les consignes de tri pour vos emballages ? Vous vous demandez où apporter vos appareils électriques ? Grâce au simulateur Datagir, retrouvez toutes les réponses à ces questions !',
           },
           result: {
-            title: `${
-              product && product['Nom']
-            } - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
+            title: `${props.result} - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
           },
         },
         linkedin: {
@@ -61,9 +54,7 @@ Voici un résultat de recherche sur le site Que Faire de mes Déchets que je vou
           },
           result: {
             source: `Que faire de mes Déchets`,
-            title: `${
-              product && product['Nom']
-            } - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
+            title: `${props.result} - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
             summary:
               'Des questions sur un autre déchet ? Toutes les réponses sont dans Que Faire de mes Déchets !',
           },
@@ -73,9 +64,7 @@ Voici un résultat de recherche sur le site Que Faire de mes Déchets que je vou
             title: 'Que Faire de mes Déchets',
           },
           result: {
-            title: `${
-              product && product['Nom']
-            } - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
+            title: `${props.result} - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
           },
         },
       }}
