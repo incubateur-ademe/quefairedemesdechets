@@ -3,9 +3,9 @@ import React from 'react'
 import MagicLink from 'components/base/MagicLink'
 import Footer from 'components/layout/Footer'
 
-export default function FooterWrapper() {
+export default function FooterWrapper(props) {
   return (
-    <Footer>
+    <Footer iframe={props.iframe}>
       <h2
         dangerouslySetInnerHTML={{
           __html: `D'ou viennent ces données&#8239;?`,

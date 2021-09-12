@@ -25,16 +25,17 @@ const Content = styled.div`
 const Section = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 2rem;
 
+  p {
+    width: 100%;
+  }
   h2,
   h3 {
+    width: 100%;
     font-size: 1.75rem;
   }
-`
-const CenterSection = styled(Section)`
-  align-items: center;
 `
 const LogosWrapper = styled.div`
   display: flex;
@@ -53,9 +54,6 @@ const Ademe = styled.img`
   width: 4.9375rem;
   height: auto;
 `
-const StyledButton = styled(Button)`
-  align-self: center;
-`
 export default function Footer(props) {
   return (
     <Wrapper
@@ -64,43 +62,55 @@ export default function Footer(props) {
       id='about'
     >
       <Content>
-        <MobileButtons />
-        <CenterSection>
+        <MobileButtons iframe={props.iframe} />
+        <Section>
+          {props.iframe && (
+            <Button to={process.env.GATSBY_URL}>
+              En savoir plus sur ce simulateur
+            </Button>
+          )}
+        </Section>
+        <Section>
           <ThemeToggle mobile />
-        </CenterSection>
-        <Section>{props.children}</Section>
-        <Section>
-          <ContactPrompt />
         </Section>
-        <Section>
-          <h2>Qui sommes-nous ?</h2>
-          <p>
-            <MagicLink to='https://datagir.ademe.fr/'>
-              <strong>Datagir</strong>
-            </MagicLink>{' '}
-            est un <strong>service public gratuit</strong>, porté par l’
-            <MagicLink to='https://www.ademe.fr/'>ADEME</MagicLink> et
-            l’incubateur de la DINUM{' '}
-            <MagicLink to='https://beta.gouv.fr/'>beta.gouv.fr</MagicLink>.
-          </p>
-          <p>
-            Notre mission est de{' '}
-            <strong>
-              diffuser les informations et données environnementales en
-              open-data de l’ADEME
-            </strong>{' '}
-            pour encourager l’amélioration continue et l’innovation. Pour cela,{' '}
-            <strong>
-              nous accompagnons toutes les applications & services dans leur
-              démarche responsable
-            </strong>{' '}
-            par l'appropriation et l’intégration de ces données afin d’apporter
-            l’information au plus près des citoyens.
-          </p>
-          <StyledButton to='https://datagir.ademe.fr/#applications'>
-            Voir tous nos simulateurs
-          </StyledButton>
-        </Section>
+        {!props.iframe && (
+          <>
+            <Section>{props.children}</Section>
+            <Section>
+              <ContactPrompt />
+            </Section>
+            <Section>
+              <h2>Qui sommes-nous ?</h2>
+              <p>
+                <MagicLink to='https://datagir.ademe.fr/'>
+                  <strong>Datagir</strong>
+                </MagicLink>{' '}
+                est un <strong>service public gratuit</strong>, porté par l’
+                <MagicLink to='https://www.ademe.fr/'>ADEME</MagicLink> et
+                l’incubateur de la DINUM{' '}
+                <MagicLink to='https://beta.gouv.fr/'>beta.gouv.fr</MagicLink>.
+              </p>
+              <p>
+                Notre mission est de{' '}
+                <strong>
+                  diffuser les informations et données environnementales en
+                  open-data de l’ADEME
+                </strong>{' '}
+                pour encourager l’amélioration continue et l’innovation. Pour
+                cela,{' '}
+                <strong>
+                  nous accompagnons toutes les applications & services dans leur
+                  démarche responsable
+                </strong>{' '}
+                par l'appropriation et l’intégration de ces données afin
+                d’apporter l’information au plus près des citoyens.
+              </p>
+              <Button to='https://datagir.ademe.fr/#applications'>
+                Voir tous nos simulateurs
+              </Button>
+            </Section>
+          </>
+        )}
       </Content>
       <LogosWrapper>
         <Logos to='https://datagir.ademe.fr/'>

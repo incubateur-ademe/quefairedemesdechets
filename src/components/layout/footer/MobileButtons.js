@@ -75,7 +75,6 @@ const Label = styled.div`
 export default function MobileButtons(props) {
   const { setEmbedOpen, setShareOpen, setContactOpen, installPrompt } =
     useContext(UXContext)
-
   return (
     <>
       <Wrapper iframe={props.iframe}>

@@ -16,7 +16,6 @@ const Wrapper = styled.div`
     left: 0;
     right: 0;
     display: ${(props) => (props.mobile ? 'block' : 'none')};
-    margin-bottom: 2rem;
     text-align: center;
   }
 `

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
@@ -6,10 +6,6 @@ import { GlobalStyle } from 'utils/styles'
 import ModalProvider from 'components/providers/ModalProvider'
 import UXProvider from 'components/providers/UXProvider'
 import SearchProvider from 'components/providers/SearchProvider'
-import CO2EModal from 'components/modals/CO2EModal'
-import MapModal from 'components/modals/MapModal'
-import AvoidModal from 'components/modals/AvoidModal'
-import NextModal from 'components/modals/NextModal'
 import ThemeToggle from 'components/base/ThemeToggle'
 import InstallButton from 'components/base/InstallButton'
 import HeaderWrapper from 'components/wrappers/HeaderWrapper'
@@ -19,6 +15,7 @@ import EmbedWrapper from 'components/wrappers/EmbedWrapper'
 import ContactWrapper from 'components/wrappers/ContactWrapper'
 import Bin from 'components/misc/Bin'
 import Seo from './web/Seo'
+import ModalWrapper from 'components/wrappers/ModalWrapper'
 
 const queryClient = new QueryClient()
 
@@ -43,11 +40,17 @@ const FullScreen = styled.div`
   flex-direction: column;
   width: 46.5rem;
   max-width: 100%;
-  min-height: 100vh;
+  min-height: ${(props) => (props.iframe ? 'none' : '100vh')};
   margin: 0 auto;
   padding: 0 0.75rem 5rem;
 `
 export default function Web(props) {
+  const [iframe, setIframe] = useState(false)
+
+  useEffect(() => {
+    setIframe(window.location.search.includes('iframe'))
+  }, [])
+
   return (
     <Wrapper>
       <Seo title={props.title} />
@@ -58,21 +61,18 @@ export default function Web(props) {
               <GlobalStyle />
               <ThemeToggle />
               <Content>
-                <FullScreen>
+                <FullScreen iframe={iframe}>
                   <HeaderWrapper />
                   {props.children}
                   <Bin />
                 </FullScreen>
-                <FooterWrapper />
+                <FooterWrapper iframe={iframe} />
               </Content>
               <EmbedWrapper result={props.result} />
               <ShareWrapper result={props.result} />
               <ContactWrapper />
               <InstallButton />
-              <CO2EModal />
-              <MapModal />
-              <AvoidModal />
-              <NextModal />
+              <ModalWrapper />
             </ModalProvider>
           </SearchProvider>
         </UXProvider>
