@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import Tabs from './details/Tabs'
@@ -18,12 +18,8 @@ const Wrapper = styled.div`
 `
 
 export default function Product(props) {
-  const [open, setOpen] = useState(null)
-  useEffect(() => {
-    if (!open && props.product['slug']) {
-      setOpen(props.product.map ? 'map' : 'next')
-    }
-  }, [props.product, open])
+  const [open, setOpen] = useState(props.product.map ? 'map' : 'next')
+
   return (
     <Wrapper>
       <Tabs setOpen={setOpen} open={open} product={props.product} />

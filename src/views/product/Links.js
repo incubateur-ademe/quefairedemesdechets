@@ -11,6 +11,10 @@ const StyledLink = styled(MagicLink)`
   margin: 0 2rem 1.5rem;
   text-decoration: none;
 
+  &:hover span {
+    text-decoration: underline;
+  }
+
   ${(props) => props.theme.mq.small} {
     margin: 0 0 1.5rem;
   }
@@ -33,6 +37,8 @@ const Big = styled.span`
 `
 const Small = styled.span`
   font-size: 0.875rem;
+  color: ${(props) => props.theme.colors.text};
+
   ${(props) => props.theme.mq.small} {
     font-size: 0.75rem;
   }

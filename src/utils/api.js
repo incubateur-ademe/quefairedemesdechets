@@ -8,7 +8,7 @@ export function useWaste() {
     ['waste'],
     () =>
       axios
-        .get(`/data/waste.json`)
+        .get(`/data/waste-search.json`)
         .then((res) => res.data.results)
 
         .then((res) => {
@@ -28,7 +28,7 @@ export function useWaste() {
               }
             }
           }
-          console.log('length', tempWaste.length)
+
           return tempWaste.map((waste) => ({
             ...waste,
             searchable: waste['Nom']

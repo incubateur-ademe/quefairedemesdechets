@@ -26,7 +26,7 @@ export const themes = {
   night: {
     name: 'Sombre',
     colors: {
-      main: '#92F2D2',
+      main: '#F6BFC3',
       background: '#1e1e1e',
       footer: '#383838',
       text: '#ffffff',

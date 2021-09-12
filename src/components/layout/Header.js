@@ -15,8 +15,7 @@ const Wrapper = styled.div`
 const Logos = styled(MagicLink)`
   display: flex;
   align-items: center;
-  margin: 0 -0.75rem;
-  padding-right: 0.75rem;
+  margin-left: -0.75rem;
   background-color: #fff;
 `
 export default function Header(props) {

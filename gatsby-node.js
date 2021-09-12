@@ -25,26 +25,19 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
               }
             }
           }
-          return tempWaste
-            .map((waste) => ({
-              ...waste,
-              searchable: waste['Nom']
-                .normalize('NFD')
-                .replace(/[\u0300-\u036f]/g, ''),
-
-              slug: waste[`Nom`]
-                .toLowerCase()
-                .replaceAll(' ', '-')
-                .replaceAll(`'`, '-')
-                .normalize('NFD')
-                .replace(/[\u0300-\u036f]/g, ''),
-            }))
-            .map((product) => ({
-              ...product,
-              linkRes: linkRes.filter((link) =>
-                link['Produits_associÃ©s'].includes(product['Nom'])
-              ),
-            }))
+          return tempWaste.map((waste) => ({
+            ...waste,
+            slug: waste[`Nom`]
+              .toLowerCase()
+              .replaceAll(' ', '-')
+              .replaceAll(`'`, '-')
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, ''),
+            map: waste['Déchèterie'] || waste['Pharmacie'],
+            links: linkRes.filter((link) =>
+              link['Produits_associÃ©s'].includes(waste['Nom'])
+            ),
+          }))
         })
     )
     .then((res) =>

@@ -18,6 +18,7 @@ import ShareWrapper from 'components/wrappers/ShareWrapper'
 import EmbedWrapper from 'components/wrappers/EmbedWrapper'
 import ContactWrapper from 'components/wrappers/ContactWrapper'
 import Bin from 'components/misc/Bin'
+import Seo from './web/Seo'
 
 const queryClient = new QueryClient()
 
@@ -49,6 +50,7 @@ const FullScreen = styled.div`
 export default function Web(props) {
   return (
     <Wrapper>
+      <Seo title={props.title} />
       <QueryClientProvider client={queryClient}>
         <UXProvider>
           <SearchProvider>
