@@ -19,6 +19,7 @@ export default function MagicLink(props) {
       onClick={props.onClick || null}
       target='_blank'
       rel='noreferrer noopener'
+      aria-label={props['aria-label']}
     >
       {props.children}
     </a>
@@ -27,6 +28,7 @@ export default function MagicLink(props) {
       className={props.className}
       to={props.to + (!props.to.includes('?') && search)}
       onClick={props.onClick || null}
+      aria-label={props['aria-label']}
     >
       {props.children}
     </Link>

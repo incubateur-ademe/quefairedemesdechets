@@ -5,7 +5,7 @@ import Switch from 'react-switch'
 import { themes } from 'utils/styles'
 import StyleContext from 'utils/StyleContext'
 
-const Wrapper = styled.div`
+const Wrapper = styled.label`
   position: fixed;
   top: 0.5rem;
   right: 0.5rem;
@@ -18,6 +18,12 @@ const Wrapper = styled.div`
     display: ${(props) => (props.mobile ? 'block' : 'none')};
     text-align: center;
   }
+`
+const InvisibleLabel = styled.span`
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 100%;
 `
 const Svg = styled.svg`
   position: absolute;
@@ -33,6 +39,7 @@ export default function Visible(props) {
 
   return (
     <Wrapper mobile={props.mobile}>
+      <InvisibleLabel>Thème</InvisibleLabel>
       <Switch
         onChange={() =>
           setTheme((prevTheme) =>
