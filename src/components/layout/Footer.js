@@ -37,6 +37,12 @@ const Section = styled.div`
     font-size: 1.75rem;
   }
 `
+const MobileSection = styled(Section)`
+  display: none;
+  ${(props) => props.theme.mq.small} {
+    display: flex;
+  }
+`
 const LogosWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -70,9 +76,9 @@ export default function Footer(props) {
             </Button>
           )}
         </Section>
-        <Section>
+        <MobileSection>
           <ThemeToggle mobile />
-        </Section>
+        </MobileSection>
         {!props.iframe && (
           <>
             <Section>{props.children}</Section>
