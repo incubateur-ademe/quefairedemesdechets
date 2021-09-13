@@ -28,7 +28,7 @@ const Wrapper = styled.form`
     left: 0;
     right: 0;
     border: 0.125em solid ${(props) => props.theme.colors.main};
-    border-radius: 1.65625em;
+    border-radius: 1.25em;
     transition: none;
   }
 `

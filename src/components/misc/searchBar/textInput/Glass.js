@@ -10,7 +10,8 @@ const Wrapper = styled.svg`
   height: auto;
 
   ${(props) => props.theme.mq.small} {
-    padding-left: 1em;
+    width: 1.5em;
+    left: 1em;
   }
 
   path {
