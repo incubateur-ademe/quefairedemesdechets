@@ -24,7 +24,6 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-highlight-words": "^0.17.0",
-    "react-map-gl": "5.2.11",
     "react-query": "^3.18.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
@@ -39,6 +38,7 @@
   "devDependencies": {
     "gatsby-cli": "^3.9.0",
     "gatsby-plugin-root-import": "^2.0.5",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.25",
     "prettier": "^2.3.2",
     "webpack": "^5.16.0",
     "webpack-cli": "^4.4.0"
