@@ -21,6 +21,7 @@ const Wrapper = styled.form`
   overflow: hidden;
   opacity: ${(props) => (props.isFetched && !props.small ? 1 : 0)};
   pointer-events: ${(props) => (props.small ? 'none' : 'inherit')};
+  transition: opacity 750ms;
 
   ${(props) => props.theme.mq.small} {
     top: 100%;
@@ -28,6 +29,7 @@ const Wrapper = styled.form`
     right: 0;
     border: 0.125em solid ${(props) => props.theme.colors.main};
     border-radius: 1.65625em;
+    transition: none;
   }
 `
 
