@@ -1,16 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-//import { Marker } from 'react-map-gl'
+import { Marker } from 'react-map-gl'
 
 import useDebounce from 'hooks/useDebounce'
 import { useDecheteries, usePharmacies } from 'utils/api'
 import Decheterie from './markers/Decheterie'
 import Pharmacie from './markers/Pharmacie'
-/*
+
 const StyledMarker = styled(Marker)`
   pointer-events: none;
 `
-*/
 export default function Markers(props) {
   const debouncedViewport = useDebounce(props.viewport)
   const { data: decheteries } = useDecheteries(
@@ -21,8 +20,7 @@ export default function Markers(props) {
     debouncedViewport || {},
     props.product && props.product['Pharmacie']
   )
-  return null
-  /*return (
+  return (
     <>
       {decheteries &&
         decheteries
@@ -59,5 +57,5 @@ export default function Markers(props) {
             </StyledMarker>
           ))}
     </>
-  )*/
+  )
 }

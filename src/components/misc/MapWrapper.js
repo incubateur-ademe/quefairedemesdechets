@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import ReactMapGL, { FlyToInterpolator } from 'react-map-gl'
 
 import Address from './mapWrapper/Address'
 import Markers from './mapWrapper/Markers'
@@ -26,5 +27,45 @@ export default function MapWrapper(props) {
   })
 
   const [currentMarker, setCurrentMarker] = useState(null)
-  return null
+  return (
+    <>
+      <Address viewport={viewport} setViewport={setViewport} />
+      <Cache visible={!viewport.label} />
+      <ReactMapGL
+        {...viewport}
+        width='100%'
+        height='100%'
+        mapStyle={'mapbox://styles/florianpanchout/ckrnnxugq0yua17lmpm1ddn9d'}
+        onViewportChange={(newViewport) => {
+          setViewport({
+            ...viewport,
+            ...newViewport,
+            // label: newViewport.zoom > 8 ? viewport.label : '',
+          })
+        }}
+        onInteractionStateChange={(interactionState) =>
+          interactionState.isDragging && setCurrentMarker(null)
+        }
+        onNativeClick={() => setCurrentMarker(null)}
+        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_API_TOKEN}
+      >
+        <Markers
+          product={props.product}
+          viewport={viewport}
+          currentMarker={currentMarker}
+          setCurrentMarker={({ id, latitude, longitude }) => {
+            setViewport({
+              ...viewport,
+              latitude,
+              longitude,
+              transitionDuration: 300,
+              transitionInterpolator: new FlyToInterpolator(),
+            })
+
+            setCurrentMarker(id)
+          }}
+        />
+      </ReactMapGL>
+    </>
+  )
 }
