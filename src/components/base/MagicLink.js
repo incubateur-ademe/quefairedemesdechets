@@ -5,7 +5,11 @@ import { useLocation } from '@reach/router'
 export default function MagicLink(props) {
   const { search } = useLocation()
   return !props.to ? (
-    <button className={props.className} onClick={props.onClick}>
+    <button
+      className={props.className}
+      onClick={props.onClick}
+      aria-label={props['aria-label']}
+    >
       {props.children}
     </button>
   ) : props.to.includes('http') || props.to.includes('mailto') ? (

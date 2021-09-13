@@ -43,6 +43,7 @@ export default function Toggle(props) {
         open={props.open}
         onClick={props.onClick}
         data-tip={props.tooltip}
+        aria-label={props.tooltip}
       >
         {props.children}
         <Arrow

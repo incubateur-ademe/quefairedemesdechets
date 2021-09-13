@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import BackButton from './textInput/BackButton'
+import Glass from './textInput/Glass'
 import Submit from './textInput/Submit'
 
 const Wrapper = styled.div`
@@ -76,7 +76,7 @@ const Name = styled.span`
 export default React.forwardRef(function TextInput(props, ref) {
   return (
     <Wrapper>
-      <BackButton small={props.small} focus={props.focus} />
+      <Glass />
       <Input
         ref={ref}
         type='text'

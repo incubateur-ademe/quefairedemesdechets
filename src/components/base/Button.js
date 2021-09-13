@@ -53,6 +53,7 @@ export default function Button(props) {
       small={props.small}
       className={props.className}
       textColor={props.textColor}
+      aria-label={props.children}
     >
       {props.children}
     </Wrapper>
