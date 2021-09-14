@@ -40,11 +40,22 @@ export const Title = styled.h3``
 export const Address = styled.address`
   font-size: 0.875rem;
 `
-export default function Marker(props) {
+export default function Place(props) {
   return props.open ? (
     <Wrapper open={props.open}>
-      <Title>{props.title}</Title>
-      <Address>{props.children}</Address>
+      <Title>{props.place.title}</Title>
+      {props.place.hours && (
+        <Address
+          dangerouslySetInnerHTML={{
+            __html: props.place.hours,
+          }}
+        />
+      )}
+      <Address
+        dangerouslySetInnerHTML={{
+          __html: props.place.address,
+        }}
+      />
       <Handle width='967' height='987' viewBox='0 0 967 987'>
         <path
           d='M64.7762 241.75L483.499 967L902.223 241.75'
@@ -56,9 +67,9 @@ export default function Marker(props) {
     <Icon
       onClick={() =>
         props.setCurrentMarker({
-          id: props.id,
-          latitude: props.latitude,
-          longitude: props.longitude,
+          id: props.place.id,
+          latitude: props.place.latitude,
+          longitude: props.place.longitude,
         })
       }
       x='0px'

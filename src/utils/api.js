@@ -92,7 +92,18 @@ export function useDecheteries(viewport, enabled) {
             viewport.zoom > 10 ? 10000 : 15000
           }&size=1000&sampling=neighbors&select=Nom_Déchèterie,Adresse_Déchèterie,Code_postal_Déchèterie,Commune_Déchèterie,_id,_geopoint`
         )
-        .then((res) => res.data.results),
+        .then((res) =>
+          res.data.results.map((place) => ({
+            id: place['_id'],
+            latitude: Number(place['_geopoint'].split(',')[0]),
+            longitude: Number(place['_geopoint'].split(',')[1]),
+            title: place['Nom_Déchèterie'].replaceAll(' ', ' '),
+            address: `${place['Adresse_Déchèterie'].replaceAll(' ', ' ')}
+                      <br />
+                      ${place['Code_postal_Déchèterie']} 
+                      ${place['Commune_Déchèterie'].replaceAll(' ', ' ')}`,
+          }))
+        ),
     {
       enabled: enabled && viewport.zoom > 8.5 ? true : false,
       keepPreviousData: viewport.zoom > 8.5 ? true : false,
@@ -108,7 +119,18 @@ export function usePharmacies(viewport, enabled) {
         .get(
           `https://api.mapbox.com/geocoding/v5/mapbox.places/pharmacie.json?proximity=${viewport.longitude},${viewport.latitude}&language=fr&access_token=${process.env.GATSBY_MAPBOX_API_TOKEN}&limit=10`
         )
-        .then((res) => res.data.features),
+        .then((res) =>
+          res.data.features.map((place) => ({
+            id: place['id'],
+            latitude: place['center'][1],
+            longitude: place['center'][0],
+            title: place['text_fr'],
+            address: place['place_name_fr'].replace(
+              place['text_fr'] + ', ',
+              ''
+            ),
+          }))
+        ),
     {
       enabled: enabled && viewport.zoom > 8.5 ? true : false,
       keepPreviousData: viewport.zoom > 8.5 ? true : false,
@@ -124,7 +146,22 @@ export function useOcad3e(viewport, enabled, category) {
         .get(
           `https://quefairedemesdechets.netlify.app/.netlify/functions/callOcad3e?latitude=${viewport.latitude}&longitude=${viewport.longitude}&category=${category}`
         )
-        .then((res) => res.data.placemarks),
+        .then((res) =>
+          res.data.placemarks.map((place) => ({
+            id:
+              place['name'] +
+              place['position']['lat'] +
+              place['position']['lng'],
+            latitude: Number(place['position']['lat']),
+            longitude: Number(place['position']['lng']),
+            title: place['name'],
+            hours: place['details']['timeTable'],
+            address: `${place['address']['address1']}
+                      <br />
+                      ${place['address']['postalCode']} 
+                      ${place['address']['city']}`,
+          }))
+        ),
     {
       enabled: enabled && viewport.zoom > 8.5 ? true : false,
       keepPreviousData: viewport.zoom > 8.5 ? true : false,
