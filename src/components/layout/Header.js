@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import ademe from './footer/ademe.jpg'
 import MagicLink from 'components/base/MagicLink'
 import Marianne from 'components/base/Marianne'
 
@@ -18,11 +19,17 @@ const Logos = styled(MagicLink)`
   margin-left: -0.75rem;
   background-color: #fff;
 `
+const Ademe = styled.img`
+  display: block;
+  width: 4.9375rem;
+  height: auto;
+`
 export default function Header(props) {
   return (
     <Wrapper className={props.className}>
       <Logos to='/' aria-label='Accueil'>
         <Marianne />
+        <Ademe src={ademe} alt='ADEME' />
       </Logos>
       {props.children}
     </Wrapper>

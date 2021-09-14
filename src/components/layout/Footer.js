@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import ademe from './footer/ademe.jpg'
-
 import MagicLink from 'components/base/MagicLink'
 import ThemeToggle from 'components/base/ThemeToggle'
 import ContactPrompt from 'components/base/ContactPrompt'
