@@ -7,6 +7,6 @@ exports.handler = function (event) {
     )
     .then((res) => ({
       statusCode: 200,
-      body: res.data,
+      body: JSON.stringify(res.data),
     }))
 }
