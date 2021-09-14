@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Marker } from 'react-map-gl'
 
 import useDebounce from 'hooks/useDebounce'
-import { useDecheteries, usePharmacies } from 'utils/api'
+import { useDecheteries, usePharmacies, useOcad3e } from 'utils/api'
 import Decheterie from './markers/Decheterie'
 import Pharmacie from './markers/Pharmacie'
 
@@ -14,45 +14,64 @@ export default function Markers(props) {
   const debouncedViewport = useDebounce(props.viewport)
   const { data: decheteries } = useDecheteries(
     debouncedViewport || {},
-    props.product && props.product['Déchèterie']
+    props.product['Déchèterie']
   )
   const { data: pharmacies } = usePharmacies(
     debouncedViewport || {},
-    props.product && props.product['Pharmacie']
+    props.product['Pharmacie']
   )
+  const { data: oca3de } = useOcad3e(
+    debouncedViewport || {},
+    props.product['Bdd'] === 'ocad3e',
+    props.product['Code']
+  )
+
   return (
     <>
       {decheteries &&
         decheteries
           .sort((a, b) => (props.currentMarker === a['_id'] ? 1 : -1))
-          .map((decheterie) => (
+          .map((place) => (
             <StyledMarker
               captureClick={true}
-              key={decheterie['_id']}
-              latitude={Number(decheterie['_geopoint'].split(',')[0])}
-              longitude={Number(decheterie['_geopoint'].split(',')[1])}
+              key={place['_id']}
+              latitude={Number(place['_geopoint'].split(',')[0])}
+              longitude={Number(place['_geopoint'].split(',')[1])}
             >
               <Decheterie
-                open={props.currentMarker === decheterie['_id']}
+                open={props.currentMarker === place['_id']}
                 setCurrentMarker={props.setCurrentMarker}
-                decheterie={decheterie}
+                place={place}
               />
+            </StyledMarker>
+          ))}
+      {oca3de &&
+        oca3de
+          .sort((a, b) => (props.currentMarker === a['name'] ? 1 : -1))
+          .map((place) => (
+            <StyledMarker
+              captureClick={true}
+              key={place['name']}
+              latitude={Number(place['position']['lat'])}
+              longitude={Number(place['position']['lng'])}
+            >
+              OCAD3E
             </StyledMarker>
           ))}
       {pharmacies &&
         pharmacies
           .sort((a, b) => (props.currentMarker === a['id'] ? 1 : -1))
-          .map((pharmacie) => (
+          .map((place) => (
             <StyledMarker
               captureClick={true}
-              key={pharmacie['id']}
-              latitude={Number(pharmacie['center'][1])}
-              longitude={Number(pharmacie['center'][0])}
+              key={place['id']}
+              latitude={Number(place['center'][1])}
+              longitude={Number(place['center'][0])}
             >
               <Pharmacie
-                open={props.currentMarker === pharmacie['id']}
+                open={props.currentMarker === place['id']}
                 setCurrentMarker={props.setCurrentMarker}
-                pharmacie={pharmacie}
+                place={place}
               />
             </StyledMarker>
           ))}

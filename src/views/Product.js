@@ -9,6 +9,7 @@ import AvoidModal from 'components/modals/AvoidModal'
 import NextModal from 'components/modals/NextModal'
 
 export default function Product(props) {
+  console.log(props.product)
   return (
     <>
       <Presentation product={props.product} />

@@ -33,7 +33,10 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
               .replace(/'/g, '-')
               .normalize('NFD')
               .replace(/[\u0300-\u036f]/g, ''),
-            map: waste['Déchèterie'] || waste['Pharmacie'],
+            map:
+              waste['Déchèterie'] ||
+              waste['Pharmacie'] ||
+              waste['Bdd'] === 'ocad3e',
             links: linkRes.filter((link) =>
               link['Produits_associÃ©s'].includes(waste['Nom'])
             ),

@@ -116,3 +116,19 @@ export function usePharmacies(viewport, enabled) {
     }
   )
 }
+export function useOcad3e(viewport, enabled, category) {
+  return useQuery(
+    ['OCAD3E', viewport, category],
+    () =>
+      axios
+        .get(
+          `https://quefairedemesdechets.netlify.app/.netlify/functions/callOcad3e?latitude=${viewport.latitude}&longitude=${viewport.longitude}&category=${category}`
+        )
+        .then((res) => res.data.placemarks),
+    {
+      enabled: enabled && viewport.zoom > 8.5 ? true : false,
+      keepPreviousData: viewport.zoom > 8.5 ? true : false,
+      refetchOnWindowFocus: false,
+    }
+  )
+}
