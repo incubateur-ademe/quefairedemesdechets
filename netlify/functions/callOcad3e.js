@@ -7,7 +7,7 @@ exports.handler = function (event) {
     )
     .then((res) => ({
       statusCode: 200,
-      'Access-Control-Allow-Origin': '*',
+      header: JSON.stringify({ 'Access-Control-Allow-Origin': '*' }),
       body: JSON.stringify(res.data),
     }))
 }
