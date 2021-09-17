@@ -126,7 +126,7 @@ export default function MapWrapper(props) {
             anchor={[currentPlace.latitude, currentPlace.longitude]}
             offset={[128, 180]}
           >
-            <Place place={currentPlace} />
+            <Place place={currentPlace} center={center} />
           </Overlay>
         )}
       </Map>

@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import useDeviceDetect from 'hooks/useMobileDetect'
+import MagicLink from 'components/base/MagicLink'
+
 const Wrapper = styled.div`
   position: relative;
   width: 16rem;
@@ -24,11 +27,16 @@ const Handle = styled.svg`
     fill: ${(props) => props.theme.colors.background};
   }
 `
-export const Title = styled.h3``
+export const Title = styled.h3`
+  margin-bottom: 0.5rem;
+`
 export const Address = styled.address`
   font-size: 0.875rem;
+  margin-bottom: 0.5rem;
 `
 export default function Place(props) {
+  const { isMobile } = useDeviceDetect()
+
   return (
     <Wrapper>
       <Title>{props.place.title}</Title>
@@ -44,6 +52,15 @@ export default function Place(props) {
           __html: props.place.address,
         }}
       />
+      <MagicLink
+        to={
+          !isMobile
+            ? `https://www.google.com/maps/dir/?api=1&origin=${props.center[0]},${props.center[1]}&destination=${props.place.latitude},${props.place.longitude}`
+            : `geo:${props.place.latitude},${props.place.longitude}?q=${props.place.latitude},${props.place.longitude}(${props.place.address})`
+        }
+      >
+        Voir l'itinéraire
+      </MagicLink>
       <Handle width='967' height='987' viewBox='0 0 967 987'>
         <path
           d='M64.7762 241.75L483.499 967L902.223 241.75'

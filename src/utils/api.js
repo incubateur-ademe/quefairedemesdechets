@@ -166,7 +166,7 @@ const fetchPharmacies = ({ queryKey }) =>
       `https://quefairedemesdechets.netlify.app/.netlify/functions/callGMap?latitude=${queryKey[1][0]}&longitude=${queryKey[1][1]}`
     )
     .then((res) =>
-      res.data.features.map((place) => ({
+      res.data.results.map((place) => ({
         id: place['place_id'],
         latitude: place['geometry']['location']['lat'],
         longitude: place['geometry']['location']['lng'],
