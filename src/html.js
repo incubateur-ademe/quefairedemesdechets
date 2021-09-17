@@ -39,9 +39,10 @@ export default function HTML(props) {
           <textarea name='message'></textarea>
         </form>
         <script
-          src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.contentWindow.js'
-          integrity='sha512-5+HBQlT1izP2UxL213/uqaO9tIpPso52TedvIsOevDs6w/HNt0/KNlkYLgi8Ona7lPCBjMEWybiR/qqs2MgyEg=='
-          crossOrigin='anonymous'
+          src='https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.contentWindow.min.js'
+          integrity='sha512-14SY6teTzhrLWeL55Q4uCyxr6GQOxF3pEoMxo2mBxXwPRikdMtzKMYWy2B5Lqjr6PHHoGOxZgPaxUYKQrSmu0A=='
+          crossorigin='anonymous'
+          referrerpolicy='no-referrer'
         ></script>
       </body>
     </html>
