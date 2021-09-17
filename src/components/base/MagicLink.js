@@ -12,7 +12,7 @@ export default function MagicLink(props) {
     >
       {props.children}
     </button>
-  ) : props.to.includes('http') || props.to.includes('mailto') ? (
+  ) : props.to.includes(':') ? (
     <a
       className={props.className}
       href={props.to}
