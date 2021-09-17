@@ -40,7 +40,8 @@ const Content = styled.div`
   opacity: ${(props) => (props.open ? 1 : 0)};
   transform: scale(${(props) => (props.open ? 1 : 0.7)})
     translateY(${(props) => (props.open ? 0 : '10em')});
-  transition: all ${(props) => (props.open ? '300ms' : 0)} ease-in-out;
+  transition: all ${(props) => (props.open && !props.noAnimation ? '300ms' : 0)}
+    ease-in-out;
 `
 const ButtonClose = styled.div`
   position: absolute;
@@ -66,6 +67,7 @@ export default function Modal(props) {
         width={props.width}
         textColor={props.textColor}
         backgroundColor={props.backgroundColor}
+        noAnimation={props.noAnimation}
       >
         <ButtonClose onClick={() => props.setOpen(false)}>+</ButtonClose>
         <Scroll>{props.children}</Scroll>

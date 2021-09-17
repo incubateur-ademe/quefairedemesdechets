@@ -16,10 +16,8 @@ export default function MapModal() {
   const { map, setMap } = useContext(ModalContext)
 
   return (
-    <Modal open={map} setOpen={setMap}>
-      <Wrapper>
-        <MapWrapper product={map} />
-      </Wrapper>
+    <Modal open={map} setOpen={setMap} noAnimation>
+      <Wrapper>{map && <MapWrapper product={map} />}</Wrapper>
     </Modal>
   )
 }

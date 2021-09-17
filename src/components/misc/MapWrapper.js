@@ -41,6 +41,7 @@ const Cache = styled.div`
 `
 const Loader = styled.div`
   position: absolute;
+  z-index: 100;
   bottom: 100%;
   left: 0;
   right: 0;
@@ -48,6 +49,11 @@ const Loader = styled.div`
   width: 100%;
   background-color: ${(props) => props.theme.colors.background};
 
+  ${(props) => props.theme.mq.small} {
+    bottom: auto;
+    top: 0;
+    height: 0.5rem;
+  }
   &:before {
     content: '';
     position: absolute;
