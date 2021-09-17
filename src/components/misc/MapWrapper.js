@@ -78,26 +78,30 @@ const Loader = styled.div`
   }
 `
 export default function MapWrapper(props) {
-  const [address, setAddress] = useState('')
+  const [address, setAddress] = useState({
+    label: '',
+    longitude: null,
+    latitude: null,
+  })
   const [center, setCenter] = useState([47.5, 2])
   const [zoom, setZoom] = useState(4.5)
 
   const [currentPlace, setCurrentPlace] = useState(null)
 
-  const { data, isLoading, isFetching } = usePlaces(center, zoom, props.product)
+  const { data, isFetching } = usePlaces(center, zoom, props.product)
 
   const themeContext = useContext(ThemeContext)
 
   return (
     <>
       <Address
-        address={address}
+        address={address.label}
         setAddress={setAddress}
         setCenter={setCenter}
         setZoom={setZoom}
       />
       <Loader isFetching={isFetching} />
-      <Cache visible={!address} />
+      <Cache visible={!address.label} />
       <Map
         center={center}
         zoom={zoom}
@@ -126,7 +130,7 @@ export default function MapWrapper(props) {
             anchor={[currentPlace.latitude, currentPlace.longitude]}
             offset={[128, 180]}
           >
-            <Place place={currentPlace} center={center} />
+            <Place place={currentPlace} address={address} />
           </Overlay>
         )}
       </Map>

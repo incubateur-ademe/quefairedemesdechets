@@ -7,7 +7,7 @@ import MagicLink from 'components/base/MagicLink'
 const Wrapper = styled.div`
   position: relative;
   width: 16rem;
-  height: 10rem;
+  min-height: 10rem;
   padding: 1rem;
   background-color: ${(props) => props.theme.colors.background};
   border: 2px solid ${(props) => props.theme.colors.text};
@@ -55,7 +55,7 @@ export default function Place(props) {
       <MagicLink
         to={
           !isMobile
-            ? `https://www.google.com/maps/dir/?api=1&origin=${props.center[0]},${props.center[1]}&destination=${props.place.latitude},${props.place.longitude}`
+            ? `https://www.google.com/maps/dir/?api=1&origin=${props.address.latitude},${props.address.longitude}&destination=${props.place.latitude},${props.place.longitude}`
             : `geo:${props.place.latitude},${props.place.longitude}?q=${props.place.latitude},${props.place.longitude}(${props.place.address})`
         }
       >

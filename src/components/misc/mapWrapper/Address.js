@@ -48,7 +48,11 @@ export default function Address(props) {
 
   const navigateToPlace = (place) => {
     if (place) {
-      props.setAddress(place.properties.label)
+      props.setAddress({
+        label: place.properties.label,
+        latitude: place.geometry.coordinates[1],
+        longitude: place.geometry.coordinates[0],
+      })
       props.setCenter([
         place.geometry.coordinates[1],
         place.geometry.coordinates[0],

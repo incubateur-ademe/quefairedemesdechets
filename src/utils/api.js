@@ -182,7 +182,11 @@ const fetchOcad3e = ({ queryKey }) =>
     )
     .then((res) =>
       res.data.placemarks.map((place) => ({
-        id: place['name'] + place['position']['lat'] + place['position']['lng'],
+        id:
+          place['name'] +
+          place['position']['lat'] +
+          place['position']['lng'] +
+          String(Math.random()),
         latitude: Number(place['position']['lat']),
         longitude: Number(place['position']['lng']),
         title: place['name'],
