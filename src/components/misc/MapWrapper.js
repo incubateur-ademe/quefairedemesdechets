@@ -1,18 +1,38 @@
 import React, { useState, useContext } from 'react'
-import styled, { ThemeContext } from 'styled-components'
-import { Map, Marker, Overlay, ZoomControl } from 'pigeon-maps'
+import styled, { keyframes, ThemeContext } from 'styled-components'
+import { Map, Marker, Overlay } from 'pigeon-maps'
 
 import { usePlaces } from 'utils/api'
 import Address from './mapWrapper/Address'
 import Place from './mapWrapper/Place'
 
+const fetching = keyframes`
+  from {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+
+  49.9% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+  50% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+
+  to {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+`
 const Cache = styled.div`
   position: absolute;
   z-index: 10;
   top: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
   background: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(3px);
   opacity: ${(props) => (props.visible ? 1 : 0)};
@@ -20,10 +40,13 @@ const Cache = styled.div`
   transition: opacity 600ms;
 `
 const Loader = styled.div`
-  position: relative;
-  height: 0.5rem;
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  height: 0.125rem;
   width: 100%;
-
+  background-color: ${(props) => props.theme.colors.background};
   &:before {
     content: '';
     position: absolute;
@@ -43,6 +66,8 @@ const Loader = styled.div`
     width: 100%;
     height: 100%;
     background-color: ${(props) => props.theme.colors.text};
+    animation: ${(props) => (props.isFetching ? fetching : 'none')} 1s linear
+      infinite;
   }
 `
 export default function MapWrapper(props) {
