@@ -13,10 +13,10 @@ const Wrapper = styled.h1`
   position: relative;
   margin-bottom: ${(props) => (props.small ? 0 : 2.5)}rem;
   font-size: ${(props) => (props.small ? 1.5 : 2.5)}rem;
-  text-align: ${(props) => (props.small ? 'right' : 'center')};
+  text-align: ${(props) => (props.small ? 'left' : 'center')};
 
   ${(props) => props.theme.mq.small} {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 `
 const Color = styled.span`
