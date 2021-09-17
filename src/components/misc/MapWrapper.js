@@ -47,6 +47,7 @@ const Loader = styled.div`
   height: 0.125rem;
   width: 100%;
   background-color: ${(props) => props.theme.colors.background};
+
   &:before {
     content: '';
     position: absolute;
