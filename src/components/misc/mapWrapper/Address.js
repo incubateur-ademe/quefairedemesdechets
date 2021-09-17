@@ -29,8 +29,8 @@ const Wrapper = styled.form`
 export default function Address(props) {
   const [search, setSearch] = useState('')
   useEffect(() => {
-    setSearch(props.viewport.label)
-  }, [props.viewport.label])
+    setSearch(props.address)
+  }, [props.address])
   const debouncedSearch = useDebounce(search)
 
   const { data, isFetching } = useSearch(debouncedSearch)
@@ -46,24 +46,22 @@ export default function Address(props) {
     }
   }, [focus])
 
-  const setViewport = props.setViewport
-  const navigateToPlace = useCallback(
-    (place) => {
-      setViewport({
-        label: place.properties.label,
-        latitude: place.geometry.coordinates[1],
-        longitude: place.geometry.coordinates[0],
-        zoom: 12.5,
-      })
+  const navigateToPlace = (place) => {
+    if (place) {
+      props.setAddress(place.properties.label)
+      props.setCenter([
+        place.geometry.coordinates[1],
+        place.geometry.coordinates[0],
+      ])
+      props.setZoom(14)
       setFocus(false)
-    },
-    [setViewport]
-  )
+    }
+  }
 
   return (
     <Wrapper
       focus={focus}
-      addressSet={props.viewport.label}
+      addressSet={props.address}
       onSubmit={(e) => {
         e.preventDefault()
         if (current > -1) {

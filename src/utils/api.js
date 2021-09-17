@@ -2,6 +2,7 @@
 
 import { useQuery } from 'react-query'
 import axios from 'axios'
+import useDebounce from 'hooks/useDebounce'
 
 export function useWaste() {
   return useQuery(
@@ -80,92 +81,100 @@ export function usePosition(position) {
     }
   )
 }
-export function useDecheteries(viewport, enabled) {
-  return useQuery(
-    ['decheterie', viewport],
-    () =>
-      axios
-        .get(
-          `https://koumoul.com/s/data-fair/api/v1/datasets/greatersinoe-(r)-annuaire-2017-des-decheteries-de-dechets-menagers-et-assimiles-(dma)/lines?format=json&q_mode=simple&geo_distance=${
-            viewport.longitude
-          }%2C${viewport.latitude}%2C${
-            viewport.zoom > 10 ? 10000 : 15000
-          }&size=1000&sampling=neighbors&select=Nom_Déchèterie,Adresse_Déchèterie,Code_postal_Déchèterie,Commune_Déchèterie,_id,_geopoint`
-        )
-        .then((res) =>
-          res.data.results.map((place) => ({
-            id: place['_id'],
-            latitude: Number(place['_geopoint'].split(',')[0]),
-            longitude: Number(place['_geopoint'].split(',')[1]),
-            title: place['Nom_Déchèterie'].replaceAll(' ', ' '),
-            address: `${place['Adresse_Déchèterie'].replaceAll(' ', ' ')}
+export function usePlaces(center, zoom, product) {
+  const debouncedCenter = useDebounce(center)
+
+  const zoomedEnough = zoom > 10
+
+  const {
+    data: decheteries,
+    isLoading: isLoadingDecheteries,
+    isFetching: isFetchingDecheteries,
+  } = useQuery(['decheteries', debouncedCenter], fetchDecheteries, {
+    enabled: product['Déchèterie'] && zoomedEnough ? true : false,
+    keepPreviousData: zoomedEnough ? true : false,
+    refetchOnWindowFocus: false,
+  })
+
+  const {
+    data: pharmacies,
+    isLoading: isLoadingPharmacies,
+    isFetching: isFetchingPharmacies,
+  } = useQuery(['pharmacies', debouncedCenter], fetchPharmacies, {
+    enabled: product['Pharmacie'] && zoomedEnough ? true : false,
+    keepPreviousData: zoomedEnough ? true : false,
+    refetchOnWindowFocus: false,
+  })
+
+  const {
+    data: ocad3e,
+    isLoading: isLoadingOcad3e,
+    isFetching: isFetchingOcad3e,
+  } = useQuery(['ocad3e', debouncedCenter, product['Code']], fetchOcad3e, {
+    enabled: product['Bdd'] === 'ocad3e' && zoomedEnough ? true : false,
+    keepPreviousData: zoomedEnough ? true : false,
+    refetchOnWindowFocus: false,
+  })
+
+  return {
+    data: [...(decheteries || []), ...(pharmacies || []), ...(ocad3e || [])],
+    isLoading: isLoadingDecheteries || isLoadingPharmacies || isLoadingOcad3e,
+    isFetching:
+      isFetchingDecheteries || isFetchingPharmacies || isFetchingOcad3e,
+  }
+}
+const fetchDecheteries = ({ queryKey }) =>
+  axios
+    .get(
+      `https://koumoul.com/s/data-fair/api/v1/datasets/greatersinoe-(r)-annuaire-2017-des-decheteries-de-dechets-menagers-et-assimiles-(dma)/lines?format=json&q_mode=simple&geo_distance=${
+        queryKey[1][1]
+      }%2C${
+        queryKey[1][0]
+      }%2C${15000}&size=1000&sampling=neighbors&select=Nom_Déchèterie,Adresse_Déchèterie,Code_postal_Déchèterie,Commune_Déchèterie,_id,_geopoint`
+    )
+    .then((res) =>
+      res.data.results.map((place) => ({
+        id: place['_id'],
+        latitude: Number(place['_geopoint'].split(',')[0]),
+        longitude: Number(place['_geopoint'].split(',')[1]),
+        title: place['Nom_Déchèterie'].replaceAll(' ', ' '),
+        address: `${place['Adresse_Déchèterie'].replaceAll(' ', ' ')}
                       <br />
                       ${place['Code_postal_Déchèterie']} 
                       ${place['Commune_Déchèterie'].replaceAll(' ', ' ')}`,
-          }))
-        ),
-    {
-      enabled: enabled && viewport.zoom > 8.5 ? true : false,
-      keepPreviousData: viewport.zoom > 8.5 ? true : false,
-      refetchOnWindowFocus: false,
-    }
-  )
-}
-export function usePharmacies(viewport, enabled) {
-  return useQuery(
-    ['pharmacies', viewport],
-    () =>
-      axios
-        .get(
-          `https://api.mapbox.com/geocoding/v5/mapbox.places/pharmacie.json?proximity=${viewport.longitude},${viewport.latitude}&language=fr&access_token=${process.env.GATSBY_MAPBOX_API_TOKEN}&limit=10`
-        )
-        .then((res) =>
-          res.data.features.map((place) => ({
-            id: place['id'],
-            latitude: place['center'][1],
-            longitude: place['center'][0],
-            title: place['text_fr'],
-            address: place['place_name_fr'].replace(
-              place['text_fr'] + ', ',
-              ''
-            ),
-          }))
-        ),
-    {
-      enabled: enabled && viewport.zoom > 8.5 ? true : false,
-      keepPreviousData: viewport.zoom > 8.5 ? true : false,
-      refetchOnWindowFocus: false,
-    }
-  )
-}
-export function useOcad3e(viewport, enabled, category) {
-  return useQuery(
-    ['OCAD3E', viewport, category],
-    () =>
-      axios
-        .get(
-          `https://quefairedemesdechets.netlify.app/.netlify/functions/callOcad3e?latitude=${viewport.latitude}&longitude=${viewport.longitude}&category=${category}`
-        )
-        .then((res) =>
-          res.data.placemarks.map((place) => ({
-            id:
-              place['name'] +
-              place['position']['lat'] +
-              place['position']['lng'],
-            latitude: Number(place['position']['lat']),
-            longitude: Number(place['position']['lng']),
-            title: place['name'],
-            hours: place['details']['timeTable'],
-            address: `${place['address']['address1']}
+      }))
+    )
+
+const fetchPharmacies = ({ queryKey }) =>
+  axios
+    .get(
+      `https://api.mapbox.com/geocoding/v5/mapbox.places/pharmacie.json?proximity=${queryKey[1][1]},${queryKey[1][0]}&language=fr&access_token=${process.env.GATSBY_MAPBOX_API_TOKEN}&limit=10`
+    )
+    .then((res) =>
+      res.data.features.map((place) => ({
+        id: place['id'],
+        latitude: place['center'][1],
+        longitude: place['center'][0],
+        title: place['text_fr'],
+        address: place['place_name_fr'].replace(place['text_fr'] + ', ', ''),
+      }))
+    )
+
+const fetchOcad3e = ({ queryKey }) =>
+  axios
+    .get(
+      `https://quefairedemesdechets.netlify.app/.netlify/functions/callOcad3e?latitude=${queryKey[1][0]}&longitude=${queryKey[1][1]}&category=${queryKey[2]}`
+    )
+    .then((res) =>
+      res.data.placemarks.map((place) => ({
+        id: place['name'] + place['position']['lat'] + place['position']['lng'],
+        latitude: Number(place['position']['lat']),
+        longitude: Number(place['position']['lng']),
+        title: place['name'],
+        hours: place['details']['timeTable'],
+        address: `${place['address']['address1']}
                       <br />
                       ${place['address']['postalCode']} 
                       ${place['address']['city']}`,
-          }))
-        ),
-    {
-      enabled: enabled && viewport.zoom > 8.5 ? true : false,
-      keepPreviousData: viewport.zoom > 8.5 ? true : false,
-      refetchOnWindowFocus: false,
-    }
-  )
-}
+      }))
+    )

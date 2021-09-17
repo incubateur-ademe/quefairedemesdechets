@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
-import ReactMapGL, { FlyToInterpolator } from 'react-map-gl'
+import React, { useState, useContext } from 'react'
+import styled, { ThemeContext } from 'styled-components'
+import { Map, Marker, Overlay, ZoomControl } from 'pigeon-maps'
 
+import { usePlaces } from 'utils/api'
 import Address from './mapWrapper/Address'
-import Markers from './mapWrapper/Markers'
+import Place from './mapWrapper/Place'
 
 const Cache = styled.div`
   position: absolute;
@@ -18,54 +19,85 @@ const Cache = styled.div`
   pointer-events: ${(props) => (props.visible ? 'inherit' : 'none')};
   transition: opacity 600ms;
 `
-export default function MapWrapper(props) {
-  const [viewport, setViewport] = useState({
-    label: '',
-    latitude: 47.5,
-    longitude: 2,
-    zoom: 4.5,
-  })
+const Loader = styled.div`
+  position: relative;
+  height: 0.5rem;
+  width: 100%;
 
-  const [currentMarker, setCurrentMarker] = useState(null)
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${(props) => props.theme.colors.text};
+    opacity: 0.2;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${(props) => props.theme.colors.text};
+  }
+`
+export default function MapWrapper(props) {
+  const [address, setAddress] = useState('')
+  const [center, setCenter] = useState([47.5, 2])
+  const [zoom, setZoom] = useState(4.5)
+
+  const [currentPlace, setCurrentPlace] = useState(null)
+
+  const { data, isLoading, isFetching } = usePlaces(center, zoom, props.product)
+
+  const themeContext = useContext(ThemeContext)
+
   return (
     <>
-      <Address viewport={viewport} setViewport={setViewport} />
-      <Cache visible={!viewport.label} />
-      <ReactMapGL
-        {...viewport}
-        width='100%'
-        height='100%'
-        mapStyle={'mapbox://styles/florianpanchout/ckrnnxugq0yua17lmpm1ddn9d'}
-        onViewportChange={(newViewport) => {
-          setViewport({
-            ...viewport,
-            ...newViewport,
-            // label: newViewport.zoom > 8 ? viewport.label : '',
-          })
+      <Address
+        address={address}
+        setAddress={setAddress}
+        setCenter={setCenter}
+        setZoom={setZoom}
+      />
+      <Loader isFetching={isFetching} />
+      <Cache visible={!address} />
+      <Map
+        center={center}
+        zoom={zoom}
+        onBoundsChanged={({ center, zoom }) => {
+          setCenter(center)
+          setZoom(zoom)
         }}
-        onInteractionStateChange={(interactionState) =>
-          interactionState.isDragging && setCurrentMarker(null)
-        }
-        onNativeClick={() => setCurrentMarker(null)}
-        mapboxApiAccessToken={process.env.GATSBY_MAPBOX_API_TOKEN}
+        attribution={false}
       >
-        <Markers
-          product={props.product}
-          viewport={viewport}
-          currentMarker={currentMarker}
-          setCurrentMarker={({ id, latitude, longitude }) => {
-            setViewport({
-              ...viewport,
-              latitude,
-              longitude,
-              transitionDuration: 300,
-              transitionInterpolator: new FlyToInterpolator(),
-            })
-
-            setCurrentMarker(id)
-          }}
-        />
-      </ReactMapGL>
+        {data &&
+          data.map(
+            (place) =>
+              place.latitude &&
+              place.longitude && (
+                <Marker
+                  key={place.id}
+                  width={50}
+                  color={themeContext.colors.main}
+                  anchor={[place.latitude, place.longitude]}
+                  onClick={() => setCurrentPlace(place)}
+                />
+              )
+          )}
+        {currentPlace && (
+          <Overlay
+            anchor={[currentPlace.latitude, currentPlace.longitude]}
+            offset={[128, 180]}
+          >
+            <Place place={currentPlace} />
+          </Overlay>
+        )}
+      </Map>
     </>
   )
 }
