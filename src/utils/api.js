@@ -145,7 +145,7 @@ const fetchDecheteries = ({ queryKey }) =>
       }))
     )
 
-const fetchPharmacies = ({ queryKey }) =>
+/*const fetchPharmacies = ({ queryKey }) =>
   axios
     .get(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/pharmacie.json?proximity=${queryKey[1][1]},${queryKey[1][0]}&language=fr&access_token=${process.env.GATSBY_MAPBOX_API_TOKEN}&limit=10`
@@ -157,6 +157,21 @@ const fetchPharmacies = ({ queryKey }) =>
         longitude: place['center'][0],
         title: place['text_fr'],
         address: place['place_name_fr'].replace(place['text_fr'] + ', ', ''),
+      }))
+    )*/
+
+const fetchPharmacies = ({ queryKey }) =>
+  axios
+    .get(
+      `https://quefairedemesdechets.netlify.app/.netlify/functions/callGMap?latitude=${queryKey[1][0]}&longitude=${queryKey[1][1]}`
+    )
+    .then((res) =>
+      res.data.features.map((place) => ({
+        id: place['place_id'],
+        latitude: place['geometry']['location']['lat'],
+        longitude: place['geometry']['location']['lng'],
+        title: place['name'],
+        address: place['vicinity'],
       }))
     )
 
