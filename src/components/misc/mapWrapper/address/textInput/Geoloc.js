@@ -63,10 +63,10 @@ export default function Geoloc(props) {
 
   const { data, isFetching, isError } = usePosition(position)
 
-  const navigateToPlace = props.navigateToPlace
   useEffect(() => {
-    data && data.features && navigateToPlace(data.features[0])
-  }, [navigateToPlace, data])
+    console.log('wololo')
+    data && data.features && props.navigateToPlace(data.features[0])
+  }, [data])
 
   const [error, setError] = useState(false)
 

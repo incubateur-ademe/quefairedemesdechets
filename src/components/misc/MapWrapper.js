@@ -49,25 +49,14 @@ const Loader = styled.div`
   right: 0;
   height: 0.125rem;
   width: 100%;
-  background-color: ${(props) => props.theme.colors.background};
 
   ${(props) => props.theme.mq.small} {
     top: 0;
     bottom: auto;
     height: 0.5rem;
   }
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: ${(props) => props.theme.colors.text};
-    opacity: 0.2;
-  }
 
-  &:after {
+  &:before {
     content: '';
     position: absolute;
     top: 0;
