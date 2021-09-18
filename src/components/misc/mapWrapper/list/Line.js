@@ -8,8 +8,21 @@ const Wrapper = styled.tr`
   &:nth-child(2n) {
     background-color: ${(props) => props.theme.colors.secondLight};
   }
-  td {
-    padding: 0.6rem 1.2rem;
+
+  ${(props) => props.theme.mq.small} {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 1rem;
+  }
+`
+const Cell = styled.td`
+  padding: 0.6rem 1.2rem;
+
+  ${(props) => props.theme.mq.small} {
+    display: block;
+    width: ${(props) => (props.small ? 50 : 100)}%;
+    padding: 0;
+    text-align: ${(props) => (props.right ? 'right' : 'left')};
   }
 `
 export default function Line(props) {
@@ -17,14 +30,16 @@ export default function Line(props) {
 
   return (
     <Wrapper key={props.place.id}>
-      <td>{props.place.title}</td>
-      <td
+      <Cell>
+        <strong>{props.place.title}</strong>
+      </Cell>
+      <Cell
         dangerouslySetInnerHTML={{
           __html: props.place.address,
         }}
       />
 
-      <td>
+      <Cell small>
         {Math.round(props.place.distance / 10) / 100}
         <span
           dangerouslySetInnerHTML={{
@@ -32,8 +47,8 @@ export default function Line(props) {
           }}
         />
         km
-      </td>
-      <td>
+      </Cell>
+      <Cell small right>
         <MagicLink
           to={
             !isMobile
@@ -53,7 +68,7 @@ export default function Line(props) {
           />
           l'itinéraire
         </MagicLink>
-      </td>
+      </Cell>
     </Wrapper>
   )
 }

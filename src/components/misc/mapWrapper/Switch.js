@@ -26,6 +26,11 @@ const Wrapper = styled.button`
       fill: ${(props) => props.theme.colors.main};
     }
   }
+
+  ${(props) => props.theme.mq.small} {
+    top: auto;
+    bottom: 1rem;
+  }
 `
 export default function Switch(props) {
   return (
