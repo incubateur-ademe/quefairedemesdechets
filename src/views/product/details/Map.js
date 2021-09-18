@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 35rem;
   border-radius: 1rem;
+  border: 0.125rem solid ${(props) => props.theme.colors.secondLight};
   overflow: hidden;
 `
 export default function Map(props) {
