@@ -63,7 +63,7 @@ const Loader = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: ${(props) => props.theme.colors.text};
+    background-color: ${(props) => props.theme.colors.second};
     transform: scaleX(0);
     animation: ${(props) => (props.isFetching ? fetching : 'none')} 1s linear
       infinite;
