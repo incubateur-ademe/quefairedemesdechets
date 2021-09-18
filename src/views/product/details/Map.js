@@ -6,13 +6,14 @@ import MapWrapper from 'components/misc/MapWrapper'
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 30rem;
-  border-top: 0.125rem solid ${(props) => props.theme.colors.text};
+  height: 35rem;
+  border-radius: 1rem;
+  overflow: hidden;
 `
 export default function Map(props) {
-  return props.open ? (
+  return (
     <Wrapper>
       <MapWrapper product={props.product} />
     </Wrapper>
-  ) : null
+  )
 }

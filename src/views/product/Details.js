@@ -1,31 +1,53 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 
-import Tabs from './details/Tabs'
 import Map from './details/Map'
-import Avoid from './details/Avoid'
-import Next from './details/Next'
 
 const Wrapper = styled.div`
-  margin-bottom: 5rem;
-  border: 0.125rem solid ${(props) => props.theme.colors.text};
-  border-radius: 2rem;
-  overflow: hidden;
-
   ${(props) => props.theme.mq.small} {
     display: none;
   }
 `
-
+const Section = styled.section`
+  margin-bottom: 4rem;
+`
+const Title = styled.h2`
+  margin-bottom: 1.25rem;
+`
+const Text = styled.p`
+  font-size: 1.125rem;
+`
 export default function Product(props) {
-  const [open, setOpen] = useState(props.product.map ? 'map' : 'next')
-
+  console.log(props.product)
   return (
     <Wrapper>
-      <Tabs setOpen={setOpen} open={open} product={props.product} />
-      <Map open={open === 'map'} product={props.product} />
-      <Next open={open === 'next'} product={props.product} />
-      <Avoid open={open === 'avoid'} product={props.product} />
+      {props.product.map && (
+        <Section>
+          <Title>Ou l'apporter ?</Title>
+
+          <Map product={props.product} />
+        </Section>
+      )}
+      {props.product[`Que_va-t-il_devenir_?`] && (
+        <Section>
+          <Title>Que va-t-il devenir ?</Title>
+          <Text
+            dangerouslySetInnerHTML={{
+              __html: props.product[`Que_va-t-il_devenir_?`],
+            }}
+          />
+        </Section>
+      )}
+      {props.product[`Comment_les_Ã©viter_?`] && (
+        <Section>
+          <Title>Comment l'éviter ?</Title>
+          <Text
+            dangerouslySetInnerHTML={{
+              __html: props.product[`Comment_les_Ã©viter_?`],
+            }}
+          />
+        </Section>
+      )}
     </Wrapper>
   )
 }

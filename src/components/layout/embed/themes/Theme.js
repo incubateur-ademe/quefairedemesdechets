@@ -20,7 +20,6 @@ const Content = styled.div`
 const Title = styled.h4`
   margin-bottom: 0.4em;
   font-size: 1.5em;
-  color: ${(props) => props.displayTheme.colors.text};
 `
 const Tiles = styled.div`
   display: flex;

@@ -141,7 +141,7 @@ const Wrapper = styled.div`
 const Svg = styled.svg`
   path,
   circle {
-    fill: ${(props) => props.theme.colors.text};
+    fill: ${(props) => props.theme.colors.second};
   }
 
   &:hover {

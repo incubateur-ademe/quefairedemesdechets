@@ -16,14 +16,14 @@ const Input = styled.textarea`
 
   color: ${(props) => props.theme.colors.text};
   background-color: transparent;
-  border: 2px solid ${(props) => props.theme.colors.text};
+  border: 2px solid ${(props) => props.theme.colors.second};
   border-radius: 1rem;
   resize: vertical;
   transition: box-shadow 300ms ease-out;
 
   &:focus {
     outline: none;
-    box-shadow: 0 -0 0px 1px ${(props) => props.theme.colors.text};
+    box-shadow: 0 -0 0px 1px ${(props) => props.theme.colors.second};
   }
 `
 export default function TextArea(props) {

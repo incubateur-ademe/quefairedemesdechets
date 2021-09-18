@@ -32,7 +32,6 @@ const Content = styled.div`
   max-width: 90vw;
   max-height: 90vh;
   margin: 1rem;
-  color: ${(props) => props.theme.colors.text};
   background-color: ${(props) => props.theme.colors.background};
   border-radius: 1em;
   box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.2);

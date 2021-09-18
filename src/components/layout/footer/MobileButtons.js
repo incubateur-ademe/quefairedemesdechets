@@ -22,16 +22,16 @@ const Button = styled.button`
   align-items: center;
   margin: 0;
   padding: 0;
-  color: ${(props) => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.second};
   background: none;
   border: none;
 `
 const StyledLink = styled(MagicLink)`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-  color: ${(props) => props.theme.colors.text};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: ${(props) => props.theme.colors.second};
   text-decoration: none;
 `
 const Icon = styled.div`

@@ -14,7 +14,7 @@ const StyledHeader = styled(Header)`
       left: -0.75rem;
       right: -0.75rem;
       height: 0.125rem;
-      background-color: ${(props) => props.theme.colors.text};
+      background-color: ${(props) => props.theme.colors.second};
     }
   }
 `

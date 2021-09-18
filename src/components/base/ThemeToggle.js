@@ -19,12 +19,6 @@ const Wrapper = styled.label`
     text-align: center;
   }
 `
-const InvisibleLabel = styled.span`
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  right: 100%;
-`
 const Svg = styled.svg`
   position: absolute;
   display: block;
@@ -39,7 +33,6 @@ export default function Visible(props) {
 
   return (
     <Wrapper mobile={props.mobile}>
-      <InvisibleLabel>Thème</InvisibleLabel>
       <Switch
         onChange={() =>
           setTheme((prevTheme) =>
@@ -51,6 +44,7 @@ export default function Visible(props) {
         onColor={themes.default.colors.background}
         offHandleColor={themes.default.colors.background}
         onHandleColor={themes.night.colors.background}
+        aria-label='Changer de thème'
         uncheckedIcon={
           <Svg x='0px' y='0px' viewBox='0 0 469.333 469.333'>
             <path

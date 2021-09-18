@@ -92,7 +92,7 @@ export function usePlaces(center, zoom, product) {
     isFetching: isFetchingDecheteries,
   } = useQuery(['decheteries', debouncedCenter], fetchDecheteries, {
     enabled: product['Déchèterie'] && zoomedEnough ? true : false,
-    keepPreviousData: zoomedEnough ? true : false,
+    keepPreviousData: product['Déchèterie'] && zoomedEnough ? true : false,
     refetchOnWindowFocus: false,
   })
 
@@ -102,7 +102,7 @@ export function usePlaces(center, zoom, product) {
     isFetching: isFetchingPharmacies,
   } = useQuery(['pharmacies', debouncedCenter], fetchPharmacies, {
     enabled: product['Pharmacie'] && zoomedEnough ? true : false,
-    keepPreviousData: zoomedEnough ? true : false,
+    keepPreviousData: product['Pharmacie'] && zoomedEnough ? true : false,
     refetchOnWindowFocus: false,
   })
 
@@ -112,7 +112,8 @@ export function usePlaces(center, zoom, product) {
     isFetching: isFetchingOcad3e,
   } = useQuery(['ocad3e', debouncedCenter, product['Code']], fetchOcad3e, {
     enabled: product['Bdd'] === 'ocad3e' && zoomedEnough ? true : false,
-    keepPreviousData: zoomedEnough ? true : false,
+    keepPreviousData:
+      product['Bdd'] === 'ocad3e' && zoomedEnough ? true : false,
     refetchOnWindowFocus: false,
   })
 
@@ -181,19 +182,22 @@ const fetchOcad3e = ({ queryKey }) =>
       `https://quefairedemesdechets.netlify.app/.netlify/functions/callOcad3e?latitude=${queryKey[1][0]}&longitude=${queryKey[1][1]}&category=${queryKey[2]}`
     )
     .then((res) =>
-      res.data.placemarks.map((place) => ({
-        id:
-          place['name'] +
-          place['position']['lat'] +
-          place['position']['lng'] +
-          String(Math.random()),
-        latitude: Number(place['position']['lat']),
-        longitude: Number(place['position']['lng']),
-        title: place['name'],
-        hours: place['details']['timeTable'],
-        address: `${place['address']['address1']}
+      res.data.placemarks
+        .map((place) => ({
+          id:
+            place['name'] +
+            place['position']['lat'] +
+            place['position']['lng'] +
+            String(Math.random()),
+          latitude: Number(place['position']['lat']),
+          longitude: Number(place['position']['lng']),
+          distance: Number(place['position']['distance']),
+          title: place['name'],
+          hours: place['details']['timeTable'],
+          address: `${place['address']['address1']}
                       <br />
                       ${place['address']['postalCode']} 
                       ${place['address']['city']}`,
-      }))
+        }))
+        .sort((a, b) => (a.distance > b.distance ? 1 : -1))
     )

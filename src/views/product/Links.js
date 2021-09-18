@@ -4,7 +4,9 @@ import styled from 'styled-components'
 import MagicLink from 'components/base/MagicLink'
 
 const Wrapper = styled.div``
-const Title = styled.h2``
+const Title = styled.h2`
+  margin-bottom: 1.25rem;
+`
 const StyledLink = styled(MagicLink)`
   display: flex;
   align-items: flex-start;

@@ -57,7 +57,7 @@ export default function Address(props) {
         place.geometry.coordinates[1],
         place.geometry.coordinates[0],
       ])
-      props.setZoom(14)
+      props.setZoom(13)
       setFocus(false)
     }
   }

@@ -56,7 +56,12 @@ export default function Place(props) {
         to={
           !isMobile
             ? `https://www.google.com/maps/dir/?api=1&origin=${props.address.latitude},${props.address.longitude}&destination=${props.place.latitude},${props.place.longitude}`
-            : `geo:${props.place.latitude},${props.place.longitude}?q=${props.place.latitude},${props.place.longitude}(${props.place.address})`
+            : `geo:${props.place.latitude},${props.place.longitude}?q=${
+                props.place.latitude
+              },${props.place.longitude}(${props.place.address.replaceAll(
+                '<br/>',
+                ''
+              )})`
         }
       >
         Voir l'itinéraire

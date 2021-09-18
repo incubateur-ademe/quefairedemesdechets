@@ -6,9 +6,11 @@ export const themes = {
     name: 'Clair',
     colors: {
       main: '#E01B0B',
+      second: '#32337B',
+      secondLight: '#E5EDF5',
       background: '#ffffff',
       footer: '#F6F7F9',
-      text: '#32337B',
+      text: '#383838',
     },
     fonts: {
       body: '"Marianne", sans-serif',
@@ -27,6 +29,7 @@ export const themes = {
     name: 'Sombre',
     colors: {
       main: '#F6BFC3',
+      second: '#E5EDF5',
       background: '#1e1e1e',
       footer: '#383838',
       text: '#ffffff',
@@ -76,6 +79,7 @@ export const GlobalStyle = createGlobalStyle`
   h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     font-family: ${(props) => props.theme.fonts.title};
+    color: ${(props) => props.theme.colors.second};
     font-weight: bold;
     line-height: 1.2;
   }

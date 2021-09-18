@@ -15,7 +15,7 @@ const Wrapper = styled.svg`
   }
 
   path {
-    fill: ${(props) => props.theme.colors.text};
+    fill: ${(props) => props.theme.colors.second};
   }
 `
 export default function Glass() {
