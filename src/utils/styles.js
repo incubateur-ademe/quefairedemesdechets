@@ -30,6 +30,7 @@ export const themes = {
     colors: {
       main: '#F6BFC3',
       second: '#E5EDF5',
+      secondLight: '#383838',
       background: '#1e1e1e',
       footer: '#383838',
       text: '#ffffff',

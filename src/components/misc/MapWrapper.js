@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react'
 import styled, { keyframes, ThemeContext } from 'styled-components'
 import { Map, Marker, Overlay } from 'pigeon-maps'
-import Switch from 'react-switch'
 
 import { usePlaces } from 'utils/api'
 import Address from './mapWrapper/Address'
+import Switch from './mapWrapper/Switch'
 import Place from './mapWrapper/Place'
 import List from './mapWrapper/List'
 
@@ -27,12 +27,6 @@ const fetching = keyframes`
     transform: scaleX(1);
     transform-origin: left;
   }
-`
-const SwitchWrapper = styled.div`
-  position: absolute;
-  z-index: 2;
-  top: 1rem;
-  right: 0.5rem;
 `
 const Cache = styled.div`
   position: absolute;
@@ -117,13 +111,7 @@ export default function MapWrapper(props) {
         setCenter={setCenter}
         setZoom={setZoom}
       />
-      <SwitchWrapper>
-        <Switch
-          onChange={() => setList((prevList) => !prevList)}
-          checked={list}
-          aria-label='Changer de mode'
-        />
-      </SwitchWrapper>
+      <Switch setList={setList} list={list} />
       <Loader isFetching={isFetching} />
       <Cache visible={!address.label} />
       {list ? (
