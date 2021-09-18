@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import ademe from './footer/ademe.jpg'
 import MagicLink from 'components/base/MagicLink'
 import ThemeToggle from 'components/base/ThemeToggle'
 import ContactPrompt from 'components/base/ContactPrompt'
 import Button from 'components/base/Button'
 import Marianne from 'components/base/Marianne'
+import Ademe from 'components/base/Ademe'
 import Logo from 'components/base/Logo'
 import MobileButtons from './footer/MobileButtons'
 
@@ -53,11 +53,6 @@ const Logos = styled(MagicLink)`
   width: 100%;
   text-decoration: none;
   background-color: #fff;
-`
-const Ademe = styled.img`
-  display: block;
-  width: 4.9375rem;
-  height: auto;
 `
 export default function Footer(props) {
   return (
@@ -120,7 +115,7 @@ export default function Footer(props) {
       <LogosWrapper>
         <Logos to='https://datagir.ademe.fr/'>
           <Marianne />
-          <Ademe src={ademe} alt='ADEME' />
+          <Ademe />
           <Logo />
         </Logos>
       </LogosWrapper>
