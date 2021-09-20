@@ -7,7 +7,7 @@ const search = script.dataset.search
 const source = window.location.href.toString()
 
 const src = `${
-  domain || 'https://quefairedemesdechets.fr'
+  domain || 'https://quefairedemesdechets.netlify.app'
 }/?source=${source}&iframe=1&${search.replace('?', '')}`
 
 const iframe = document.createElement('iframe')
