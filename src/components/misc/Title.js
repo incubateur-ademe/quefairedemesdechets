@@ -13,7 +13,7 @@ const Wrapper = styled.h1`
   position: relative;
   margin-bottom: ${(props) => (props.small ? 0 : 2.5)}rem;
   font-size: ${(props) => (props.small ? 1.5 : 2.5)}rem;
-  text-align: ${(props) => (props.small ? 'left' : 'center')};
+  text-align: ${(props) => (props.small && !props.noLogos ? 'left' : 'center')};
 
   ${(props) => props.theme.mq.small} {
     font-size: 1.25rem;
@@ -25,10 +25,14 @@ const Color = styled.span`
 export default function Title(props) {
   const { isFetching } = useWaste()
   const { binFlight, setBinFlight } = useContext(UXContext)
-
+  console.log(props.noLogos)
   return (
     <StyledMagicLink to='/'>
-      <Wrapper small={props.small} as={props.small ? 'h2' : 'h1'}>
+      <Wrapper
+        small={props.small}
+        as={props.small ? 'h2' : 'h1'}
+        noLogos={props.noLogos}
+      >
         Que Faire de mes
         <span
           dangerouslySetInnerHTML={{

@@ -38,7 +38,7 @@ const Section = styled.div`
 `
 const MobileSection = styled(Section)`
   display: none;
-  ${(props) => props.theme.mq.small} {
+  ${(props) => props.theme.mq.medium} {
     display: flex;
   }
 `
@@ -112,13 +112,15 @@ export default function Footer(props) {
           </>
         )}
       </Content>
-      <LogosWrapper>
-        <Logos to='https://datagir.ademe.fr/'>
-          <Marianne />
-          <Ademe />
-          <Logo />
-        </Logos>
-      </LogosWrapper>
+      {!props.iframe && (
+        <LogosWrapper>
+          <Logos to='https://datagir.ademe.fr/'>
+            <Marianne />
+            <Ademe />
+            <Logo />
+          </Logos>
+        </LogosWrapper>
+      )}
     </Wrapper>
   )
 }

@@ -34,8 +34,6 @@ const SEO = (props) => {
     url: `${siteUrl}${pathname}`,
   }
 
-  console.log('image', seo.image)
-
   return (
     <Helmet title={seo.title}>
       <meta name='description' content={seo.description} />

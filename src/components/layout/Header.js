@@ -22,10 +22,12 @@ const Logos = styled(MagicLink)`
 export default function Header(props) {
   return (
     <Wrapper className={props.className}>
-      <Logos to='/' aria-label='Accueil'>
-        <Marianne />
-        <Ademe />
-      </Logos>
+      {!props.noLogos && (
+        <Logos to='/' aria-label='Accueil'>
+          <Marianne />
+          <Ademe />
+        </Logos>
+      )}
       {props.children}
     </Wrapper>
   )

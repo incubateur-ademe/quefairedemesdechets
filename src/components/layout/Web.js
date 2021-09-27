@@ -42,13 +42,15 @@ const FullScreen = styled.div`
   max-width: 100%;
   min-height: ${(props) => (props.iframe ? 'none' : '100vh')};
   margin: 0 auto;
-  padding: 0 0.75rem 5rem;
+  padding: ${(props) => (props.noHeader ? '1rem' : 0)} 0.75rem 5rem;
 `
 export default function Web(props) {
   const [iframe, setIframe] = useState(false)
+  const [noHeader, setnoHeader] = useState(false)
 
   useEffect(() => {
     setIframe(window.location.search.includes('iframe'))
+    setnoHeader(window.location.search.includes('noheader'))
   }, [])
 
   return (
@@ -61,8 +63,8 @@ export default function Web(props) {
               <GlobalStyle />
               <ThemeToggle />
               <Content>
-                <FullScreen iframe={iframe}>
-                  <HeaderWrapper />
+                <FullScreen iframe={iframe} noHeader={noHeader}>
+                  {!noHeader && <HeaderWrapper />}
                   {props.children}
                   <Bin />
                 </FullScreen>
