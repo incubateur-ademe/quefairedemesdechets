@@ -8,15 +8,15 @@ import Ademe from 'components/base/Ademe'
 const Wrapper = styled.div`
   position: relative;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  padding-bottom: 0.25rem;
+  padding-bottom: 0.125rem;
   margin-bottom: 3rem;
 `
 const Logos = styled(MagicLink)`
   display: flex;
   align-items: center;
-  margin-left: -0.75rem;
+  margin: 0 0.75rem 0 -0.75rem;
   background-color: #fff;
 `
 export default function Header(props) {

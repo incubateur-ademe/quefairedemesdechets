@@ -16,7 +16,7 @@ const Wrapper = styled.h1`
   text-align: ${(props) => (props.small ? 'left' : 'center')};
 
   ${(props) => props.theme.mq.small} {
-    font-size: 1.25rem;
+    font-size: ${(props) => (props.small ? 1.125 : 1.25)}rem;
   }
 `
 const Color = styled.span`
@@ -25,11 +25,11 @@ const Color = styled.span`
 export default function Title(props) {
   const { isFetching } = useWaste()
   const { binFlight, setBinFlight } = useContext(UXContext)
-  console.log(props.noLogos)
+
   return (
     <StyledMagicLink to='/'>
       <Wrapper small={props.small} as={props.small ? 'h2' : 'h1'}>
-        Que Faire de mes
+        Que Faire de{props.small && <br />} mes
         <span
           dangerouslySetInnerHTML={{
             __html: `&nbsp;`,
