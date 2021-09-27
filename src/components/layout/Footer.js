@@ -114,7 +114,7 @@ export default function Footer(props) {
       </Content>
       {!props.iframe && (
         <LogosWrapper>
-          <Logos to='https://datagir.ademe.fr/'>
+          <Logos to='https://datagir.ademe.fr/' aria-label='datagir.ademe.fr'>
             <Marianne />
             <Ademe />
             <Logo />
