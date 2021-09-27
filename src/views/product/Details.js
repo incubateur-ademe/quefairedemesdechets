@@ -23,7 +23,7 @@ export default function Product(props) {
     <Wrapper>
       {props.product.map && (
         <Section>
-          <Title>Ou l'apporter ?</Title>
+          <Title>Où l'apporter ?</Title>
 
           <Map product={props.product} />
         </Section>
