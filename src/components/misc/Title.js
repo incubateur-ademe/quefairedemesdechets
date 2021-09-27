@@ -13,7 +13,7 @@ const Wrapper = styled.h1`
   position: relative;
   margin-bottom: ${(props) => (props.small ? 0 : 2.5)}rem;
   font-size: ${(props) => (props.small ? 1.5 : 2.5)}rem;
-  text-align: ${(props) => (props.small && !props.noLogos ? 'left' : 'center')};
+  text-align: ${(props) => (props.small ? 'left' : 'center')};
 
   ${(props) => props.theme.mq.small} {
     font-size: 1.25rem;
@@ -28,11 +28,7 @@ export default function Title(props) {
   console.log(props.noLogos)
   return (
     <StyledMagicLink to='/'>
-      <Wrapper
-        small={props.small}
-        as={props.small ? 'h2' : 'h1'}
-        noLogos={props.noLogos}
-      >
+      <Wrapper small={props.small} as={props.small ? 'h2' : 'h1'}>
         Que Faire de mes
         <span
           dangerouslySetInnerHTML={{

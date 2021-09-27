@@ -18,11 +18,11 @@ const StyledHeader = styled(Header)`
     }
   }
 `
-export default function HeaderWrapper(props) {
+export default function HeaderWrapper() {
   const location = useLocation()
   return (
-    <StyledHeader noLogos={props.noLogos} small={location.pathname !== '/'}>
-      {location.pathname !== '/' && <Title small noLogos={props.noLogos} />}
+    <StyledHeader small={location.pathname !== '/'}>
+      {location.pathname !== '/' && <Title small />}
     </StyledHeader>
   )
 }
