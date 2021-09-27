@@ -53,12 +53,9 @@ export default function Links(props) {
         <StyledLink
           key={link['URL']}
           to={link['URL']}
-          onCLick={window._paq?.push([
-            'trackEvent',
-            'Misc',
-            'Link',
-            link['URL'],
-          ])}
+          onClick={() =>
+            window._paq?.push(['trackEvent', 'Misc', 'Link', link['URL']])
+          }
         >
           <Icon x='0px' y='0px' viewBox='0 0 283.922 283.922'>
             <path
