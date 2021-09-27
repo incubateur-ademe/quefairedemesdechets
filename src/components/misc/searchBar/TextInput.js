@@ -80,7 +80,7 @@ export default React.forwardRef(function TextInput(props, ref) {
       <Input
         ref={ref}
         type='text'
-        placeholder='Entrez votre recherche'
+        placeholder='Entrez un déchet'
         value={props.search}
         onChange={(e) => props.setSearch(e.target.value)}
         onFocus={() => props.setFocus(true)}
