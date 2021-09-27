@@ -74,7 +74,7 @@ export default function SearchBar(props) {
 
   const navigateToProduct = (product) => {
     console.log(product)
-    navigate(`/dechet/${product.item[`slug`]}`)
+    navigate(`/dechet/${product.item[`slug`]}${window.location.search}`)
     setSearch(product.item[`Nom`])
     setFocus(false)
   }

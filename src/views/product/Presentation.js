@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import PreviousButton from './presentation/PreviousButton'
 import ShareButton from './presentation/ShareButton'
 
 const Header = styled.div`
@@ -18,7 +17,7 @@ const Header = styled.div`
 `
 const Title = styled.h1`
   flex: 1;
-  margin: 0 1.5rem 0;
+  margin: 0 1.5rem 0 0;
   font-size: 2.75rem;
   line-height: 1.1;
 
@@ -30,10 +29,6 @@ const Title = styled.h1`
     font-size: 2rem;
     margin: 0 1rem 0 0;
   }
-`
-const Subtitle = styled.h3`
-  margin: -1rem 3rem 2rem;
-  display: block;
 `
 const Text = styled.div`
   margin-bottom: 3rem;
@@ -53,7 +48,6 @@ export default function Presentation(props) {
   return (
     <>
       <Header>
-        <PreviousButton />
         <Title>{props.product['Nom']}</Title>
         <ShareButton />
       </Header>

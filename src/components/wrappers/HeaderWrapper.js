@@ -28,8 +28,9 @@ const Wrapper = styled.div`
 `
 const SearchBarWrapper = styled.div`
   position: relative;
-  width: 20rem;
+  width: ${(props) => (props.noHeader ? '100%' : '20rem')};
   height: 2.875rem;
+  margin-top: ${(props) => (props.noHeader ? '1rem' : 0)};
 
   ${(props) => props.theme.mq.small} {
     display: none;
@@ -39,15 +40,15 @@ const StyledSearchBar = styled(SearchBar)`
   top: 0;
   font-size: 0.7rem;
 `
-export default function HeaderWrapper() {
+export default function HeaderWrapper(props) {
   const location = useLocation()
   const { isFetched } = useWaste()
   return (
-    <StyledHeader small={location.pathname !== '/'}>
+    <StyledHeader small={location.pathname !== '/'} noHeader={props.noHeader}>
       {location.pathname !== '/' && (
         <Wrapper>
-          <Title small />
-          <SearchBarWrapper>
+          {!props.noHeader && <Title small />}
+          <SearchBarWrapper noHeader={props.noHeader}>
             <StyledSearchBar isFetched={isFetched} />
           </SearchBarWrapper>
         </Wrapper>
