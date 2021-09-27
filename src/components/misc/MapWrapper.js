@@ -94,11 +94,20 @@ export default function MapWrapper(props) {
     <>
       <Address
         address={address.label}
-        setAddress={setAddress}
+        setAddress={(value) => {
+          window._paq?.push(['trackEvent', 'Map', 'Adresse'])
+          setAddress(value)
+        }}
         setCenter={setCenter}
         setZoom={setZoom}
       />
-      <Switch setList={setList} list={list} />
+      <Switch
+        setList={(value) => {
+          window._paq?.push(['trackEvent', 'Map', 'List'])
+          setList(value)
+        }}
+        list={list}
+      />
       <Loader isFetching={isFetching} />
       <Cache visible={!address.label} />
       {list ? (

@@ -58,6 +58,7 @@ export default function Code(props) {
           if (copy(script)) {
             setCopied(true)
           }
+          window._paq?.push(['trackEvent', 'Share', 'Embed', props.typeshare])
         }}
       >
         {script}

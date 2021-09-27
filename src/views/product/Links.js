@@ -50,7 +50,16 @@ export default function Links(props) {
     <Wrapper>
       <Title>En Savoir Plus</Title>
       {props.product.links.map((link) => (
-        <StyledLink key={link['URL']} to={link['URL']}>
+        <StyledLink
+          key={link['URL']}
+          to={link['URL']}
+          onCLick={window._paq?.push([
+            'trackEvent',
+            'Misc',
+            'Link',
+            link['URL'],
+          ])}
+        >
           <Icon x='0px' y='0px' viewBox='0 0 283.922 283.922'>
             <path
               d='M266.422,0h-97.625c-9.65,0-17.5,7.851-17.5,17.5c0,9.649,7.85,17.5,17.5,17.5h55.377l-92.375,92.374

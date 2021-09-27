@@ -9,6 +9,9 @@ export default function Mail(props) {
       to={`mailto:?subject=${encodeURI(props.subject)}&body=${encodeURI(
         props.body
       )}${encodeURI(props.url)}`}
+      onClick={() =>
+        window._paq?.push(['trackEvent', 'Share', 'Email', props.url])
+      }
     >
       <Svg height='448pt' viewBox='0 0 448 448' width='448pt'>
         <path d='m314.375 144h-180.75l90.375 77.464844zm0 0' />
