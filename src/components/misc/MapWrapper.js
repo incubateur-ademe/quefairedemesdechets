@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import styled, { keyframes, ThemeContext } from 'styled-components'
-import { Map, Marker, Overlay } from 'pigeon-maps'
+import { Map, Marker, Overlay, ZoomControl } from 'pigeon-maps'
 
 import { usePlaces } from 'utils/api'
 import Address from './mapWrapper/Address'
@@ -44,16 +44,14 @@ const Cache = styled.div`
 const Loader = styled.div`
   position: absolute;
   z-index: 100;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
   height: 0.125rem;
   width: 100%;
 
   ${(props) => props.theme.mq.small} {
-    top: 0;
-    bottom: auto;
-    height: 0.5rem;
+    height: 0.25rem;
   }
 
   &:before {
@@ -116,6 +114,8 @@ export default function MapWrapper(props) {
           }}
           attribution={false}
         >
+          <ZoomControl style={{ top: 'auto', bottom: '1rem', left: '1rem' }} />
+
           {data &&
             data.map(
               (place) =>

@@ -6,7 +6,7 @@ import MapWrapper from 'components/misc/MapWrapper'
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 35rem;
+  height: clamp(20rem, 75vh, 35rem);
   border-radius: 1rem;
   border: 0.125rem solid ${(props) => props.theme.colors.secondLight};
   overflow: hidden;
