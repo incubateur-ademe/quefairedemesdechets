@@ -2,11 +2,15 @@ const axios = require(`axios`)
 
 exports.createPages = ({ graphql, actions: { createPage } }) => {
   return axios
-    .get(`https://quefairedemesdechets.netlify.app/data/waste.json`)
+    .get(
+      `https://koumoul.com/s/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&size=1000&sampling=neighbors`
+    )
     .then((res) => res.data.results)
     .then((wasteRes) =>
       axios
-        .get('https://quefairedemesdechets.netlify.app/data/links.json')
+        .get(
+          'https://koumoul.com/s/data-fair/api/v1/datasets/que-faire-de-mes-dechets-liens/lines?format=json&q_mode=simple&size=1000&sampling=neighbors'
+        )
         .then((res) => res.data.results)
         .then((linkRes) => {
           let tempWaste = [...wasteRes]

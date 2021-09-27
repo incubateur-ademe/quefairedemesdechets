@@ -9,7 +9,9 @@ export function useWaste() {
     ['waste'],
     () =>
       axios
-        .get(`/data/waste-search.json`)
+        .get(
+          `https://koumoul.com/s/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&size=1000&select=Nom%2CSynonymes_existants&sampling=neighbors`
+        )
         .then((res) => res.data.results)
 
         .then((res) => {
