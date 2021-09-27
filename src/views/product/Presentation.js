@@ -57,9 +57,6 @@ export default function Presentation(props) {
         <Title>{props.product['Nom']}</Title>
         <ShareButton />
       </Header>
-      {props.product['parent'] && (
-        <Subtitle>({props.product['parent']})</Subtitle>
-      )}
       <Text
         dangerouslySetInnerHTML={{
           __html: props.product[`Qu'est-ce_que_j'en_fais_?`],
