@@ -29,7 +29,7 @@ Voici un résultat de recherche sur le site Que Faire de mes Déchets que je vou
         facebook: {
           simulator: {
             quote:
-              'Vous voulez être sûr de bien respecter les consignes de tri pour vos emballages ? Vous vous demandez où apporter vos appareils électriques ? Grâce au simulateur Datagir, retrouvez toutes les réponses à ces questions !',
+              'Vous voulez être sûr de bien respecter les consignes de tri pour vos emballages ? Vous vous demandez où apporter vos appareils électriques ? Grâce au simulateur Datagir, retrouvez toutes les réponses à ces questions ! ♻🌍',
           },
           result: {
             quote: `${props.result} - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
@@ -38,7 +38,7 @@ Voici un résultat de recherche sur le site Que Faire de mes Déchets que je vou
         twitter: {
           simulator: {
             title:
-              'Vous voulez être sûr de bien respecter les consignes de tri pour vos emballages ? Vous vous demandez où apporter vos appareils électriques ? Grâce au simulateur Datagir, retrouvez toutes les réponses à ces questions !',
+              'Vous voulez être sûr de bien respecter les consignes de tri pour vos emballages ? Vous vous demandez où apporter vos appareils électriques ? Grâce au simulateur Datagir, retrouvez toutes les réponses à ces questions ! ♻🌍',
           },
           result: {
             title: `${props.result} - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
@@ -61,7 +61,7 @@ Voici un résultat de recherche sur le site Que Faire de mes Déchets que je vou
         },
         whatsapp: {
           simulator: {
-            title: 'Que Faire de mes Déchets',
+            title: 'Que Faire de mes Déchets ♻🌍',
           },
           result: {
             title: `${props.result} - J’ai trouvé où jeter ce type de déchets grâce à Que Faire de mes Déchets !`,
