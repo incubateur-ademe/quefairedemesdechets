@@ -5,13 +5,14 @@ import Highlighter from 'react-highlight-words'
 
 const Wrapper = styled.div`
   max-height: 60vh;
-  overflow-y: scroll;
+  overflow: hidden;
 `
 const Suggestion = styled.div`
   padding: 0.75em 0.75em 0.75em 2em;
   cursor: pointer;
   transition: background-color 200ms ease-out;
   background-color: rgba(0, 0, 0, ${(props) => (props.current ? 0.15 : 0)});
+  font-size: clamp(13px, 1em, 2em);
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.2);
