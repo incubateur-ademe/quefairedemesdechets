@@ -64,7 +64,6 @@ export default function Geoloc(props) {
   const { data, isFetching, isError } = usePosition(position)
 
   useEffect(() => {
-    console.log('wololo')
     data && data.features && props.navigateToPlace(data.features[0])
   }, [data])
 

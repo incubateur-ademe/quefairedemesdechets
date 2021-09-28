@@ -18,7 +18,6 @@ const Text = styled.p`
   font-size: 1.125rem;
 `
 export default function Product(props) {
-  console.log(props.product)
   return (
     <Wrapper>
       {props.product.map && (
