@@ -17,14 +17,12 @@ const Suggestion = styled.div`
   cursor: pointer;
   transition: background-color 200ms ease-out,
     opacity ${(props) => (props.isFetching ? 300 : 0)}ms ease-out;
-  background-color: rgba(
-    ${(props) => props.theme.colors.background},
-    ${(props) => (props.current ? 0.4 : 0)}
-  );
+  background-color: ${(props) =>
+    props.theme.colors[props.current ? 'secondLight' : 'background']};
   opacity: ${(props) => (props.isFetching ? 0.3 : 1)};
 
   &:hover {
-    background-color: rgba(${(props) => props.theme.colors.background}, 0.7);
+    background-color: ${(props) => props.theme.colors.mainLight};
   }
 
   mark {

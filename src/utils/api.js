@@ -93,8 +93,8 @@ export function usePlaces(center, zoom, product) {
     isLoading: isLoadingDecheteries,
     isFetching: isFetchingDecheteries,
   } = useQuery(['decheteries', debouncedCenter], fetchDecheteries, {
-    enabled: product['Déchèterie'] && zoomedEnough ? true : false,
-    keepPreviousData: product['Déchèterie'] && zoomedEnough ? true : false,
+    enabled: product['Bdd'] === 'sinoe' && zoomedEnough ? true : false,
+    keepPreviousData: product['Bdd'] === 'sinoe' && zoomedEnough ? true : false,
     refetchOnWindowFocus: false,
   })
 
@@ -103,8 +103,9 @@ export function usePlaces(center, zoom, product) {
     isLoading: isLoadingPharmacies,
     isFetching: isFetchingPharmacies,
   } = useQuery(['pharmacies', debouncedCenter], fetchPharmacies, {
-    enabled: product['Pharmacie'] && zoomedEnough ? true : false,
-    keepPreviousData: product['Pharmacie'] && zoomedEnough ? true : false,
+    enabled: product['Bdd'] === 'google' && zoomedEnough ? true : false,
+    keepPreviousData:
+      product['Bdd'] === 'google' && zoomedEnough ? true : false,
     refetchOnWindowFocus: false,
   })
 

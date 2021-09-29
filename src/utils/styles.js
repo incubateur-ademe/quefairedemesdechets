@@ -6,6 +6,7 @@ export const themes = {
     name: 'Clair',
     colors: {
       main: '#E01B0B',
+      mainLight: '#F6BFC3',
       second: '#32337B',
       secondLight: '#E5EDF5',
       background: '#ffffff',

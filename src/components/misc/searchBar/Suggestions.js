@@ -11,11 +11,12 @@ const Suggestion = styled.div`
   padding: 0.75em 0.75em 0.75em 2em;
   cursor: pointer;
   transition: background-color 200ms ease-out;
-  background-color: rgba(0, 0, 0, ${(props) => (props.current ? 0.15 : 0)});
+  background-color: ${(props) =>
+    props.theme.colors[props.current ? 'secondLight' : 'background']};
   font-size: clamp(13px, 1em, 2em);
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: ${(props) => props.theme.colors.mainLight};
   }
   &:last-child {
     padding-bottom: 1.5em;
