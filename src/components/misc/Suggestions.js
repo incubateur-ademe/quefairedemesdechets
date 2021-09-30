@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useQueryParam, ArrayParam } from 'use-query-params'
 
+import { useSuggestions } from 'utils/api'
 import Button from 'components/base/Button'
 
 const Title = styled.p`
@@ -26,26 +28,44 @@ const StyledButton = styled(Button)`
   }
 `
 export default function Suggestions(props) {
+  const [suggestions] = useQueryParam('suggestions', ArrayParam)
+
+  const { data } = useSuggestions(suggestions)
+
   return (
     <>
       <Title>{props.children}</Title>
-      <Listing>
-        <StyledButton to={'/dechet/masque-a-usage-unique'}>
-          Masque à usage unique
-        </StyledButton>
-        <StyledButton to={'/dechet/cable'}>Câble</StyledButton>
-        <StyledButton to={'/dechet/telephone-mobile'}>
-          Téléphone mobile
-        </StyledButton>
-        <StyledButton to={'/dechet/medicaments'}>Médicaments</StyledButton>
-        <StyledButton to={'/dechet/capsules-de-cafe-ou-de-the'}>
-          Capsules de café
-        </StyledButton>
-        <StyledButton to={'/dechet/chaussures'}>Chaussures</StyledButton>
-        <StyledButton to={'/dechet/vetement-(propre-et-sec)'}>
-          Vêtements
-        </StyledButton>
-      </Listing>
+      {suggestions ? (
+        <Listing>
+          {data &&
+            data.map((suggestion) => (
+              <StyledButton
+                to={`/dechet/${suggestion.slug}`}
+                key={suggestion.slug}
+              >
+                {suggestion.Nom}
+              </StyledButton>
+            ))}
+        </Listing>
+      ) : (
+        <Listing>
+          <StyledButton to={'/dechet/masque-a-usage-unique'}>
+            Masque à usage unique
+          </StyledButton>
+          <StyledButton to={'/dechet/cable'}>Câble</StyledButton>
+          <StyledButton to={'/dechet/telephone-mobile'}>
+            Téléphone mobile
+          </StyledButton>
+          <StyledButton to={'/dechet/medicaments'}>Médicaments</StyledButton>
+          <StyledButton to={'/dechet/capsules-de-cafe-ou-de-the'}>
+            Capsules de café
+          </StyledButton>
+          <StyledButton to={'/dechet/chaussures'}>Chaussures</StyledButton>
+          <StyledButton to={'/dechet/vetement-(propre-et-sec)'}>
+            Vêtements
+          </StyledButton>
+        </Listing>
+      )}
     </>
   )
 }

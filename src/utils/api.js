@@ -51,6 +51,33 @@ export function useWaste() {
     }
   )
 }
+export function useSuggestions(suggestions) {
+  return useQuery(
+    ['suggestions', suggestions],
+    () =>
+      axios
+        .get(
+          `https://koumoul.com/s/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&ID_in=${suggestions.join()}&sampling=neighbors&select=Nom`
+        )
+        .then((res) => res.data.results)
+        .then((results) =>
+          results.map((result) => ({
+            ...result,
+            slug: result[`Nom`]
+              .toLowerCase()
+              .replaceAll(' ', '-')
+              .replaceAll(`'`, '-')
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, ''),
+          }))
+        ),
+    {
+      enabled: suggestions ? true : false,
+      keepPreviousData: true,
+      refetchOnWindowFocus: false,
+    }
+  )
+}
 export function useSearch(search) {
   return useQuery(
     ['search', search],
