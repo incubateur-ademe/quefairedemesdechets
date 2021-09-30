@@ -37,7 +37,7 @@ export default function Title(props) {
         />
         <Color
           onClick={(e) => {
-            if (!binFlight) {
+            if (!binFlight && !props.small) {
               setBinFlight(true)
               setTimeout(() => setBinFlight(false), 4000)
             }
