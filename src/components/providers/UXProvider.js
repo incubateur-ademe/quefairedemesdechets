@@ -4,7 +4,7 @@ import UXContext from 'utils/UXContext'
 import usePageView from 'hooks/usePageView'
 
 export default function UXProvider(props) {
-  usePageView('Télétravail')
+  usePageView('Que Faire de mes Déchets')
 
   const [embedOpen, setEmbedOpen] = useState(false)
   const [shareOpen, setShareOpen] = useState(false)

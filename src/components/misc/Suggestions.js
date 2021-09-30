@@ -33,17 +33,17 @@ export default function Suggestions(props) {
         <StyledButton to={'/dechet/masque-a-usage-unique'}>
           Masque à usage unique
         </StyledButton>
-        <StyledButton to={'/dechet/aspirateur'}>Aspirateur</StyledButton>
-        <StyledButton to={'/dechet/epluchures'}>Epluchures</StyledButton>
-        <StyledButton to={'/dechet/vetements-(propres-et-secs)'}>
-          Vêtements
+        <StyledButton to={'/dechet/cable'}>Câble</StyledButton>
+        <StyledButton to={'/dechet/telephone-mobile'}>
+          Téléphone mobile
         </StyledButton>
+        <StyledButton to={'/dechet/medicaments'}>Médicaments</StyledButton>
         <StyledButton to={'/dechet/capsules-de-cafe-ou-de-the'}>
           Capsules de café
         </StyledButton>
-        <StyledButton to={'/dechet/meuble'}>Meuble</StyledButton>
-        <StyledButton to={'/dechet/produit-chimique'}>
-          Produit chimique
+        <StyledButton to={'/dechet/chaussures'}>Chaussures</StyledButton>
+        <StyledButton to={'/dechet/vetement-(propre-et-sec)'}>
+          Vêtements
         </StyledButton>
       </Listing>
     </>
