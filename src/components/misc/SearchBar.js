@@ -29,6 +29,7 @@ const Wrapper = styled.form`
     right: 0;
     border: 0.125em solid ${(props) => props.theme.colors.main};
     border-radius: 1.25em;
+    opacity: 1;
     transition: none;
   }
 `
@@ -101,7 +102,7 @@ export default function SearchBar(props) {
         setSearch={setSearch}
         setFocus={setFocus}
       />
-      {isFetched && true && (
+      {isFetched && focus && (
         <Suggestions
           search={search}
           results={results}
