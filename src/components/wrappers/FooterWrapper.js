@@ -5,7 +5,7 @@ import MagicLink from 'components/base/MagicLink'
 import Footer from 'components/layout/Footer'
 
 const Agir = styled.svg`
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 `
 const Path = styled.path`
   fill: ${(props) => props.theme.colors.second};
