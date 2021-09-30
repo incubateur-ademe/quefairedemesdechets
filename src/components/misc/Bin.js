@@ -120,10 +120,14 @@ const hover = keyframes`
 const Wrapper = styled.div`
   position: fixed;
   z-index: 12;
-  bottom: 0;
-  ${(props) => props.position}: 1rem;
+  ${(props) => props.position['y']}: 0;
+  ${(props) => props.position['x']}: 1rem;
   cursor: pointer;
-  transform: translateY(${(props) => (props.visible ? '50%' : '100%')});
+  transform: translateY(
+      ${(props) =>
+        props.visible ? (props.position['y'] === 'top' ? -50 : 50) : 100}%
+    )
+    rotate(${(props) => (props.position['y'] === 'top' ? 180 : 0)}deg);
   transition: transform 400ms ease-out
     ${(props) => (props.visible ? '1000ms' : '0ms')};
   animation: ${(props) =>
@@ -156,22 +160,41 @@ export default function Bin() {
   const { isSuccess } = useWaste()
   const { binFlight } = useContext(UXContext)
 
-  const [position, setPosition] = useState('left')
+  const positions = [
+    {
+      x: 'left',
+      y: 'bottom',
+    },
+    {
+      x: 'right',
+      y: 'bottom',
+    },
+    {
+      x: 'left',
+      y: 'bottom',
+    },
+    {
+      x: 'right',
+      y: 'bottom',
+    },
+  ]
+  const [currentPosition, setCurrentPosition] = useState(0)
   const [visible, setVisible] = useState(true)
 
   return (
     <Wrapper
       visible={visible && isSuccess}
       flight={binFlight}
-      position={position}
+      position={positions[currentPosition]}
       onClick={() => {
         setVisible(false)
         setTimeout(() => {
-          setPosition((prevPosition) =>
-            prevPosition === 'left' ? 'right' : 'left'
+          setCurrentPosition((prevCurrentPosition) =>
+            prevCurrentPosition < 3 ? prevCurrentPosition + 1 : 0
           )
           setVisible(true)
         }, 500)
+        window._paq?.push(['trackEvent', 'Poubelle', 'Click'])
       }}
     >
       <Svg visible={visible} width='133' height='133' viewBox='0 0 133 133'>
