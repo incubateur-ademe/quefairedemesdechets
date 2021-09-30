@@ -21,6 +21,7 @@ export default function FooterWrapper(props) {
       <p>
         Retrouvez tous les conseils de l’ADEME sur le site{' '}
         <MagicLink
+          aria-label={'Agir pour la transition'}
           to={
             'https://agirpourlatransition.ademe.fr/particuliers/maison/dechets'
           }
@@ -30,6 +31,7 @@ export default function FooterWrapper(props) {
       </p>
 
       <MagicLink
+        aria-label={'Agir pour la transition'}
         to={'https://agirpourlatransition.ademe.fr/particuliers/maison/dechets'}
       >
         <Agir viewBox='0 0 139 100' width='139' height='100'>
