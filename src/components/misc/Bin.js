@@ -194,7 +194,7 @@ export default function Bin() {
           )
           setVisible(true)
         }, 500)
-        window._paq?.push(['trackEvent', 'Poubelle', 'Click'])
+        window._paq?.push(['trackEvent', 'Misc', 'Poubelle'])
       }}
     >
       <Svg visible={visible} width='133' height='133' viewBox='0 0 133 133'>
