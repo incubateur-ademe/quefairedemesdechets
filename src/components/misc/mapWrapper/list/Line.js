@@ -57,7 +57,7 @@ export default function Line(props) {
                   props.place.latitude
                 },${
                   props.place.longitude
-                }(${props.place.address.reprops.placeAll('<br/>', '')})`
+                }(${props.place.address.props.replaceAll('<br/>', '')})`
           }
         >
           Voir
