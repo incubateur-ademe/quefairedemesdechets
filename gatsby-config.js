@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Que Faire de mes Déchets`,
+    title: `Que Faire de mes Déchets ? Découvrez les solutions pour tous vos déchets et nos conseils pour en produire moins.`,
     author: `Datagir`,
-    description: `Découvrez les solutions pour tous vos déchets et nos conseils pour en produire moins.`,
+    description: `Masque chirurgical ou ffp2, téléphone portable, médicaments, capsules de café, vêtements... Découvrez ici comment les recycler, les trier, les éviter ou les jeter !`,
     siteUrl: `https://quefairedemesdechets.fr`,
     image: 'metaimage.png',
     twitterUsername: '_datagir',
