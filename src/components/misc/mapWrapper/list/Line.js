@@ -55,9 +55,10 @@ export default function Line(props) {
               ? `https://www.google.com/maps/dir/?api=1&origin=${props.address.latitude},${props.address.longitude}&destination=${props.place.latitude},${props.place.longitude}`
               : `geo:${props.place.latitude},${props.place.longitude}?q=${
                   props.place.latitude
-                },${
-                  props.place.longitude
-                }(${props.place.address.props.replaceAll('<br/>', '')})`
+                },${props.place.longitude}(${props.place.address.replaceAll(
+                  '<br/>',
+                  ''
+                )})`
           }
         >
           Voir
