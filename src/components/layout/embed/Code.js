@@ -48,7 +48,7 @@ export default function Code(props) {
       }?theme=${theme}"></script>`
     )
   }, [location.pathname, props.id, props.typeShare, theme])
-  console.log(location.pathname)
+
   const [copied, setCopied] = useState(false)
   return (
     <Wrapper>

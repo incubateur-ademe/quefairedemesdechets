@@ -2,7 +2,6 @@ import { iframeResize } from 'iframe-resizer'
 
 const script = document.getElementById('datagir_dechets')
 
-const domain = script.dataset.domain
 const search = script.dataset.search
 const source = window.location.href.toString()
 
