@@ -6,10 +6,7 @@ const domain = script.dataset.domain
 const search = script.dataset.search
 const source = window.location.href.toString()
 
-const src = `https://quefairedemesdechets.fr/?source=${source}&iframe=1&${search.replace(
-  '?',
-  ''
-)}`
+const src = `https://quefairedemesdechets.fr/${search}&source=${source}&iframe=1`
 
 const iframe = document.createElement('iframe')
 

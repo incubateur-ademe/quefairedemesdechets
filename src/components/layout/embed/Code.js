@@ -44,11 +44,11 @@ export default function Code(props) {
       `<script id="${props.id || 'datagir'}" src="${
         window.location.origin
       }/iframe.js" data-search="${
-        props.typeShare === 'result' ? location.search : '?theme=' + theme
-      }"></script>`
+        props.typeShare === 'result' ? location.pathname : ''
+      }?theme=${theme}"></script>`
     )
-  }, [location.search, props.id, props.typeShare, theme])
-
+  }, [location.pathname, props.id, props.typeShare, theme])
+  console.log(location.pathname)
   const [copied, setCopied] = useState(false)
   return (
     <Wrapper>
