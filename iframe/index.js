@@ -15,6 +15,7 @@ const iframeAttributes = {
   allowfullscreen: true,
   webkitallowfullscreen: true,
   mozallowfullscreen: true,
+  allow: 'geolocation',
 }
 for (var key in iframeAttributes) {
   iframe.setAttribute(key, iframeAttributes[key])
