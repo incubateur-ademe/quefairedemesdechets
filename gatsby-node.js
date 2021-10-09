@@ -40,7 +40,8 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
             map:
               waste['Bdd'] === 'sinoe' ||
               waste['Bdd'] === 'google' ||
-              waste['Bdd'] === 'ocad3e',
+              waste['Bdd'] === 'ocad3e' ||
+              waste['Code'] === 'ADEME_DASRI',
             links: linkRes.filter((link) =>
               link['Produits_associÃ©s'].includes(waste['Nom'])
             ),

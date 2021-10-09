@@ -130,9 +130,16 @@ export function usePlaces(center, zoom, product) {
     isLoading: isLoadingPharmacies,
     isFetching: isFetchingPharmacies,
   } = useQuery(['pharmacies', debouncedCenter], fetchPharmacies, {
-    enabled: product['Bdd'] === 'google' && zoomedEnough ? true : false,
+    enabled:
+      (product['Bdd'] === 'google' || product['Code'] === 'ADEME_DASRI') &&
+      zoomedEnough
+        ? true
+        : false,
     keepPreviousData:
-      product['Bdd'] === 'google' && zoomedEnough ? true : false,
+      (product['Bdd'] === 'google' || product['Code'] === 'ADEME_DASRI') &&
+      zoomedEnough
+        ? true
+        : false,
     refetchOnWindowFocus: false,
   })
 
