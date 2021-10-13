@@ -3,9 +3,9 @@ import { iframeResize } from 'iframe-resizer'
 const script = document.getElementById('datagir_dechets')
 
 const search = script.dataset.search
-const source = encodeURI(window.location.href)
+const source = window.location.href.toString()
 
-const src = `https://quefairedemesdechets.fr/${search}&source=${source}&iframe=1`
+const src = `https://quefairedemesdechets.fr/${search}&iframe=1&source=${source}`
 
 const iframe = document.createElement('iframe')
 
