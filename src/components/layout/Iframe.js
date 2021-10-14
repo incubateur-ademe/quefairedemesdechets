@@ -15,6 +15,10 @@ const Content = styled.div`
   }
 `
 export default function Iframe(props) {
+  useEffect(() => {
+    window?._paq?.push(['setCookieSameSite', 'None'])
+  }, [])
+
   return (
     <Wrapper>
       <Content>{props.children}</Content>
