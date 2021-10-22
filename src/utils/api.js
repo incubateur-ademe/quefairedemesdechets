@@ -10,7 +10,7 @@ export function useWaste() {
     () =>
       axios
         .get(
-          `https://koumoul.com/s/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&size=1000&select=Nom%2CSynonymes_existants&sampling=neighbors`
+          `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&size=1000&select=Nom%2CSynonymes_existants&sampling=neighbors`
         )
         .then((res) => res.data.results)
 
@@ -57,7 +57,7 @@ export function useSuggestions(suggestions) {
     () =>
       axios
         .get(
-          `https://koumoul.com/s/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&ID_in=${suggestions.join()}&sampling=neighbors&select=Nom`
+          `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&ID_in=${suggestions.join()}&sampling=neighbors&select=Nom`
         )
         .then((res) => res.data.results)
         .then((results) =>
@@ -164,7 +164,7 @@ export function usePlaces(center, zoom, product) {
 const fetchDecheteries = ({ queryKey }) =>
   axios
     .get(
-      `https://koumoul.com/s/data-fair/api/v1/datasets/greatersinoe-(r)-annuaire-2017-des-decheteries-de-dechets-menagers-et-assimiles-(dma)/lines?format=json&q_mode=simple&geo_distance=${
+      `https://data.ademe.fr/data-fair/api/v1/datasets/greatersinoe-(r)-annuaire-2017-des-decheteries-de-dechets-menagers-et-assimiles-(dma)/lines?format=json&q_mode=simple&geo_distance=${
         queryKey[1][1]
       }%2C${
         queryKey[1][0]
