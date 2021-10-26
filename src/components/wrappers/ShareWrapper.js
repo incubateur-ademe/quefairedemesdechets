@@ -10,7 +10,7 @@ export default function ShareWrapper(props) {
       messages={{
         mail: {
           simulator: {
-            subject: `Découvrez & intégrez le simulateur de l'ADEME Que Faire de mes Déchets !`,
+            subject: `Découvrez et intégrez le simulateur de l'ADEME Que Faire de mes Déchets !`,
             body: `Bonjour,
             
 Vous souhaitez aider votre communauté ou collaborateurs à savoir plus facilement où jeter leurs déchets, et comment les limiter ?
@@ -50,7 +50,7 @@ Voici un résultat de recherche sur le site Que Faire de mes Déchets que je vou
             title:
               'Retrouvez les consignes de tri de tous les déchets et intégrez cet outil à votre site ! 💻♻🌍',
             summary:
-              'Vous souhaitez aider votre communauté ou collaborateurs à savoir plus facilement où jeter leurs déchets, et comment les limiter ? Faites-leur découvrir Que faire de mes déchets !  Ce simulateur aussi intégrable librement en iframe sur vos plateformes web & mobiles, de quoi toucher largement les visiteurs de votre site !',
+              'Vous souhaitez aider votre communauté ou collaborateurs à savoir plus facilement où jeter leurs déchets, et comment les limiter ? Faites-leur découvrir Que faire de mes déchets !  Ce simulateur aussi intégrable librement en iframe sur vos plateformes web et mobiles, de quoi toucher largement les visiteurs de votre site !',
           },
           result: {
             source: `Que faire de mes Déchets`,
