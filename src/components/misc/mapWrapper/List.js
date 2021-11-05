@@ -6,7 +6,7 @@ import Line from './list/Line'
 const Wrapper = styled.div`
   height: calc(100% - 5rem);
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   margin-top: 5rem;
   font-size: 0.875rem;
 
