@@ -87,7 +87,7 @@ export default function MapWrapper(props) {
   function mapTiler(x, y, z, dpr) {
     return `https://api.maptiler.com/maps/voyager/256/${z}/${x}/${y}${
       dpr >= 2 ? '@2x' : ''
-    }.png?key=O05Aqy8ZzG7HT99FQ5PR#7.4/`
+    }.png?key=${process.env.GATSBY_MAPTILER_API_KEY}#7.4/`
   }
 
   return (
