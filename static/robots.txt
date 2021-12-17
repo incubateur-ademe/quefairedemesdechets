@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /build/
+
+User-agent: *
+Allow: /

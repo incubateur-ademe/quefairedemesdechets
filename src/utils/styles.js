@@ -12,6 +12,7 @@ export const themes = {
       background: '#ffffff',
       footer: '#F6F7F9',
       text: '#383838',
+      error: 'red',
     },
     fonts: {
       body: '"Marianne", sans-serif',
@@ -35,6 +36,7 @@ export const themes = {
       background: '#1e1e1e',
       footer: '#383838',
       text: '#ffffff',
+      error: 'red',
     },
     fonts: {
       body: '"Marianne", sans-serif',

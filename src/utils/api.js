@@ -1,6 +1,6 @@
 /*eslint-disable eqeqeq*/
 
-import { useQuery } from 'react-query'
+import { useQuery, useMutation } from 'react-query'
 import axios from 'axios'
 import useDebounce from 'hooks/useDebounce'
 
@@ -238,3 +238,9 @@ const fetchOcad3e = ({ queryKey }) =>
         }))
         .sort((a, b) => (a.distance > b.distance ? 1 : -1))
     )
+
+export function useRebuildSite() {
+  return useMutation(() =>
+    axios.post(`https://api.netlify.com/build_hooks/615189df8b8ed42b27ae36d7`)
+  )
+}

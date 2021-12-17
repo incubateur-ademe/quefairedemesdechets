@@ -15,7 +15,8 @@ const Input = styled.input`
   padding: 0.5rem 1rem;
   color: ${(props) => props.theme.colors.text};
   background-color: transparent;
-  border: 2px solid ${(props) => props.theme.colors.second};
+  border: 2px solid
+    ${(props) => props.theme.colors[props.error ? 'error' : 'second']};
   border-radius: 1rem;
   transition: box-shadow 300ms ease-out;
 
