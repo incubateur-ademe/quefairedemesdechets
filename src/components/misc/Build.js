@@ -15,7 +15,9 @@ export default function Build() {
       onSubmit={(e) => {
         e.preventDefault()
         setError(false)
-        if (code === 'bidoubidou') {
+
+        // This password is NOT critical
+        if (code === 'qfdmd') {
           mutation.mutate()
         } else {
           setError(true)
@@ -23,6 +25,7 @@ export default function Build() {
       }}
     >
       <TextInput
+        type='password'
         label={'Code'}
         value={code}
         onChange={({ value }) => setCode(value)}
