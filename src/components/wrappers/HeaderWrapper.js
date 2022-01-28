@@ -16,7 +16,8 @@ const StyledHeader = styled(Header)`
       left: -0.75rem;
       right: -0.75rem;
       height: 0.125rem;
-      background-color: ${(props) => props.theme.colors.second};
+      background-color: ${(props) =>
+        props.theme.colors[props.noHeader ? 'background' : 'second']};
     }
   }
 `
@@ -33,12 +34,16 @@ const SearchBarWrapper = styled.div`
   margin-top: ${(props) => (props.noHeader ? '1rem' : 0)};
 
   ${(props) => props.theme.mq.small} {
-    display: none;
+    display: ${(props) => (props.noHeader ? 'block' : 'none')};
   }
 `
 const StyledSearchBar = styled(SearchBar)`
   top: 0;
   font-size: 0.7rem;
+
+  ${(props) => props.theme.mq.small} {
+    font-size: 0.875rem;
+  }
 `
 export default function HeaderWrapper(props) {
   const location = useLocation()
