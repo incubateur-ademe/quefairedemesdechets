@@ -16,7 +16,7 @@ const Wrapper = styled.h1`
   text-align: ${(props) => (props.small ? 'left' : 'center')};
 
   ${(props) => props.theme.mq.medium} {
-    font-size: ${(props) => (props.small ? 1.125 : 1.25)}rem;
+    font-size: ${(props) => (props.small ? 1.125 : 2)}rem;
   }
   ${(props) => props.theme.mq.small} {
     font-size: ${(props) => (props.small ? 1 : 1.25)}rem;
