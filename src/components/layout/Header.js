@@ -12,6 +12,10 @@ const Wrapper = styled.div`
   align-items: center;
   padding-bottom: 0.125rem;
   margin-bottom: 3rem;
+
+  ${(props) => props.theme.mq.medium} {
+    font-size: 0.75rem;
+  }
 `
 const Logos = styled(MagicLink)`
   display: flex;
