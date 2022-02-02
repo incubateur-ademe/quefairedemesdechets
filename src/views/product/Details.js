@@ -37,12 +37,12 @@ export default function Product(props) {
           />
         </Section>
       )}
-      {props.product[`Comment_les_Ã©viter_?`] && (
+      {props.product[`Comment_les_eviter_?`] && (
         <Section>
           <Title>Comment l'éviter ?</Title>
           <Text
             dangerouslySetInnerHTML={{
-              __html: props.product[`Comment_les_Ã©viter_?`],
+              __html: props.product[`Comment_les_eviter_?`],
             }}
           />
         </Section>

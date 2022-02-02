@@ -13,7 +13,7 @@ export default function AvoidModal() {
       <Title>Comment éviter de le produire ?</Title>
       <Text
         dangerouslySetInnerHTML={{
-          __html: avoid[`Comment_les_Ã©viter_?`],
+          __html: avoid[`Comment_les_eviter_?`],
         }}
       />
     </Modal>

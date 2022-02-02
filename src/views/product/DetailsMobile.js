@@ -38,7 +38,7 @@ export default function Product(props) {
           Que va-t-il devenir ?
         </StyledButton>
       )}
-      {props.product[`Comment_les_Ã©viter_?`] && (
+      {props.product[`Comment_les_eviter_?`] && (
         <StyledButton hollow onClick={() => setAvoid(props.product)}>
           Comment l'éviter ?
         </StyledButton>
