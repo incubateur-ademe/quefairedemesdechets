@@ -53,8 +53,8 @@ export default function Footer() {
       </Content>
       <LogosWrapper>
         <Logos to='https://datagir.ademe.fr/'>
-          <Institution src={repufrancaise} alt='République Française' />
-          <Institution src={ademe} alt='ADEME' />
+          <Institution src={repufrancaise} title='République Française' />
+          <Institution src={ademe} title='ADEME' />
           <Logo />
         </Logos>
       </LogosWrapper>

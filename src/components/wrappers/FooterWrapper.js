@@ -33,6 +33,7 @@ export default function FooterWrapper(props) {
       <MagicLink
         aria-label={'Agir pour la transition'}
         to={'https://agirpourlatransition.ademe.fr/particuliers/maison/dechets'}
+        noIcon
       >
         <Agir viewBox='0 0 139 100' width='139' height='100'>
           <path

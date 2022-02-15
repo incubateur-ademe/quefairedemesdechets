@@ -10,7 +10,7 @@ import NextModal from 'components/modals/NextModal'
 
 export default function Product(props) {
   return (
-    <>
+    <main>
       <Presentation product={props.product} />
       <Details product={props.product} />
       <DetailsMobile product={props.product} />
@@ -18,6 +18,6 @@ export default function Product(props) {
       <MapModal />
       <AvoidModal />
       <NextModal />
-    </>
+    </main>
   )
 }

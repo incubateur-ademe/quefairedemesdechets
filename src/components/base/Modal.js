@@ -21,7 +21,7 @@ const Background = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, ${(props) => (props.open ? 0.6 : 0)});
-  transition: background-color ${(props) => (props.open ? '300ms' : 0)}
+  transition: background-color ${(props) => (props.open ? '300ms' : '1ms')}
     ease-in-out;
 `
 const Content = styled.div`
@@ -35,11 +35,12 @@ const Content = styled.div`
   background-color: ${(props) => props.theme.colors.background};
   border-radius: 1em;
   box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.2);
-
+  visibility: ${(props) => (props.open ? 'visible' : 'hidden')};
   opacity: ${(props) => (props.open ? 1 : 0)};
   transform: scale(${(props) => (props.open ? 1 : 0.7)})
     translateY(${(props) => (props.open ? 0 : '10em')});
-  transition: all ${(props) => (props.open && !props.noAnimation ? '300ms' : 0)}
+  transition: all
+    ${(props) => (props.open && !props.noAnimation ? '300ms' : '1ms')}
     ease-in-out;
 `
 const ButtonClose = styled.div`

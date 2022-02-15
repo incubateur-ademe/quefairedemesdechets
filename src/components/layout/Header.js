@@ -5,7 +5,7 @@ import MagicLink from 'components/base/MagicLink'
 import Marianne from 'components/base/Marianne'
 import Ademe from 'components/base/Ademe'
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
   position: relative;
   display: flex;
   justify-content: flex-start;

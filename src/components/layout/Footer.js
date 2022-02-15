@@ -10,7 +10,7 @@ import Ademe from 'components/base/Ademe'
 import Logo from 'components/base/Logo'
 import MobileButtons from './footer/MobileButtons'
 
-const Wrapper = styled.div`
+const Wrapper = styled.footer`
   position: relative;
   background-color: ${(props) =>
     props.theme.colors[props.background || 'footer']};
@@ -53,6 +53,13 @@ const Logos = styled(MagicLink)`
   width: 100%;
   text-decoration: none;
   background-color: #fff;
+`
+const Accessibility = styled.div`
+  padding-bottom: 1rem;
+  font-size: 0.75rem;
+  font-weight: 300;
+  text-align: center;
+  background-color: ${(props) => props.theme.colors.background};
 `
 export default function Footer(props) {
   return (
@@ -113,13 +120,20 @@ export default function Footer(props) {
         )}
       </Content>
       {!props.iframe && (
-        <LogosWrapper>
-          <Logos to='https://datagir.ademe.fr/' aria-label='datagir.ademe.fr'>
-            <Marianne />
-            <Ademe />
-            <Logo />
-          </Logos>
-        </LogosWrapper>
+        <>
+          <LogosWrapper>
+            <Logos
+              to='https://datagir.ademe.fr/'
+              aria-label='datagir.ademe.fr'
+              noIcon
+            >
+              <Marianne />
+              <Ademe />
+              <Logo />
+            </Logos>
+          </LogosWrapper>
+          <Accessibility>accessibilité : non conforme</Accessibility>
+        </>
       )}
     </Wrapper>
   )
