@@ -67,7 +67,7 @@ const Eye = styled.svg`
   width: 1.5rem;
 `
 const Install = styled.svg``
-const Label = styled.div`
+const Label = styled.span`
   font-size: 0.75rem;
   font-weight: bold;
   text-align: center;

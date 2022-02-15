@@ -26,13 +26,13 @@ export default function HTML(props) {
           dangerouslySetInnerHTML={{ __html: props.body }}
         />
         {props.postBodyComponents}
-        <form name='contact' netlify-honeypot='bot-field' hidden>
+        <form name='contact' hidden>
           <input type='text' name='nom' />
           <input type='email' name='email' />
           <input type='text' name='objet' />
           <textarea name='message'></textarea>
         </form>
-        <form name='bug' netlify-honeypot='bot-field' hidden>
+        <form name='bug' hidden>
           <input type='text' name='nom' />
           <input type='email' name='email' />
           <input type='text' name='objet' />
