@@ -34,7 +34,7 @@ const StyledLink = styled(MagicLink)`
   color: ${(props) => props.theme.colors.second};
   text-decoration: none;
 `
-const Icon = styled.div`
+const Icon = styled.span`
   position: relative;
   width: 3rem;
   height: 3rem;
