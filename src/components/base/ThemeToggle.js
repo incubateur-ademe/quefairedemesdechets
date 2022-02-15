@@ -5,7 +5,7 @@ import Switch from 'react-switch'
 import { themes } from 'utils/styles'
 import StyleContext from 'utils/StyleContext'
 
-const Wrapper = styled.label`
+const Wrapper = styled.div`
   position: fixed;
   top: 0.5rem;
   right: 0.5rem;
