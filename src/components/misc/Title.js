@@ -30,7 +30,10 @@ export default function Title(props) {
   const { binFlight, setBinFlight } = useContext(UXContext)
 
   return (
-    <StyledMagicLink to='/'>
+    <StyledMagicLink
+      to='/'
+      title='Que Faire de mes Déchets ? Retour à l’accueil'
+    >
       <Wrapper small={props.small} as={props.small ? 'h2' : 'h1'}>
         Que Faire de{props.small && <br />} mes
         <span

@@ -12,7 +12,7 @@ export const themes = {
       background: '#ffffff',
       footer: '#F6F7F9',
       text: '#383838',
-      error: 'red',
+      error: '#EB0000',
     },
     fonts: {
       body: '"Marianne", sans-serif',

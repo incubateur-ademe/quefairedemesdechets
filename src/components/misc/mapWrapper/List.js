@@ -32,7 +32,7 @@ export default function List(props) {
 
   return (
     <Wrapper>
-      <table>
+      <table role='presentation'>
         <tbody>
           {props.data &&
             props.data

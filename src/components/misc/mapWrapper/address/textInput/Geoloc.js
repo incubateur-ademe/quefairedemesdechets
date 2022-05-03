@@ -48,12 +48,21 @@ const Error = styled.div`
   width: calc(100% - 2rem);
   max-width: 25rem;
   padding: 1rem 2.5rem;
+  color: ${(props) => props.theme.colors.background};
   background: ${(props) => props.theme.colors.error};
   border-radius: 1.5rem;
 
   p {
     margin: 0;
     text-align: center;
+  }
+
+  a {
+    color: ${(props) => props.theme.colors.background};
+
+    path {
+      fill: ${(props) => props.theme.colors.background};
+    }
   }
 `
 export default function Geoloc(props) {

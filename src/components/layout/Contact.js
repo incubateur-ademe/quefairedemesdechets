@@ -94,6 +94,7 @@ export default function Contact(props) {
           onChange={({ name, value }) =>
             setUser((prevUser) => ({ ...prevUser, [name]: value }))
           }
+          autocomplete='name'
           required
         />
         <TextInput
@@ -105,6 +106,7 @@ export default function Contact(props) {
           onChange={({ name, value }) =>
             setUser((prevUser) => ({ ...prevUser, [name]: value }))
           }
+          autocomplete='email'
         />
         <Select
           name={'objet'}
@@ -133,12 +135,13 @@ export default function Contact(props) {
           <option value='autre'>Autre</option>
         </Select>
         {props.options.find((option) => option.value === user.objet) && (
-          <Warning>
-            {
-              props.options.find((option) => option.value === user.objet)
-                .disclaimer
-            }
-          </Warning>
+          <Warning
+            dangerouslySetInnerHTML={{
+              __html: props.options.find(
+                (option) => option.value === user.objet
+              ).disclaimer,
+            }}
+          />
         )}
         <TextArea
           name={'message'}
@@ -154,15 +157,15 @@ export default function Contact(props) {
             Envoyer mon message
           </Button>
         </ButtonWrapper>
-        {empty && <Alert>Merci de remplir tous les champs</Alert>}
+        {empty && <Alert role='alert'>Merci de remplir tous les champs</Alert>}
         {mutation.isError && (
-          <Alert>
+          <Alert role='alert'>
             Quelque chose n'a pas fonctionné :(
             <br />({mutation.error.message})
           </Alert>
         )}
         {mutation.isSuccess && (
-          <Alert>
+          <Alert role='status'>
             Merci !<br />
             Nous avons bien reçu votre message
           </Alert>

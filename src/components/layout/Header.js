@@ -27,7 +27,11 @@ export default function Header(props) {
   return (
     <Wrapper className={props.className}>
       {!props.noHeader && (
-        <Logos to='/' aria-label='Accueil'>
+        <Logos
+          to='/'
+          aria-label='Que Faire de mes Déchets ? Retour à l’accueil'
+          title='Que Faire de mes Déchets ? Retour à l’accueil'
+        >
           <Marianne />
           <Ademe />
         </Logos>

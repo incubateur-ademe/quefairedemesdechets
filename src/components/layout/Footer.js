@@ -54,7 +54,8 @@ const Logos = styled(MagicLink)`
   text-decoration: none;
   background-color: #fff;
 `
-const Accessibility = styled.div`
+const Accessibility = styled.p`
+  margin: 0;
   padding-bottom: 1rem;
   font-size: 0.75rem;
   font-weight: 300;

@@ -17,7 +17,9 @@ export default function MagicLink(props) {
   const { search } = useLocation()
   return !props.to ? (
     <button
+      id={props.id}
       className={props.className}
+      title={props.title}
       onClick={props.onClick}
       aria-label={props['aria-label']}
     >
@@ -27,7 +29,9 @@ export default function MagicLink(props) {
     props.to.includes('.') ||
     props.to.includes('#') ? (
     <a
+      id={props.id}
       className={props.className}
+      title={props.title}
       href={props.to}
       onClick={props.onClick || null}
       target={
@@ -56,7 +60,9 @@ export default function MagicLink(props) {
     </a>
   ) : (
     <Link
+      id={props.id}
       className={props.className}
+      title={props.title}
       to={props.to + (!props.to.includes('?') && search)}
       onClick={props.onClick || null}
       aria-label={props['aria-label']}
