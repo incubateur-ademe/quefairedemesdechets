@@ -76,7 +76,7 @@ export default function accessibilite() {
           raison d’éléments masqués.
         </li>
       </ul>
-      <h4>Non-conformités</h4>
+      <h4>Contenus non soumis à l’obligation d’accessibilité</h4>
       <ul>
         <li>
           Les cartes de certaines pages déchet (motif : carte avec alternative).
