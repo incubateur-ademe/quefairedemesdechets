@@ -40,18 +40,20 @@ export default function accessibilite() {
           et des champs en autocomplétion), ou font un usage inapproprié de
           propriétés ARIA ;
         </li>
+        <li>Des pages contiennent des erreurs de code source ;</li>
         <li>
-          Des pages contiennent des erreurs de code source ; Des pages font
-          usage de balises à des fins de présentation (par exemple des textes
-          non structurés dans des balises de paragraphes) ;
+          Des pages font usage de balises à des fins de présentation (par
+          exemple des textes non structurés dans des balises de paragraphes) ;
         </li>
         <li>
           Des pages ont une hiérarchie de titres non pertinente (titres
-          manquants ou mal définis) ; La structure et les zones principales des
-          pages sont mal définies ; Des suites d’éléments ne sont pas
-          structurées avec des listes ; Des indications visuelles de prise de
-          focus sont désactivées ;
+          manquants ou mal définis) ;
         </li>
+        <li>
+          La structure et les zones principales des pages sont mal définies ;
+        </li>
+        <li>Des suites d’éléments ne sont pas structurées avec des listes ;</li>
+        <li>Des indications visuelles de prise de focus sont désactivées ;</li>
         <li>
           Certains contenus additionnels apparaissant au survol ne sont pas
           contrôlables par l’utilisateur ;
@@ -119,9 +121,11 @@ export default function accessibilite() {
         Il est important de rappeler qu’en vertu de l’article 11 de la loi de
         février 2005 :
         <br />
-        « la personne handicapée a droit à la compensation des conséquences de
-        son handicap, quels que soient l’origine et la nature de sa déficience,
-        son âge ou son mode de vie. »
+        <blockquote>
+          « la personne handicapée a droit à la compensation des conséquences de
+          son handicap, quels que soient l’origine et la nature de sa
+          déficience, son âge ou son mode de vie. »
+        </blockquote>
         <br />
         L’ADEME s'engage à prendre les moyens nécessaires afin de donner accès,
         dans un délai raisonnable, aux informations et fonctionnalités
@@ -147,7 +151,7 @@ export default function accessibilite() {
           ;
         </li>
         <li>
-          <MagicLink to='www.defenseurdesdroits.fr/office/'>
+          <MagicLink to='https://www.defenseurdesdroits.fr/office/'>
             la liste du ou des délégués de votre région
           </MagicLink>{' '}
           avec leurs informations de contact direct ;
