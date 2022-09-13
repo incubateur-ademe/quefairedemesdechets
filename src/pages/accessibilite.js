@@ -16,10 +16,11 @@ export default function accessibilite() {
       </p>
       <h2>État de conformité</h2>
       <p>
-        Le site Que Faire de mes Déchets (https://quefairedemesdechets.fr/) est
-        conforme avec le référentiel général d’amélioration de l’accessibilité,
-        RGAA version 4.1, en raison des non-conformités énumérées dans la
-        section « Résultats des tests ».
+        Le site Que Faire de mes Déchets
+        (https://quefairedemesdechets.ademe.fr/) est conforme avec le
+        référentiel général d’amélioration de l’accessibilité, RGAA version 4.1,
+        en raison des non-conformités énumérées dans la section « Résultats des
+        tests ».
       </p>
       <h2>Résultats des tests</h2>
       <p>
@@ -113,8 +114,8 @@ export default function accessibilite() {
       </p>
       <h3>Pages du site ayant fait l’objet de la vérification de conformité</h3>
       <ul>
-        <li>Accueil : https://quefairedemesdechets.fr/</li>
-        <li>Câble : https://quefairedemesdechets.fr/dechet/cable</li>
+        <li>Accueil : https://quefairedemesdechets.ademe.fr/</li>
+        <li>Câble : https://quefairedemesdechets.ademe.fr/dechet/cable</li>
       </ul>
       <h2>Retour d’information et contact</h2>
       <p>
