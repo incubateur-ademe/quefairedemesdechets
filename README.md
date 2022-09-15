@@ -2,7 +2,7 @@
 
 Application web permettant de savoir quoi faire de ses déchets
 
-https://quefairedemesdechets.fr
+https://quefairedemesdechets.ademe.fr
 
 ## Développement
 

@@ -3,7 +3,7 @@ module.exports = {
     title: `Que Faire de mes Déchets ? Découvrez les solutions pour tous vos déchets et nos conseils pour en produire moins.`,
     author: `Datagir`,
     description: `Masque chirurgical ou ffp2, téléphone portable, médicaments, capsules de café, vêtements... Découvrez ici comment les recycler, les trier, les éviter ou les jeter !`,
-    siteUrl: `https://quefairedemesdechets.fr`,
+    siteUrl: `https://quefairedemesdechets.ademe.fr`,
     image: 'metaimage.png',
     twitterUsername: '_datagir',
   },
@@ -28,7 +28,7 @@ module.exports = {
       options: {
         siteId: '199',
         matomoUrl: 'https://stats.data.gouv.fr',
-        siteUrl: 'https://quefairedemesdechets.fr',
+        siteUrl: 'https://quefairedemesdechets.ademe.fr',
       },
     },
     {
