@@ -114,7 +114,6 @@ export default function MapWrapper(props) {
         <List data={data} address={address} />
       ) : (
         <Map
-          provider={mapTiler}
           center={center}
           zoom={zoom}
           onBoundsChanged={({ center, zoom }) => {
