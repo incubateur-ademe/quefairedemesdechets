@@ -120,7 +120,7 @@ export default function MapWrapper(props) {
             setCenter(center)
             setZoom(zoom)
           }}
-          attribution={false}
+          attributionPrefix={false}
         >
           <ZoomControl style={{ top: 'auto', bottom: '1rem', left: '1rem' }} />
 
