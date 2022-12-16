@@ -84,12 +84,6 @@ export default function MapWrapper(props) {
 
   const themeContext = useContext(ThemeContext)
 
-  function mapTiler(x, y, z, dpr) {
-    return `https://api.maptiler.com/maps/voyager/256/${z}/${x}/${y}${
-      dpr >= 2 ? '@2x' : ''
-    }.png?key=${process.env.GATSBY_MAPTILER_API_KEY}#7.4/`
-  }
-
   return (
     <>
       <Address
