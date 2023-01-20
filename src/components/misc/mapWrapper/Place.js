@@ -34,6 +34,10 @@ export const Address = styled.address`
   font-size: 0.875rem;
   margin-bottom: 0.5rem;
 `
+export const Hours = styled.p`
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+`
 export default function Place(props) {
   const { isMobile } = useDeviceDetect()
 
@@ -41,7 +45,7 @@ export default function Place(props) {
     <Wrapper>
       <Title>{props.place.title}</Title>
       {props.place.hours && (
-        <Address
+        <Hours
           dangerouslySetInnerHTML={{
             __html: props.place.hours,
           }}

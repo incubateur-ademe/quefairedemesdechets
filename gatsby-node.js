@@ -42,7 +42,8 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
               waste['Bdd'] === 'sinoe' ||
               waste['Bdd'] === 'google' ||
               waste['Bdd'] === 'ocad3e' ||
-              waste['Code'] === 'ADEME_DASRI',
+              waste['Code'] === 'ADEME_DASRI' ||
+              waste['Code'] === 'ADEME_SOLAIRE',
             links: linkRes.filter((link) =>
               link['Produits_associes']
                 .split('; ')

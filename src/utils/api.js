@@ -126,6 +126,17 @@ export function usePlaces(center, zoom, product) {
   })
 
   const {
+    data: pvsoren,
+    isLoading: isLoadingPvsoren,
+    isFetching: isFetchingPvsoren,
+  } = useQuery(['pvsoren', debouncedCenter], fetchPvsoren, {
+    enabled: product['Code'] === 'ADEME_SOLAIRE' && zoomedEnough ? true : false,
+    keepPreviousData:
+      product['Code'] === 'ADEME_SOLAIRE' && zoomedEnough ? true : false,
+    refetchOnWindowFocus: false,
+  })
+
+  const {
     data: pharmacies,
     isLoading: isLoadingPharmacies,
     isFetching: isFetchingPharmacies,
@@ -155,10 +166,22 @@ export function usePlaces(center, zoom, product) {
   })
 
   return {
-    data: [...(decheteries || []), ...(pharmacies || []), ...(ocad3e || [])],
-    isLoading: isLoadingDecheteries || isLoadingPharmacies || isLoadingOcad3e,
+    data: [
+      ...(decheteries || []),
+      ...(pharmacies || []),
+      ...(ocad3e || []),
+      ...(pvsoren || []),
+    ],
+    isLoading:
+      isLoadingDecheteries ||
+      isLoadingPharmacies ||
+      isLoadingOcad3e ||
+      isLoadingPvsoren,
     isFetching:
-      isFetchingDecheteries || isFetchingPharmacies || isFetchingOcad3e,
+      isFetchingDecheteries ||
+      isFetchingPharmacies ||
+      isFetchingOcad3e ||
+      isFetchingPvsoren,
   }
 }
 const fetchDecheteries = ({ queryKey }) =>
@@ -182,21 +205,26 @@ const fetchDecheteries = ({ queryKey }) =>
                       ${place['Commune_Déchèterie'].replaceAll(' ', ' ')}`,
       }))
     )
-
-/*const fetchPharmacies = ({ queryKey }) =>
+const fetchPvsoren = ({ queryKey }) =>
   axios
     .get(
-      `https://api.mapbox.com/geocoding/v5/mapbox.places/pharmacie.json?proximity=${queryKey[1][1]},${queryKey[1][0]}&language=fr&access_token=${process.env.GATSBY_MAPBOX_API_TOKEN}&limit=10`
+      `https://koumoul.com/data-fair/api/v1/datasets/points-dapport-soren-pv/lines?format=json&q_mode=simple&geo_distance=${
+        queryKey[1][1]
+      }%2C${queryKey[1][0]}%2C${15000}&size=1000`
     )
     .then((res) =>
-      res.data.features.map((place) => ({
-        id: place['id'],
-        latitude: place['center'][1],
-        longitude: place['center'][0],
-        title: place['text_fr'],
-        address: place['place_name_fr'].replace(place['text_fr'] + ', ', ''),
+      res.data.results.map((place) => ({
+        id: place['SIREN'],
+        latitude: Number(place['_geopoint'].split(',')[0]),
+        longitude: Number(place['_geopoint'].split(',')[1]),
+        title: place['Organisme'].replaceAll(' ', ' '),
+        address: `${place['Adresse'].replaceAll(' ', ' ')}
+                      <br />
+                      ${place['Code_Postal']} 
+                      ${place['Ville'].replaceAll(' ', ' ')}`,
+        hours: formatHoursFromKoumoul(place),
       }))
-    )*/
+    )
 
 const fetchPharmacies = ({ queryKey }) =>
   axios
@@ -243,4 +271,72 @@ export function useRebuildSite() {
   return useMutation(() =>
     axios.post(`https://api.netlify.com/build_hooks/615189df8b8ed42b27ae36d7`)
   )
+}
+
+function formatHoursFromKoumoul(place) {
+  return `
+    Lundi : ${
+      place['Ouverture_lundi_AM']
+        ? `${place['Ouverture_lundi_AM']} - ${place['Fermeture_lundi_AM']}`
+        : 'fermé'
+    } / ${
+    place['Ouverture_lundi_PM']
+      ? `${place['Ouverture_lundi_PM']} - ${place['Fermeture_lundi_PM']}`
+      : 'fermé'
+  }<br/>
+    mardi : ${
+      place['Ouverture_mardi_AM']
+        ? `${place['Ouverture_mardi_AM']} - ${place['Fermeture_mardi_AM']}`
+        : 'fermé'
+    } / ${
+    place['Ouverture_mardi_PM']
+      ? `${place['Ouverture_mardi_PM']} - ${place['Fermeture_mardi_PM']}`
+      : 'fermé'
+  }<br/>
+    mercredi : ${
+      place['Ouverture_mercredi_AM']
+        ? `${place['Ouverture_mercredi_AM']} - ${place['Fermeture_mercredi_AM']}`
+        : 'fermé'
+    } / ${
+    place['Ouverture_mercredi_PM']
+      ? `${place['Ouverture_mercredi_PM']} - ${place['Fermeture_mercredi_PM']}`
+      : 'fermé'
+  }<br/>
+    jeudi : ${
+      place['Ouverture_jeudi_AM']
+        ? `${place['Ouverture_jeudi_AM']} - ${place['Fermeture_jeudi_AM']}`
+        : 'fermé'
+    } / ${
+    place['Ouverture_jeudi_PM']
+      ? `${place['Ouverture_jeudi_PM']} - ${place['Fermeture_jeudi_PM']}`
+      : 'fermé'
+  }<br/>
+    vendredi : ${
+      place['Ouverture_vendredi_AM']
+        ? `${place['Ouverture_vendredi_AM']} - ${place['Fermeture_vendredi_AM']}`
+        : 'fermé'
+    } / ${
+    place['Ouverture_vendredi_PM']
+      ? `${place['Ouverture_vendredi_PM']} - ${place['Fermeture_vendredi_PM']}`
+      : 'fermé'
+  }<br/>
+    samedi : ${
+      place['Ouverture_samedi_AM']
+        ? `${place['Ouverture_samedi_AM']} - ${place['Fermeture_samedi_AM']}`
+        : 'fermé'
+    } / ${
+    place['Ouverture_samedi_PM']
+      ? `${place['Ouverture_samedi_PM']} - ${place['Fermeture_samedi_PM']}`
+      : 'fermé'
+  }<br/>
+    dimanche : ${
+      place['Ouverture_dimanche_AM']
+        ? `${place['Ouverture_dimanche_AM']} - ${place['Fermeture_dimanche_AM']}`
+        : 'fermé'
+    } / ${
+    place['Ouverture_dimanche_PM']
+      ? `${place['Ouverture_dimanche_PM']} - ${place['Fermeture_dimanche_PM']}`
+      : 'fermé'
+  }
+  `
 }
