@@ -208,7 +208,7 @@ const fetchDecheteries = ({ queryKey }) =>
 const fetchPvsoren = ({ queryKey }) =>
   axios
     .get(
-      `https://koumoul.com/data-fair/api/v1/datasets/points-dapport-soren-pv/lines?format=json&q_mode=simple&geo_distance=${
+      `https://data.pointsapport.ademe.fr/data-fair/api/v1/datasets/donnees-de-geolocalisation-des-points-dapport-pv-soren/lines?format=json&q_mode=simple&geo_distance=${
         queryKey[1][1]
       }%2C${queryKey[1][0]}%2C${15000}&size=1000`
     )
