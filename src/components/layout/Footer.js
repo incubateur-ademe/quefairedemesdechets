@@ -124,6 +124,8 @@ export default function Footer(props) {
         <>
           <LogosWrapper>
             <Logos
+                to='https://ademe.fr/'
+                aria-label='ademe.fr'
               noIcon
             >
               <Marianne />
