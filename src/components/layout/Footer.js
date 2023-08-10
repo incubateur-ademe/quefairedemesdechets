@@ -93,8 +93,8 @@ export default function Footer(props) {
             <Section>
               <h2>Qui sommes-nous ?</h2>
               <p>
-                <MagicLink to='https://datagir.ademe.fr/'>
-                  <strong>Datagir</strong>
+                <MagicLink to='https://quefairedemesdechets.ademe.fr/'>
+                  <strong>Que faire de mes déchets</strong>
                 </MagicLink>{' '}
                 est un <strong>service public gratuit</strong>, porté par l’
                 <MagicLink to='https://www.ademe.fr/'>ADEME</MagicLink> et
@@ -116,9 +116,6 @@ export default function Footer(props) {
                 par l'appropriation et l’intégration de ces données afin
                 d’apporter l’information au plus près des citoyens.
               </p>
-              <Button to='https://datagir.ademe.fr/#applications'>
-                Voir tous nos simulateurs
-              </Button>
             </Section>
           </>
         )}
@@ -127,13 +124,12 @@ export default function Footer(props) {
         <>
           <LogosWrapper>
             <Logos
-              to='https://datagir.ademe.fr/'
-              aria-label='datagir.ademe.fr'
+                to='https://ademe.fr/'
+                aria-label='ademe.fr'
               noIcon
             >
               <Marianne />
               <Ademe />
-              <Logo />
             </Logos>
           </LogosWrapper>
           <Accessibility to='/accessibilite'>
