@@ -77,7 +77,7 @@ export default function Contact(props) {
             const formData = new URLSearchParams()
             formData.append(
               'form-name',
-              ['integration', 'datagir', 'autre'].includes(user.objet)
+              ['integration', 'autre'].includes(user.objet)
                 ? 'contact'
                 : 'bug'
             )
@@ -119,9 +119,6 @@ export default function Contact(props) {
           <option value={null} disabled></option>
           <option value='integration'>
             Je souhaite obtenir de l'aide pour intégrer le simulateur
-          </option>
-          <option value='datagir'>
-            Je souhaite en savoir plus sur Datagir
           </option>
           {props.options.map((option) => (
             <option key={option.value} value={option.value}>

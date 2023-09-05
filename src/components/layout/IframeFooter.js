@@ -51,13 +51,6 @@ export default function Footer() {
           </Button>
         </ButtonWrapper>
       </Content>
-      <LogosWrapper>
-        <Logos to='https://datagir.ademe.fr/'>
-          <Institution src={repufrancaise} alt='République Française' />
-          <Institution src={ademe} alt='ADEME' />
-          <Logo />
-        </Logos>
-      </LogosWrapper>
     </Wrapper>
   )
 }
