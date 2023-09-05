@@ -2,7 +2,7 @@
   "name": "quefairedemesdechets",
   "version": "0.1.0",
   "private": true,
-  "author": "ADEME",
+  "author": "Datagir",
   "dependencies": {
     "axios": "^0.27.2",
     "babel-plugin-styled-components": "^2.0.7",
