@@ -43,25 +43,13 @@ export default function ContactPrompt(props) {
           </Text>
         </>
       )}
-      <Text>
-        <strong>
-          Vous souhaitez réutiliser les données brutes ou obtenir de l'aide pour
-          intégrer ce simulateur ?
-        </strong>
-        <br />
-        Contactez nous à{' '}
-        <MagicLink to='mailto:datagir@ademe.fr'>
-          datagir@ademe.fr
-        </MagicLink>{' '}
-        pour bénéficier de notre expertise et accompagnement.
-      </Text>
       {!props.contact && (
         <Text>
           <strong>Vous souhaitez réutiliser le code du simulateur ?</strong>
           <br />
           Ce simulateur est développé de manière ouverte (open source).
           L’ensemble du code est{' '}
-          <MagicLink to='https://github.com/datagir/quefairedemesdechets/'>
+          <MagicLink to='https://github.com/incubateur-ademe/quefairedemesdechets'>
             disponible librement
           </MagicLink>
           .
