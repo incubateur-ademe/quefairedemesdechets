@@ -72,7 +72,7 @@ export default function Web(props) {
               </Content>
               <EmbedWrapper result={props.result} />
               <ShareWrapper result={props.result} />
-              <ContactWrapper />
+              {!iframe && (<ContactWrapper />)}
               <InstallButton />
               <ModalWrapper />
             </ModalProvider>
