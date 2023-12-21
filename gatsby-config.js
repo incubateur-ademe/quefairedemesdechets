@@ -26,8 +26,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-matomo',
       options: {
-        siteId: '199',
-        matomoUrl: 'https://stats.data.gouv.fr',
+        siteId: '82',
+        matomoUrl: 'https://stats.beta.gouv.fr',
         siteUrl: 'https://quefairedemesdechets.ademe.fr',
       },
     },
