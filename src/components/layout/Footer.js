@@ -7,7 +7,6 @@ import ContactPrompt from 'components/base/ContactPrompt'
 import Button from 'components/base/Button'
 import Marianne from 'components/base/Marianne'
 import Ademe from 'components/base/Ademe'
-import Logo from 'components/base/Logo'
 import MobileButtons from './footer/MobileButtons'
 
 const Wrapper = styled.footer`
