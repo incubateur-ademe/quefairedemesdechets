@@ -187,22 +187,22 @@ export function usePlaces(center, zoom, product) {
 const fetchDecheteries = ({ queryKey }) =>
   axios
     .get(
-      `https://data.ademe.fr/data-fair/api/v1/datasets/greatersinoe-(r)-annuaire-2017-des-decheteries-de-dechets-menagers-et-assimiles-(dma)/lines?format=json&q_mode=simple&geo_distance=${
+      `https://data.ademe.fr/data-fair/api/v1/datasets/sinoe-(r)-annuaire-des-decheteries-dma/lines?format=json&q_mode=simple&q=${2024}&q_fields=ANNEE&geo_distance=${
         queryKey[1][1]
       }%2C${
         queryKey[1][0]
-      }%2C${15000}&size=1000&sampling=neighbors&select=Nom_Déchèterie,Adresse_Déchèterie,Code_postal_Déchèterie,Commune_Déchèterie,_id,_geopoint`
-    )
+      }%2C${15000}&size=1000&sampling=neighbors&select=ANNEE%2CN_SERVICE%2CAD1_SITE%2CCP_SITE%2CL_VILLE_SITE%2C_geopoint%2C_id`
+)
     .then((res) =>
       res.data.results.map((place) => ({
         id: place['_id'],
         latitude: Number(place['_geopoint'].split(',')[0]),
         longitude: Number(place['_geopoint'].split(',')[1]),
-        title: place['Nom_Déchèterie'].replaceAll(' ', ' '),
-        address: `${place['Adresse_Déchèterie'].replaceAll(' ', ' ')}
+        title: place['N_SERVICE'].replaceAll(' ', ' '),
+        address: `${place['AD1_SITE'].replaceAll(' ', ' ')}
                       <br />
-                      ${place['Code_postal_Déchèterie']} 
-                      ${place['Commune_Déchèterie'].replaceAll(' ', ' ')}`,
+                      ${place['CP_SITE']} 
+                      ${place['L_VILLE_SITE'].replaceAll(' ', ' ')}`,
       }))
     )
 const fetchPvsoren = ({ queryKey }) =>
