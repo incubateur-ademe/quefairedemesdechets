@@ -85,7 +85,7 @@ export function useSearch(search) {
       search && search.length > 2
         ? axios
             .get(
-              `https://api-adresse.data.gouv.fr/search/?q=${search}&type=housenumber`
+              `https://api-adresse.data.gouv.fr/search/?q=${search}`
             )
             .then((res) => res.data.features)
         : Promise.resolve([]),
