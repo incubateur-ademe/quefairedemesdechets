@@ -16,7 +16,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
           let tempWaste = [...wasteRes]
 
           for (let result of wasteRes) {
-            if (result['Synonymes_existants']) {
+            if (result['Synonymes_existants'] && result['ID']) {
               const synonyms = result['Synonymes_existants'].split(' / ')
               for (let i = 0; i < synonyms.length; i++) {
                 if (!tempWaste.find((waste) => waste['Nom'] === synonyms[i])) {
