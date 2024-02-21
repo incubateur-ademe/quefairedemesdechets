@@ -5,7 +5,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
     .get(
       `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&size=1000&sampling=neighbors`
     )
-    .then((res) => res.data.results)
+    .then((res) => res.data.results.filter(waste => typeof waste['ID'] !== 'undefined')) // handle Koumoul missing ID
     .then((wasteRes) =>
       axios
         .get(
@@ -16,7 +16,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
           let tempWaste = [...wasteRes]
 
           for (let result of wasteRes) {
-            if (result['Synonymes_existants'] && result['ID']) {
+            if (result['Synonymes_existants']) {
               const synonyms = result['Synonymes_existants'].split(' / ')
               for (let i = 0; i < synonyms.length; i++) {
                 if (!tempWaste.find((waste) => waste['Nom'] === synonyms[i])) {
