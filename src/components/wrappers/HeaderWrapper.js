@@ -4,7 +4,7 @@ import { useLocation } from '@reach/router'
 
 import { useWaste } from 'utils/api'
 import Header from 'components/layout/Header'
-import Title from 'components/misc/Title'
+import GifTitle from 'components/misc/GifTitle'
 import SearchBar from 'components/misc/SearchBar'
 
 const StyledHeader = styled(Header)`
@@ -52,7 +52,7 @@ export default function HeaderWrapper(props) {
     <StyledHeader small={location.pathname !== '/'} noHeader={props.noHeader}>
       {location.pathname !== '/' && (
         <Wrapper>
-          {!props.noHeader && <Title small />}
+          {!props.noHeader && <GifTitle small />}
           <SearchBarWrapper noHeader={props.noHeader}>
             <StyledSearchBar isFetched={isFetched} />
           </SearchBarWrapper>

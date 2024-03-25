@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { useWaste } from 'utils/api'
-import Title from 'components/misc/Title'
+import GifTitle from 'components/misc/GifTitle'
 import SearchBar from 'components/misc/SearchBar'
 import SuggestionsWrapper from './home/SuggestionsWrapper'
 
@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <div>
-      <Title />
+      <GifTitle />
       <Wrapper>
         <SearchBar isFetched={isFetched} />
       </Wrapper>
