@@ -26,7 +26,7 @@ export default function GifTitle(props) {
         <img 
           src={ props.small ? qfdmodSmallGif : qfdmodGif }
           alt='Que faire de mes Objets et de mes Déchets'
-          style={{ width: '100%', maxWidth: '500px', maxHeight: '60px' }}/>
+          style={{ width: props.small ? 'auto' : '100%', maxWidth: props.small ? '100%' : '500px', maxHeight: '60px' }}/>
       </Wrapper>
     </StyledMagicLink>
   )
