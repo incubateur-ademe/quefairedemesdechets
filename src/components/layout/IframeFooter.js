@@ -1,12 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import ademe from './footer/ademe.jpg'
-import repufrancaise from './footer/repufrancaise.jpg'
-
 import Button from 'components/base/Button'
 import MagicLink from 'components/base/MagicLink'
-import Logo from 'components/base/Logo'
 import MobileButtons from './footer/MobileButtons'
 
 const Wrapper = styled.div`

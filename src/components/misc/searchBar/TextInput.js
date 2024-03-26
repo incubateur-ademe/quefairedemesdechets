@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 `
 const Input = styled.input`
   width: 100%;
-  padding: 0.5em 2.8em;
+  padding: 0.5em 0.5em 0.5em 2.8em;
   font-size: 1.625em;
   font-weight: normal;
   line-height: 1.25;
@@ -80,7 +80,7 @@ export default React.forwardRef(function TextInput(props, ref) {
       <Input
         ref={ref}
         type='text'
-        placeholder='Entrez un déchet'
+        placeholder='Entrez un objet ou déchet'
         value={props.search}
         onChange={(e) => props.setSearch(e.target.value)}
         onFocus={() => props.setFocus(true)}
