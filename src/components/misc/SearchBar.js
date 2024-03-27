@@ -62,7 +62,7 @@ export default function SearchBar(props) {
     }
   }, [search, fuse])
 
-  const [focus, setFocus] = useState(false)
+  const [focus, setFocus] = useState(props.focus)
   const input = useRef(null)
   const [current, setCurrent] = useState(0)
 
@@ -70,6 +70,9 @@ export default function SearchBar(props) {
     if (!focus) {
       setCurrent(0)
       input.current && input.current.blur()
+    }
+    else {
+      input.current && input.current.focus()
     }
   }, [focus])
 
