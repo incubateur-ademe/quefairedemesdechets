@@ -19,7 +19,7 @@ export default function Home() {
     <div>
       <GifTitle />
       <Wrapper>
-        <SearchBar isFetched={isFetched} />
+        <SearchBar isFetched={isFetched} focus={true}/>
       </Wrapper>
       <SuggestionsWrapper />
     </div>
