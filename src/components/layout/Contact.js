@@ -31,10 +31,16 @@ const ButtonWrapper = styled.div`
   justify-content: center;
 `
 const Warning = styled.p``
+const AlertContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+`
 const Alert = styled.p`
   margin-top: 1rem;
   text-align: center;
-  color: #1f8d49;
+  color: ${props => props.role === 'status' ? '#1f8d49' : 'inherit'};
   font-weight: bold;
 `
 
@@ -60,116 +66,125 @@ export default function Contact(props) {
       open={contactOpen}
       toggleClose={() => {
         setContactOpen((prevOpen) => !prevOpen)
+        mutation.reset()
       }}
       index={2}
     >
       <Title>Nous contacter</Title>
-      <Form
-        id='contact'
-        method='post'
-        data-netlify='true'
-        name='contact'
-        onSubmit={(e) => {
-          e.preventDefault()
-          if (!user.nom || !user.email || !user.objet || !user.message) {
-            mutation.reset()
-            setEmpty(true)
-          } else {
-            setEmpty(false)
-            const formData = new URLSearchParams()
-            formData.append(
-              'form-name',
-              ['integration', 'autre'].includes(user.objet)
-                ? 'contact'
-                : 'bug'
-            )
-            Object.keys(user).map((key) => formData.append(key, user[key]))
-            mutation.mutate(formData)
-          }
-        }}
-      >
-        <TextInput
-          name={'nom'}
-          value={user.nom}
-          error={empty && !user.nom}
-          label={'Votre nom'}
-          onChange={({ name, value }) =>
-            setUser((prevUser) => ({ ...prevUser, [name]: value }))
-          }
-          autocomplete='name'
-          required
-        />
-        <TextInput
-          type='email'
-          name={'email'}
-          error={empty && !user.email}
-          value={user.email}
-          label={'Votre email'}
-          onChange={({ name, value }) =>
-            setUser((prevUser) => ({ ...prevUser, [name]: value }))
-          }
-          autocomplete='email'
-        />
-        <Select
-          name={'objet'}
-          value={user.objet}
-          label={'Votre sujet'}
-          onChange={({ name, value }) =>
-            setUser((prevUser) => ({ ...prevUser, [name]: value }))
-          }
+      {!mutation.isError && !mutation.isSuccess && (
+
+        <Form
+          id='contact'
+          method='post'
+          data-netlify='true'
+          name='contact'
+          onSubmit={(e) => {
+            e.preventDefault()
+            if (!user.nom || !user.email || !user.objet || !user.message) {
+              mutation.reset()
+              setEmpty(true)
+            } else {
+              setEmpty(false)
+              const formData = new URLSearchParams()
+              formData.append(
+                'form-name',
+                ['integration', 'autre'].includes(user.objet)
+                  ? 'contact'
+                  : 'bug'
+              )
+              Object.keys(user).map((key) => formData.append(key, user[key]))
+              mutation.mutate(formData)
+            }
+          }}
         >
-          <option value={null} disabled></option>
-          <option value='integration'>
-            Je souhaite obtenir de l'aide pour intégrer le simulateur
-          </option>
-          {props.options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-          <option value='bug'>J'ai trouvé un bug</option>
-          <option value='amelioration'>
-            Je souhaite proposer une amélioration
-          </option>
-          <option value='autre'>Autre</option>
-        </Select>
-        {props.options.find((option) => option.value === user.objet) && (
-          <Warning
-            dangerouslySetInnerHTML={{
-              __html: props.options.find(
-                (option) => option.value === user.objet
-              ).disclaimer,
-            }}
+          <TextInput
+            name={'nom'}
+            value={user.nom}
+            error={empty && !user.nom}
+            label={'Votre nom'}
+            onChange={({ name, value }) =>
+              setUser((prevUser) => ({ ...prevUser, [name]: value }))
+            }
+            autocomplete='name'
+            required
           />
-        )}
-        <TextArea
-          name={'message'}
-          value={user.message}
-          error={empty && !user.message}
-          label={'Votre message'}
-          onChange={({ name, value }) =>
-            setUser((prevUser) => ({ ...prevUser, [name]: value }))
-          }
-        />
-        <ButtonWrapper>
-          <Button submit disabled={mutation.isLoading}>
-            Envoyer mon message
-          </Button>
-        </ButtonWrapper>
-        {empty && <Alert role='alert'>Merci de remplir tous les champs</Alert>}
-        {mutation.isError && (
+          <TextInput
+            type='email'
+            name={'email'}
+            error={empty && !user.email}
+            value={user.email}
+            label={'Votre email'}
+            onChange={({ name, value }) =>
+              setUser((prevUser) => ({ ...prevUser, [name]: value }))
+            }
+            autocomplete='email'
+          />
+          <Select
+            name={'objet'}
+            value={user.objet}
+            label={'Votre sujet'}
+            onChange={({ name, value }) =>
+              setUser((prevUser) => ({ ...prevUser, [name]: value }))
+            }
+          >
+            <option value={null} disabled></option>
+            <option value='integration'>
+              Je souhaite obtenir de l'aide pour intégrer le simulateur
+            </option>
+            {props.options.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+            <option value='bug'>J'ai trouvé un bug</option>
+            <option value='amelioration'>
+              Je souhaite proposer une amélioration
+            </option>
+            <option value='autre'>Autre</option>
+          </Select>
+          {props.options.find((option) => option.value === user.objet) && (
+            <Warning
+              dangerouslySetInnerHTML={{
+                __html: props.options.find(
+                  (option) => option.value === user.objet
+                ).disclaimer,
+              }}
+            />
+          )}
+          <TextArea
+            name={'message'}
+            value={user.message}
+            error={empty && !user.message}
+            label={'Votre message'}
+            onChange={({ name, value }) =>
+              setUser((prevUser) => ({ ...prevUser, [name]: value }))
+            }
+          />
+          <ButtonWrapper>
+            <Button submit disabled={mutation.isLoading}>
+              Envoyer mon message
+            </Button>
+          </ButtonWrapper>
+          {empty && <Alert role='alert'>Merci de remplir tous les champs</Alert>}
+        </Form>
+      )}
+      {mutation.isError && (
+        <AlertContainer>
           <Alert role='alert'>
             Quelque chose n'a pas fonctionné :(
             <br />({mutation.error.message})
           </Alert>
-        )}
-        {mutation.isSuccess && (
-          <Alert role='status'>
+        </AlertContainer>
+      )}
+      {mutation.isSuccess && (
+        <AlertContainer>
+          <Alert role="status">
             Merci !<br />
             Nous avons bien reçu votre message
+            
           </Alert>
-        )}
-      </Form>
+        </AlertContainer>
+      )}
       <ContactPrompt contact />
     </Panel>
   )
