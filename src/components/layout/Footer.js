@@ -117,25 +117,25 @@ export default function Footer(props) {
               </p>
             </Section>
             <Section>
-              <h2>Comment contribuez au développement de nos outils ?</h2>
+              <h2>Comment contribuer au développement de nos outils ?</h2>
               <p>
                 Pour contribuer à la conception et au développement de nos outils,
-                rien de plus simple, 
+                rien de plus simple,{' '}
                 <strong>
                    <MagicLink to='https://tally.so/r/wvNgx0'>
                   participez à notre enquête
                   </MagicLink>{' '} 
                   et renseignez votre adresse e-mail à la fin si vous le souhaitez
-                </strong>{' '}
+                </strong>
                   , notre équipe vous reconcatera pour vous présenter
-                  les dernières avancées et 
+                  les dernières avancées et{' '}
                 <strong>
                   vous faire participer à des sessions 
                   de tests et de découvertes des fonctionnalités à venir ! 
                 </strong>{' '}
                  Ce sera aussi l'occasion pour vous de nous faire part de vos retours d'expériences
                 sur l'utilisation de nos outils. Votre participation est importante pour s'assurer
-                que nous développions un outil pertinent et efficace pour vos besoins. 
+                que nous développons un outil pertinent et efficace pour vos besoins. 
               </p>
               <p>
                 Notre mission est de{' '}
