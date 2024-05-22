@@ -1,3 +1,5 @@
+require('dotenv').config({path: `.env`})
+
 module.exports = {
   siteMetadata: {
     title: `Que Faire de mes Déchets ? Découvrez les solutions pour tous vos déchets et nos conseils pour en produire moins.`,
