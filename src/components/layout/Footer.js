@@ -127,7 +127,7 @@ export default function Footer(props) {
                   </MagicLink>{' '} 
                   et renseignez votre adresse e-mail à la fin si vous le souhaitez
                 </strong>
-                  , notre équipe vous reconcatera pour vous présenter
+                  , notre équipe vous recontactera pour vous présenter
                   les dernières avancées et{' '}
                 <strong>
                   vous faire participer à des sessions 
@@ -136,21 +136,6 @@ export default function Footer(props) {
                  Ce sera aussi l'occasion pour vous de nous faire part de vos retours d'expériences
                 sur l'utilisation de nos outils. Votre participation est importante pour s'assurer
                 que nous développons un outil pertinent et efficace pour vos besoins. 
-              </p>
-              <p>
-                Notre mission est de{' '}
-                <strong>
-                  diffuser les informations et données environnementales en
-                  open-data de l’ADEME
-                </strong>{' '}
-                pour encourager l’amélioration continue et l’innovation. Pour
-                cela,{' '}
-                <strong>
-                  nous accompagnons toutes les applications & services dans leur
-                  démarche responsable
-                </strong>{' '}
-                par l'appropriation et l’intégration de ces données afin
-                d’apporter l’information au plus près des citoyens.
               </p>
             </Section>
           </>
