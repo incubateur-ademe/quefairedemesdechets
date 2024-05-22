@@ -34,6 +34,8 @@ const Warning = styled.p``
 const Alert = styled.p`
   margin-top: 1rem;
   text-align: center;
+  color: #1f8d49;
+  font-weight: bold;
 `
 
 export default function Contact(props) {
