@@ -163,12 +163,8 @@ export default function Contact(props) {
         )}
         {mutation.isSuccess && (
           <Alert role='status'>
-          <p style="color:#1f8d49;">   
-          <strong>
             Merci !<br />
             Nous avons bien reçu votre message
-          </strong>
-          </p>
           </Alert>
         )}
       </Form>
