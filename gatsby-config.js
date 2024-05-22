@@ -15,6 +15,15 @@ module.exports = {
     `gatsby-plugin-root-import`,
     `gatsby-plugin-sitemap`,
     {
+      resolve: `gatsby-plugin-posthog`,
+      options: {
+        apiKey: process.env.POSTHOG_API_KEY,
+        apiHost: "https://eu.i.posthog.com",
+        head: true,
+        isEnabledDevMode: false
+      },
+    },
+    {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         custom: {
