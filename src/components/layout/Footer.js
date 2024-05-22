@@ -116,6 +116,28 @@ export default function Footer(props) {
                 d’apporter l’information au plus près des citoyens.
               </p>
             </Section>
+            <Section>
+              <h2>Comment contribuer au développement de nos outils ?</h2>
+              <p>
+                Pour contribuer à la conception et au développement de nos outils,
+                rien de plus simple,{' '}
+                <strong>
+                   <MagicLink to='https://tally.so/r/wvNgx0'>
+                  participez à notre enquête
+                  </MagicLink>{' '} 
+                  et renseignez votre adresse e-mail à la fin si vous le souhaitez
+                </strong>
+                  , notre équipe vous recontactera pour vous présenter
+                  les dernières avancées et{' '}
+                <strong>
+                  vous faire participer à des sessions 
+                  de tests et de découvertes des fonctionnalités à venir ! 
+                </strong>{' '}
+                 Ce sera aussi l'occasion pour vous de nous faire part de vos retours d'expériences
+                sur l'utilisation de nos outils. Votre participation est importante pour s'assurer
+                que nous développons un outil pertinent et efficace pour vos besoins. 
+              </p>
+            </Section>
           </>
         )}
       </Content>
