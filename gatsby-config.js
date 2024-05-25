@@ -1,3 +1,5 @@
+require('dotenv').config({path: `.env`})
+
 module.exports = {
   siteMetadata: {
     title: `Que Faire de mes Déchets ? Découvrez les solutions pour tous vos déchets et nos conseils pour en produire moins.`,
@@ -14,6 +16,15 @@ module.exports = {
     'gatsby-plugin-use-query-params',
     `gatsby-plugin-root-import`,
     `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-posthog`,
+      options: {
+        apiKey: process.env.POSTHOG_API_KEY,
+        apiHost: "https://eu.i.posthog.com",
+        head: true,
+        isEnabledDevMode: false
+      },
+    },
     {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
