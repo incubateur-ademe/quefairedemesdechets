@@ -11,6 +11,7 @@ import TextArea from 'components/base/TextArea'
 import Select from 'components/base/Select'
 import ContactPrompt from 'components/base/ContactPrompt'
 
+const ContactForm = styled.div``
 const Form = styled.form`
   width: 100%;
   margin-bottom: 3rem;
@@ -31,6 +32,18 @@ const ButtonWrapper = styled.div`
   justify-content: center;
 `
 const Warning = styled.p``
+const AlertContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+`
+const AlertIcon = styled.svg`
+  margin: 1rem;
+  width: 3rem;
+  color: ${props => props.role === 'alert-icon' ? '#ce0500' : '#18753C'};
+`
 const Alert = styled.p`
   margin-top: 1rem;
   text-align: center;
@@ -58,120 +71,131 @@ export default function Contact(props) {
       open={contactOpen}
       toggleClose={() => {
         setContactOpen((prevOpen) => !prevOpen)
+        mutation.reset()
       }}
       index={2}
     >
-      <Title>Nous contacter</Title>
-      <Form
-        id='contact'
-        method='post'
-        data-netlify='true'
-        name='contact'
-        onSubmit={(e) => {
-          e.preventDefault()
-          if (!user.nom || !user.email || !user.objet || !user.message) {
-            mutation.reset()
-            setEmpty(true)
-          } else {
-            setEmpty(false)
-            const formData = new URLSearchParams()
-            formData.append(
-              'form-name',
-              ['integration', 'autre'].includes(user.objet)
-                ? 'contact'
-                : 'bug'
-            )
-            Object.keys(user).map((key) => formData.append(key, user[key]))
-            mutation.mutate(formData)
-          }
-        }}
-      >
-        <TextInput
-          name={'nom'}
-          value={user.nom}
-          error={empty && !user.nom}
-          label={'Votre nom'}
-          onChange={({ name, value }) =>
-            setUser((prevUser) => ({ ...prevUser, [name]: value }))
-          }
-          autocomplete='name'
-          required
-        />
-        <TextInput
-          type='email'
-          name={'email'}
-          error={empty && !user.email}
-          value={user.email}
-          label={'Votre email'}
-          onChange={({ name, value }) =>
-            setUser((prevUser) => ({ ...prevUser, [name]: value }))
-          }
-          autocomplete='email'
-        />
-        <Select
-          name={'objet'}
-          value={user.objet}
-          label={'Votre sujet'}
-          onChange={({ name, value }) =>
-            setUser((prevUser) => ({ ...prevUser, [name]: value }))
-          }
-        >
-          <option value={null} disabled></option>
-          <option value='integration'>
-            Je souhaite obtenir de l'aide pour intégrer le simulateur
-          </option>
-          {props.options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-          <option value='bug'>J'ai trouvé un bug</option>
-          <option value='amelioration'>
-            Je souhaite proposer une amélioration
-          </option>
-          <option value='autre'>Autre</option>
-        </Select>
-        {props.options.find((option) => option.value === user.objet) && (
-          <Warning
-            dangerouslySetInnerHTML={{
-              __html: props.options.find(
-                (option) => option.value === user.objet
-              ).disclaimer,
+      {!mutation.isError && !mutation.isSuccess && (
+        <ContactForm>
+          <Title>Nous contacter</Title>
+          <Form
+            id='contact'
+            method='post'
+            data-netlify='true'
+            name='contact'
+            onSubmit={(e) => {
+              e.preventDefault()
+              if (!user.nom || !user.email || !user.objet || !user.message) {
+                mutation.reset()
+                setEmpty(true)
+              } else {
+                setEmpty(false)
+                const formData = new URLSearchParams()
+                formData.append(
+                  'form-name',
+                  ['integration', 'autre'].includes(user.objet)
+                    ? 'contact'
+                    : 'bug'
+                )
+                Object.keys(user).map((key) => formData.append(key, user[key]))
+                mutation.mutate(formData)
+              }
             }}
-          />
-        )}
-        <TextArea
-          name={'message'}
-          value={user.message}
-          error={empty && !user.message}
-          label={'Votre message'}
-          onChange={({ name, value }) =>
-            setUser((prevUser) => ({ ...prevUser, [name]: value }))
-          }
-        />
-        <ButtonWrapper>
-          <Button submit disabled={mutation.isLoading}>
-            Envoyer mon message
-          </Button>
-        </ButtonWrapper>
-        {empty && <Alert role='alert'>Merci de remplir tous les champs</Alert>}
-        {mutation.isError && (
+          >
+            <TextInput
+              name={'nom'}
+              value={user.nom}
+              error={empty && !user.nom}
+              label={'Votre nom'}
+              onChange={({ name, value }) =>
+                setUser((prevUser) => ({ ...prevUser, [name]: value }))
+              }
+              autocomplete='name'
+              required
+            />
+            <TextInput
+              type='email'
+              name={'email'}
+              error={empty && !user.email}
+              value={user.email}
+              label={'Votre email'}
+              onChange={({ name, value }) =>
+                setUser((prevUser) => ({ ...prevUser, [name]: value }))
+              }
+              autocomplete='email'
+            />
+            <Select
+              name={'objet'}
+              value={user.objet}
+              label={'Votre sujet'}
+              onChange={({ name, value }) =>
+                setUser((prevUser) => ({ ...prevUser, [name]: value }))
+              }
+            >
+              <option value={null} disabled></option>
+              <option value='integration'>
+                Je souhaite obtenir de l'aide pour intégrer le simulateur
+              </option>
+              {props.options.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+              <option value='bug'>J'ai trouvé un bug</option>
+              <option value='amelioration'>
+                Je souhaite proposer une amélioration
+              </option>
+              <option value='autre'>Autre</option>
+            </Select>
+            {props.options.find((option) => option.value === user.objet) && (
+              <Warning
+                dangerouslySetInnerHTML={{
+                  __html: props.options.find(
+                    (option) => option.value === user.objet
+                  ).disclaimer,
+                }}
+              />
+            )}
+            <TextArea
+              name={'message'}
+              value={user.message}
+              error={empty && !user.message}
+              label={'Votre message'}
+              onChange={({ name, value }) =>
+                setUser((prevUser) => ({ ...prevUser, [name]: value }))
+              }
+            />
+            <ButtonWrapper>
+              <Button submit disabled={mutation.isLoading}>
+                Envoyer mon message
+              </Button>
+            </ButtonWrapper>
+            {empty && <Alert role='alert'>Merci de remplir tous les champs</Alert>}
+          </Form>
+        </ContactForm>
+      )}
+      {mutation.isError && (
+        <AlertContainer>
+
+        <AlertIcon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="alert-icon">
+          <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11 15V17H13V15H11ZM11 7V13H13V7H11Z"></path>
+        </AlertIcon>
           <Alert role='alert'>
             Quelque chose n'a pas fonctionné :(
             <br />({mutation.error.message})
           </Alert>
-        )}
-        {mutation.isSuccess && (
-          <Alert role='status'>
-          <p style="color:#1f8d49;">   
-          <strong>
-            Merci !<br />
-            Nous avons bien reçu votre message
-          </strong>
-          </p>
+        </AlertContainer>
+      )}
+      {mutation.isSuccess && (
+        <AlertContainer>
+          <AlertIcon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="status-icon">
+            <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11.0026 16L18.0737 8.92893L16.6595 7.51472L11.0026 13.1716L8.17421 10.3431L6.75999 11.7574L11.0026 16Z"></path>
+          </AlertIcon>
+          <Alert role="status">
+            Votre message a bien été envoyé.
           </Alert>
-        )}
-      </Form>
+        </AlertContainer>
+      )}
       <ContactPrompt contact />
     </Panel>
   )
