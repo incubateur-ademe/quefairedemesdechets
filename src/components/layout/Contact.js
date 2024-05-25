@@ -41,7 +41,7 @@ const AlertContainer = styled.div`
 const AlertIcon = styled.svg`
   margin: 1rem;
   width: 3rem;
-  color: ${props => props.role === 'status' ? '#18753C' : '#ce0500'};
+  color: ${props => props.role === 'alert-icon' ? '#ce0500' : '#18753C'};
 `
 const Alert = styled.p`
   margin-top: 1rem;
@@ -175,7 +175,7 @@ export default function Contact(props) {
       {mutation.isError && (
         <AlertContainer>
 
-        <AlertIcon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <AlertIcon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="alert-icon">
           <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11 15V17H13V15H11ZM11 7V13H13V7H11Z"></path>
         </AlertIcon>
           <Alert role='alert'>
@@ -186,7 +186,7 @@ export default function Contact(props) {
       )}
       {mutation.isSuccess && (
         <AlertContainer>
-          <AlertIcon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <AlertIcon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="status-icon">
             <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11.0026 16L18.0737 8.92893L16.6595 7.51472L11.0026 13.1716L8.17421 10.3431L6.75999 11.7574L11.0026 16Z"></path>
           </AlertIcon>
           <Alert role="status">
