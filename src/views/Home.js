@@ -15,13 +15,18 @@ const Wrapper = styled.div`
 export default function Home() {
   const { isFetched } = useWaste()
 
+  const setFocus = () => {
+    return !window.location.search.includes('iframe')
+  }
+
   return (
     <div>
       <GifTitle />
       <Wrapper>
-        <SearchBar isFetched={isFetched} focus={true}/>
+        <SearchBar isFetched={isFetched} focus={setFocus}/>
       </Wrapper>
       <SuggestionsWrapper />
     </div>
   )
 }
+
