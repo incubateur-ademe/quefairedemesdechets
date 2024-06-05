@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import { useWaste } from 'utils/api'
@@ -14,16 +14,19 @@ const Wrapper = styled.div`
 `
 export default function Home() {
   const { isFetched } = useWaste()
+  const [focus, setFocus] = useState(false)
 
-  const setFocus = () => {
-    return !window.location.search.includes('iframe')
-  }
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setFocus(!window.location.search.includes('iframe'))
+    }
+  }, [])
 
   return (
     <div>
       <GifTitle />
       <Wrapper>
-        <SearchBar isFetched={isFetched} focus={setFocus}/>
+        <SearchBar isFetched={isFetched} focus={focus}/>
       </Wrapper>
       <SuggestionsWrapper />
     </div>
