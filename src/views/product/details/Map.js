@@ -7,8 +7,8 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
   height: clamp(20rem, 75vh, 35rem);
-  border-radius: 1rem;
-  border: 0.125rem solid ${(props) => props.theme.colors.secondLight};
+  ${props => props.product.Nom !== "Vêtement (propre et sec)" && 'border-radius: 1rem;'}
+  border: ${props => props.product.Nom !== "Vêtement (propre et sec)" ? '0.125rem' : '0'} solid ${(props) => props.theme.colors.secondLight};
   overflow: hidden;
 `
 const IFrame = styled.iframe`
