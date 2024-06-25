@@ -13,7 +13,6 @@ export default function UXProvider(props) {
   useEffect(() => {
     window.addEventListener('beforeinstallprompt', (e) => {
       setInstallPrompt(e)
-      console.log(`'beforeinstallprompt' event was fired.`)
     })
   }, [])
 

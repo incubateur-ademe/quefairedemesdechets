@@ -49,9 +49,9 @@ export default function Links(props) {
   return props.product.links?.length ? (
     <Wrapper>
       <Title>En Savoir Plus</Title>
-      {props.product.links.map((link) => (
+      {props.product.links.map((link, index) => (
         <StyledLink
-          key={link['URL']}
+          key={`${link['URL']}-${index}`}
           to={link['URL']}
           onClick={() =>
             window._paq?.push(['trackEvent', 'Misc', 'Link', link['URL']])
