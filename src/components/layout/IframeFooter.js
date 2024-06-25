@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.background};
 `;
 const Content = styled.div`
-  max-width: 37rem;
+  max-width: 58.75rem;
   margin: 0 auto;
   padding: 1rem 0.5rem 0.5rem;
 `;
