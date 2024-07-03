@@ -1,19 +1,18 @@
 const axios = require(`axios`);
 const fs = require("fs");
-const { parse } = require("csv-parse");
 
-function updateKoumoulDataFrom(product, localData) {
-  const productInLocalData = localData.find(
-    (localProduct) => product.Code === localProduct[1]
+const LVAO_API = `${process.env.LVAO_BASE_URL}/api`;
+
+function getLVAOMapFor(product) {
+  const mapUrl = axios.get(
+    `${LVAO_API}/api/qfdmd/afficher_carte?id=${product.ID}`
   );
 
-  if (productInLocalData) {
+  if (mapUrl) {
     return {
       ...product,
       lvao: {
-        subCategoryID: productInLocalData[0],
-        mapUrl: productInLocalData[3],
-        description: productInLocalData[2],
+        mapUrl,
       },
     };
   }
@@ -21,13 +20,6 @@ function updateKoumoulDataFrom(product, localData) {
 }
 
 exports.createPages = ({ actions: { createPage } }) => {
-  const localData = [];
-  fs.createReadStream("./data-config.csv")
-    .pipe(parse({ delimiter: ",", from_line: 2 }))
-    .on("data", function (row) {
-      localData.push(row);
-    });
-
   return axios
     .get(
       `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&size=1000&sampling=neighbors`
@@ -86,7 +78,7 @@ exports.createPages = ({ actions: { createPage } }) => {
         createPage({
           path: `/dechet/${product.slug}/`,
           component: require.resolve("./src/templates/product.js"),
-          context: { product: updateKoumoulDataFrom(product, localData) },
+          context: { product: getLVAOMapFor(product) },
         });
       })
     );
