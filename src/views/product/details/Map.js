@@ -30,10 +30,11 @@ const IFrameWrapper = ({ src }) => {
 };
 
 export default function Map({ lvaoData, product }) {
+  console.log({ lvaoData });
   return (
     <Wrapper LVAOMapIsDisplayed={!!lvaoData?.url_carte}>
-      {props.lvaoData?.url_carte ? (
-        <IFrameWrapper src={props.lvaoData.urlCarte} />
+      {lvaoData?.url_carte ? (
+        <IFrameWrapper src={lvaoData.url_carte} />
       ) : (
         <MapWrapper product={product} />
       )}
