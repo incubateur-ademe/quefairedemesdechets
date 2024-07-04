@@ -10,7 +10,7 @@ export function useLVAOMapForProduct(productID) {
     queryKey: ["lvao-product", productID],
     queryFn: async ({ queryKey }) => {
       const response = await fetch(
-        `${LVAO_API}/qfdmd/afficher_carte?id=${queryKey[1]}`
+        `${LVAO_API}/qfdmd/produit?id=${queryKey[1]}`
       );
 
       if (!response.ok) {
