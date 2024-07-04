@@ -7,14 +7,36 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
   height: clamp(20rem, 75vh, 35rem);
-  border-radius: 1rem;
-  border: 0.125rem solid ${(props) => props.theme.colors.secondLight};
+  ${(props) => props.LVAOMapIsDisplayed && "border-radius: 1rem;"}
   overflow: hidden;
 `;
-export default function Map(props) {
+const IFrame = styled.iframe`
+  border: none;
+  width: 100%;
+  height: 100%;
+`;
+
+const IFrameWrapper = ({ src }) => {
   return (
-    <Wrapper>
-      <MapWrapper product={props.product} />
+    <IFrame
+      id="lvao_iframe"
+      allow="geolocation"
+      allowFullScreen={true}
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      src={src}
+    />
+  );
+};
+
+export default function Map({ lvaoData, product }) {
+  return (
+    <Wrapper LVAOMapIsDisplayed={!!lvaoData?.url_carte}>
+      {props.lvaoData?.url_carte ? (
+        <IFrameWrapper src={props.lvaoData.urlCarte} />
+      ) : (
+        <MapWrapper product={product} />
+      )}
     </Wrapper>
   );
 }

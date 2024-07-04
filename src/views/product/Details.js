@@ -3,11 +3,6 @@ import styled from "styled-components";
 
 import Map from "./details/Map";
 
-const Wrapper = styled.div`
-  ${(props) => props.theme.mq.small} {
-    display: none;
-  }
-`;
 const Section = styled.section`
   margin-bottom: 4rem;
 `;
@@ -19,7 +14,7 @@ const Text = styled.p`
 `;
 export default function Product(props) {
   return (
-    <Wrapper>
+    <div>
       {props.product.map && (
         <Section>
           <Title>Où l'apporter ?</Title>
@@ -47,6 +42,6 @@ export default function Product(props) {
           />
         </Section>
       )}
-    </Wrapper>
+    </div>
   );
 }
