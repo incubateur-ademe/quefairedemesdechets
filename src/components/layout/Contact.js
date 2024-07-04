@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import styled from "styled-components";
-import { useMutation } from "react-query";
+import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 
 import UXContext from "utils/UXContext";
@@ -95,7 +95,7 @@ export default function Contact(props) {
                   "form-name",
                   ["integration", "autre"].includes(user.objet)
                     ? "contact"
-                    : "bug",
+                    : "bug"
                 );
                 Object.keys(user).map((key) => formData.append(key, user[key]));
                 mutation.mutate(formData);

@@ -21,5 +21,5 @@ const StyleProviderSSR = (props) => {
     </StyleContext.Provider>
   );
 };
-const wrapper = ({ element }) => <StyleProviderSSR>{element}</StyleProviderSSR>;
-export default wrapper;
+
+export default StyleProviderSSR;
