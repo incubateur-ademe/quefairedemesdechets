@@ -1,25 +1,6 @@
 const axios = require(`axios`);
-const fs = require("fs");
 
-const LVAO_API = `${process.env.LVAO_BASE_URL}/api`;
-
-function getLVAOMapFor(product) {
-  const mapUrl = axios.get(
-    `${LVAO_API}/api/qfdmd/afficher_carte?id=${product.ID}`
-  );
-
-  if (mapUrl) {
-    return {
-      ...product,
-      lvao: {
-        mapUrl,
-      },
-    };
-  }
-  return product;
-}
-
-exports.createPages = ({ actions: { createPage } }) => {
+exports.createPages = ({ graphql, actions: { createPage } }) => {
   return axios
     .get(
       `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&size=1000&sampling=neighbors`
@@ -78,7 +59,7 @@ exports.createPages = ({ actions: { createPage } }) => {
         createPage({
           path: `/dechet/${product.slug}/`,
           component: require.resolve("./src/templates/product.js"),
-          context: { product: getLVAOMapFor(product) },
+          context: { product },
         });
       })
     );
