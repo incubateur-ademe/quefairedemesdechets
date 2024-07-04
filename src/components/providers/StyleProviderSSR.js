@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
-import { ThemeProvider } from 'styled-components'
+import React, { useState } from "react";
+import { ThemeProvider } from "styled-components";
 
-import StyleContext from 'src/utils/StyleContext'
-import { themes } from 'src/utils/styles'
+import StyleContext from "src/utils/StyleContext";
+import { themes } from "src/utils/styles";
 
 const StyleProviderSSR = (props) => {
-  const [theme, setTheme] = useState('default')
+  const [theme, setTheme] = useState("default");
 
   return (
     <StyleContext.Provider
@@ -19,7 +19,7 @@ const StyleProviderSSR = (props) => {
         {props.children}
       </ThemeProvider>
     </StyleContext.Provider>
-  )
-}
-const wrapper = ({ element }) => <StyleProviderSSR>{element}</StyleProviderSSR>
-export default wrapper
+  );
+};
+
+export default StyleProviderSSR;

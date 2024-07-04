@@ -30,7 +30,6 @@
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
     "react-highlight-words": "^0.18.0",
-    "react-query": "^3.38.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-share": "^4.4.0",

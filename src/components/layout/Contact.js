@@ -1,21 +1,21 @@
-import React, { useState, useContext } from 'react'
-import styled from 'styled-components'
-import { useMutation } from 'react-query'
-import axios from 'axios'
+import React, { useState, useContext } from "react";
+import styled from "styled-components";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
 
-import UXContext from 'utils/UXContext'
-import Panel from 'components/base/Panel'
-import Button from 'components/base/Button'
-import TextInput from 'components/base/TextInput'
-import TextArea from 'components/base/TextArea'
-import Select from 'components/base/Select'
-import ContactPrompt from 'components/base/ContactPrompt'
+import UXContext from "utils/UXContext";
+import Panel from "components/base/Panel";
+import Button from "components/base/Button";
+import TextInput from "components/base/TextInput";
+import TextArea from "components/base/TextArea";
+import Select from "components/base/Select";
+import ContactPrompt from "components/base/ContactPrompt";
 
-const ContactForm = styled.div``
+const ContactForm = styled.div``;
 const Form = styled.form`
   width: 100%;
   margin-bottom: 3rem;
-`
+`;
 const Title = styled.div`
   margin-bottom: 1rem;
   font-size: 2rem;
@@ -26,52 +26,52 @@ const Title = styled.div`
   ${(props) => props.theme.mq.small} {
     font-size: 1.5rem;
   }
-`
+`;
 const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
-`
-const Warning = styled.p``
+`;
+const Warning = styled.p``;
 const AlertContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 80%;
-`
+`;
 const AlertIcon = styled.svg`
   margin: 1rem;
   width: 3rem;
-  color: ${props => props.role === 'alert-icon' ? '#ce0500' : '#18753C'};
-`
+  color: ${(props) => (props.role === "alert-icon" ? "#ce0500" : "#18753C")};
+`;
 const Alert = styled.p`
   margin-top: 1rem;
   text-align: center;
-`
+`;
 
 export default function Contact(props) {
-  const { contactOpen, setContactOpen } = useContext(UXContext)
+  const { contactOpen, setContactOpen } = useContext(UXContext);
 
   const [user, setUser] = useState({
-    nom: '',
-    email: '',
-    objet: '',
-    message: '',
-  })
+    nom: "",
+    email: "",
+    objet: "",
+    message: "",
+  });
 
-  const [empty, setEmpty] = useState(false)
+  const [empty, setEmpty] = useState(false);
 
   const mutation = useMutation((formData) => {
-    return axios.post('/', formData)
-  })
+    return axios.post("/", formData);
+  });
 
   return (
     <Panel
       small={props.small}
       open={contactOpen}
       toggleClose={() => {
-        setContactOpen((prevOpen) => !prevOpen)
-        mutation.reset()
+        setContactOpen((prevOpen) => !prevOpen);
+        mutation.reset();
       }}
       index={2}
     >
@@ -79,61 +79,61 @@ export default function Contact(props) {
         <ContactForm>
           <Title>Nous contacter</Title>
           <Form
-            id='contact'
-            method='post'
-            data-netlify='true'
-            name='contact'
+            id="contact"
+            method="post"
+            data-netlify="true"
+            name="contact"
             onSubmit={(e) => {
-              e.preventDefault()
+              e.preventDefault();
               if (!user.nom || !user.email || !user.objet || !user.message) {
-                mutation.reset()
-                setEmpty(true)
+                mutation.reset();
+                setEmpty(true);
               } else {
-                setEmpty(false)
-                const formData = new URLSearchParams()
+                setEmpty(false);
+                const formData = new URLSearchParams();
                 formData.append(
-                  'form-name',
-                  ['integration', 'autre'].includes(user.objet)
-                    ? 'contact'
-                    : 'bug'
-                )
-                Object.keys(user).map((key) => formData.append(key, user[key]))
-                mutation.mutate(formData)
+                  "form-name",
+                  ["integration", "autre"].includes(user.objet)
+                    ? "contact"
+                    : "bug"
+                );
+                Object.keys(user).map((key) => formData.append(key, user[key]));
+                mutation.mutate(formData);
               }
             }}
           >
             <TextInput
-              name={'nom'}
+              name={"nom"}
               value={user.nom}
               error={empty && !user.nom}
-              label={'Votre nom'}
+              label={"Votre nom"}
               onChange={({ name, value }) =>
                 setUser((prevUser) => ({ ...prevUser, [name]: value }))
               }
-              autocomplete='name'
+              autocomplete="name"
               required
             />
             <TextInput
-              type='email'
-              name={'email'}
+              type="email"
+              name={"email"}
               error={empty && !user.email}
               value={user.email}
-              label={'Votre email'}
+              label={"Votre email"}
               onChange={({ name, value }) =>
                 setUser((prevUser) => ({ ...prevUser, [name]: value }))
               }
-              autocomplete='email'
+              autocomplete="email"
             />
             <Select
-              name={'objet'}
+              name={"objet"}
               value={user.objet}
-              label={'Votre sujet'}
+              label={"Votre sujet"}
               onChange={({ name, value }) =>
                 setUser((prevUser) => ({ ...prevUser, [name]: value }))
               }
             >
               <option value={null} disabled></option>
-              <option value='integration'>
+              <option value="integration">
                 Je souhaite obtenir de l'aide pour intégrer le simulateur
               </option>
               {props.options.map((option) => (
@@ -141,11 +141,11 @@ export default function Contact(props) {
                   {option.label}
                 </option>
               ))}
-              <option value='bug'>J'ai trouvé un bug</option>
-              <option value='amelioration'>
+              <option value="bug">J'ai trouvé un bug</option>
+              <option value="amelioration">
                 Je souhaite proposer une amélioration
               </option>
-              <option value='autre'>Autre</option>
+              <option value="autre">Autre</option>
             </Select>
             {props.options.find((option) => option.value === user.objet) && (
               <Warning
@@ -157,10 +157,10 @@ export default function Contact(props) {
               />
             )}
             <TextArea
-              name={'message'}
+              name={"message"}
               value={user.message}
               error={empty && !user.message}
-              label={'Votre message'}
+              label={"Votre message"}
               onChange={({ name, value }) =>
                 setUser((prevUser) => ({ ...prevUser, [name]: value }))
               }
@@ -170,17 +170,23 @@ export default function Contact(props) {
                 Envoyer mon message
               </Button>
             </ButtonWrapper>
-            {empty && <Alert role='alert'>Merci de remplir tous les champs</Alert>}
+            {empty && (
+              <Alert role="alert">Merci de remplir tous les champs</Alert>
+            )}
           </Form>
         </ContactForm>
       )}
       {mutation.isError && (
         <AlertContainer>
-
-        <AlertIcon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="alert-icon">
-          <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11 15V17H13V15H11ZM11 7V13H13V7H11Z"></path>
-        </AlertIcon>
-          <Alert role='alert'>
+          <AlertIcon
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            role="alert-icon"
+          >
+            <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11 15V17H13V15H11ZM11 7V13H13V7H11Z"></path>
+          </AlertIcon>
+          <Alert role="alert">
             Quelque chose n'a pas fonctionné :(
             <br />({mutation.error.message})
           </Alert>
@@ -188,15 +194,18 @@ export default function Contact(props) {
       )}
       {mutation.isSuccess && (
         <AlertContainer>
-          <AlertIcon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" role="status-icon">
+          <AlertIcon
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            role="status-icon"
+          >
             <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11.0026 16L18.0737 8.92893L16.6595 7.51472L11.0026 13.1716L8.17421 10.3431L6.75999 11.7574L11.0026 16Z"></path>
           </AlertIcon>
-          <Alert role="status">
-            Votre message a bien été envoyé.
-          </Alert>
+          <Alert role="status">Votre message a bien été envoyé.</Alert>
         </AlertContainer>
       )}
       <ContactPrompt contact />
     </Panel>
-  )
+  );
 }
