@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import { useMutation } from "@tanstack/react-query";
-import axios from "axios";
 
 import UXContext from "utils/UXContext";
 import Panel from "components/base/Panel";
@@ -62,7 +61,7 @@ export default function Contact(props) {
   const [empty, setEmpty] = useState(false);
 
   const mutation = useMutation((formData) => {
-    return axios.post("/", formData);
+    return fetch("/", { method: "post", body: formData });
   });
 
   return (
