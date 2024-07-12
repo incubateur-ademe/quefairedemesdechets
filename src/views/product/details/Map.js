@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 
 import MapWrapper from "components/misc/MapWrapper";
@@ -17,6 +17,12 @@ const IFrame = styled.iframe`
 `;
 
 const IFrameWrapper = ({ src }) => {
+  const iframeRef = useRef(null);
+
+  function handleLoad() {
+    iframeRef.current.contentWindow.postMessage("ademe", "*");
+  }
+
   return (
     <IFrame
       id="lvao_iframe"
@@ -24,13 +30,14 @@ const IFrameWrapper = ({ src }) => {
       allowFullScreen={true}
       webkitallowfullscreen="true"
       mozallowfullscreen="true"
+      ref={iframeRef}
+      onLoad={handleLoad}
       src={src}
     />
   );
 };
 
 export default function Map({ lvaoData, product }) {
-  console.log({ lvaoData });
   return (
     <Wrapper LVAOMapIsDisplayed={!!lvaoData?.url_carte}>
       {lvaoData?.url_carte ? (
