@@ -38,7 +38,7 @@
     "styled-components": "^5.3.5",
     "styled-normalize": "^8.0.7",
     "twemoji": "^14.0.2",
-    "use-query-params": "^1.1.9"
+    "use-query-params": "^2.2.1"
   },
   "devDependencies": {
     "gatsby-cli": "^4.13.0",
