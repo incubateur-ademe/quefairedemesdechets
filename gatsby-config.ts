@@ -10,7 +10,14 @@ module.exports = {
     twitterUsername: "_datagir",
   },
   plugins: [
-    //`gatsby-plugin-preact`,
+    {
+      resolve: `gatsby-plugin-typescript`,
+      // options: {
+      //   isTSX: true, // defaults to false
+      //   jsxPragma: `jsx`, // defaults to "React"
+      //   allExtensions: true, // defaults to false
+      // },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-use-query-params",
