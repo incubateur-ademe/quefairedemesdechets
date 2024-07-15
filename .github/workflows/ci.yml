@@ -3,7 +3,7 @@ name: Que Faire de Mes Déchets | CI
 on: [push]
 
 jobs:
-  build:
+  test-and-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
