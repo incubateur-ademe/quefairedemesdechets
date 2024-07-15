@@ -10,7 +10,7 @@ const TitleWrapper = styled.h3`
   margin: 0;
   padding: 0;
 `
-const Title = styled.button<{ expanded?: boolean }>`
+const Title = styled.button<{ $expanded?: boolean }>`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -29,10 +29,10 @@ const Title = styled.button<{ expanded?: boolean }>`
     background: #fafafa;
   }
 
-  ${({ expanded }) => expanded && `background: #E3E3FD;`}
+  ${({ $expanded }) => $expanded && `background: #E3E3FD;`}
 `
 
-const Chevron = styled.svg<{ expanded?: boolean }>`
+const Chevron = styled.svg<{ $expanded: boolean }>`
   ---rotation: rotate(180deg);
 
   width: 10px;
@@ -41,7 +41,7 @@ const Chevron = styled.svg<{ expanded?: boolean }>`
   transition: .25s;
   will-change: transform;
   transform: var(---rotation);
-  ${({ expanded }) => expanded && `---rotation: rotate(0deg);`}
+  ${({ $expanded }) => $expanded && `---rotation: rotate(0deg);`}
 `
 
 const AccordionItemWrapper = styled.div`
@@ -50,10 +50,10 @@ const AccordionItemWrapper = styled.div`
 `
 
 
-const Content = styled.div<{ expanded?: boolean; }> `
+const Content = styled.p<{ $expanded?: boolean; }> `
   display: none;
   padding: 1rem;
-  ${({ expanded }) => expanded && `display: block;`}
+  ${({ $expanded }) => $expanded && `display: block;`}
 `
 
 export default function Accordion({ items }: { items: AccordionItem[] }) {
@@ -65,30 +65,32 @@ export default function Accordion({ items }: { items: AccordionItem[] }) {
         const expanded = expandedItem === index
         const id = `accordion-item-${index}`
         return (
-          <AccordionItemWrapper>
+          <AccordionItemWrapper key={id}>
             <TitleWrapper
             >
               <Title
-                expanded={expanded}
+                $expanded={expanded}
                 onClick={() => setExpandedItem(expanded ? null : index)}
                 aria-expanded={expanded}
                 aria-controls={id}
                 id={`${id}-button`}
+                data-testid={`accordion-button`}
                 type="button"
               >
                 {title}
 
-                <Chevron expanded={expanded}
+                <Chevron $expanded={expanded}
                   width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fillRule="evenodd" clipRule="evenodd" d="M4.99999 2.21883L1.69999 5.51883L0.757324 4.57616L4.99999 0.333496L9.24266 4.57616L8.29999 5.51883L4.99999 2.21883Z" fill="#000091" />
                 </Chevron>
               </Title>
             </TitleWrapper>
             <Content
-              aria-labelled-by={`${id}-button`}
+              aria-labelledby={`${id}-button`}
               aria-hidden={!expanded}
               id={id}
-              expanded={expanded}
+              $expanded={expanded}
+              data-testid={`accordion-content`}
             >{content}</Content>
           </AccordionItemWrapper>
         )
