@@ -1,19 +1,17 @@
-const axios = require(`axios`);
-
 exports.createPages = ({ graphql, actions: { createPage } }) => {
-  return axios
-    .get(
-      `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&size=1000&sampling=neighbors`,
-    )
+  return fetch(
+    `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&size=1000&sampling=neighbors`
+  )
+    .then((res) => res.json())
     .then((res) =>
-      res.data.results.filter((waste) => typeof waste["ID"] !== "undefined"),
+      res.results.filter((waste) => typeof waste["ID"] !== "undefined")
     ) // handle Koumoul missing ID
     .then((wasteRes) =>
-      axios
-        .get(
-          "https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-liens/lines?format=json&q_mode=simple&size=1000&sampling=neighbors",
-        )
-        .then((res) => res.data.results)
+      fetch(
+        "https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-liens/lines?format=json&q_mode=simple&size=1000&sampling=neighbors"
+      )
+        .then((res) => res.json())
+        .then((res) => res.results)
         .then((linkRes) => {
           let tempWaste = [...wasteRes];
 
@@ -49,10 +47,10 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
             links: linkRes.filter((link) =>
               link["Produits_associes"]
                 .split("; ")
-                .includes(waste["ID"].split("_")[0]),
+                .includes(waste["ID"].split("_")[0])
             ),
           }));
-        }),
+        })
     )
     .then((res) =>
       res.forEach((product) => {
@@ -61,6 +59,6 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
           component: require.resolve("./src/templates/product.js"),
           context: { product },
         });
-      }),
+      })
     );
 };
