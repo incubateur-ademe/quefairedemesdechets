@@ -1,22 +1,22 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-import Map from './details/Map'
+import Map from "./details/Map";
 
 const Wrapper = styled.div`
   ${(props) => props.theme.mq.small} {
     display: none;
   }
-`
+`;
 const Section = styled.section`
   margin-bottom: 4rem;
-`
+`;
 const Title = styled.h2`
   margin-bottom: 1.25rem;
-`
+`;
 const Text = styled.p`
   font-size: 1.125rem;
-`
+`;
 export default function Product(props) {
   return (
     <Wrapper>
@@ -48,5 +48,5 @@ export default function Product(props) {
         </Section>
       )}
     </Wrapper>
-  )
+  );
 }

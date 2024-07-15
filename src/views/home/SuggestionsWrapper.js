@@ -1,9 +1,9 @@
-import React, { useEffect, useContext } from 'react'
-import styled from 'styled-components'
+import React, { useEffect, useContext } from "react";
+import styled from "styled-components";
 
-import { useWaste } from 'utils/api'
-import SearchContext from 'utils/SearchContext'
-import Suggestions from 'components/misc/Suggestions'
+import { useWaste } from "utils/api";
+import SearchContext from "utils/SearchContext";
+import Suggestions from "components/misc/Suggestions";
 
 const Wrapper = styled.div`
   padding-bottom: 1rem;
@@ -15,14 +15,14 @@ const Wrapper = styled.div`
     opacity: 1;
     transition: none;
   }
-`
+`;
 export default function SuggestionsWrapper() {
-  const { isFetched } = useWaste()
+  const { isFetched } = useWaste();
 
-  const { setSearch } = useContext(SearchContext)
+  const { setSearch } = useContext(SearchContext);
   useEffect(() => {
-    setSearch('')
-  }, [setSearch])
+    setSearch("");
+  }, [setSearch]);
 
   return (
     <Wrapper isFetched={isFetched}>
@@ -30,5 +30,5 @@ export default function SuggestionsWrapper() {
         En panne d’inspiration ? Essayez une des suggestions ci‑dessous.
       </Suggestions>
     </Wrapper>
-  )
+  );
 }

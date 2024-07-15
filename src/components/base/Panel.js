@@ -1,23 +1,23 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-import useWindowSize from 'hooks/useWindowSize'
-import EmbedButton from './panel/EmbedButton'
-import ShareButton from './panel/ShareButton'
-import ContactButton from './panel/ContactButton'
+import useWindowSize from "hooks/useWindowSize";
+import EmbedButton from "./panel/EmbedButton";
+import ShareButton from "./panel/ShareButton";
+import ContactButton from "./panel/ContactButton";
 
 const Wrapper = styled.div`
   position: relative;
-  width: ${(props) => (props.open ? '30rem' : 0)};
+  width: ${(props) => (props.open ? "30rem" : 0)};
   transition: width 400ms ease-out;
 
   ${(props) => props.theme.mq.medium} {
-    display: ${(props) => (props.open && props.small ? 'block' : 'none')};
+    display: ${(props) => (props.open && props.small ? "block" : "none")};
     width: auto;
     border-left: none;
     transition: none;
   }
-`
+`;
 const Content = styled.div`
   position: fixed;
   z-index: 12;
@@ -27,11 +27,11 @@ const Content = styled.div`
   height: 100%;
   padding: 2rem;
   background-color: ${(props) =>
-    props.small ? 'transparent' : props.theme.colors.background};
+    props.small ? "transparent" : props.theme.colors.background};
   border-left: 5px solid ${(props) => props.theme.colors.main};
   overflow-y: auto;
   overflow-x: visible;
-  transform: translateX(${(props) => (props.open ? 0 : '100%')});
+  transform: translateX(${(props) => (props.open ? 0 : "100%")});
   transition: transform 400ms ease-out;
 
   ${(props) => props.theme.mq.medium} {
@@ -54,7 +54,7 @@ const Content = styled.div`
     font-size: 1.3em;
     margin-bottom: 1rem;
   }
-`
+`;
 const ButtonClose = styled.div`
   position: absolute;
   top: 0.25em;
@@ -64,9 +64,9 @@ const ButtonClose = styled.div`
   transform: rotate(45deg);
   cursor: pointer;
   line-height: 0.5;
-`
+`;
 export default function Panel(props) {
-  const { width } = useWindowSize()
+  const { width } = useWindowSize();
   return (width > 1200 && !props.small) || (width <= 1200 && props.small) ? (
     <Wrapper open={props.open} small={props.small} id={props.id}>
       {!props.small &&
@@ -94,5 +94,5 @@ export default function Panel(props) {
         {props.children}
       </Content>
     </Wrapper>
-  ) : null
+  ) : null;
 }

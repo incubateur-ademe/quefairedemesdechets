@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useContext } from 'react'
-import styled from 'styled-components'
-import { useLocation } from '@reach/router'
-import copy from 'copy-to-clipboard'
+import React, { useState, useEffect, useContext } from "react";
+import styled from "styled-components";
+import { useLocation } from "@reach/router";
+import copy from "copy-to-clipboard";
 
-import StyleContext from 'utils/StyleContext'
+import StyleContext from "utils/StyleContext";
 
 const Wrapper = styled.div`
   margin-bottom: 2em;
-`
+`;
 const Text = styled.code`
   position: relative;
   display: block;
@@ -19,7 +19,7 @@ const Text = styled.code`
   cursor: pointer;
 
   &:before {
-    content: 'Copié !';
+    content: "Copié !";
     position: absolute;
     bottom: 0;
     right: 0;
@@ -28,37 +28,37 @@ const Text = styled.code`
     opacity: ${(props) => (props.copied ? 1 : 0)};
     transition: opacity 300ms ease-out;
   }
-`
+`;
 const Explication = styled.p`
   margin-bottom: 0;
   font-size: 0.875em;
   font-style: italic;
-`
+`;
 export default function Code(props) {
-  let location = useLocation()
-  const { theme } = useContext(StyleContext)
-  const [script, setScript] = useState(null)
+  let location = useLocation();
+  const { theme } = useContext(StyleContext);
+  const [script, setScript] = useState(null);
 
   useEffect(() => {
     setScript(
-      `<script id="${props.id || 'datagir'}" src="${
+      `<script id="${props.id || "datagir"}" src="${
         window.location.origin
       }/iframe.js" data-search="${
-        props.typeShare === 'result' ? location.pathname : ''
-      }?theme=${theme}"></script>`
-    )
-  }, [location.pathname, props.id, props.typeShare, theme])
+        props.typeShare === "result" ? location.pathname : ""
+      }?theme=${theme}"></script>`,
+    );
+  }, [location.pathname, props.id, props.typeShare, theme]);
 
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useState(false);
   return (
     <Wrapper>
       <Text
         copied={copied}
         onClick={() => {
           if (copy(script)) {
-            setCopied(true)
+            setCopied(true);
           }
-          window._paq?.push(['trackEvent', 'Share', 'Embed', props.typeshare])
+          window._paq?.push(["trackEvent", "Share", "Embed", props.typeshare]);
         }}
       >
         {script}
@@ -68,5 +68,5 @@ export default function Code(props) {
         votre site web
       </Explication>
     </Wrapper>
-  )
+  );
 }

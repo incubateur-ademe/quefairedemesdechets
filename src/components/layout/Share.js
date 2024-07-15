@@ -1,17 +1,17 @@
-import React, { useState, useEffect, useContext } from 'react'
-import styled from 'styled-components'
-import { useLocation } from '@reach/router'
+import React, { useState, useEffect, useContext } from "react";
+import styled from "styled-components";
+import { useLocation } from "@reach/router";
 
-import UXContext from 'utils/UXContext'
-import Select from 'components/base/FancySelect'
-import Panel from 'components/base/Panel'
-import Integration from './share/Integration'
-import Link from './share/Link'
-import Mail from './share/Mail'
-import Facebook from './share/Facebook'
-import Twitter from './share/Twitter'
-import Linkedin from './share/Linkedin'
-import Whatsapp from './share/Whatsapp'
+import UXContext from "utils/UXContext";
+import Select from "components/base/FancySelect";
+import Panel from "components/base/Panel";
+import Integration from "./share/Integration";
+import Link from "./share/Link";
+import Mail from "./share/Mail";
+import Facebook from "./share/Facebook";
+import Twitter from "./share/Twitter";
+import Linkedin from "./share/Linkedin";
+import Whatsapp from "./share/Whatsapp";
 
 const ShareButtons = styled.div`
   display: flex;
@@ -31,7 +31,7 @@ const ShareButtons = styled.div`
       fill: ${(props) => props.theme.colors.main};
     }
   }
-`
+`;
 const Title = styled.div`
   margin-bottom: 1rem;
   font-size: 2rem;
@@ -42,39 +42,39 @@ const Title = styled.div`
   ${(props) => props.theme.mq.small} {
     font-size: 1.5rem;
   }
-`
+`;
 export default function Share(props) {
   const { shareOpen, setShareOpen, typeShare, setTypeShare, setEmbedOpen } =
-    useContext(UXContext)
+    useContext(UXContext);
 
-  let location = useLocation()
-  const [url, setUrl] = useState()
+  let location = useLocation();
+  const [url, setUrl] = useState();
   useEffect(() => {
     setUrl(
       `${window.location.origin}/${
-        typeShare === 'result' ? location.pathname + location.search : ''
-      }`
-    )
-  }, [location.search, location.pathname, typeShare])
+        typeShare === "result" ? location.pathname + location.search : ""
+      }`,
+    );
+  }, [location.search, location.pathname, typeShare]);
 
   return (
     <Panel
       small={props.small}
-      id={props.small ? 'share-mobile' : null}
+      id={props.small ? "share-mobile" : null}
       open={shareOpen}
       toggleClose={() => setShareOpen((prevOpen) => !prevOpen)}
       index={1}
     >
       <Title>
-        Partager{' '}
+        Partager{" "}
         <Select
           fancy
           value={typeShare}
           onChange={setTypeShare}
           options={[
-            { value: 'simulator', label: `ce simulateur` },
+            { value: "simulator", label: `ce simulateur` },
             {
-              value: 'result',
+              value: "result",
               label: `cette fiche`,
               disabled: !props.result,
             },
@@ -100,5 +100,5 @@ export default function Share(props) {
       </ShareButtons>
       <Link url={url} />
     </Panel>
-  )
+  );
 }

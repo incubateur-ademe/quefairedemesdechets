@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-import ShareButton from './presentation/ShareButton'
+import ShareButton from "./presentation/ShareButton";
 
 const Header = styled.div`
   position: relative;
@@ -14,7 +14,7 @@ const Header = styled.div`
     align-items: flex-start;
     // padding-top: 1.5rem;
   }
-`
+`;
 const Title = styled.h1`
   flex: 1;
   margin: 0 1.5rem 0 0;
@@ -29,7 +29,7 @@ const Title = styled.h1`
     font-size: 2rem;
     margin: 0 1rem 0 0;
   }
-`
+`;
 const Text = styled.div`
   margin-bottom: 3rem;
   font-size: 1.25rem;
@@ -43,12 +43,12 @@ const Text = styled.div`
   li {
     margin-bottom: 1.5rem;
   }
-`
+`;
 export default function Presentation(props) {
   return (
     <>
       <Header>
-        <Title>{props.product['Nom']}</Title>
+        <Title>{props.product["Nom"]}</Title>
         <ShareButton />
       </Header>
       <Text
@@ -57,5 +57,5 @@ export default function Presentation(props) {
         }}
       />
     </>
-  )
+  );
 }

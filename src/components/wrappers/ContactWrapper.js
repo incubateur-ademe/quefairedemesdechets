@@ -1,6 +1,6 @@
-import React from 'react'
+import React from "react";
 
-import Contact from 'components/layout/Contact'
+import Contact from "components/layout/Contact";
 
 export default function ContactWrapper(props) {
   return (
@@ -8,14 +8,14 @@ export default function ContactWrapper(props) {
       small={props.small}
       options={[
         {
-          value: 'Erreur',
+          value: "Erreur",
           label: `Je souhaite signaler une erreur pour un déchet`,
         },
         {
-          value: 'Manquant',
+          value: "Manquant",
           label: `Je souhaite signaler un déchet manquant`,
         },
       ]}
     />
-  )
+  );
 }

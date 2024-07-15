@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useContext, useRef } from 'react'
-import styled from 'styled-components'
-import { navigate } from 'gatsby'
-import Fuse from '../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js'
+import React, { useState, useEffect, useContext, useRef } from "react";
+import styled from "styled-components";
+import { navigate } from "gatsby";
+import Fuse from "../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
 
-import { useWaste } from 'utils/api'
-import SearchContext from 'utils/SearchContext'
-import TextInput from './searchBar/TextInput'
-import Suggestions from './searchBar/Suggestions'
+import { useWaste } from "utils/api";
+import SearchContext from "utils/SearchContext";
+import TextInput from "./searchBar/TextInput";
+import Suggestions from "./searchBar/Suggestions";
 
 const Wrapper = styled.form`
   position: absolute;
@@ -20,7 +20,7 @@ const Wrapper = styled.form`
   border-radius: 2em;
   overflow: hidden;
   opacity: ${(props) => (props.isFetched && !props.small ? 1 : 0)};
-  pointer-events: ${(props) => (props.small ? 'none' : 'inherit')};
+  pointer-events: ${(props) => (props.small ? "none" : "inherit")};
   transition: opacity 750ms;
 
   ${(props) => props.theme.mq.small} {
@@ -32,52 +32,52 @@ const Wrapper = styled.form`
     opacity: 1;
     transition: none;
   }
-`
+`;
 
 export default function SearchBar(props) {
-  const { data, isFetched } = useWaste()
-  const { search, setSearch } = useContext(SearchContext)
+  const { data, isFetched } = useWaste();
+  const { search, setSearch } = useContext(SearchContext);
 
-  const [results, setResults] = useState([])
-  const [fuse, setFuse] = useState(null)
+  const [results, setResults] = useState([]);
+  const [fuse, setFuse] = useState(null);
   useEffect(() => {
     if (data) {
       setFuse(
         new Fuse(data, {
-          keys: ['searchable'],
+          keys: ["searchable"],
           threshold: 0.3,
           ignoreLocation: true,
-        })
-      )
+        }),
+      );
     }
-  }, [data])
+  }, [data]);
 
   useEffect(() => {
     if (fuse && search.length > 2) {
       setResults(
-        fuse.search(search.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-      )
+        fuse.search(search.normalize("NFD").replace(/[\u0300-\u036f]/g, "")),
+      );
     } else {
-      setResults([])
+      setResults([]);
     }
-  }, [search, fuse])
+  }, [search, fuse]);
 
-  const [focus, setFocus] = useState(false)
-  const input = useRef(null)
-  const [current, setCurrent] = useState(0)
+  const [focus, setFocus] = useState(false);
+  const input = useRef(null);
+  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     if (!focus) {
-      setCurrent(0)
-      input.current && input.current.blur()
+      setCurrent(0);
+      input.current && input.current.blur();
     }
-  }, [focus])
+  }, [focus]);
 
   const navigateToProduct = (product) => {
-    navigate(`/dechet/${product.item[`slug`]}${window.location.search}`)
-    setSearch(product.item[`Nom`])
-    setFocus(false)
-  }
+    navigate(`/dechet/${product.item[`slug`]}${window.location.search}`);
+    setSearch(product.item[`Nom`]);
+    setFocus(false);
+  };
 
   return (
     <Wrapper
@@ -85,9 +85,9 @@ export default function SearchBar(props) {
       small={props.small}
       focus={focus}
       onSubmit={(e) => {
-        e.preventDefault()
+        e.preventDefault();
         if (results[current]) {
-          navigateToProduct(results[current])
+          navigateToProduct(results[current]);
         }
       }}
       className={props.className}
@@ -113,5 +113,5 @@ export default function SearchBar(props) {
         />
       )}
     </Wrapper>
-  )
+  );
 }

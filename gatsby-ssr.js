@@ -1,3 +1,3 @@
-import StyleProviderSSR from './src/components/providers/StyleProviderSSR'
+import StyleProviderSSR from "./src/components/providers/StyleProviderSSR";
 
-export const wrapRootElement = StyleProviderSSR
+export const wrapRootElement = StyleProviderSSR;

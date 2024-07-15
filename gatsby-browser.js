@@ -1,3 +1,3 @@
-import StyleProvider from './src/components/providers/StyleProvider'
+import StyleProvider from "./src/components/providers/StyleProvider";
 
-export const wrapRootElement = StyleProvider
+export const wrapRootElement = StyleProvider;

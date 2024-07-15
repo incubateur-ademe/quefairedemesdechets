@@ -1,19 +1,19 @@
-import React, { useContext } from 'react'
-import styled from 'styled-components'
+import React, { useContext } from "react";
+import styled from "styled-components";
 
-import { useWaste } from 'utils/api'
-import UXContext from 'utils/UXContext'
-import MagicLink from 'components/base/MagicLink'
+import { useWaste } from "utils/api";
+import UXContext from "utils/UXContext";
+import MagicLink from "components/base/MagicLink";
 
 const StyledMagicLink = styled(MagicLink)`
   color: ${(props) => props.theme.colors.text};
   text-decoration: none;
-`
+`;
 const Wrapper = styled.h1`
   position: relative;
   margin-bottom: ${(props) => (props.small ? 0 : 2.5)}rem;
   font-size: ${(props) => (props.small ? 1.5 : 2.5)}rem;
-  text-align: ${(props) => (props.small ? 'left' : 'center')};
+  text-align: ${(props) => (props.small ? "left" : "center")};
 
   ${(props) => props.theme.mq.medium} {
     font-size: ${(props) => (props.small ? 1.125 : 2)}rem;
@@ -21,20 +21,20 @@ const Wrapper = styled.h1`
   ${(props) => props.theme.mq.small} {
     font-size: ${(props) => (props.small ? 1 : 1.25)}rem;
   }
-`
+`;
 const Color = styled.span`
   color: ${(props) => props.theme.colors.main};
-`
+`;
 export default function Title(props) {
-  const { isFetching } = useWaste()
-  const { binFlight, setBinFlight } = useContext(UXContext)
+  const { isFetching } = useWaste();
+  const { binFlight, setBinFlight } = useContext(UXContext);
 
   return (
     <StyledMagicLink
-      to='/'
-      title='Que Faire de mes Déchets ? Retour à l’accueil'
+      to="/"
+      title="Que Faire de mes Déchets ? Retour à l’accueil"
     >
-      <Wrapper small={props.small} as={props.small ? 'h2' : 'h1'}>
+      <Wrapper small={props.small} as={props.small ? "h2" : "h1"}>
         Que Faire de{props.small && <br />} mes
         <span
           dangerouslySetInnerHTML={{
@@ -44,8 +44,8 @@ export default function Title(props) {
         <Color
           onClick={(e) => {
             if (!binFlight && !props.small) {
-              setBinFlight(true)
-              setTimeout(() => setBinFlight(false), 4000)
+              setBinFlight(true);
+              setTimeout(() => setBinFlight(false), 4000);
             }
           }}
           isFetching={isFetching}
@@ -60,5 +60,5 @@ export default function Title(props) {
         ?
       </Wrapper>
     </StyledMagicLink>
-  )
+  );
 }

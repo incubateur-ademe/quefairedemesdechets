@@ -1,13 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-import Submit from './textInput/Submit'
-import Geoloc from './textInput/Geoloc'
+import Submit from "./textInput/Submit";
+import Geoloc from "./textInput/Geoloc";
 
 const Wrapper = styled.div`
   position: relative;
   // overflow: hidden;
-`
+`;
 const Input = styled.input`
   width: 100%;
   padding: 0.5rem 4.5rem 0.5rem 1.5rem;
@@ -25,14 +25,14 @@ const Input = styled.input`
   &:focus {
     outline: none;
   }
-`
+`;
 export default React.forwardRef(function TextInput(props, ref) {
   return (
     <Wrapper>
       <Input
         ref={ref}
-        type='text'
-        placeholder='Entrez votre adresse'
+        type="text"
+        placeholder="Entrez votre adresse"
         value={props.search}
         onChange={(e) => props.setSearch(e.target.value)}
         onFocus={() => props.setFocus(true)}
@@ -47,5 +47,5 @@ export default React.forwardRef(function TextInput(props, ref) {
         navigateToPlace={props.navigateToPlace}
       />
     </Wrapper>
-  )
-})
+  );
+});

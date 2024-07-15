@@ -1,13 +1,13 @@
-import React, { useContext } from 'react'
-import styled from 'styled-components'
+import React, { useContext } from "react";
+import styled from "styled-components";
 
-import ModalContext from 'utils/ModalContext'
-import Modal from 'components/base/Modal'
+import ModalContext from "utils/ModalContext";
+import Modal from "components/base/Modal";
 
-const Title = styled.h2``
-const Text = styled.p``
+const Title = styled.h2``;
+const Text = styled.p``;
 export default function NextModal() {
-  const { next, setNext } = useContext(ModalContext)
+  const { next, setNext } = useContext(ModalContext);
   return (
     <Modal open={next} setOpen={setNext}>
       <Title>Que va-t-il devenir ?</Title>
@@ -17,5 +17,5 @@ export default function NextModal() {
         }}
       />
     </Modal>
-  )
+  );
 }

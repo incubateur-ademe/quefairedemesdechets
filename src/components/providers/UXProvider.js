@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 
-import UXContext from 'utils/UXContext'
+import UXContext from "utils/UXContext";
 
 export default function UXProvider(props) {
-  const [embedOpen, setEmbedOpen] = useState(false)
-  const [shareOpen, setShareOpen] = useState(false)
-  const [contactOpen, setContactOpen] = useState(false)
-  const [typeShare, setTypeShare] = useState('simulator')
-  const [details, setDetails] = useState(false)
+  const [embedOpen, setEmbedOpen] = useState(false);
+  const [shareOpen, setShareOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
+  const [typeShare, setTypeShare] = useState("simulator");
+  const [details, setDetails] = useState(false);
 
-  const [installPrompt, setInstallPrompt] = useState(null)
+  const [installPrompt, setInstallPrompt] = useState(null);
   useEffect(() => {
-    window.addEventListener('beforeinstallprompt', (e) => {
-      setInstallPrompt(e)
-      console.log(`'beforeinstallprompt' event was fired.`)
-    })
-  }, [])
+    window.addEventListener("beforeinstallprompt", (e) => {
+      setInstallPrompt(e);
+      console.log(`'beforeinstallprompt' event was fired.`);
+    });
+  }, []);
 
-  const [binFlight, setBinFlight] = useState(false)
+  const [binFlight, setBinFlight] = useState(false);
 
   return (
     <UXContext.Provider
@@ -25,29 +25,29 @@ export default function UXProvider(props) {
         embedOpen,
         setEmbedOpen: (value) => {
           if (value) {
-            setShareOpen(false)
-            setContactOpen(false)
-            setTypeShare('simulator')
+            setShareOpen(false);
+            setContactOpen(false);
+            setTypeShare("simulator");
           }
-          setEmbedOpen(value)
+          setEmbedOpen(value);
         },
         shareOpen,
         setShareOpen: (value) => {
           if (value) {
-            setEmbedOpen(false)
-            setContactOpen(false)
-            setTypeShare('simulator')
+            setEmbedOpen(false);
+            setContactOpen(false);
+            setTypeShare("simulator");
           }
-          setShareOpen(value)
+          setShareOpen(value);
         },
         contactOpen,
         setContactOpen: (value) => {
           if (value) {
-            setShareOpen(false)
-            setEmbedOpen(false)
-            setTypeShare('simulator')
+            setShareOpen(false);
+            setEmbedOpen(false);
+            setTypeShare("simulator");
           }
-          setContactOpen(value)
+          setContactOpen(value);
         },
         details,
         setDetails,
@@ -60,5 +60,5 @@ export default function UXProvider(props) {
     >
       {props.children}
     </UXContext.Provider>
-  )
+  );
 }
