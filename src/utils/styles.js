@@ -1,18 +1,18 @@
-import { createGlobalStyle } from 'styled-components'
-import styledNormalize from 'styled-normalize'
+import { createGlobalStyle } from "styled-components";
+import styledNormalize from "styled-normalize";
 
 export const themes = {
   default: {
-    name: 'Clair',
+    name: "Clair",
     colors: {
-      main: '#E01B0B',
-      mainLight: '#F6BFC3',
-      second: '#32337B',
-      secondLight: '#E5EDF5',
-      background: '#ffffff',
-      footer: '#F6F7F9',
-      text: '#383838',
-      error: '#EB0000',
+      main: "#E01B0B",
+      mainLight: "#F6BFC3",
+      second: "#32337B",
+      secondLight: "#E5EDF5",
+      background: "#ffffff",
+      footer: "#F6F7F9",
+      text: "#383838",
+      error: "#EB0000",
     },
     fonts: {
       body: '"Marianne", sans-serif',
@@ -28,15 +28,15 @@ export const themes = {
     },
   },
   night: {
-    name: 'Sombre',
+    name: "Sombre",
     colors: {
-      main: '#F6BFC3',
-      second: '#E5EDF5',
-      secondLight: '#383838',
-      background: '#1e1e1e',
-      footer: '#383838',
-      text: '#ffffff',
-      error: 'red',
+      main: "#F6BFC3",
+      second: "#E5EDF5",
+      secondLight: "#383838",
+      background: "#1e1e1e",
+      footer: "#383838",
+      text: "#ffffff",
+      error: "red",
     },
     fonts: {
       body: '"Marianne", sans-serif',
@@ -51,7 +51,7 @@ export const themes = {
       xlarge: `@media screen and (min-width: ${2000}px)`,
     },
   },
-}
+};
 
 export const GlobalStyle = createGlobalStyle`
   ${styledNormalize}
@@ -103,4 +103,4 @@ export const GlobalStyle = createGlobalStyle`
   option {
     color: #010101;
   }
-`
+`;

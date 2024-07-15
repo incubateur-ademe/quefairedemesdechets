@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
 export default function useMounted() {
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(false);
   useEffect(() => {
-    setMounted(true)
+    setMounted(true);
     return () => {
-      setMounted(false)
-    }
-  }, [])
+      setMounted(false);
+    };
+  }, []);
 
-  return mounted
+  return mounted;
 }
