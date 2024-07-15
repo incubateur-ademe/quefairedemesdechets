@@ -9,7 +9,7 @@ export function useLVAOMapForProduct(productID) {
     queryKey: ["lvao-product", productID],
     queryFn: async ({ queryKey }) => {
       const response = await fetch(
-        `${LVAO_API}/qfdmd/produit?id=${queryKey[1]}`
+        `${LVAO_API}/qfdmd/produit?id=${queryKey[1]}`,
       );
 
       if (!response.ok) {
@@ -25,7 +25,7 @@ export function useWaste() {
     queryKey: ["waste"],
     queryFn: () =>
       fetch(
-        `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&size=1000&select=Nom%2CSynonymes_existants&sampling=neighbors`
+        `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&size=1000&select=Nom%2CSynonymes_existants&sampling=neighbors`,
       )
         .then((res) => res.json())
         .then((res) => res.results)
@@ -68,7 +68,7 @@ export function useSuggestions(suggestions) {
     queryKey: ["suggestions", suggestions],
     queryFn: () =>
       fetch(
-        `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&ID_in=${suggestions.join()}&sampling=neighbors&select=Nom`
+        `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&ID_in=${suggestions.join()}&sampling=neighbors&select=Nom`,
       )
         .then((res) => res.json())
         .then((res) => res.results)
@@ -81,7 +81,7 @@ export function useSuggestions(suggestions) {
               .replaceAll(`'`, "-")
               .normalize("NFD")
               .replace(/[\u0300-\u036f]/g, ""),
-          }))
+          })),
         ),
     enabled: suggestions ? true : false,
     keepPreviousData: true,
@@ -104,7 +104,7 @@ export function usePosition(position) {
     queryKey: ["position", position?.timestamp],
     queryFn: () =>
       fetch(
-        `https://api-adresse.data.gouv.fr/reverse/?lon=${position.coords.longitude}&lat=${position.coords.latitude}`
+        `https://api-adresse.data.gouv.fr/reverse/?lon=${position.coords.longitude}&lat=${position.coords.latitude}`,
       ).then((res) => res.json()),
     enabled: position ? true : false,
   });
@@ -193,7 +193,7 @@ const fetchDecheteries = ({ queryKey }) =>
       queryKey[1][1]
     }%2C${
       queryKey[1][0]
-    }%2C${15000}&size=1000&sampling=neighbors&select=ANNEE%2CN_SERVICE%2CAD1_SITE%2CCP_SITE%2CL_VILLE_SITE%2C_geopoint%2C_id`
+    }%2C${15000}&size=1000&sampling=neighbors&select=ANNEE%2CN_SERVICE%2CAD1_SITE%2CCP_SITE%2CL_VILLE_SITE%2C_geopoint%2C_id`,
   ).then((res) =>
     res.json().results.map((place) => ({
       id: place["_id"],
@@ -204,13 +204,13 @@ const fetchDecheteries = ({ queryKey }) =>
                       <br />
                       ${place["CP_SITE"]} 
                       ${place["L_VILLE_SITE"].replaceAll(" ", " ")}`,
-    }))
+    })),
   );
 const fetchPvsoren = ({ queryKey }) =>
   fetch(
     `https://data.pointsapport.ademe.fr/data-fair/api/v1/datasets/donnees-de-geolocalisation-des-points-dapport-pv-soren/lines?format=json&q_mode=simple&geo_distance=${
       queryKey[1][1]
-    }%2C${queryKey[1][0]}%2C${15000}&size=1000`
+    }%2C${queryKey[1][0]}%2C${15000}&size=1000`,
   )
     .then((res) => res.json())
     .then((res) =>
@@ -224,12 +224,12 @@ const fetchPvsoren = ({ queryKey }) =>
                       ${place["Code_Postal"]} 
                       ${place["Ville"].replaceAll(" ", " ")}`,
         hours: formatHoursFromKoumoul(place),
-      }))
+      })),
     );
 
 const fetchPharmacies = ({ queryKey }) =>
   fetch(
-    `https://quefairedemesdechets.netlify.app/.netlify/functions/callGMap?latitude=${queryKey[1][0]}&longitude=${queryKey[1][1]}`
+    `https://quefairedemesdechets.netlify.app/.netlify/functions/callGMap?latitude=${queryKey[1][0]}&longitude=${queryKey[1][1]}`,
   )
     .then((res) => res.json())
     .then((res) =>
@@ -239,12 +239,12 @@ const fetchPharmacies = ({ queryKey }) =>
         longitude: place["geometry"]["location"]["lng"],
         title: place["name"],
         address: place["vicinity"],
-      }))
+      })),
     );
 
 const fetchOcad3e = ({ queryKey }) =>
   fetch(
-    `https://quefairedemesdechets.netlify.app/.netlify/functions/callOcad3e?latitude=${queryKey[1][0]}&longitude=${queryKey[1][1]}&category=${queryKey[2]}`
+    `https://quefairedemesdechets.netlify.app/.netlify/functions/callOcad3e?latitude=${queryKey[1][0]}&longitude=${queryKey[1][1]}&category=${queryKey[2]}`,
   )
     .then((res) => res.json())
     .then((res) =>
@@ -265,14 +265,14 @@ const fetchOcad3e = ({ queryKey }) =>
                       ${place["address"]["postalCode"]} 
                       ${place["address"]["city"]}`,
         }))
-        .sort((a, b) => (a.distance > b.distance ? 1 : -1))
+        .sort((a, b) => (a.distance > b.distance ? 1 : -1)),
     );
 
 export function useRebuildSite() {
   return useMutation(() =>
     fetch(`https://api.netlify.com/build_hooks/615189df8b8ed42b27ae36d7`, {
       method: "POST",
-    })
+    }),
   );
 }
 
@@ -283,63 +283,63 @@ function formatHoursFromKoumoul(place) {
         ? `${place["Ouverture_lundi_AM"]} - ${place["Fermeture_lundi_AM"]}`
         : "fermé"
     } / ${
-    place["Ouverture_lundi_PM"]
-      ? `${place["Ouverture_lundi_PM"]} - ${place["Fermeture_lundi_PM"]}`
-      : "fermé"
-  }<br/>
+      place["Ouverture_lundi_PM"]
+        ? `${place["Ouverture_lundi_PM"]} - ${place["Fermeture_lundi_PM"]}`
+        : "fermé"
+    }<br/>
     mardi : ${
       place["Ouverture_mardi_AM"]
         ? `${place["Ouverture_mardi_AM"]} - ${place["Fermeture_mardi_AM"]}`
         : "fermé"
     } / ${
-    place["Ouverture_mardi_PM"]
-      ? `${place["Ouverture_mardi_PM"]} - ${place["Fermeture_mardi_PM"]}`
-      : "fermé"
-  }<br/>
+      place["Ouverture_mardi_PM"]
+        ? `${place["Ouverture_mardi_PM"]} - ${place["Fermeture_mardi_PM"]}`
+        : "fermé"
+    }<br/>
     mercredi : ${
       place["Ouverture_mercredi_AM"]
         ? `${place["Ouverture_mercredi_AM"]} - ${place["Fermeture_mercredi_AM"]}`
         : "fermé"
     } / ${
-    place["Ouverture_mercredi_PM"]
-      ? `${place["Ouverture_mercredi_PM"]} - ${place["Fermeture_mercredi_PM"]}`
-      : "fermé"
-  }<br/>
+      place["Ouverture_mercredi_PM"]
+        ? `${place["Ouverture_mercredi_PM"]} - ${place["Fermeture_mercredi_PM"]}`
+        : "fermé"
+    }<br/>
     jeudi : ${
       place["Ouverture_jeudi_AM"]
         ? `${place["Ouverture_jeudi_AM"]} - ${place["Fermeture_jeudi_AM"]}`
         : "fermé"
     } / ${
-    place["Ouverture_jeudi_PM"]
-      ? `${place["Ouverture_jeudi_PM"]} - ${place["Fermeture_jeudi_PM"]}`
-      : "fermé"
-  }<br/>
+      place["Ouverture_jeudi_PM"]
+        ? `${place["Ouverture_jeudi_PM"]} - ${place["Fermeture_jeudi_PM"]}`
+        : "fermé"
+    }<br/>
     vendredi : ${
       place["Ouverture_vendredi_AM"]
         ? `${place["Ouverture_vendredi_AM"]} - ${place["Fermeture_vendredi_AM"]}`
         : "fermé"
     } / ${
-    place["Ouverture_vendredi_PM"]
-      ? `${place["Ouverture_vendredi_PM"]} - ${place["Fermeture_vendredi_PM"]}`
-      : "fermé"
-  }<br/>
+      place["Ouverture_vendredi_PM"]
+        ? `${place["Ouverture_vendredi_PM"]} - ${place["Fermeture_vendredi_PM"]}`
+        : "fermé"
+    }<br/>
     samedi : ${
       place["Ouverture_samedi_AM"]
         ? `${place["Ouverture_samedi_AM"]} - ${place["Fermeture_samedi_AM"]}`
         : "fermé"
     } / ${
-    place["Ouverture_samedi_PM"]
-      ? `${place["Ouverture_samedi_PM"]} - ${place["Fermeture_samedi_PM"]}`
-      : "fermé"
-  }<br/>
+      place["Ouverture_samedi_PM"]
+        ? `${place["Ouverture_samedi_PM"]} - ${place["Fermeture_samedi_PM"]}`
+        : "fermé"
+    }<br/>
     dimanche : ${
       place["Ouverture_dimanche_AM"]
         ? `${place["Ouverture_dimanche_AM"]} - ${place["Fermeture_dimanche_AM"]}`
         : "fermé"
     } / ${
-    place["Ouverture_dimanche_PM"]
-      ? `${place["Ouverture_dimanche_PM"]} - ${place["Fermeture_dimanche_PM"]}`
-      : "fermé"
-  }
+      place["Ouverture_dimanche_PM"]
+        ? `${place["Ouverture_dimanche_PM"]} - ${place["Fermeture_dimanche_PM"]}`
+        : "fermé"
+    }
   `;
 }
