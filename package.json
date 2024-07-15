@@ -41,7 +41,7 @@
     "use-query-params": "^1.1.9"
   },
   "devDependencies": {
-    "gatsby-cli": "^4.13.0",
+    "gatsby-cli": "^5.13.3",
     "gatsby-plugin-root-import": "^2.0.8",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.27",
     "prettier": "^2.6.2",
