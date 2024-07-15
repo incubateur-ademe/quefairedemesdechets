@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
-import styled from 'styled-components'
+import React, { useContext } from "react";
+import styled from "styled-components";
 
-import ModalContext from 'utils/ModalContext'
-import Button from 'components/base/Button'
+import ModalContext from "utils/ModalContext";
+import Button from "components/base/Button";
 
 const Wrapper = styled.div`
   display: none;
@@ -14,14 +14,14 @@ const Wrapper = styled.div`
   ${(props) => props.theme.mq.small} {
     display: flex;
   }
-`
+`;
 const StyledButton = styled(Button)`
   min-width: 80%;
   margin-bottom: 1.5rem;
-`
+`;
 
 export default function Product(props) {
-  const { setMap, setNext, setAvoid } = useContext(ModalContext)
+  const { setMap, setNext, setAvoid } = useContext(ModalContext);
 
   return (
     <Wrapper>
@@ -44,5 +44,5 @@ export default function Product(props) {
         </StyledButton>
       )}
     </Wrapper>
-  )
+  );
 }

@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
-import styled from 'styled-components'
+import React, { useContext } from "react";
+import styled from "styled-components";
 
-import UXContext from 'utils/UXContext'
-import Panel from 'components/base/Panel'
-import Themes from './embed/Themes'
-import Code from './embed/Code'
-import ContactPrompt from 'components/base/ContactPrompt'
-import Select from 'components/base/FancySelect'
+import UXContext from "utils/UXContext";
+import Panel from "components/base/Panel";
+import Themes from "./embed/Themes";
+import Code from "./embed/Code";
+import ContactPrompt from "components/base/ContactPrompt";
+import Select from "components/base/FancySelect";
 
 const Title = styled.div`
   margin-bottom: 1rem;
@@ -18,29 +18,29 @@ const Title = styled.div`
   ${(props) => props.theme.mq.small} {
     font-size: 1.5rem;
   }
-`
+`;
 export default function Embed(props) {
   const { embedOpen, setEmbedOpen, typeShare, setTypeShare } =
-    useContext(UXContext)
+    useContext(UXContext);
 
   return (
     <Panel
       small={props.small}
       open={embedOpen}
       toggleClose={() => {
-        setEmbedOpen((prevOpen) => !prevOpen)
+        setEmbedOpen((prevOpen) => !prevOpen);
       }}
       index={0}
     >
       <Title>
-        Intégrer{' '}
+        Intégrer{" "}
         <Select
           fancy
           value={typeShare}
           onChange={setTypeShare}
           options={[
-            { value: 'simulator', label: `ce simulateur` },
-            { value: 'result', label: `cette fiche`, disabled: !props.result },
+            { value: "simulator", label: `ce simulateur` },
+            { value: "result", label: `cette fiche`, disabled: !props.result },
           ]}
         />
       </Title>
@@ -54,5 +54,5 @@ export default function Embed(props) {
       <Themes />
       <ContactPrompt configurator />
     </Panel>
-  )
+  );
 }

@@ -1,15 +1,15 @@
-import React, { useState, useEffect, useRef } from 'react'
-import styled from 'styled-components'
+import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
 
-import { useSearch } from 'utils/api'
-import useDebounce from 'hooks/useDebounce'
-import TextInput from './address/TextInput'
-import Suggestions from './address/Suggestions'
+import { useSearch } from "utils/api";
+import useDebounce from "hooks/useDebounce";
+import TextInput from "./address/TextInput";
+import Suggestions from "./address/Suggestions";
 
 const Wrapper = styled.form`
   position: absolute;
   z-index: 100;
-  top: ${(props) => (props.addressSet ? '1rem' : '5rem')};
+  top: ${(props) => (props.addressSet ? "1rem" : "5rem")};
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 2rem);
@@ -18,33 +18,35 @@ const Wrapper = styled.form`
   border: 0.125rem solid ${(props) => props.theme.colors.second};
   border-radius: 1.375rem;
   transition: box-shadow 200ms ease-out;
-  transition: border 200ms ease-out, top 300ms ease-out;
+  transition:
+    border 200ms ease-out,
+    top 300ms ease-out;
   //overflow: hidden;
 
   ${(props) => props.theme.mq.small} {
-    top: ${(props) => (props.addressSet ? '2.5rem' : '5rem')};
+    top: ${(props) => (props.addressSet ? "2.5rem" : "5rem")};
   }
-`
+`;
 
 export default function Address(props) {
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState("");
   useEffect(() => {
-    setSearch(props.address)
-  }, [props.address])
-  const debouncedSearch = useDebounce(search)
+    setSearch(props.address);
+  }, [props.address]);
+  const debouncedSearch = useDebounce(search);
 
-  const { data, isFetching } = useSearch(debouncedSearch)
+  const { data, isFetching } = useSearch(debouncedSearch);
 
-  const [focus, setFocus] = useState(false)
-  const input = useRef(null)
-  const [current, setCurrent] = useState(0)
+  const [focus, setFocus] = useState(false);
+  const input = useRef(null);
+  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     if (!focus) {
-      setCurrent(0)
-      input.current && input.current.blur()
+      setCurrent(0);
+      input.current && input.current.blur();
     }
-  }, [focus])
+  }, [focus]);
 
   const navigateToPlace = (place) => {
     if (place) {
@@ -52,24 +54,24 @@ export default function Address(props) {
         label: place.properties.label,
         latitude: place.geometry.coordinates[1],
         longitude: place.geometry.coordinates[0],
-      })
+      });
       props.setCenter([
         place.geometry.coordinates[1],
         place.geometry.coordinates[0],
-      ])
-      props.setZoom(13)
-      setFocus(false)
+      ]);
+      props.setZoom(13);
+      setFocus(false);
     }
-  }
+  };
 
   return (
     <Wrapper
       focus={focus}
       addressSet={props.address}
       onSubmit={(e) => {
-        e.preventDefault()
+        e.preventDefault();
         if (current > -1) {
-          navigateToPlace(data[current])
+          navigateToPlace(data[current]);
         }
       }}
     >
@@ -95,5 +97,5 @@ export default function Address(props) {
         />
       )}
     </Wrapper>
-  )
+  );
 }

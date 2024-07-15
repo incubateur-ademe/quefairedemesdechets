@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-import useMobileDetect from 'hooks/useMobileDetect'
-import MagicLink from 'components/base/MagicLink'
+import useMobileDetect from "hooks/useMobileDetect";
+import MagicLink from "components/base/MagicLink";
 
 const Wrapper = styled.tr`
   &:nth-child(2n) {
@@ -14,7 +14,7 @@ const Wrapper = styled.tr`
     flex-wrap: wrap;
     padding: 1rem 1rem;
   }
-`
+`;
 const Cell = styled.td`
   padding: 0.6rem 1.2rem;
 
@@ -22,11 +22,11 @@ const Cell = styled.td`
     display: block;
     width: ${(props) => (props.small ? 50 : 100)}%;
     padding: 0;
-    text-align: ${(props) => (props.right ? 'right' : 'left')};
+    text-align: ${(props) => (props.right ? "right" : "left")};
   }
-`
+`;
 export default function Line(props) {
-  const { isMobile } = useMobileDetect()
+  const { isMobile } = useMobileDetect();
 
   return (
     <Wrapper key={props.place.id}>
@@ -43,7 +43,7 @@ export default function Line(props) {
         {Math.round(props.place.distance / 10) / 100}
         <span
           dangerouslySetInnerHTML={{
-            __html: '&nbsp',
+            __html: "&nbsp",
           }}
         />
         km
@@ -56,20 +56,20 @@ export default function Line(props) {
               : `geo:${props.place.latitude},${props.place.longitude}?q=${
                   props.place.latitude
                 },${props.place.longitude}(${props.place.address.replaceAll(
-                  '<br/>',
-                  ''
+                  "<br/>",
+                  "",
                 )})`
           }
         >
           Voir
           <span
             dangerouslySetInnerHTML={{
-              __html: '&nbsp',
+              __html: "&nbsp",
             }}
           />
           l'itinéraire
         </MagicLink>
       </Cell>
     </Wrapper>
-  )
+  );
 }
