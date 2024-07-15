@@ -1,3 +1,5 @@
+import path from "path"
+
 exports.createPages = ({ graphql, actions: { createPage } }) => {
   return fetch(
     `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&size=1000&sampling=neighbors`
@@ -56,7 +58,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
       res.forEach((product) => {
         createPage({
           path: `/dechet/${product.slug}/`,
-          component: require.resolve("./src/templates/product.js"),
+          component: path.resolve("./src/templates/product.js"),
           context: { product },
         });
       })
