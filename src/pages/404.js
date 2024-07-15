@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
-import Web from 'components/layout/Web'
-import Suggestions from 'components/misc/Suggestions'
+import Web from "components/layout/Web";
+import Suggestions from "components/misc/Suggestions";
 
 export default function notfound() {
   return (
@@ -12,5 +12,5 @@ export default function notfound() {
         Essayez une des suggestions ci dessous.
       </Suggestions>
     </Web>
-  )
+  );
 }

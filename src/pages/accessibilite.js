@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
-import MagicLink from 'components/base/MagicLink'
-import Web from 'components/layout/Web'
+import MagicLink from "components/base/MagicLink";
+import Web from "components/layout/Web";
 
 export default function accessibilite() {
   return (
@@ -146,15 +146,15 @@ export default function accessibilite() {
       </p>
       <ul>
         <li>
-          <MagicLink to='https://formulaire.defenseurdesdroits.fr/defenseur/code/afficher.php?ETAPE=informations'>
+          <MagicLink to="https://formulaire.defenseurdesdroits.fr/defenseur/code/afficher.php?ETAPE=informations">
             un formulaire de contact
-          </MagicLink>{' '}
+          </MagicLink>{" "}
           ;
         </li>
         <li>
-          <MagicLink to='https://www.defenseurdesdroits.fr/office/'>
+          <MagicLink to="https://www.defenseurdesdroits.fr/office/">
             la liste du ou des délégués de votre région
-          </MagicLink>{' '}
+          </MagicLink>{" "}
           avec leurs informations de contact direct ;
         </li>
         <li>un numéro de téléphone : 09 69 39 00 00 ;</li>
@@ -164,5 +164,5 @@ export default function accessibilite() {
         </li>
       </ul>
     </Web>
-  )
+  );
 }
