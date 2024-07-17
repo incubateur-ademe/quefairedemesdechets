@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 
 import MapWrapper from "components/misc/MapWrapper";
@@ -7,14 +7,44 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
   height: clamp(20rem, 75vh, 35rem);
-  border-radius: 1rem;
-  border: 0.125rem solid ${(props) => props.theme.colors.secondLight};
+  ${(props) => props.LVAOMapIsDisplayed && "border-radius: 1rem;"}
   overflow: hidden;
 `;
-export default function Map(props) {
+const IFrame = styled.iframe`
+  border: none;
+  width: 100%;
+  height: 100%;
+`;
+
+const IFrameWrapper = ({ src }) => {
+  const iframeRef = useRef(null);
+
+  function handleLoad() {
+    iframeRef.current.contentWindow.postMessage("ademe", "*");
+  }
+
   return (
-    <Wrapper>
-      <MapWrapper product={props.product} />
+    <IFrame
+      id="lvao_iframe"
+      allow="geolocation"
+      allowFullScreen={true}
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      ref={iframeRef}
+      onLoad={handleLoad}
+      src={src}
+    />
+  );
+};
+
+export default function Map({ lvaoData, product }) {
+  return (
+    <Wrapper LVAOMapIsDisplayed={!!lvaoData?.url_carte}>
+      {lvaoData?.url_carte ? (
+        <IFrameWrapper src={lvaoData.url_carte} />
+      ) : (
+        <MapWrapper product={product} />
+      )}
     </Wrapper>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import styled from "styled-components";
 import { navigate } from "gatsby";
-import Fuse from "../../../node_modules/fuse.js/dist/fuse.basic.esm.min.js";
+import Fuse from "fuse.js";
 
 import { useWaste } from "utils/api";
 import SearchContext from "utils/SearchContext";
