@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { QueryClient, QueryClientProvider } from "react-query";
 
 import { GlobalStyle } from "utils/styles";
 import ModalProvider from "components/providers/ModalProvider";
@@ -16,8 +15,6 @@ import ContactWrapper from "components/wrappers/ContactWrapper";
 import Bin from "components/misc/Bin";
 import Seo from "./web/Seo";
 import ModalWrapper from "components/wrappers/ModalWrapper";
-
-const queryClient = new QueryClient();
 
 const Wrapper = styled.div`
   display: flex;
@@ -44,6 +41,7 @@ const FullScreen = styled.div`
   margin: 0 auto;
   padding: 0 0.75rem 5rem;
 `;
+
 export default function Web(props) {
   const [iframe, setIframe] = useState(false);
   const [noHeader, setnoHeader] = useState(false);
@@ -56,29 +54,27 @@ export default function Web(props) {
   return (
     <Wrapper>
       <Seo title={props.title} />
-      <QueryClientProvider client={queryClient}>
-        <UXProvider>
-          <SearchProvider>
-            <ModalProvider>
-              <GlobalStyle />
-              <ThemeToggle />
-              <Content>
-                <FullScreen iframe={iframe}>
-                  <HeaderWrapper noHeader={noHeader} />
-                  {props.children}
-                  <Bin />
-                </FullScreen>
-                <FooterWrapper iframe={iframe} />
-              </Content>
-              <EmbedWrapper result={props.result} />
-              <ShareWrapper result={props.result} />
-              {!iframe && <ContactWrapper />}
-              <InstallButton />
-              <ModalWrapper />
-            </ModalProvider>
-          </SearchProvider>
-        </UXProvider>
-      </QueryClientProvider>
+      <UXProvider>
+        <SearchProvider>
+          <ModalProvider>
+            <GlobalStyle />
+            <ThemeToggle />
+            <Content>
+              <FullScreen iframe={iframe}>
+                <HeaderWrapper noHeader={noHeader} />
+                {props.children}
+                <Bin />
+              </FullScreen>
+              <FooterWrapper iframe={iframe} />
+            </Content>
+            <EmbedWrapper result={props.result} />
+            <ShareWrapper result={props.result} />
+            {!iframe && <ContactWrapper />}
+            <InstallButton />
+            <ModalWrapper />
+          </ModalProvider>
+        </SearchProvider>
+      </UXProvider>
     </Wrapper>
   );
 }

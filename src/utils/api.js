@@ -1,19 +1,34 @@
 /*eslint-disable eqeqeq*/
 
-import { useQuery, useMutation } from "react-query";
-import axios from "axios";
+import { useQuery, useMutation } from "@tanstack/react-query";
 import useDebounce from "hooks/useDebounce";
 
-export function useWaste() {
-  return useQuery(
-    ["waste"],
-    () =>
-      axios
-        .get(
-          `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&size=1000&select=Nom%2CSynonymes_existants&sampling=neighbors`,
-        )
-        .then((res) => res.data.results)
+const LVAO_API = `${process.env.GATSBY_LVAO_BASE_URL}/api`;
+export function useLVAOMapForProduct(productID) {
+  return useQuery({
+    queryKey: ["lvao-product", productID],
+    queryFn: async ({ queryKey }) => {
+      const response = await fetch(
+        `${LVAO_API}/qfdmd/produit?id=${queryKey[1]}`,
+      );
 
+      if (!response.ok) {
+        throw Error(response.text);
+      }
+      return response.json();
+    },
+  });
+}
+
+export function useWaste() {
+  return useQuery({
+    queryKey: ["waste"],
+    queryFn: () =>
+      fetch(
+        `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&size=1000&select=Nom%2CSynonymes_existants&sampling=neighbors`,
+      )
+        .then((res) => res.json())
+        .then((res) => res.results)
         .then((res) => {
           let tempWaste = [...res];
 
@@ -45,21 +60,18 @@ export function useWaste() {
               .replace(/[\u0300-\u036f]/g, ""),
           }));
         }),
-    {
-      keepPreviousData: true,
-      refetchOnWindowFocus: false,
-    },
-  );
+    keepPreviousData: true,
+  });
 }
 export function useSuggestions(suggestions) {
-  return useQuery(
-    ["suggestions", suggestions],
-    () =>
-      axios
-        .get(
-          `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&ID_in=${suggestions.join()}&sampling=neighbors&select=Nom`,
-        )
-        .then((res) => res.data.results)
+  return useQuery({
+    queryKey: ["suggestions", suggestions],
+    queryFn: () =>
+      fetch(
+        `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&ID_in=${suggestions.join()}&sampling=neighbors&select=Nom`,
+      )
+        .then((res) => res.json())
+        .then((res) => res.results)
         .then((results) =>
           results.map((result) => ({
             ...result,
@@ -71,42 +83,31 @@ export function useSuggestions(suggestions) {
               .replace(/[\u0300-\u036f]/g, ""),
           })),
         ),
-    {
-      enabled: suggestions ? true : false,
-      keepPreviousData: true,
-      refetchOnWindowFocus: false,
-    },
-  );
+    enabled: suggestions ? true : false,
+    keepPreviousData: true,
+  });
 }
 export function useSearch(search) {
-  return useQuery(
-    ["search", search],
-    () =>
+  return useQuery({
+    queryKey: ["search", search],
+    queryFn: () =>
       search && search.length > 2
-        ? axios
-            .get(`https://api-adresse.data.gouv.fr/search/?q=${search}`)
-            .then((res) => res.data.features)
+        ? fetch(`https://api-adresse.data.gouv.fr/search/?q=${search}`)
+            .then((res) => res.json())
+            .then((res) => res.features)
         : Promise.resolve([]),
-    {
-      keepPreviousData: true,
-      refetchOnWindowFocus: false,
-    },
-  );
+    keepPreviousData: true,
+  });
 }
 export function usePosition(position) {
-  return useQuery(
-    ["position", position?.timestamp],
-    () =>
-      axios
-        .get(
-          `https://api-adresse.data.gouv.fr/reverse/?lon=${position.coords.longitude}&lat=${position.coords.latitude}`,
-        )
-        .then((res) => res.data),
-    {
-      enabled: position ? true : false,
-      refetchOnWindowFocus: false,
-    },
-  );
+  return useQuery({
+    queryKey: ["position", position?.timestamp],
+    queryFn: () =>
+      fetch(
+        `https://api-adresse.data.gouv.fr/reverse/?lon=${position.coords.longitude}&lat=${position.coords.latitude}`,
+      ).then((res) => res.json()),
+    enabled: position ? true : false,
+  });
 }
 export function usePlaces(center, zoom, product) {
   const debouncedCenter = useDebounce(center);
@@ -117,28 +118,32 @@ export function usePlaces(center, zoom, product) {
     data: decheteries,
     isLoading: isLoadingDecheteries,
     isFetching: isFetchingDecheteries,
-  } = useQuery(["decheteries", debouncedCenter], fetchDecheteries, {
+  } = useQuery({
+    queryKey: ["decheteries", debouncedCenter],
+    queryFn: fetchDecheteries,
     enabled: product["Bdd"] === "sinoe" && zoomedEnough ? true : false,
     keepPreviousData: product["Bdd"] === "sinoe" && zoomedEnough ? true : false,
-    refetchOnWindowFocus: false,
   });
 
   const {
     data: pvsoren,
     isLoading: isLoadingPvsoren,
     isFetching: isFetchingPvsoren,
-  } = useQuery(["pvsoren", debouncedCenter], fetchPvsoren, {
+  } = useQuery({
+    queryKey: ["pvsoren", debouncedCenter],
+    queryFn: fetchPvsoren,
     enabled: product["Code"] === "ADEME_SOLAIRE" && zoomedEnough ? true : false,
     keepPreviousData:
       product["Code"] === "ADEME_SOLAIRE" && zoomedEnough ? true : false,
-    refetchOnWindowFocus: false,
   });
 
   const {
     data: pharmacies,
     isLoading: isLoadingPharmacies,
     isFetching: isFetchingPharmacies,
-  } = useQuery(["pharmacies", debouncedCenter], fetchPharmacies, {
+  } = useQuery({
+    queryKey: ["pharmacies", debouncedCenter],
+    queryFn: fetchPharmacies,
     enabled:
       (product["Bdd"] === "google" || product["Code"] === "ADEME_DASRI") &&
       zoomedEnough
@@ -149,18 +154,18 @@ export function usePlaces(center, zoom, product) {
       zoomedEnough
         ? true
         : false,
-    refetchOnWindowFocus: false,
   });
 
   const {
     data: ocad3e,
     isLoading: isLoadingOcad3e,
     isFetching: isFetchingOcad3e,
-  } = useQuery(["ocad3e", debouncedCenter, product["Code"]], fetchOcad3e, {
+  } = useQuery({
+    queryKey: ["ocad3e", debouncedCenter, product["Code"]],
+    queryFn: fetchOcad3e,
     enabled: product["Bdd"] === "ocad3e" && zoomedEnough ? true : false,
     keepPreviousData:
       product["Bdd"] === "ocad3e" && zoomedEnough ? true : false,
-    refetchOnWindowFocus: false,
   });
 
   return {
@@ -183,35 +188,33 @@ export function usePlaces(center, zoom, product) {
   };
 }
 const fetchDecheteries = ({ queryKey }) =>
-  axios
-    .get(
-      `https://data.ademe.fr/data-fair/api/v1/datasets/sinoe-(r)-annuaire-des-decheteries-dma/lines?format=json&q_mode=simple&q=${2024}&q_fields=ANNEE&geo_distance=${
-        queryKey[1][1]
-      }%2C${
-        queryKey[1][0]
-      }%2C${15000}&size=1000&sampling=neighbors&select=ANNEE%2CN_SERVICE%2CAD1_SITE%2CCP_SITE%2CL_VILLE_SITE%2C_geopoint%2C_id`,
-    )
-    .then((res) =>
-      res.data.results.map((place) => ({
-        id: place["_id"],
-        latitude: Number(place["_geopoint"].split(",")[0]),
-        longitude: Number(place["_geopoint"].split(",")[1]),
-        title: place["N_SERVICE"].replaceAll(" ", " "),
-        address: `${place["AD1_SITE"].replaceAll(" ", " ")}
+  fetch(
+    `https://data.ademe.fr/data-fair/api/v1/datasets/sinoe-(r)-annuaire-des-decheteries-dma/lines?format=json&q_mode=simple&q=${2024}&q_fields=ANNEE&geo_distance=${
+      queryKey[1][1]
+    }%2C${
+      queryKey[1][0]
+    }%2C${15000}&size=1000&sampling=neighbors&select=ANNEE%2CN_SERVICE%2CAD1_SITE%2CCP_SITE%2CL_VILLE_SITE%2C_geopoint%2C_id`,
+  ).then((res) =>
+    res.json().results.map((place) => ({
+      id: place["_id"],
+      latitude: Number(place["_geopoint"].split(",")[0]),
+      longitude: Number(place["_geopoint"].split(",")[1]),
+      title: place["N_SERVICE"].replaceAll(" ", " "),
+      address: `${place["AD1_SITE"].replaceAll(" ", " ")}
                       <br />
                       ${place["CP_SITE"]} 
                       ${place["L_VILLE_SITE"].replaceAll(" ", " ")}`,
-      })),
-    );
+    })),
+  );
 const fetchPvsoren = ({ queryKey }) =>
-  axios
-    .get(
-      `https://data.pointsapport.ademe.fr/data-fair/api/v1/datasets/donnees-de-geolocalisation-des-points-dapport-pv-soren/lines?format=json&q_mode=simple&geo_distance=${
-        queryKey[1][1]
-      }%2C${queryKey[1][0]}%2C${15000}&size=1000`,
-    )
+  fetch(
+    `https://data.pointsapport.ademe.fr/data-fair/api/v1/datasets/donnees-de-geolocalisation-des-points-dapport-pv-soren/lines?format=json&q_mode=simple&geo_distance=${
+      queryKey[1][1]
+    }%2C${queryKey[1][0]}%2C${15000}&size=1000`,
+  )
+    .then((res) => res.json())
     .then((res) =>
-      res.data.results.map((place) => ({
+      res.results.map((place) => ({
         id: place["SIREN"],
         latitude: Number(place["_geopoint"].split(",")[0]),
         longitude: Number(place["_geopoint"].split(",")[1]),
@@ -225,12 +228,12 @@ const fetchPvsoren = ({ queryKey }) =>
     );
 
 const fetchPharmacies = ({ queryKey }) =>
-  axios
-    .get(
-      `https://quefairedemesdechets.netlify.app/.netlify/functions/callGMap?latitude=${queryKey[1][0]}&longitude=${queryKey[1][1]}`,
-    )
+  fetch(
+    `https://quefairedemesdechets.netlify.app/.netlify/functions/callGMap?latitude=${queryKey[1][0]}&longitude=${queryKey[1][1]}`,
+  )
+    .then((res) => res.json())
     .then((res) =>
-      res.data.results.map((place) => ({
+      res.results.map((place) => ({
         id: place["place_id"],
         latitude: place["geometry"]["location"]["lat"],
         longitude: place["geometry"]["location"]["lng"],
@@ -240,12 +243,12 @@ const fetchPharmacies = ({ queryKey }) =>
     );
 
 const fetchOcad3e = ({ queryKey }) =>
-  axios
-    .get(
-      `https://quefairedemesdechets.netlify.app/.netlify/functions/callOcad3e?latitude=${queryKey[1][0]}&longitude=${queryKey[1][1]}&category=${queryKey[2]}`,
-    )
+  fetch(
+    `https://quefairedemesdechets.netlify.app/.netlify/functions/callOcad3e?latitude=${queryKey[1][0]}&longitude=${queryKey[1][1]}&category=${queryKey[2]}`,
+  )
+    .then((res) => res.json())
     .then((res) =>
-      res.data.placemarks
+      res.placemarks
         .map((place) => ({
           id:
             place["name"] +
@@ -267,7 +270,9 @@ const fetchOcad3e = ({ queryKey }) =>
 
 export function useRebuildSite() {
   return useMutation(() =>
-    axios.post(`https://api.netlify.com/build_hooks/615189df8b8ed42b27ae36d7`),
+    fetch(`https://api.netlify.com/build_hooks/615189df8b8ed42b27ae36d7`, {
+      method: "POST",
+    }),
   );
 }
 
