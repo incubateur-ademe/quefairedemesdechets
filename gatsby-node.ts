@@ -1,4 +1,5 @@
 import path from "path"
+import slug from "slug"
 
 exports.createPages = ({ graphql, actions: { createPage } }) => {
   return fetch(
@@ -55,12 +56,12 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
         })
     )
     .then((res) =>
-      res.forEach((product) => {
+      res.map(product => ({ ...product, slug: slug(product.slug, { locale: "fr"})})).forEach((product) => {
         createPage({
           path: `/dechet/${product.slug}/`,
           component: path.resolve("./src/templates/product.js"),
           context: { product },
         });
       })
-    );
+    )
 };

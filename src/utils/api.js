@@ -1,6 +1,7 @@
 /*eslint-disable eqeqeq*/
 
 import { useQuery, useMutation } from "@tanstack/react-query";
+import slug from "slug";
 import useDebounce from "hooks/useDebounce";
 
 const LVAO_API = `${process.env.GATSBY_LVAO_BASE_URL}/api`;
@@ -52,17 +53,13 @@ export function useWaste() {
             searchable: waste["Nom"]
               .normalize("NFD")
               .replace(/[\u0300-\u036f]/g, ""),
-            slug: waste[`Nom`]
-              .toLowerCase()
-              .replaceAll(" ", "-")
-              .replaceAll(`'`, "-")
-              .normalize("NFD")
-              .replace(/[\u0300-\u036f]/g, ""),
+            slug: slug(waste[`Nom`], { locale: "fr"}),
           }));
         }),
     keepPreviousData: true,
   });
 }
+
 export function useSuggestions(suggestions) {
   return useQuery({
     queryKey: ["suggestions", suggestions],
@@ -202,7 +199,7 @@ const fetchDecheteries = ({ queryKey }) =>
       title: place["N_SERVICE"].replaceAll(" ", " "),
       address: `${place["AD1_SITE"].replaceAll(" ", " ")}
                       <br />
-                      ${place["CP_SITE"]} 
+                      ${place["CP_SITE"]}
                       ${place["L_VILLE_SITE"].replaceAll(" ", " ")}`,
     })),
   );
@@ -221,7 +218,7 @@ const fetchPvsoren = ({ queryKey }) =>
         title: place["Organisme"].replaceAll(" ", " "),
         address: `${place["Adresse"].replaceAll(" ", " ")}
                       <br />
-                      ${place["Code_Postal"]} 
+                      ${place["Code_Postal"]}
                       ${place["Ville"].replaceAll(" ", " ")}`,
         hours: formatHoursFromKoumoul(place),
       })),
@@ -262,7 +259,7 @@ const fetchOcad3e = ({ queryKey }) =>
           hours: place["details"]["timeTable"],
           address: `${place["address"]["address1"]}
                       <br />
-                      ${place["address"]["postalCode"]} 
+                      ${place["address"]["postalCode"]}
                       ${place["address"]["city"]}`,
         }))
         .sort((a, b) => (a.distance > b.distance ? 1 : -1)),
