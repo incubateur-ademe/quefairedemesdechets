@@ -1,8 +1,9 @@
-import dotenv from "dotenv"
-
+import dotenv from 'dotenv';
 dotenv.config({ path: `.env` });
 
-const config = {
+import type { GatsbyConfig } from 'gatsby';
+
+const config: GatsbyConfig = {
   siteMetadata: {
     title: `Que Faire de mes Déchets ? Découvrez les solutions pour tous vos déchets et nos conseils pour en produire moins.`,
     author: `Datagir`,
