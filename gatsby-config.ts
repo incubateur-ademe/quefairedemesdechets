@@ -1,6 +1,9 @@
-require("dotenv").config({ path: `.env` });
+import dotenv from 'dotenv';
+dotenv.config({ path: `.env` });
 
-module.exports = {
+import type { GatsbyConfig } from 'gatsby';
+
+const config: GatsbyConfig = {
   siteMetadata: {
     title: `Que Faire de mes Déchets ? Découvrez les solutions pour tous vos déchets et nos conseils pour en produire moins.`,
     author: `Datagir`,
@@ -57,3 +60,6 @@ module.exports = {
     "gatsby-plugin-webpack-bundle-analyser-v2",
   ],
 };
+
+
+export default config
