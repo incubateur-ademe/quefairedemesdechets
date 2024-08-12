@@ -10,7 +10,6 @@ module.exports = {
     twitterUsername: "_datagir",
   },
   plugins: [
-    //`gatsby-plugin-preact`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-use-query-params",

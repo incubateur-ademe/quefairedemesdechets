@@ -8,7 +8,7 @@ const StyleProvider = (props) => {
 
   useEffect(() => {
     setTheme(
-      window.location.search.includes("theme=night") ? "night" : "default",
+      window.location.search.includes("theme=night") ? "night" : "default"
     );
   }, []);
   return (
@@ -24,5 +24,5 @@ const StyleProvider = (props) => {
     </StyleContext.Provider>
   );
 };
-const wrapper = ({ element }) => <StyleProvider>{element}</StyleProvider>;
-export default wrapper;
+
+export default StyleProvider;
