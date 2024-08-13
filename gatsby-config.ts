@@ -12,6 +12,19 @@ const config: GatsbyConfig = {
     image: "metaimage.png",
     twitterUsername: "_datagir",
   },
+  // force X-Frame-Options to SAMEORIGIN
+  // to allow embedding in iframe
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors
+  headers:   [{
+    source: `*`,
+    headers: [
+      {
+        key: `x-frame-options`,
+        value: `DENY`,
+      },
+    ],
+  }],
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
@@ -58,6 +71,16 @@ const config: GatsbyConfig = {
     },
     "gatsby-plugin-offline",
     "gatsby-plugin-webpack-bundle-analyser-v2",
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          "*": [
+            "X-Frame-Options: DENY",
+          ],
+        },
+      },
+    },
   ],
 };
 

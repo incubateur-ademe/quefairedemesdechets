@@ -13,6 +13,7 @@
     "gatsby": "^5.13.6",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-matomo": "^0.16.2",
+    "gatsby-plugin-netlify": "^5.1.1",
     "gatsby-plugin-offline": "^6.13.2",
     "gatsby-plugin-posthog": "^1.0.1",
     "gatsby-plugin-react-helmet": "^6.13.1",
