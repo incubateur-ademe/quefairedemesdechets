@@ -62,8 +62,7 @@
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
-    "build": "yarn clean && yarn iframe && gatsby build",
-    "clean": "rm -rf ../cache && gatsby clean",
+    "build": "rm -rf ../cache && yarn cache clean && rm -rf node_modules && yarn install --frozen-lockfile && gatsby clean && yarn iframe && gatsby build",
     "iframe": "webpack",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
