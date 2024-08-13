@@ -12,19 +12,19 @@ const config: GatsbyConfig = {
     image: "metaimage.png",
     twitterUsername: "_datagir",
   },
-  // // force X-Frame-Options to SAMEORIGIN
-  // // to allow embedding in iframe
-  // // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
-  // // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors
-  // headers:   [{
-  //   source: `*`,
-  //   headers: [
-  //     {
-  //       key: `X-Frame-Options`,
-  //       value: `ALLOWALL`,
-  //     },
-  //   ],
-  // }],
+  // force X-Frame-Options to SAMEORIGIN
+  // to allow embedding in iframe
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options
+  // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/frame-ancestors
+  headers:   [{
+    source: `*`,
+    headers: [
+      {
+        key: `X-Frame-Options`,
+        value: `ALLOWALL`,
+      },
+    ],
+  }],
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
