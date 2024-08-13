@@ -20,8 +20,8 @@ const config: GatsbyConfig = {
     source: `*`,
     headers: [
       {
-        key: `x-frame-options`,
-        value: `DENY`,
+        key: `X-Frame-Options`,
+        value: `ALLOWALL`,
       },
     ],
   }],
@@ -76,7 +76,7 @@ const config: GatsbyConfig = {
       options: {
         headers: {
           "*": [
-            "X-Frame-Options: DENY",
+            "X-Frame-Options: ALLOWALL",
           ],
         },
       },
