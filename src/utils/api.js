@@ -265,15 +265,6 @@ const fetchOcad3e = ({ queryKey }) =>
         .sort((a, b) => (a.distance > b.distance ? 1 : -1)),
     );
 
-export function useRebuildSite() {
-  return useMutation({
-    mutationFn: () =>
-      fetch(`https://api.netlify.com/build_hooks/615189df8b8ed42b27ae36d7`, {
-        method: "POST",
-      }),
-  });
-}
-
 function formatHoursFromKoumoul(place) {
   return `
     Lundi : ${
