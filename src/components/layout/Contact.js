@@ -60,8 +60,10 @@ export default function Contact(props) {
 
   const [empty, setEmpty] = useState(false);
 
-  const mutation = useMutation((formData) => {
-    return fetch("/", { method: "post", body: formData });
+  const mutation = useMutation({
+    mutationFn: (formData) => {
+      return fetch("/", { method: "post", body: formData });
+    }
   });
 
   return (
