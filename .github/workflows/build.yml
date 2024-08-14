@@ -10,4 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Appel du hook Netlify
-      run: curl --silent --show-error --fail -X POST ${{ secrets.NETLIFY_PRODUCTION_BUILD_HOOK }}
+      env:
+        URL: ${{ secrets.NETLIFY_PRODUCTION_BUILD_HOOK }}
+      run: curl --silent --show-error --fail -X POST "$URL"
