@@ -72,12 +72,7 @@ export function useSuggestions(suggestions) {
         .then((results) =>
           results.map((result) => ({
             ...result,
-            slug: result[`Nom`]
-              .toLowerCase()
-              .replaceAll(" ", "-")
-              .replaceAll(`'`, "-")
-              .normalize("NFD")
-              .replace(/[\u0300-\u036f]/g, ""),
+            slug: slug(result[`Nom`], { locale: "fr" })
           })),
         ),
     enabled: suggestions ? true : false,
