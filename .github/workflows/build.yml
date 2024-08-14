@@ -1,0 +1,11 @@
+name: Mise à jour de quefairedemesdechets.ademe.fr
+on: workflow_dispatch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Appel du hook Netlify
+      uses: wei/curl@master
+      with:
+        args: ${{ secrets.NETLIFY_PRODUCTION_BUILD_HOOK }}
