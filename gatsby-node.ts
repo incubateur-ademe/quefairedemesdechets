@@ -35,12 +35,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
           }
           return tempWaste.map((waste) => ({
             ...waste,
-            slug: waste[`Nom`]
-              .toLowerCase()
-              .replace(/\s/g, "-")
-              .replace(/'/g, "-")
-              .normalize("NFD")
-              .replace(/[\u0300-\u036f]/g, ""),
+            slug: slug(waste[`Nom`], { locale: "fr"}),
             map:
               waste["Bdd"] === "sinoe" ||
               waste["Bdd"] === "google" ||
@@ -56,7 +51,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
         })
     )
     .then((res) =>
-      res.map(product => ({ ...product, slug: slug(product.slug, { locale: "fr"})})).forEach((product) => {
+      res.forEach((product) => {
         createPage({
           path: `/dechet/${product.slug}/`,
           component: path.resolve("./src/templates/product.js"),
