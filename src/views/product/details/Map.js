@@ -6,7 +6,7 @@ import MapWrapper from "components/misc/MapWrapper";
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  height: clamp(20rem, 75vh, 35rem);
+  height: 700px;
   ${(props) => props.LVAOMapIsDisplayed && "border-radius: 1rem;"}
   overflow: hidden;
 `;
