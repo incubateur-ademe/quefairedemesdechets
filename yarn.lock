@@ -12771,10 +12771,10 @@ react-side-effect@^2.1.0:
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-2.1.2.tgz#dc6345b9e8f9906dc2eeb68700b615e0b4fe752a"
   integrity sha512-PVjOcvVOyIILrYoyGEpDN3vmYNLdy1CajSFNt4TDsVQC5KpTijDvWVoR+/7Rz2xT978D8/ZtFceXxzsPwZEDvw==
 
-react-switch@^6.0.0:
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/react-switch/-/react-switch-6.1.0.tgz#46239535820f6cf1331aecd948ba585d8a7b532a"
-  integrity sha512-cOwQkxtHCOGtoK0KN3kZBPTQjt8P1TTpaor+TS0AJRLfFBIRkgjVIUCwAfvVlW32Bi1BK333rk9y/14suD38SA==
+react-switch@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/react-switch/-/react-switch-7.0.0.tgz#400990bb9822864938e343ed24f13276a617bdc0"
+  integrity sha512-KkDeW+cozZXI6knDPyUt3KBN1rmhoVYgAdCJqAh7st7tk8YE6N0iR89zjCWO8T8dUTeJGTR0KU+5CHCRMRffiA==
   dependencies:
     prop-types "^15.7.2"
 
