@@ -19,7 +19,7 @@ const Wrapper = styled.form`
   border: 0.25em solid ${(props) => props.theme.colors.main};
   border-radius: 2em;
   overflow: hidden;
-  opacity: ${(props) => (props.isFetched && !props.small ? 1 : 0)};
+  opacity: ${(props) => (props.$isFetched && !props.small ? 1 : 0)};
   pointer-events: ${(props) => (props.small ? "none" : "inherit")};
   transition: opacity 750ms;
 
@@ -81,9 +81,9 @@ export default function SearchBar(props) {
 
   return (
     <Wrapper
-      isFetched={props.isFetched}
+      $isFetched={props.isFetched}
       small={props.small}
-      focus={focus}
+      focus={focus.toString()}
       onSubmit={(e) => {
         e.preventDefault();
         if (results[current]) {
