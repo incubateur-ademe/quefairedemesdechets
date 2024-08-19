@@ -25,6 +25,7 @@ const config: GatsbyConfig = {
   },
   plugins: [
     `gatsby-plugin-sitemap`,
+    `@sentry/gatsby`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-use-query-params",
