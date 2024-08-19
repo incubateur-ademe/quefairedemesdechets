@@ -4,7 +4,8 @@ import styled from "styled-components";
 import { useWaste } from "utils/api";
 import GifTitle from "components/misc/GifTitle";
 import SearchBar from "components/misc/SearchBar";
-import SuggestionsWrapper from "./home/SuggestionsWrapper";
+import SuggestionsWrapper from "views/home/SuggestionsWrapper";
+import ProDisclaimer from "views/home/ProDisclaimer";
 
 const Wrapper = styled.div`
   position: relative;
@@ -22,6 +23,7 @@ export default function Home() {
         <SearchBar isFetched={isFetched} />
       </Wrapper>
       <SuggestionsWrapper />
+      <ProDisclaimer />
     </div>
   );
 }

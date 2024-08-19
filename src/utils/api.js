@@ -72,12 +72,7 @@ export function useSuggestions(suggestions) {
         .then((results) =>
           results.map((result) => ({
             ...result,
-            slug: result[`Nom`]
-              .toLowerCase()
-              .replaceAll(" ", "-")
-              .replaceAll(`'`, "-")
-              .normalize("NFD")
-              .replace(/[\u0300-\u036f]/g, ""),
+            slug: slug(result[`Nom`], { locale: "fr" })
           })),
         ),
     enabled: suggestions ? true : false,
@@ -264,14 +259,6 @@ const fetchOcad3e = ({ queryKey }) =>
         }))
         .sort((a, b) => (a.distance > b.distance ? 1 : -1)),
     );
-
-export function useRebuildSite() {
-  return useMutation(() =>
-    fetch(`https://api.netlify.com/build_hooks/615189df8b8ed42b27ae36d7`, {
-      method: "POST",
-    }),
-  );
-}
 
 function formatHoursFromKoumoul(place) {
   return `

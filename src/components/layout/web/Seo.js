@@ -38,6 +38,7 @@ const SEO = (props) => {
     <Helmet title={seo.title}>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
+      <meta name="google-site-verification" content="vHhqbYkCiU-dtj5Ona46jyfzS5E0NvNfnROEqtcRAWE" />
 
       {seo.url && <meta property="og:url" content={seo.url} />}
 
