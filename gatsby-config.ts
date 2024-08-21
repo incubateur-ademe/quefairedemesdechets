@@ -16,12 +16,12 @@ const config: GatsbyConfig = {
     },
   ],
   siteMetadata: {
-    title: `Que Faire de mes Déchets ? Découvrez les solutions pour tous vos déchets et nos conseils pour en produire moins.`,
-    author: `Datagir`,
-    description: `Masque chirurgical ou ffp2, téléphone portable, médicaments, capsules de café, vêtements... Découvrez ici comment les recycler, les trier, les éviter ou les jeter !`,
+    title: `Que Faire de mes déchets & objets : votre assistant au tri et à la réduction des déchets`,
+    author: `LongueVieAuxObjets`,
+    description: `Vêtements, emballages, smartphones, médicaments… trouvez les réponses pour les réparer, les revendre d'occasion, les trier, les recycler, les éviter ou les jeter`,
     siteUrl: `https://quefairedemesdechets.ademe.fr`,
     image: "metaimage.png",
-    twitterUsername: "_datagir",
+    twitterUsername: "ademe",
   },
   plugins: [
     `gatsby-plugin-sitemap`,
