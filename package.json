@@ -4,7 +4,7 @@
   "private": true,
   "author": "Datagir",
   "dependencies": {
-    "@tanstack/react-query": "^5.51.23",
+    "@tanstack/react-query": "^5.52.0",
     "@types/slug": "^5.0.8",
     "babel-plugin-styled-components": "^2.1.4",
     "copy-to-clipboard": "^3.3.3",
