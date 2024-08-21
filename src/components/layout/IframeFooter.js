@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   background-color: ${(props) => props.theme.colors.background};
 `;
 const Content = styled.div`
-  max-width: ${(props) => props.theme.widths.max_width_with_gutters};
+  max-width: ${(props) => props.theme.widths.maxWidthWithGutters};
   margin: 0 auto;
   padding: 1rem 0.5rem 0.5rem;
 `;

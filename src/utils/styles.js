@@ -27,7 +27,7 @@ export const themes = {
       xlarge: `@media screen and (min-width: ${2000}px)`,
     },
     widths: {
-      max_width_with_gutters: "58.75rem",
+      maxWidthWithGutters: "67rem",
     },
   },
   night: {
@@ -54,7 +54,7 @@ export const themes = {
       xlarge: `@media screen and (min-width: ${2000}px)`,
     },
     widths: {
-      max_width_with_gutters: "58.75rem",
+      maxWidthWithGutters: "67rem",
     },
   },
 };
