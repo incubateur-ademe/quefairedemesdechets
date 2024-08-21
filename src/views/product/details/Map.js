@@ -32,6 +32,7 @@ const IFrameWrapper = ({ src }) => {
       mozallowfullscreen="true"
       ref={iframeRef}
       onLoad={handleLoad}
+      referrerPolicy="strict-origin-when-cross-origin"
       src={src}
     />
   );
