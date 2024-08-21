@@ -24,6 +24,7 @@ const config: GatsbyConfig = {
     twitterUsername: "_datagir",
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-use-query-params",

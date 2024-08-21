@@ -3432,10 +3432,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^18.3.3":
-  version "18.3.3"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.3.3.tgz#9679020895318b0915d7a3ab004d92d33375c45f"
-  integrity sha512-hti/R0pS0q1/xx+TsI73XIqk26eBsISZ2R0wUijXIngRK9R/e7Xw/cXVxQK7R5JjW+SV4zGcn5hXjudkN/pLIw==
+"@types/react@*", "@types/react@^18.3.4":
+  version "18.3.4"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.3.4.tgz#dfdd534a1d081307144c00e325c06e00312c93a3"
+  integrity sha512-J7W30FTdfCxDDjmfRM+/JqLHBIyl7xUIp9kwK637FGmY7+mkSFSe6L4jpZzhj5QMfLssSDP4/i75AKkrdC7/Jw==
   dependencies:
     "@types/prop-types" "*"
     csstype "^3.0.2"
@@ -7720,10 +7720,10 @@ gatsby-plugin-manifest@^5.13.1:
     semver "^7.5.3"
     sharp "^0.32.6"
 
-gatsby-plugin-matomo@^0.16.2:
-  version "0.16.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-matomo/-/gatsby-plugin-matomo-0.16.2.tgz#d2abaabeb41022077953c8af0f92b229dc747e61"
-  integrity sha512-/MMTlhMdzGaNkTQ5j4iCJ2DkTtbHmMRRTYxhZg7XVhOvJmKVUoKjue/sb5M7414V35ZewNz2/mqx+Cj/sKaMZw==
+gatsby-plugin-matomo@^0.16.3:
+  version "0.16.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-matomo/-/gatsby-plugin-matomo-0.16.3.tgz#ce0df0aaabd024dbce311d6a291cb3f6fd95c4b8"
+  integrity sha512-xgS4gFMKRqYgD3I5rZ0mXhW+hyvCDX8i0XSkaRH4jw74GffFOoL5FRqQZP/oVRARepDInQOvdgo1sfcpQ37CCQ==
 
 gatsby-plugin-offline@^6.13.2:
   version "6.13.2"
