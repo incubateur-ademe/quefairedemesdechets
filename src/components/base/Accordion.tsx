@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 type AccordionItem = {
   title: string
-  content: string
+  content: React.ReactElement | string
 }
 
 const TitleWrapper = styled.h3`
