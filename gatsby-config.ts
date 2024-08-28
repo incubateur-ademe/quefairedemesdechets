@@ -1,16 +1,16 @@
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 dotenv.config({ path: `.env` });
 
-import type { GatsbyConfig } from 'gatsby';
+import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   headers: [
     {
-      source: '*',
+      source: "*",
       headers: [
         {
-          key: 'Content-Security-Policy',
-          value: 'frame-ancestors *;',
+          key: "Content-Security-Policy",
+          value: "frame-ancestors *;",
         },
       ],
     },
@@ -37,6 +37,9 @@ const config: GatsbyConfig = {
         apiHost: "https://eu.i.posthog.com",
         head: true,
         isEnabledDevMode: false,
+        initOptions: {
+          persistence: "memory",
+        },
       },
     },
     {
@@ -73,5 +76,4 @@ const config: GatsbyConfig = {
   ],
 };
 
-
-export default config
+export default config;
