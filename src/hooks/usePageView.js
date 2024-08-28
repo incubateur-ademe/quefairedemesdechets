@@ -14,6 +14,7 @@ export default function usePageViews(sitename) {
       // remove all previously assigned custom variables, requires Matomo (formerly Piwik) 3.0.2
       window._paq.push(["deleteCustomVariables", "page"]);
       window._paq.push(["setGenerationTimeMs", 0]);
+      window._paq.push(['disableCookies']);
       window._paq.push(["trackPageView"]);
 
       // make Matomo aware of newly added content
