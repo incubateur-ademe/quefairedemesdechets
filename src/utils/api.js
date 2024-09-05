@@ -19,8 +19,8 @@ export function useLVAOMapForProduct(productID) {
         // OPTIMIZE: In a near future, all products will display this map and the 404
         // will be handled in a cleaner way.
         return;
-      } else if (!error.ok) {
-        throw Error(error.text);
+      } else if (!response.ok) {
+        throw Error(response.text);
       }
       return response.json();
     },
