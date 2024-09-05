@@ -12,9 +12,9 @@ export function useLVAOMapForProduct(productID) {
       const response = await fetch(
         `${LVAO_API}/qfdmd/produit?id=${queryKey[1]}`,
       );
-
       if (!response.ok) {
-        throw Error(response.text);
+        // We deliberately do not handle errors at the moment as the API is not stable yet.
+        return
       }
       return response.json();
     },
@@ -53,7 +53,7 @@ export function useWaste() {
             searchable: waste["Nom"]
               .normalize("NFD")
               .replace(/[\u0300-\u036f]/g, ""),
-            slug: slug(waste[`Nom`], { locale: "fr"}),
+            slug: slug(waste[`Nom`], { locale: "fr" }),
           }));
         }),
     keepPreviousData: true,
@@ -72,7 +72,7 @@ export function useSuggestions(suggestions) {
         .then((results) =>
           results.map((result) => ({
             ...result,
-            slug: slug(result[`Nom`], { locale: "fr" })
+            slug: slug(result[`Nom`], { locale: "fr" }),
           })),
         ),
     enabled: suggestions ? true : false,

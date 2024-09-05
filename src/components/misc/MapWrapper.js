@@ -37,8 +37,8 @@ const Cache = styled.div`
   right: 0;
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(3px);
-  opacity: ${(props) => (props.visible ? 1 : 0)};
-  pointer-events: ${(props) => (props.visible ? "inherit" : "none")};
+  opacity: ${({ $visible }) => ($visible ? 1 : 0)};
+  pointer-events: ${({ $visible }) => ($visible ? "inherit" : "none")};
   transition: opacity 600ms;
 `;
 const Loader = styled.div`
@@ -63,7 +63,7 @@ const Loader = styled.div`
     height: 100%;
     background-color: ${(props) => props.theme.colors.second};
     transform: scaleX(0);
-    animation: ${(props) => (props.isFetching ? fetching : "none")} 1s linear
+    animation: ${({ $isFetching }) => ($isFetching ? fetching : "none")} 1s linear
       infinite;
   }
 `;
@@ -102,8 +102,8 @@ export default function MapWrapper(props) {
         }}
         list={list}
       />
-      <Loader isFetching={isFetching} />
-      <Cache visible={!address.label} />
+      <Loader $isFetching={isFetching} />
+      <Cache $visible={!address.label} />
       {list ? (
         <List data={data} address={address} />
       ) : (
