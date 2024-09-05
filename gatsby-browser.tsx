@@ -4,8 +4,9 @@ import ReactQueryProvider from "./src/components/providers/ReactQueryProvider";
 
 import * as Sentry from "@sentry/gatsby";
 
+const dsn = process.env.GATSBY_SENTRY_DSN
 Sentry.init({
-  dsn: "https://examplePublicKey@o0.ingest.sentry.io/0",
+  dsn,
   integrations: [
     Sentry.browserTracingIntegration(),
   ],
