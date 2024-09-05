@@ -40,7 +40,7 @@ export default function Toggle(props) {
     <>
       <Wrapper
         className={props.className}
-        open={props.open}
+        $open={props.$open}
         onClick={props.onClick}
         data-tip={props.tooltip}
         aria-label={props.tooltip}

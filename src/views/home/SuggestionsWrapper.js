@@ -7,7 +7,7 @@ import Suggestions from "components/misc/Suggestions";
 
 const Wrapper = styled.div`
   padding-bottom: 1rem;
-  opacity: ${(props) => (props.isFetched ? 1 : 0)};
+  opacity: ${(props) => (props.$isFetched ? 1 : 0)};
   transition: opacity 1500ms 500ms;
 
   ${(props) => props.theme.mq.small} {
@@ -25,7 +25,7 @@ export default function SuggestionsWrapper() {
   }, [setSearch]);
 
   return (
-    <Wrapper isFetched={isFetched}>
+    <Wrapper $isFetched={isFetched}>
       <Suggestions>
         En panne d’inspiration ? Essayez une des suggestions ci‑dessous.
       </Suggestions>

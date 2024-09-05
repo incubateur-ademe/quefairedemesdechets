@@ -20,8 +20,8 @@ const hover = keyframes`
 `;
 const StyledWrapper = styled(Toggle)`
   transform: translate(
-    ${(props) => (props.open ? "-30rem" : "0")},
-    calc(${(props) => (props.four ? "-200% - 3rem" : "-150% - 2rem")})
+    ${(props) => (props.$open ? "-30rem" : "0")},
+    calc(${(props) => (props.$four ? "-200% - 3rem" : "-150% - 2rem")})
   );
 
   &:hover,
@@ -39,7 +39,7 @@ const Embed = styled.svg`
   display: block;
   width: 2.75rem;
   height: auto;
-  opacity: ${(props) => (props.open ? 0 : 1)};
+  opacity: ${(props) => (props.$open ? 0 : 1)};
   transition: all 300ms ease-out;
 
   path {
@@ -51,13 +51,13 @@ export default function EmbedButton(props) {
 
   return (
     <StyledWrapper
-      open={props.open}
+      $open={props.open}
       onClick={props.onClick}
-      four={installPrompt}
+      $four={installPrompt}
       tooltip={"Intégrer ce simulateur"}
     >
       <Embed
-        open={props.open}
+        $open={props.open}
         x="0px"
         y="0px"
         width="94.504px"

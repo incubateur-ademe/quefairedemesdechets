@@ -106,7 +106,7 @@ export default function Contact(props) {
             <TextInput
               name={"nom"}
               value={user.nom}
-              error={empty && !user.nom}
+              $error={empty && !user.nom}
               label={"Votre nom"}
               onChange={({ name, value }) =>
                 setUser((prevUser) => ({ ...prevUser, [name]: value }))
@@ -117,7 +117,7 @@ export default function Contact(props) {
             <TextInput
               type="email"
               name={"email"}
-              error={empty && !user.email}
+              $error={empty && !user.email}
               value={user.email}
               label={"Votre email"}
               onChange={({ name, value }) =>
@@ -160,7 +160,7 @@ export default function Contact(props) {
             <TextArea
               name={"message"}
               value={user.message}
-              error={empty && !user.message}
+              $error={empty && !user.message}
               label={"Votre message"}
               onChange={({ name, value }) =>
                 setUser((prevUser) => ({ ...prevUser, [name]: value }))

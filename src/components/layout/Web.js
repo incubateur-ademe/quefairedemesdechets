@@ -37,7 +37,7 @@ const FullScreen = styled.div`
   flex-direction: column;
   width: 67rem;
   max-width: 100%;
-  min-height: ${(props) => (props.iframe ? "none" : "100vh")};
+  min-height: ${(props) => (props.$iframe ? "none" : "100vh")};
   margin: 0 auto;
   padding: 0 0.75rem 5rem;
 `;
@@ -60,7 +60,7 @@ export default function Web(props) {
             <GlobalStyle />
             <ThemeToggle />
             <Content>
-              <FullScreen iframe={iframe}>
+              <FullScreen $iframe={iframe}>
                 <HeaderWrapper noHeader={noHeader} />
                 {props.children}
                 <Bin />

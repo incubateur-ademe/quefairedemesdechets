@@ -52,7 +52,7 @@ const Check = styled.svg`
   width: 1rem;
   height: auto;
   vertical-align: top;
-  opacity: ${(props) => (props.copied ? 1 : 0)};
+  opacity: ${(props) => (props.$copied ? 1 : 0)};
   transition: opacity 200ms ease-out;
   path {
     fill: ${(props) => props.theme.colors.background};
@@ -87,7 +87,7 @@ export default function Code(props) {
       >
         Copier{" "}
         <Check
-          copied={copied}
+          $copied={copied}
           height="417pt"
           viewBox="0 -46 417.81333 417"
           width="417pt"

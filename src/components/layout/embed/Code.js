@@ -25,7 +25,7 @@ const Text = styled.code`
     right: 0;
     font-size: 0.875em;
     color: ${(props) => props.theme.colors.main};
-    opacity: ${(props) => (props.copied ? 1 : 0)};
+    opacity: ${(props) => (props.$copied ? 1 : 0)};
     transition: opacity 300ms ease-out;
   }
 `;
@@ -53,7 +53,7 @@ export default function Code(props) {
   return (
     <Wrapper>
       <Text
-        copied={copied}
+        $copied={copied}
         onClick={() => {
           if (copy(script)) {
             setCopied(true);

@@ -17,8 +17,8 @@ const hover = keyframes`
 `;
 const StyledWrapper = styled(Toggle)`
   transform: translate(
-    ${(props) => (props.open ? "-30rem" : "0")},
-    ${(props) => (props.four ? "calc(-100% - 1rem)" : "-50%")}
+    ${(props) => (props.$open ? "-30rem" : "0")},
+    ${(props) => (props.$four ? "calc(-100% - 1rem)" : "-50%")}
   );
 
   &:hover,
@@ -37,7 +37,7 @@ const Share = styled.svg`
   display: block;
   width: 2.25rem;
   height: auto;
-  opacity: ${(props) => (props.open ? 0 : 1)};
+  opacity: ${(props) => (props.$open ? 0 : 1)};
   transition: all 300ms ease-out;
 
   path {
@@ -56,13 +56,13 @@ export default function ShareButton(props) {
 
   return (
     <StyledWrapper
-      open={props.open}
+      $open={props.open}
       onClick={props.onClick}
-      four={installPrompt}
+      $four={installPrompt}
       tooltip={"Partager ce simulateur"}
     >
       <Share
-        open={props.open}
+        $open={props.open}
         height="512pt"
         viewBox="-21 0 512 512"
         width="512pt"

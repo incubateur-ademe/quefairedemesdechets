@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   transform: translate3d(0, 0, 1em);
-  pointer-events: ${(props) => (props.open ? "inherit" : "none")};
+  pointer-events: ${(props) => (props.$open ? "inherit" : "none")};
 `;
 const Background = styled.div`
   position: absolute;
@@ -20,27 +20,27 @@ const Background = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, ${(props) => (props.open ? 0.6 : 0)});
-  transition: background-color ${(props) => (props.open ? "300ms" : "1ms")}
+  background-color: rgba(0, 0, 0, ${(props) => (props.$open ? 0.6 : 0)});
+  transition: background-color ${(props) => (props.$open ? "300ms" : "1ms")}
     ease-in-out;
 `;
 const Content = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  width: ${(props) => props.width || "30em"};
+  width: ${(props) => props.$width || "30em"};
   max-width: 90vw;
   max-height: 90vh;
   margin: 1rem;
   background-color: ${(props) => props.theme.colors.background};
   border-radius: 1em;
   box-shadow: 0px 0px 15px 10px rgba(0, 0, 0, 0.2);
-  visibility: ${(props) => (props.open ? "visible" : "hidden")};
-  opacity: ${(props) => (props.open ? 1 : 0)};
-  transform: scale(${(props) => (props.open ? 1 : 0.7)})
-    translateY(${(props) => (props.open ? 0 : "10em")});
+  visibility: ${(props) => (props.$open ? "visible" : "hidden")};
+  opacity: ${(props) => (props.$open ? 1 : 0)};
+  transform: scale(${(props) => (props.$open ? 1 : 0.7)})
+    translateY(${(props) => (props.$open ? 0 : "10em")});
   transition: all
-    ${(props) => (props.open && !props.noAnimation ? "300ms" : "1ms")}
+    ${(props) => (props.$open && !props.$noAnimation ? "300ms" : "1ms")}
     ease-in-out;
 `;
 const ButtonClose = styled.div`
@@ -60,14 +60,14 @@ const Scroll = styled.div`
 `;
 export default function Modal(props) {
   return (
-    <Wrapper open={props.open} className={props.className}>
-      <Background open={props.open} onClick={() => props.setOpen(false)} />
+    <Wrapper $open={props.open} className={props.className}>
+      <Background $open={props.open} onClick={() => props.setOpen(false)} />
       <Content
-        open={props.open}
+        $open={props.open}
         width={props.width}
         textColor={props.textColor}
-        backgroundColor={props.backgroundColor}
-        noAnimation={props.noAnimation}
+        $backgroundColor={props.backgroundColor}
+        $noAnimation={props.noAnimation}
       >
         <ButtonClose onClick={() => props.setOpen(false)}>+</ButtonClose>
         <Scroll>{props.children}</Scroll>

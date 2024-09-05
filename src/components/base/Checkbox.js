@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   position: relative;
   display: inline-block;
-  font-size: ${(props) => (props.small ? "1em" : "1.2em")};
+  font-size: ${(props) => (props.$small ? "1em" : "1.2em")};
 
   &:before {
     content: "";
@@ -51,7 +51,7 @@ export default function Checkbox(props) {
   return (
     <Wrapper
       checked={props.checked}
-      small={props.small}
+      $small={props.small}
       className={props.className}
     >
       <Input
