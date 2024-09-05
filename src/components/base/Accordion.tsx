@@ -18,7 +18,7 @@ const Title = styled.button<{ $expanded?: boolean }>`
   jutify-content: space-between;
   padding: 1rem;
   cursor: pointer;
-  transition: .25s; 
+  transition: .25s;
   user-select: none;
   -webkit-user-select: none;
   -webkit-appearance: button;
@@ -50,7 +50,7 @@ const AccordionItemWrapper = styled.div`
 `
 
 
-const Content = styled.p<{ $expanded?: boolean; }> `
+const Content = styled.div<{ $expanded?: boolean; }> `
   display: none;
   padding: 1rem;
   ${({ $expanded }) => $expanded && `display: block;`}

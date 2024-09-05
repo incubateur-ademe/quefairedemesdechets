@@ -193,7 +193,7 @@ export default function Bin() {
   const [visible, setVisible] = useState(true);
 
   return (
-    <Position position={positions[currentPosition]}>
+    <Position $position={positions[currentPosition]}>
       <Wrapper
         $visible={visible && isSuccess}
         $flight={binFlight}
@@ -211,7 +211,7 @@ export default function Bin() {
       >
         <Svg
           aria-hidden="true"
-          visible={visible}
+          $visible={visible}
           width="133"
           height="133"
           viewBox="0 0 133 133"

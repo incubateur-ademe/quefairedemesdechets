@@ -10,9 +10,9 @@ const Wrapper = styled.button`
   background: ${(props) => props.theme.colors.background};
   border: none;
   border-radius: 1.375rem;
-  opacity: ${(props) => (props.visible ? 1 : 0)};
-  pointer-events: ${(props) => (props.visible ? "inherit" : "none")};
-  transition: opacity ${(props) => (props.visible ? 600 : 0)}ms;
+  opacity: ${(props) => (props.$visible ? 1 : 0)};
+  pointer-events: ${(props) => (props.$visible ? "inherit" : "none")};
+  transition: opacity ${(props) => (props.$visible ? 600 : 0)}ms;
   cursor: pointer;
 
   &:focus {
@@ -32,7 +32,7 @@ const Wrapper = styled.button`
 export default function Submit(props) {
   return (
     <Wrapper
-      visible={props.visible}
+      $visible={props.visible}
       onFocus={() => props.setFocus(true)}
       onBlur={() => props.setFocus(false)}
       aria-label="Valider mon adresse"
