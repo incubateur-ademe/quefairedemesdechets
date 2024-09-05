@@ -186,8 +186,10 @@ const fetchDecheteries = ({ queryKey }) =>
     }%2C${
       queryKey[1][0]
     }%2C${15000}&size=1000&sampling=neighbors&select=ANNEE%2CN_SERVICE%2CAD1_SITE%2CCP_SITE%2CL_VILLE_SITE%2C_geopoint%2C_id`,
-  ).then((res) =>
-    res.json().results.map((place) => ({
+  )
+  .then((res) => res.json())
+  .then((res) =>
+    res.results.map((place) => ({
       id: place["_id"],
       latitude: Number(place["_geopoint"].split(",")[0]),
       longitude: Number(place["_geopoint"].split(",")[1]),
