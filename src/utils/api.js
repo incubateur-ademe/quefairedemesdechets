@@ -1,6 +1,6 @@
 /*eslint-disable eqeqeq*/
 
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import slug from "slug";
 import useDebounce from "hooks/useDebounce";
 

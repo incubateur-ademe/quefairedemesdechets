@@ -8,7 +8,7 @@ const Wrapper = styled(MagicLink)`
   justify-content: center;
   align-items: center;
   padding: 0.8em 1.6em;
-  font-size: ${(props) => (props.small ? "0.875em" : "1em")};
+  font-size: ${(props) => (props.$small ? "0.875em" : "1em")};
   text-align: center;
   text-decoration: none;
   color: ${(props) =>
@@ -49,8 +49,8 @@ export default function Button(props) {
       to={props.to}
       onClick={props.onClick}
       disabled={props.disabled}
-      hollow={props.hollow}
-      small={props.small}
+      $hollow={props.hollow}
+      $small={props.small}
       className={props.className}
       textColor={props.textColor}
       aria-label={props.children}

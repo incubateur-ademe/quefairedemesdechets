@@ -120,13 +120,13 @@ const hover = keyframes`
 const Position = styled.div`
   position: fixed;
   z-index: 12;
-  ${(props) => props.position["y"]}: 0;
-  ${(props) => props.position["x"]}: 1rem;
-  transform: rotate(${(props) => (props.position["y"] === "top" ? 180 : 0)}deg)
+  ${(props) => props.$position["y"]}: 0;
+  ${(props) => props.$position["x"]}: 1rem;
+  transform: rotate(${(props) => (props.$position["y"] === "top" ? 180 : 0)}deg)
     translateX(
       ${(props) =>
-        (props.position["y"] === "bottom" && props.position["x"] === "right") ||
-        (props.position["y"] === "top" && props.position["x"] === "left")
+        (props.$position["y"] === "bottom" && props.$position["x"] === "right") ||
+        (props.$position["y"] === "top" && props.$position["x"] === "left")
           ? -8.3125
           : 0}rem
     );
@@ -134,16 +134,16 @@ const Position = styled.div`
 const Wrapper = styled.div`
   position: absolute;
   cursor: pointer;
-  transform: translateY(${(props) => (props.visible ? -50 : 0)}%);
+  transform: translateY(${(props) => (props.$visible ? -50 : 0)}%);
   transition: transform 400ms ease-out
-    ${(props) => (props.visible ? "1000ms" : "0ms")};
+    ${(props) => (props.$visible ? "1000ms" : "0ms")};
   animation: ${(props) =>
-      props.flight
-        ? props.position["x"] === "left"
-          ? props.position["y"] === "bottom"
+      props.$flight
+        ? props.$position["x"] === "left"
+          ? props.$position["y"] === "bottom"
             ? flightLeft
             : flightRight
-          : props.position["y"] === "bottom"
+          : props.$position["y"] === "bottom"
             ? flightRight
             : flightLeft
         : ""}
@@ -160,7 +160,7 @@ const Svg = styled.svg`
   }
 
   &:hover {
-    animation: ${(props) => (props.visible ? hover : "")} 500ms infinite;
+    animation: ${(props) => (props.$visible ? hover : "")} 500ms infinite;
   }
 `;
 const Eye = styled.circle`
@@ -193,11 +193,11 @@ export default function Bin() {
   const [visible, setVisible] = useState(true);
 
   return (
-    <Position position={positions[currentPosition]}>
+    <Position $position={positions[currentPosition]}>
       <Wrapper
-        visible={visible && isSuccess}
-        flight={binFlight}
-        position={positions[currentPosition]}
+        $visible={visible && isSuccess}
+        $flight={binFlight}
+        $position={positions[currentPosition]}
         onClick={() => {
           setVisible(false);
           setTimeout(() => {
@@ -211,7 +211,7 @@ export default function Bin() {
       >
         <Svg
           aria-hidden="true"
-          visible={visible}
+          $visible={visible}
           width="133"
           height="133"
           viewBox="0 0 133 133"

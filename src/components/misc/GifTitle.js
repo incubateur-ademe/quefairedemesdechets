@@ -10,7 +10,7 @@ const StyledMagicLink = styled(MagicLink)`
 `;
 const Wrapper = styled.h1`
   position: relative;
-  margin-bottom: ${(props) => (props.small ? 0 : 2.5)}rem;
+  margin-bottom: ${(props) => (props.$small ? 0 : 2.5)}rem;
   text-align: center;
 `;
 
@@ -20,7 +20,7 @@ export default function GifTitle(props) {
       to="/"
       title="Que Faire de mes Déchets ? Retour à l’accueil"
     >
-      <Wrapper small={props.small} as="h1">
+      <Wrapper $small={props.small} as="h1">
         <span hidden>Que faire de mes Objets et de mes Déchets</span>
         <img
           src={props.small ? qfdmodSmallGif : qfdmodGif}

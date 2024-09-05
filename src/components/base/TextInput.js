@@ -8,7 +8,7 @@ const Label = styled.label`
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
-  color: ${(props) => props.theme.colors[props.error ? "error" : "text"]};
+  color: ${(props) => props.theme.colors[props.$error ? "error" : "text"]};
 `;
 const Input = styled.input`
   width: 100%;
@@ -16,7 +16,7 @@ const Input = styled.input`
   color: ${(props) => props.theme.colors.text};
   background-color: transparent;
   border: 2px solid
-    ${(props) => props.theme.colors[props.error ? "error" : "second"]};
+    ${(props) => props.theme.colors[props.$error ? "error" : "second"]};
   border-radius: 1rem;
   transition: box-shadow 300ms ease-out;
 
@@ -29,7 +29,7 @@ export default function TextInput(props) {
   return (
     <Wrapper>
       {props.label && (
-        <Label htmlFor={props.name} error={props.error}>
+        <Label htmlFor={props.name} $error={props.error}>
           {props.label}
         </Label>
       )}
@@ -38,7 +38,7 @@ export default function TextInput(props) {
         id={props.name}
         name={props.name}
         value={props.value}
-        error={props.error}
+        $error={props.error}
         onChange={(e) => {
           props.onChange({ value: e.currentTarget.value, name: props.name });
         }}

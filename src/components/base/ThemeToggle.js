@@ -15,7 +15,7 @@ const Wrapper = styled.div`
     position: relative;
     left: 0;
     right: 0;
-    display: ${(props) => (props.mobile ? "block" : "none")};
+    display: ${(props) => (props.$mobile ? "block" : "none")};
     text-align: center;
   }
 `;
@@ -32,7 +32,7 @@ export default function Visible(props) {
   const { theme, setTheme } = useContext(StyleContext);
 
   return (
-    <Wrapper mobile={props.mobile}>
+    <Wrapper $mobile={props.mobile}>
       <Switch
         onChange={() =>
           setTheme((prevTheme) =>

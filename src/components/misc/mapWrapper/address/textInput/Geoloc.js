@@ -8,7 +8,7 @@ const fetching = keyframes`
   from {
    opacity: 1;
   }
-  
+
   50% {
    opacity: 0;
   }
@@ -25,16 +25,16 @@ const Wrapper = styled.button`
   background: ${(props) => props.theme.colors.background};
   border: none;
   border-radius: 1.375rem;
-  opacity: ${(props) => (props.visible ? 1 : 0)};
-  pointer-events: ${(props) => (props.visible ? "inherit" : "none")};
-  transition: opacity ${(props) => (props.visible ? 600 : 0)}ms;
-  cursor: ${(props) => (props.fetching ? "wait" : "pointer")};
+  opacity: ${(props) => (props.$visible ? 1 : 0)};
+  pointer-events: ${(props) => (props.$visible ? "inherit" : "none")};
+  transition: opacity ${(props) => (props.$visible ? 600 : 0)}ms;
+  cursor: ${(props) => (props.$fetching ? "wait" : "pointer")};
 
   svg {
     display: block;
     width: 1.375rem;
     height: auto;
-    animation: ${(props) => (props.fetching ? fetching : "")} 1000ms infinite;
+    animation: ${(props) => (props.$fetching ? fetching : "")} 1000ms infinite;
 
     path {
       fill: ${(props) => props.theme.colors.main};
@@ -74,7 +74,7 @@ export default function Geoloc(props) {
 
   useEffect(() => {
     data && data.features && props.navigateToPlace(data.features[0]);
-  }, [data]);
+  }, [data, props]);
 
   const [error, setError] = useState(false);
 
@@ -83,8 +83,8 @@ export default function Geoloc(props) {
     "geolocation" in navigator ? (
     <>
       <Wrapper
-        visible={props.visible && !error && !isError}
-        fetching={isFetching || isGeolocating}
+        $visible={props.visible && !error && !isError}
+        $fetching={isFetching || isGeolocating}
         type="button"
         onClick={() => {
           if (!isFetching && !isGeolocating) setIsGeolocating(true);

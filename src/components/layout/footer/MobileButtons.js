@@ -10,7 +10,7 @@ import MagicLink from "components/base/MagicLink";
 const Wrapper = styled.div`
   display: none;
   justify-content: space-around;
-  margin-bottom: ${(props) => (props.iframe ? 1 : 2)}rem;
+  margin-bottom: ${(props) => (props.$iframe ? 1 : 2)}rem;
 
   ${(props) => props.theme.mq.medium} {
     display: flex;
@@ -77,7 +77,7 @@ export default function MobileButtons(props) {
     useContext(UXContext);
   return (
     <>
-      <Wrapper iframe={props.iframe}>
+      <Wrapper $iframe={props.iframe}>
         <Button onClick={() => setEmbedOpen(true)}>
           <Icon>
             <Embed
