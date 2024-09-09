@@ -31,18 +31,6 @@ const config: GatsbyConfig = {
     `gatsby-plugin-root-import`,
     `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-plugin-posthog`,
-      options: {
-        apiKey: process.env.POSTHOG_API_KEY,
-        apiHost: "https://eu.i.posthog.com",
-        head: true,
-        isEnabledDevMode: false,
-        initOptions: {
-          persistence: "memory",
-        },
-      },
-    },
-    {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         custom: {
