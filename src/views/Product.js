@@ -6,12 +6,12 @@ import Links from "./product/Links";
 import { useLVAOMapForProduct } from "../utils/api";
 
 export default function Product(props) {
-  const { data } = useLVAOMapForProduct(props.product.ID);
+  const { data, isFetching } = useLVAOMapForProduct(props.product.ID);
 
   return (
     <main>
       <Presentation product={props.product} />
-      <Details product={props.product} lvaoData={data} />
+      <Details product={props.product} lvaoData={data} isFetching={isFetching} />
       <Links product={props.product} />
     </main>
   );
