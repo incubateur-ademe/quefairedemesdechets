@@ -61,7 +61,7 @@
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
-    "build": "gatsby clean && yarn iframe && gatsby build",
+    "build": "yarn clean && yarn iframe && gatsby build",
     "clean": "rm -rf ../cache && gatsby clean",
     "iframe": "webpack",
     "develop": "gatsby develop",
