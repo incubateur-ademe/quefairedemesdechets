@@ -31,7 +31,7 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        excludes: [`disable-posthog`]
+        excludes: [`disableposthog`]
       }
     },
       {
