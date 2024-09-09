@@ -3,6 +3,7 @@ import styled from "styled-components";
 import posthog from "posthog-js"
 
 import { GlobalStyle } from "utils/styles";
+import { getCookie } from "utils/cookies"
 import ModalProvider from "components/providers/ModalProvider";
 import UXProvider from "components/providers/UXProvider";
 import SearchProvider from "components/providers/SearchProvider";
@@ -51,7 +52,7 @@ export default function Web(props) {
   useEffect(() => {
     setIframe(window.location.search.includes("iframe"));
     setnoHeader(window.location.search.includes("noheader"));
-    if (document.cookie.split("; ").find(row => row === "disable-posthog=1")) {
+    if (getCookie("disable-posthog", "1")) {
       setInternalUser(true)
     }
   }, []);
