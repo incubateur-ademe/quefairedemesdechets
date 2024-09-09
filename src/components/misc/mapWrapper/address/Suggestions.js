@@ -17,10 +17,10 @@ const Suggestion = styled.div`
   cursor: pointer;
   transition:
     background-color 200ms ease-out,
-    opacity ${(props) => (props.isFetching ? 300 : 0)}ms ease-out;
-  background-color: ${(props) =>
-    props.theme.colors[props.current ? "secondLight" : "background"]};
-  opacity: ${(props) => (props.isFetching ? 0.3 : 1)};
+    opacity ${({ $isFetching }) => ($isFetching ? 300 : 0)}ms ease-out;
+  background-color: ${({ theme, $current }) =>
+    theme.colors[$current ? "secondLight" : "background"]};
+  opacity: ${({ $isFetching }) => ($isFetching ? 0.3 : 1)};
 
   &:hover {
     background-color: ${(props) => props.theme.colors.mainLight};
@@ -66,9 +66,9 @@ export default function Suggestions(props) {
         (result, index) =>
           index < maxSuggestions && (
             <Suggestion
-              current={index === props.current}
+              $current={index === props.current}
               key={result["properties"]["id"]}
-              isFetching={props.isFetching}
+              $isFetching={props.isFetching}
               onClick={() => props.handleSuggestionClick(result)}
               onMouseDown={(e) => e.preventDefault()}
             >

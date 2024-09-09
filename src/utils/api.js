@@ -12,8 +12,14 @@ export function useLVAOMapForProduct(productID) {
       const response = await fetch(
         `${LVAO_API}/qfdmd/produit?id=${queryKey[1]}`,
       );
-
-      if (!response.ok) {
+      if (response.status === 404) {
+        // We deliberately do not handle 404 errors
+        // in the UI at the moment. A 404 error means that a product
+        // has not yet been configured to display the new Longue Vie Aux Objets map.
+        // OPTIMIZE: In a near future, all products will display this map and the 404
+        // will be handled in a cleaner way.
+        return;
+      } else if (!response.ok) {
         throw Error(response.text);
       }
       return response.json();
@@ -53,7 +59,7 @@ export function useWaste() {
             searchable: waste["Nom"]
               .normalize("NFD")
               .replace(/[\u0300-\u036f]/g, ""),
-            slug: slug(waste[`Nom`], { locale: "fr"}),
+            slug: slug(waste[`Nom`], { locale: "fr" }),
           }));
         }),
     keepPreviousData: true,
@@ -72,7 +78,7 @@ export function useSuggestions(suggestions) {
         .then((results) =>
           results.map((result) => ({
             ...result,
-            slug: slug(result[`Nom`], { locale: "fr" })
+            slug: slug(result[`Nom`], { locale: "fr" }),
           })),
         ),
     enabled: suggestions ? true : false,

@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
   height: clamp(20rem, 85vh, 44rem);
-  ${(props) => props.LVAOMapIsDisplayed && "border-radius: 1rem;"}
+  ${(props) => props.$LVAOMapIsDisplayed && "border-radius: 1rem;"}
   overflow: hidden;
 `;
 const IFrame = styled.iframe`
@@ -40,7 +40,7 @@ const IFrameWrapper = ({ src }) => {
 
 export default function Map({ lvaoData, product }) {
   return (
-    <Wrapper LVAOMapIsDisplayed={!!lvaoData?.url_carte}>
+    <Wrapper $LVAOMapIsDisplayed={!!lvaoData?.url_carte}>
       {lvaoData?.url_carte ? (
         <IFrameWrapper src={lvaoData.url_carte} />
       ) : (

@@ -9,7 +9,7 @@ import Suggestions from "./address/Suggestions";
 const Wrapper = styled.form`
   position: absolute;
   z-index: 100;
-  top: ${(props) => (props.addressSet ? "1rem" : "5rem")};
+  top: ${({ $addressSet }) => ($addressSet ? "1rem" : "5rem")};
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 2rem);
@@ -24,7 +24,7 @@ const Wrapper = styled.form`
   //overflow: hidden;
 
   ${(props) => props.theme.mq.small} {
-    top: ${(props) => (props.addressSet ? "2.5rem" : "5rem")};
+    top: ${({ $addressSet}) => ($addressSet ? "2.5rem" : "5rem")};
   }
 `;
 
@@ -66,8 +66,8 @@ export default function Address(props) {
 
   return (
     <Wrapper
-      focus={focus}
-      addressSet={props.address}
+      $focus={focus}
+      $addressSet={props.address}
       onSubmit={(e) => {
         e.preventDefault();
         if (current > -1) {
