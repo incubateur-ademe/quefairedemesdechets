@@ -24,13 +24,17 @@ const config: GatsbyConfig = {
     twitterUsername: "ademe",
   },
   plugins: [
-    `gatsby-plugin-sitemap`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-use-query-params",
     `gatsby-plugin-root-import`,
-    `gatsby-plugin-sitemap`,
     {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        excludes: [`disable-posthog`]
+      }
+    },
+      {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         custom: {
