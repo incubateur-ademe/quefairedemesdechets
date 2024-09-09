@@ -35,7 +35,7 @@ const FullScreen = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: 67rem;
+  width: ${(props) => props.theme.widths.maxWidthWithGutters};
   max-width: 100%;
   min-height: ${(props) => (props.$iframe ? "none" : "100vh")};
   margin: 0 auto;

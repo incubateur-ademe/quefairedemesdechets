@@ -16,7 +16,7 @@ const Wrapper = styled.footer`
   transition: all 600ms;
 `;
 const Content = styled.div`
-  max-width: ${(props) => props.width || "37rem"};
+  max-width: ${(props) => props.width || props.theme.widths.maxWidthWithGutters};
   margin: 0 auto;
   padding: 2rem 1rem 1rem;
 `;
