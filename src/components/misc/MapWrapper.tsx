@@ -63,8 +63,8 @@ const Loader = styled.div`
     height: 100%;
     background-color: ${(props) => props.theme.colors.second};
     transform: scaleX(0);
-    animation: ${({ $isFetching }) => ($isFetching ? fetching : "none")} 1s linear
-      infinite;
+    animation: ${({ $isFetching }) => ($isFetching ? fetching : "none")} 1s
+      linear infinite;
   }
 `;
 export default function MapWrapper(props) {
@@ -77,10 +77,13 @@ export default function MapWrapper(props) {
   });
   const [center, setCenter] = useState([47.5, 2]);
   const [zoom, setZoom] = useState(4.5);
-
   const [currentPlace, setCurrentPlace] = useState(null);
 
-  const { data, isFetching } = usePlaces(center, zoom, props.product);
+  const { data, isFetching } = usePlaces(
+    [address?.latitude, address?.longitude],
+    zoom,
+    props.product,
+  );
 
   const themeContext = useContext(ThemeContext);
 
