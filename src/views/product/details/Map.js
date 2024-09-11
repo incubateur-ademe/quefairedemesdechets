@@ -42,7 +42,7 @@ export default function Map({ lvaoData, product }) {
   return (
     <Wrapper $LVAOMapIsDisplayed={!!lvaoData?.url_carte}>
       {lvaoData?.url_carte ? (
-        <MapWrapper src={lvaoData.url_carte} />
+        <LVAOMapWrapper src={lvaoData.url_carte} />
       ) : (
         <LegacyMapWrapper product={product} />
       )}
