@@ -58,7 +58,7 @@ const config: GatsbyConfig = {
         siteId: "82",
         matomoUrl: "https://stats.beta.gouv.fr",
         siteUrl: "https://quefairedemesdechets.ademe.fr",
-        disableCookies: true
+        disableCookies: true,
       },
     },
     {

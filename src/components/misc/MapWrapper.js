@@ -63,8 +63,8 @@ const Loader = styled.div`
     height: 100%;
     background-color: ${(props) => props.theme.colors.second};
     transform: scaleX(0);
-    animation: ${({ $isFetching }) => ($isFetching ? fetching : "none")} 1s linear
-      infinite;
+    animation: ${({ $isFetching }) => ($isFetching ? fetching : "none")} 1s
+      linear infinite;
   }
 `;
 export default function MapWrapper(props) {

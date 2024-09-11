@@ -193,19 +193,19 @@ const fetchDecheteries = ({ queryKey }) =>
       queryKey[1][0]
     }%2C${15000}&size=1000&sampling=neighbors&select=ANNEE%2CN_SERVICE%2CAD1_SITE%2CCP_SITE%2CL_VILLE_SITE%2C_geopoint%2C_id`,
   )
-  .then((res) => res.json())
-  .then((res) =>
-    res.results.map((place) => ({
-      id: place["_id"],
-      latitude: Number(place["_geopoint"].split(",")[0]),
-      longitude: Number(place["_geopoint"].split(",")[1]),
-      title: place["N_SERVICE"].replaceAll(" ", " "),
-      address: `${place["AD1_SITE"].replaceAll(" ", " ")}
+    .then((res) => res.json())
+    .then((res) =>
+      res.results.map((place) => ({
+        id: place["_id"],
+        latitude: Number(place["_geopoint"].split(",")[0]),
+        longitude: Number(place["_geopoint"].split(",")[1]),
+        title: place["N_SERVICE"].replaceAll(" ", " "),
+        address: `${place["AD1_SITE"].replaceAll(" ", " ")}
                       <br />
                       ${place["CP_SITE"]}
                       ${place["L_VILLE_SITE"].replaceAll(" ", " ")}`,
-    })),
-  );
+      })),
+    );
 const fetchPvsoren = ({ queryKey }) =>
   fetch(
     `https://data.pointsapport.ademe.fr/data-fair/api/v1/datasets/donnees-de-geolocalisation-des-points-dapport-pv-soren/lines?format=json&q_mode=simple&geo_distance=${

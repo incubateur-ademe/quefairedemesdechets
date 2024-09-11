@@ -24,7 +24,7 @@ const Wrapper = styled.form`
   //overflow: hidden;
 
   ${(props) => props.theme.mq.small} {
-    top: ${({ $addressSet}) => ($addressSet ? "2.5rem" : "5rem")};
+    top: ${({ $addressSet }) => ($addressSet ? "2.5rem" : "5rem")};
   }
 `;
 
