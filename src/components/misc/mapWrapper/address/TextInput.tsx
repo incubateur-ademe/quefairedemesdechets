@@ -26,25 +26,36 @@ const Input = styled.input`
     outline: none;
   }
 `;
-export default React.forwardRef(function TextInput(props, ref) {
+export default React.forwardRef(function TextInput(
+  {
+    setFocus,
+    setSearch,
+    search,
+    suggestion,
+    suggestionVisible,
+    navigateToPlace,
+  },
+  ref,
+) {
+
   return (
     <Wrapper>
       <Input
         ref={ref}
         type="text"
         placeholder="Entrez votre adresse"
-        value={props.search}
-        onChange={(e) => props.setSearch(e.target.value)}
-        onFocus={() => props.setFocus(true)}
-        onBlur={() => props.setFocus(false)}
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        onFocus={() => setFocus(true)}
+        onBlur={() => setFocus(false)}
       />
       <Submit
-        visible={props.suggestion && props.suggestionVisible && props.search}
-        setFocus={props.setFocus}
+        visible={suggestion && suggestionVisible && search}
+        setFocus={setFocus}
       />
       <Geoloc
-        visible={!(props.suggestion && props.suggestionVisible && props.search)}
-        navigateToPlace={props.navigateToPlace}
+        visible={!(suggestion && suggestionVisible && search)}
+        navigateToPlace={navigateToPlace}
       />
     </Wrapper>
   );
