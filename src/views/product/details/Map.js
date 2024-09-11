@@ -16,7 +16,7 @@ const IFrame = styled.iframe`
   height: 100%;
 `;
 
-const MapWrapper = ({ src }) => {
+const LVAOMapWrapper = ({ src }) => {
   const iframeRef = useRef(null);
 
   function handleLoad() {
