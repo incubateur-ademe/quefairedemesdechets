@@ -65,7 +65,7 @@ const Error = styled.div`
     }
   }
 `;
-export default function Geoloc(props) {
+export default function Geoloc({ navigateToPlace, visible }) {
   const [position, setPosition] = useState(null);
 
   const [isGeolocating, setIsGeolocating] = useState(null);
@@ -73,8 +73,8 @@ export default function Geoloc(props) {
   const { data, isFetching, isError } = usePosition(position);
 
   useEffect(() => {
-    data && data.features && props.navigateToPlace(data.features[0]);
-  }, [data, props]);
+    data && data.features && navigateToPlace(data.features[0]);
+  }, [data, navigateToPlace]);
 
   const [error, setError] = useState(false);
 
@@ -83,7 +83,7 @@ export default function Geoloc(props) {
     "geolocation" in navigator ? (
     <>
       <Wrapper
-        $visible={props.visible && !error && !isError}
+        $visible={visible && !error && !isError}
         $fetching={isFetching || isGeolocating}
         type="button"
         onClick={() => {

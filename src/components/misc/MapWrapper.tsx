@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import styled, { keyframes, ThemeContext } from "styled-components";
 import { Map, Marker, Overlay, ZoomControl } from "pigeon-maps";
 
@@ -63,13 +63,12 @@ const Loader = styled.div`
     height: 100%;
     background-color: ${(props) => props.theme.colors.second};
     transform: scaleX(0);
-    animation: ${({ $isFetching }) => ($isFetching ? fetching : "none")} 1s linear
-      infinite;
+    animation: ${({ $isFetching }) => ($isFetching ? fetching: "none")} 1s
+      linear infinite;
   }
 `;
 export default function MapWrapper(props) {
   const [list, setList] = useState(false);
-
   const [address, setAddress] = useState({
     label: "",
     longitude: null,
@@ -77,29 +76,32 @@ export default function MapWrapper(props) {
   });
   const [center, setCenter] = useState([47.5, 2]);
   const [zoom, setZoom] = useState(4.5);
-
   const [currentPlace, setCurrentPlace] = useState(null);
-
   const { data, isFetching } = usePlaces(center, zoom, props.product);
 
   const themeContext = useContext(ThemeContext);
+
+  useEffect(() => {
+    if (address.latitude && address.longitude) {
+      window._paq?.push(["trackEvent", "Map", "Adresse"]);
+    }
+  }, [address]);
+  useEffect(() => {
+    if (list) {
+      window._paq?.push(["trackEvent", "Map", "List"]);
+    }
+  }, [list]);
 
   return (
     <>
       <Address
         address={address.label}
-        setAddress={(value) => {
-          window._paq?.push(["trackEvent", "Map", "Adresse"]);
-          setAddress(value);
-        }}
+        setAddress={setAddress}
         setCenter={setCenter}
         setZoom={setZoom}
       />
       <Switch
-        setList={(value) => {
-          window._paq?.push(["trackEvent", "Map", "List"]);
-          setList(value);
-        }}
+        setList={setList}
         list={list}
       />
       <Loader $isFetching={isFetching} />
