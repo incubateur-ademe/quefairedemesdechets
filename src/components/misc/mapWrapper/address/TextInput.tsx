@@ -37,7 +37,6 @@ export default React.forwardRef(function TextInput(
   },
   ref,
 ) {
-
   return (
     <Wrapper>
       <Input
