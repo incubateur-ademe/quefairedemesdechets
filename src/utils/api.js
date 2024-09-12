@@ -109,9 +109,7 @@ export function usePosition(position) {
 }
 export function usePlaces(center, zoom, product) {
   const debouncedCenter = useDebounce(center);
-
-  const zoomedEnough = zoom > 10;
-
+  const enabled = !!(zoom > 10 && debouncedCenter?.[0] && debouncedCenter?.[1]);
   const {
     data: decheteries,
     isLoading: isLoadingDecheteries,
@@ -119,8 +117,8 @@ export function usePlaces(center, zoom, product) {
   } = useQuery({
     queryKey: ["decheteries", debouncedCenter],
     queryFn: fetchDecheteries,
-    enabled: product["Bdd"] === "sinoe" && zoomedEnough ? true : false,
-    keepPreviousData: product["Bdd"] === "sinoe" && zoomedEnough ? true : false,
+    enabled: product["Bdd"] === "sinoe" && enabled,
+    keepPreviousData: product["Bdd"] === "sinoe" && enabled,
   });
 
   const {
@@ -130,9 +128,8 @@ export function usePlaces(center, zoom, product) {
   } = useQuery({
     queryKey: ["pvsoren", debouncedCenter],
     queryFn: fetchPvsoren,
-    enabled: product["Code"] === "ADEME_SOLAIRE" && zoomedEnough ? true : false,
-    keepPreviousData:
-      product["Code"] === "ADEME_SOLAIRE" && zoomedEnough ? true : false,
+    enabled: product["Code"] === "ADEME_SOLAIRE" && enabled,
+    keepPreviousData: product["Code"] === "ADEME_SOLAIRE" && enabled,
   });
 
   const {
@@ -144,14 +141,10 @@ export function usePlaces(center, zoom, product) {
     queryFn: fetchPharmacies,
     enabled:
       (product["Bdd"] === "google" || product["Code"] === "ADEME_DASRI") &&
-      zoomedEnough
-        ? true
-        : false,
+      enabled,
     keepPreviousData:
       (product["Bdd"] === "google" || product["Code"] === "ADEME_DASRI") &&
-      zoomedEnough
-        ? true
-        : false,
+      enabled,
   });
 
   const {
@@ -161,9 +154,8 @@ export function usePlaces(center, zoom, product) {
   } = useQuery({
     queryKey: ["ocad3e", debouncedCenter, product["Code"]],
     queryFn: fetchOcad3e,
-    enabled: product["Bdd"] === "ocad3e" && zoomedEnough ? true : false,
-    keepPreviousData:
-      product["Bdd"] === "ocad3e" && zoomedEnough ? true : false,
+    enabled: product["Bdd"] === "ocad3e" && enabled,
+    keepPreviousData: product["Bdd"] === "ocad3e" && enabled,
   });
 
   return {

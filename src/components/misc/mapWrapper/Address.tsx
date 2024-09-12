@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import styled from "styled-components";
 
 import { useSearch } from "utils/api";
@@ -28,13 +28,9 @@ const Wrapper = styled.form`
   }
 `;
 
-export default function Address(props) {
+export default function Address({ setAddress, setCenter, setZoom, address }) {
   const [search, setSearch] = useState("");
-  useEffect(() => {
-    setSearch(props.address);
-  }, [props.address]);
   const debouncedSearch = useDebounce(search);
-
   const { data, isFetching } = useSearch(debouncedSearch);
 
   const [focus, setFocus] = useState(false);
@@ -48,26 +44,33 @@ export default function Address(props) {
     }
   }, [focus]);
 
-  const navigateToPlace = (place) => {
-    if (place) {
-      props.setAddress({
-        label: place.properties.label,
-        latitude: place.geometry.coordinates[1],
-        longitude: place.geometry.coordinates[0],
-      });
-      props.setCenter([
-        place.geometry.coordinates[1],
-        place.geometry.coordinates[0],
-      ]);
-      props.setZoom(13);
-      setFocus(false);
-    }
-  };
+  const navigateToPlace = useCallback(
+    (place) => {
+      if (place) {
+        setAddress({
+          label: place.properties.label,
+          latitude: place.geometry.coordinates[1],
+          longitude: place.geometry.coordinates[0],
+        });
+        setCenter([
+          place.geometry.coordinates[1],
+          place.geometry.coordinates[0],
+        ]);
+        setZoom(13);
+        setFocus(false);
+      }
+    },
+    [setCenter, setZoom, setFocus, setAddress],
+  );
+
+  useEffect(() => {
+    setSearch(address);
+  }, [address]);
 
   return (
     <Wrapper
       $focus={focus}
-      $addressSet={props.address}
+      $addressSet={address}
       onSubmit={(e) => {
         e.preventDefault();
         if (current > -1) {
