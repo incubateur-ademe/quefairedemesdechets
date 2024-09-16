@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import posthog from "posthog-js"
+import posthog from "posthog-js";
 
 import { GlobalStyle } from "utils/styles";
-import { getCookie } from "utils/cookies"
+import { getCookie } from "utils/cookies";
 import ModalProvider from "components/providers/ModalProvider";
 import UXProvider from "components/providers/UXProvider";
 import SearchProvider from "components/providers/SearchProvider";
@@ -37,7 +37,7 @@ const FullScreen = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: 67rem;
+  width: ${(props) => props.theme.widths.maxWidthWithGutters};
   max-width: 100%;
   min-height: ${(props) => (props.$iframe ? "none" : "100vh")};
   margin: 0 auto;
@@ -47,31 +47,31 @@ const FullScreen = styled.div`
 export default function Web(props) {
   const [iframe, setIframe] = useState(false);
   const [noHeader, setnoHeader] = useState(false);
-  const [internalUser, setInternalUser] = useState(false)
+  const [internalUser, setInternalUser] = useState(false);
 
   useEffect(() => {
     setIframe(window.location.search.includes("iframe"));
     setnoHeader(window.location.search.includes("noheader"));
     if (getCookie("disable-posthog", "1")) {
-      setInternalUser(true)
+      setInternalUser(true);
     }
   }, []);
-
-  useEffect(() =>{
-    posthog.capture("$set", {
-      $set: {
-        admin: `${internalUser}`
-      },
-    })
-  }, [internalUser])
 
   useEffect(() => {
     posthog.capture("$set", {
       $set: {
-        iframe: `${iframe}`
+        admin: `${internalUser}`,
       },
-    })
-  }, [iframe])
+    });
+  }, [internalUser]);
+
+  useEffect(() => {
+    posthog.capture("$set", {
+      $set: {
+        iframe: `${iframe}`,
+      },
+    });
+  }, [iframe]);
 
   return (
     <Wrapper>
@@ -83,7 +83,10 @@ export default function Web(props) {
             <ThemeToggle />
             <Content>
               <FullScreen $iframe={iframe}>
-              <HeaderWrapper noHeader={noHeader} internalUser={internalUser} />
+                <HeaderWrapper
+                  noHeader={noHeader}
+                  internalUser={internalUser}
+                />
                 {props.children}
                 <Bin />
               </FullScreen>

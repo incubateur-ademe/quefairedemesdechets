@@ -26,6 +26,9 @@ export const themes = {
       large: `@media screen and (min-width: ${92}em)`,
       xlarge: `@media screen and (min-width: ${2000}px)`,
     },
+    widths: {
+      maxWidthWithGutters: "67rem",
+    },
   },
   night: {
     name: "Sombre",
@@ -49,6 +52,9 @@ export const themes = {
       mediumPortrait: `@media screen and (orientation: portrait) and (max-width: ${62}px)`,
       large: `@media screen and (min-width: ${92}em)`,
       xlarge: `@media screen and (min-width: ${2000}px)`,
+    },
+    widths: {
+      maxWidthWithGutters: "67rem",
     },
   },
 };

@@ -8,7 +8,7 @@ const StyleProvider = (props) => {
 
   useEffect(() => {
     setTheme(
-      window.location.search.includes("theme=night") ? "night" : "default"
+      window.location.search.includes("theme=night") ? "night" : "default",
     );
   }, []);
   return (

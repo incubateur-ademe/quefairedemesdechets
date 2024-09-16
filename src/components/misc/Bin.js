@@ -125,7 +125,8 @@ const Position = styled.div`
   transform: rotate(${(props) => (props.$position["y"] === "top" ? 180 : 0)}deg)
     translateX(
       ${(props) =>
-        (props.$position["y"] === "bottom" && props.$position["x"] === "right") ||
+        (props.$position["y"] === "bottom" &&
+          props.$position["x"] === "right") ||
         (props.$position["y"] === "top" && props.$position["x"] === "left")
           ? -8.3125
           : 0}rem

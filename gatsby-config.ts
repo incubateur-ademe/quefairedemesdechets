@@ -24,6 +24,8 @@ const config: GatsbyConfig = {
     twitterUsername: "ademe",
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
+    `@sentry/gatsby`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-use-query-params",
@@ -31,10 +33,10 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        excludes: [`disableposthog`]
-      }
+        excludes: [`disableposthog`],
+      },
     },
-      {
+    {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         custom: {
@@ -49,7 +51,7 @@ const config: GatsbyConfig = {
         siteId: "82",
         matomoUrl: "https://stats.beta.gouv.fr",
         siteUrl: "https://quefairedemesdechets.ademe.fr",
-        disableCookies: true
+        disableCookies: true,
       },
     },
     {
