@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react"
+import React, { useState, useContext, useEffect } from "react";
 import styled, { keyframes, ThemeContext } from "styled-components";
 import { Map, Marker, Overlay, ZoomControl } from "pigeon-maps";
 
@@ -85,7 +85,7 @@ export default function MapWrapper(props) {
   );
 
   const themeContext = useContext(ThemeContext);
-        
+
   useEffect(() => {
     if (address.latitude && address.longitude) {
       window._paq?.push(["trackEvent", "Map", "Adresse"]);
@@ -105,10 +105,7 @@ export default function MapWrapper(props) {
         setCenter={setCenter}
         setZoom={setZoom}
       />
-      <Switch
-        setList={setList}
-        list={list}
-      />
+      <Switch setList={setList} list={list} />
       <Loader $isFetching={isFetching} />
       <Cache $visible={!address.label} />
       {list ? (

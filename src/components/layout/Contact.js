@@ -63,7 +63,7 @@ export default function Contact(props) {
   const mutation = useMutation({
     mutationFn: (formData) => {
       return fetch("/", { method: "post", body: formData });
-    }
+    },
   });
 
   return (
@@ -96,7 +96,7 @@ export default function Contact(props) {
                   "form-name",
                   ["integration", "autre"].includes(user.objet)
                     ? "contact"
-                    : "bug"
+                    : "bug",
                 );
                 Object.keys(user).map((key) => formData.append(key, user[key]));
                 mutation.mutate(formData);
