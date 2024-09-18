@@ -1,5 +1,5 @@
 import path from "path";
-import slug from "slug";
+import getSlugFrom from "utils/api";
 
 exports.createPages = ({ graphql, actions: { createPage } }) => {
   return fetch(
@@ -35,7 +35,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
           }
           return tempWaste.map((waste) => ({
             ...waste,
-            slug: slug(waste[`Nom`], { locale: "fr" }),
+            slug: getSlugFrom(waste),
             map:
               waste["Bdd"] === "sinoe" ||
               waste["Bdd"] === "google" ||
