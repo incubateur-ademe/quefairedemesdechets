@@ -52,8 +52,8 @@ export default function Suggestions(props) {
           <StyledButton to={"/dechet/aliments-compostables"}>
             Aliments compostables
           </StyledButton>
-          <StyledButton to={"/dechet/cable"}>Câble</StyledButton>
-          <StyledButton to={"/dechet/smartphone"}>Smartphone</StyledButton>
+          <StyledButton to={"/dechet/livre"}>Livre</StyledButton>
+          <StyledButton to={"/dechet/lunettes"}>Lunettes</StyledButton>
           <StyledButton to={"/dechet/medicaments"}>Médicaments</StyledButton>
           <StyledButton to={"/dechet/capsules-de-cafe-ou-de-the"}>
             Capsules de café
