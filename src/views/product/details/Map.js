@@ -26,7 +26,7 @@ const LVAOMapWrapper = ({ src }) => {
   return (
     <IFrame
       id="lvao_iframe"
-      allow="geolocation"
+      allow="geolocation; clipboard-write"
       allowFullScreen={true}
       webkitallowfullscreen="true"
       mozallowfullscreen="true"
