@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import styled from "styled-components";
 
 import { useSearch } from "utils/api";
@@ -9,7 +9,7 @@ import Suggestions from "./address/Suggestions";
 const Wrapper = styled.form`
   position: absolute;
   z-index: 100;
-  top: ${(props) => (props.addressSet ? "1rem" : "5rem")};
+  top: ${({ $addressSet }) => ($addressSet ? "1rem" : "5rem")};
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 2rem);
@@ -24,17 +24,13 @@ const Wrapper = styled.form`
   //overflow: hidden;
 
   ${(props) => props.theme.mq.small} {
-    top: ${(props) => (props.addressSet ? "2.5rem" : "5rem")};
+    top: ${({ $addressSet }) => ($addressSet ? "2.5rem" : "5rem")};
   }
 `;
 
-export default function Address(props) {
+export default function Address({ setAddress, setCenter, setZoom, address }) {
   const [search, setSearch] = useState("");
-  useEffect(() => {
-    setSearch(props.address);
-  }, [props.address]);
   const debouncedSearch = useDebounce(search);
-
   const { data, isFetching } = useSearch(debouncedSearch);
 
   const [focus, setFocus] = useState(false);
@@ -48,26 +44,33 @@ export default function Address(props) {
     }
   }, [focus]);
 
-  const navigateToPlace = (place) => {
-    if (place) {
-      props.setAddress({
-        label: place.properties.label,
-        latitude: place.geometry.coordinates[1],
-        longitude: place.geometry.coordinates[0],
-      });
-      props.setCenter([
-        place.geometry.coordinates[1],
-        place.geometry.coordinates[0],
-      ]);
-      props.setZoom(13);
-      setFocus(false);
-    }
-  };
+  const navigateToPlace = useCallback(
+    (place) => {
+      if (place) {
+        setAddress({
+          label: place.properties.label,
+          latitude: place.geometry.coordinates[1],
+          longitude: place.geometry.coordinates[0],
+        });
+        setCenter([
+          place.geometry.coordinates[1],
+          place.geometry.coordinates[0],
+        ]);
+        setZoom(13);
+        setFocus(false);
+      }
+    },
+    [setCenter, setZoom, setFocus, setAddress],
+  );
+
+  useEffect(() => {
+    setSearch(address);
+  }, [address]);
 
   return (
     <Wrapper
-      focus={focus}
-      addressSet={props.address}
+      $focus={focus}
+      $addressSet={address}
       onSubmit={(e) => {
         e.preventDefault();
         if (current > -1) {

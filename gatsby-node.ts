@@ -1,17 +1,17 @@
-import path from "path"
-import slug from "slug"
+import path from "path";
+import slug from "slug";
 
 exports.createPages = ({ graphql, actions: { createPage } }) => {
   return fetch(
-    `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&size=1000&sampling=neighbors`
+    `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&size=1000&sampling=neighbors`,
   )
     .then((res) => res.json())
     .then((res) =>
-      res.results.filter((waste) => typeof waste["ID"] !== "undefined")
+      res.results.filter((waste) => typeof waste["ID"] !== "undefined"),
     ) // handle Koumoul missing ID
     .then((wasteRes) =>
       fetch(
-        "https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-liens/lines?format=json&q_mode=simple&size=1000&sampling=neighbors"
+        "https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-liens/lines?format=json&q_mode=simple&size=1000&sampling=neighbors",
       )
         .then((res) => res.json())
         .then((res) => res.results)
@@ -35,7 +35,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
           }
           return tempWaste.map((waste) => ({
             ...waste,
-            slug: slug(waste[`Nom`], { locale: "fr"}),
+            slug: slug(waste[`Nom`], { locale: "fr" }),
             map:
               waste["Bdd"] === "sinoe" ||
               waste["Bdd"] === "google" ||
@@ -45,10 +45,10 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
             links: linkRes.filter((link) =>
               link["Produits_associes"]
                 .split("; ")
-                .includes(waste["ID"].split("_")[0])
+                .includes(waste["ID"].split("_")[0]),
             ),
           }));
-        })
+        }),
     )
     .then((res) =>
       res.forEach((product) => {
@@ -57,6 +57,6 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
           component: path.resolve("./src/templates/product.js"),
           context: { product },
         });
-      })
-    )
+      }),
+    );
 };

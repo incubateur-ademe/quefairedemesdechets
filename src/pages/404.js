@@ -4,6 +4,7 @@ import Web from "components/layout/Web";
 import Suggestions from "components/misc/Suggestions";
 
 export default function notfound() {
+
   return (
     <Web>
       <Suggestions>

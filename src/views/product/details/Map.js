@@ -1,13 +1,13 @@
 import React, { useRef } from "react";
 import styled from "styled-components";
 
-import MapWrapper from "components/misc/MapWrapper";
+import LegacyMapWrapper from "components/misc/MapWrapper";
 
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
   height: clamp(20rem, 85vh, 44rem);
-  ${(props) => props.LVAOMapIsDisplayed && "border-radius: 1rem;"}
+  ${(props) => props.$LVAOMapIsDisplayed && "border-radius: 1rem;"}
   overflow: hidden;
 `;
 const IFrame = styled.iframe`
@@ -16,7 +16,7 @@ const IFrame = styled.iframe`
   height: 100%;
 `;
 
-const IFrameWrapper = ({ src }) => {
+const LVAOMapWrapper = ({ src }) => {
   const iframeRef = useRef(null);
 
   function handleLoad() {
@@ -26,7 +26,7 @@ const IFrameWrapper = ({ src }) => {
   return (
     <IFrame
       id="lvao_iframe"
-      allow="geolocation"
+      allow="geolocation; clipboard-write"
       allowFullScreen={true}
       webkitallowfullscreen="true"
       mozallowfullscreen="true"
@@ -40,11 +40,11 @@ const IFrameWrapper = ({ src }) => {
 
 export default function Map({ lvaoData, product }) {
   return (
-    <Wrapper LVAOMapIsDisplayed={!!lvaoData?.url_carte}>
+    <Wrapper $LVAOMapIsDisplayed={!!lvaoData?.url_carte}>
       {lvaoData?.url_carte ? (
-        <IFrameWrapper src={lvaoData.url_carte} />
+        <LVAOMapWrapper src={lvaoData.url_carte} />
       ) : (
-        <MapWrapper product={product} />
+        <LegacyMapWrapper product={product} />
       )}
     </Wrapper>
   );

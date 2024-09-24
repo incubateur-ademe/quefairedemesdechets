@@ -25,21 +25,15 @@ const config: GatsbyConfig = {
   },
   plugins: [
     `gatsby-plugin-sitemap`,
+    `@sentry/gatsby`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-use-query-params",
     `gatsby-plugin-root-import`,
-    `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-plugin-posthog`,
+      resolve: `gatsby-plugin-sitemap`,
       options: {
-        apiKey: process.env.POSTHOG_API_KEY,
-        apiHost: "https://eu.i.posthog.com",
-        head: true,
-        isEnabledDevMode: false,
-        initOptions: {
-          persistence: "memory",
-        },
+        excludes: [`disableposthog`],
       },
     },
     {
@@ -57,7 +51,7 @@ const config: GatsbyConfig = {
         siteId: "82",
         matomoUrl: "https://stats.beta.gouv.fr",
         siteUrl: "https://quefairedemesdechets.ademe.fr",
-        disableCookies: true
+        disableCookies: true,
       },
     },
     {
