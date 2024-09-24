@@ -31,7 +31,7 @@ export default function ContactPrompt(props) {
               Vous souhaitez afficher ce simulateur sur votre site ?
             </strong>
             <br />
-            Personnalisez le et intégrez le facilement grace à{" "}
+            Personnalisez le et intégrez le facilement grâce à{" "}
             <StyledLink
               onClick={() => {
                 setEmbedOpen(true);
