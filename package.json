@@ -15,7 +15,6 @@
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-matomo": "^0.16.3",
     "gatsby-plugin-offline": "^6.13.2",
-    "gatsby-plugin-posthog": "^1.0.1",
     "gatsby-plugin-react-helmet": "^6.13.1",
     "gatsby-plugin-sitemap": "^6.13.1",
     "gatsby-plugin-styled-components": "^6.13.1",
@@ -23,6 +22,7 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "iframe-resizer": "^4.4.5",
     "pigeon-maps": "^0.21.6",
+    "posthog-js": "^1.160.3",
     "query-string": "^7.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -67,7 +67,7 @@
     "webpack-cli": "^5.1.4"
   },
   "scripts": {
-    "build": "gatsby clean && yarn iframe && gatsby build",
+    "build": "yarn clean && yarn iframe && gatsby build",
     "clean": "rm -rf ../cache && gatsby clean",
     "iframe": "webpack",
     "develop": "gatsby develop",

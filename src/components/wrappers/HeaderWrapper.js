@@ -45,19 +45,28 @@ const StyledSearchBar = styled(SearchBar)`
     font-size: 0.875rem;
   }
 `;
-export default function HeaderWrapper(props) {
+
+const Disclaimer = styled.div`
+  background: red;
+  color: white;
+  padding: .25rem 1rem;
+`;
+export default function HeaderWrapper({ noHeader, internalUser }) {
   const location = useLocation();
   const { isFetched } = useWaste();
   return (
-    <StyledHeader $small={location.pathname !== "/"} $noHeader={props.noHeader}>
-      {location.pathname !== "/" && (
-        <Wrapper>
-          {!props.noHeader && <GifTitle small />}
-          <SearchBarWrapper $noHeader={props.noHeader}>
-            <StyledSearchBar isFetched={isFetched} />
-          </SearchBarWrapper>
-        </Wrapper>
-      )}
-    </StyledHeader>
+    <>
+      {internalUser && <Disclaimer>Posthog est désactivé</Disclaimer>}
+      <StyledHeader $small={location.pathname !== "/"} $noHeader={noHeader}>
+        {location.pathname !== "/" && (
+          <Wrapper>
+            {!noHeader && <GifTitle small />}
+            <SearchBarWrapper $noHeader={noHeader}>
+              <StyledSearchBar isFetched={isFetched} />
+            </SearchBarWrapper>
+          </Wrapper>
+        )}
+      </StyledHeader>
+    </>
   );
 }

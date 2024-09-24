@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import posthog from "posthog-js";
 
 import { GlobalStyle } from "utils/styles";
+import { getCookie } from "utils/cookies";
 import ModalProvider from "components/providers/ModalProvider";
 import UXProvider from "components/providers/UXProvider";
 import SearchProvider from "components/providers/SearchProvider";
@@ -45,11 +47,31 @@ const FullScreen = styled.div`
 export default function Web(props) {
   const [iframe, setIframe] = useState(false);
   const [noHeader, setnoHeader] = useState(false);
+  const [internalUser, setInternalUser] = useState(false);
 
   useEffect(() => {
     setIframe(window.location.search.includes("iframe"));
     setnoHeader(window.location.search.includes("noheader"));
+    if (getCookie("disable-posthog", "1")) {
+      setInternalUser(true);
+    }
   }, []);
+
+  useEffect(() => {
+    posthog.capture("$set", {
+      $set: {
+        admin: `${internalUser}`,
+      },
+    });
+  }, [internalUser]);
+
+  useEffect(() => {
+    posthog.capture("$set", {
+      $set: {
+        iframe: `${iframe}`,
+      },
+    });
+  }, [iframe]);
 
   return (
     <Wrapper>
@@ -61,7 +83,10 @@ export default function Web(props) {
             <ThemeToggle />
             <Content>
               <FullScreen $iframe={iframe}>
-                <HeaderWrapper noHeader={noHeader} />
+                <HeaderWrapper
+                  noHeader={noHeader}
+                  internalUser={internalUser}
+                />
                 {props.children}
                 <Bin />
               </FullScreen>
