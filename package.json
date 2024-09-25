@@ -51,7 +51,7 @@
     "@types/node": "^20.14.10",
     "@types/react": "^18.3.4",
     "@types/react-dom": "^18.3.0",
-    "eslint": "^9.10.0",
+    "eslint": "^9.11.1",
     "eslint-plugin-react": "^7.35.2",
     "gatsby-cli": "^5.13.3",
     "gatsby-plugin-root-import": "^2.0.9",
