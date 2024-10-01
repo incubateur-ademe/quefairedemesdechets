@@ -24,7 +24,12 @@ const config: GatsbyConfig = {
     twitterUsername: "ademe",
   },
   plugins: [
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        excludes: [`disableposthog`],
+      },
+    },
     `@sentry/gatsby`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
