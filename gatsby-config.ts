@@ -30,10 +30,17 @@ const config: GatsbyConfig = {
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-use-query-params",
     `gatsby-plugin-root-import`,
+    `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: `gatsby-plugin-posthog`,
       options: {
-        excludes: [`disableposthog`],
+        apiKey: process.env.POSTHOG_API_KEY,
+        apiHost: "https://eu.i.posthog.com",
+        head: true,
+        isEnabledDevMode: false,
+        initOptions: {
+          persistence: "memory",
+        },
       },
     },
     {
