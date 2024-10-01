@@ -1,5 +1,13 @@
 import path from "path";
-import getSlugFrom from "utils/api";
+import slug from "slug";
+
+// Duplicated from src/utils/api.js
+type ProductFromAdeme = {
+  slug: string;
+};
+function getSlugFrom(productFromAdemeAPI: ProductFromAdeme) {
+  return slug(productFromAdemeAPI[`slug`], { locale: "fr" });
+}
 
 exports.createPages = ({ graphql, actions: { createPage } }) => {
   return fetch(

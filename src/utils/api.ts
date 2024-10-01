@@ -4,11 +4,14 @@ import { useQuery } from "@tanstack/react-query";
 import slug from "slug";
 import useDebounce from "hooks/useDebounce";
 
-const LVAO_API = `${process.env.GATSBY_LVAO_BASE_URL}/api`;
-
-export function getSlugFrom(productFromAdemeAPI) {
+type ProductFromAdeme = {
+  slug: string;
+};
+function getSlugFrom(productFromAdemeAPI: ProductFromAdeme) {
   return slug(productFromAdemeAPI[`slug`], { locale: "fr" });
 }
+
+const LVAO_API = `${process.env.GATSBY_LVAO_BASE_URL}/api`;
 
 export function useLVAOMapForProduct(productID) {
   return useQuery({
