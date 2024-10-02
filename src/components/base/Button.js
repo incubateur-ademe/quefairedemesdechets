@@ -18,8 +18,7 @@ const Wrapper = styled(MagicLink)`
           props.theme.name === "Défaut" ? "background" : "background"
         ]};
   background-color: ${(props) =>
-    props.hollow ? "transparent" : props.theme.colors.main};
-  border: 1px solid ${(props) => props.theme.colors.main};
+    props.hollow ? "transparent" : props.theme.colors.link.primary};
   border-radius: 1.5em;
   opacity: ${(props) => (props.disabled ? 0.5 : 1)};
   pointer-events: ${(props) => (props.disabled ? "none" : "inherit")};

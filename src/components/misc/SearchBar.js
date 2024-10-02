@@ -16,7 +16,7 @@ const Wrapper = styled.form`
   right: 0;
   background-color: ${(props) => props.theme.colors.background};
   ${(props) => props.theme.shadow};
-  border: 0.25em solid ${(props) => props.theme.colors.main};
+  border: 0.25em solid ${(props) => props.theme.colors.icons.primary};
   border-radius: 2em;
   overflow: hidden;
   opacity: ${(props) => (props.$isFetched && !props.$small ? 1 : 0)};

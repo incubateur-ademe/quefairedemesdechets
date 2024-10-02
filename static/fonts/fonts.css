@@ -8,8 +8,8 @@
 
 @font-face {
   font-family: 'Marianne';
-  src: url('./Marianne-ExtraBold.woff2') format('woff2'),
-    url('./Marianne-ExtraBold.woff') format('woff');
+  src: url('./Marianne-Bold.woff2') format('woff2'),
+    url('./Marianne-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
 }

@@ -7,8 +7,8 @@ const Wrapper = styled.button`
   top: 50%;
   right: 0;
   padding: 0.7rem 0.9rem;
-  background-color: ${(props) => props.theme.colors.main};
-  border: 5px solid ${(props) => props.theme.colors.main};
+  background-color: ${(props) => props.theme.colors.icons.primary};
+  border: 5px solid ${(props) => props.theme.colors.icons.primary};
   border-right: none;
   border-radius: 2rem 0 0 2rem;
   transition: all 400ms ease-out;

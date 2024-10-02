@@ -15,7 +15,7 @@ const Wrapper = styled.svg`
   }
 
   path {
-    fill: ${(props) => props.theme.colors.second};
+    fill: ${(props) => props.theme.colors.icons.primary};
   }
 `;
 export default function Glass() {

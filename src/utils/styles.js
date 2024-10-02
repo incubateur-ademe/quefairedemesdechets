@@ -1,6 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 import styledNormalize from "styled-normalize";
 
+/*
+titres : primary / secondary
+liens : primary / secondary
+icons : primary / secondary
+*/
 export const themes = {
   default: {
     name: "Clair",
@@ -13,6 +18,19 @@ export const themes = {
       footer: "#F6F7F9",
       text: "#383838",
       error: "#EB0000",
+      link: {
+        primary: "#37635F",
+        secondary: "",
+      },
+      icons: {
+        primary: "#5BB5A7",
+        secondary: "",
+      },
+      titles: {
+        // primary: "#4F9D91",
+        primary: "#1A2624",
+        secondary: "",
+      },
     },
     fonts: {
       body: '"Marianne", sans-serif',
@@ -73,7 +91,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: ${(props) => props.theme.colors.background};
     color: ${(props) => props.theme.colors.text};
-  } 
+  }
 
   *, *:before, *:after {
     margin-top: 0;
@@ -85,13 +103,14 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     position: relative;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     font-family: ${(props) => props.theme.fonts.title};
     color: ${(props) => props.theme.colors.second};
     font-weight: bold;
     line-height: 1.2;
+    color: ${(props) => props.theme.colors.titles.primary};
   }
 
   h2 {
@@ -103,7 +122,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: ${(props) => props.theme.colors.main};
+    color: ${(props) => props.theme.colors.link.primary};
   }
 
   option {
