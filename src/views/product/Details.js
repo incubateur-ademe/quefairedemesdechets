@@ -12,14 +12,14 @@ const Title = styled.h2`
 const Text = styled.p`
   font-size: 1.125rem;
 `;
-export default function Product({ lvaoData, product }) {
+export default function Product({ lvaoData, product, isFetching }) {
   return (
     <div>
       {product.map && (
         <Section>
           <Title>Où l'apporter ?</Title>
 
-          <Map product={product} lvaoData={lvaoData} />
+          {!isFetching && <Map product={product} lvaoData={lvaoData} />}
         </Section>
       )}
       {product[`Que_va-t-il_devenir_?`] && (
