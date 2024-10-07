@@ -17,7 +17,7 @@ const iframeAttributes = {
   allowfullscreen: true,
   webkitallowfullscreen: true,
   mozallowfullscreen: true,
-  allow: "geolocation",
+  allow: "geolocation; clipboard-write",
 };
 for (var key in iframeAttributes) {
   iframe.setAttribute(key, iframeAttributes[key]);
