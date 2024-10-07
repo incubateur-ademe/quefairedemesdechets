@@ -1,6 +1,14 @@
 import path from "path";
 import slug from "slug";
 
+// Duplicated from src/utils/api.js
+type ProductFromAdeme = {
+  slug: string;
+};
+function getSlugFrom(productFromAdemeAPI: ProductFromAdeme) {
+  return slug(productFromAdemeAPI[`slug`], { locale: "fr" });
+}
+
 exports.createPages = ({ graphql, actions: { createPage } }) => {
   return fetch(
     `https://data.ademe.fr/data-fair/api/v1/datasets/que-faire-de-mes-dechets-produits/lines?format=json&q_mode=simple&size=1000&sampling=neighbors`,
@@ -35,7 +43,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
           }
           return tempWaste.map((waste) => ({
             ...waste,
-            slug: slug(waste[`Nom`], { locale: "fr" }),
+            slug: getSlugFrom(waste),
             map:
               waste["Bdd"] === "sinoe" ||
               waste["Bdd"] === "google" ||
