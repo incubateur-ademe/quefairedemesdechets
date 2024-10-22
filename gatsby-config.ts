@@ -41,6 +41,7 @@ const config: GatsbyConfig = {
       options: {
         apiKey: process.env.POSTHOG_API_KEY,
         apiHost: "https://eu.i.posthog.com",
+        autocapture: false,
         head: true,
         isEnabledDevMode: false,
         initOptions: {
