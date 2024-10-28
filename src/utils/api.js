@@ -1,18 +1,10 @@
-/*eslint-disable */
+/*eslint-disable eqeqeq*/
 
 import { useQuery } from "@tanstack/react-query";
 import slug from "slug";
 import useDebounce from "hooks/useDebounce";
 
-type ProductFromAdeme = {
-  slug: string;
-};
-function getSlugFrom(productFromAdemeAPI: ProductFromAdeme) {
-  return slug(productFromAdemeAPI[`slug`], { locale: "fr" });
-}
-
 const LVAO_API = `${process.env.GATSBY_LVAO_BASE_URL}/api`;
-
 export function useLVAOMapForProduct(productID) {
   return useQuery({
     queryKey: ["lvao-product", productID],
@@ -67,7 +59,7 @@ export function useWaste() {
             searchable: waste["Nom"]
               .normalize("NFD")
               .replace(/[\u0300-\u036f]/g, ""),
-            slug: getSlugFrom(waste),
+            slug: slug(waste[`Nom`], { locale: "fr" }),
           }));
         }),
     keepPreviousData: true,
@@ -86,7 +78,7 @@ export function useSuggestions(suggestions) {
         .then((results) =>
           results.map((result) => ({
             ...result,
-            slug: getSlugFrom(result),
+            slug: slug(result[`Nom`], { locale: "fr" }),
           })),
         ),
     enabled: suggestions ? true : false,
