@@ -33,7 +33,7 @@
     "react-scripts": "5.0.1",
     "react-share": "^5.1.0",
     "react-switch": "^7.0.0",
-    "react-tooltip": "^4.2.17",
+    "react-tooltip": "^5.28.0",
     "slug": "^9.1.0",
     "styled-components": "^6.1.11",
     "styled-normalize": "^8.1.1",
