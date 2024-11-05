@@ -2,6 +2,6 @@
   GATSBY_CPU_COUNT= "2"
 
 [[headers]]
-for = "/*"
+for = "*"
 [headers.values]
     Referrer-Policy = "strict-origin-when-cross-origin"
