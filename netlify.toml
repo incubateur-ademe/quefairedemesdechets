@@ -1,2 +1,7 @@
 [context.deploy-preview.environment]
   GATSBY_CPU_COUNT= "2"
+
+[[headers]]
+for = "*"
+[headers.values]
+    Referrer-Policy = "strict-origin-when-cross-origin"
