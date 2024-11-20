@@ -23,7 +23,7 @@ const Wrapper = styled.button`
   height: 3rem;
   padding: 0;
   background: none;
-  border: 3px solid ${(props) => props.theme.colors.main};
+  border: 3px solid ${(props) => props.theme.colors.icons.primary};
   border-radius: 2rem;
   cursor: pointer;
 
@@ -49,7 +49,7 @@ const Wrapper = styled.button`
       width: 1.4rem;
     }
     path {
-      fill: ${(props) => props.theme.colors.main};
+      fill: ${(props) => props.theme.colors.icons.primary};
 
       &.outline1 {
         animation-delay: 200ms;
