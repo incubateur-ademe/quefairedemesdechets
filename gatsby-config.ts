@@ -16,7 +16,7 @@ const config: GatsbyConfig = {
     },
   ],
   siteMetadata: {
-    title: `Que Faire de mes déchets & objets : votre assistant au tri et à la réduction des déchets`,
+    title: `Que Faire de mes déchets & objets: votre assistant au tri et à la réduction des déchets`,
     author: `LongueVieAuxObjets`,
     description: `Vêtements, emballages, smartphones, médicaments… trouvez les réponses pour les réparer, les revendre d'occasion, les trier, les recycler, les éviter ou les jeter`,
     siteUrl: `https://quefairedemesdechets.ademe.fr`,
